@@ -4,6 +4,9 @@ module.exports = config => {
     dir: {
       input: 'src',
       output: 'dist'
-    }
+    },
+    markdownTemplateEngine: 'njk',
+    dataTemplateEngine: 'njk',
+    htmlTemplateEngine: 'njk'
   };
 };
