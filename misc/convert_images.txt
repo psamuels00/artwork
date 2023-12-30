@@ -1,8 +1,8 @@
-convert -resize 200x ../perrins-art/02-Portfolio/03-TheDemo/PerrinLogo/PerrinLogo.png pics/home/PerrinLogo.png
+convert -resize 200x ../perrins-art/02-Portfolio/03-TheDemo/PerrinLogo/PerrinLogo.png src/images/home/PerrinLogo.png
 
-convert -quality 40 ../perrins-art/02-Portfolio/06-Emma/EmmaSittingRelaxedAttentive-13-final-zoom-head.heic pics/home/Emma.jpg
-convert -quality 30 ../perrins-art/02-Portfolio/03-TheDemo/02-PaintingFull.jpeg pics/home/TheDemo.jpg
-convert -quality 40 ../perrins-art/02-Portfolio/07-OutpostBackView/Backyard-09-finished-cropped.jpg pics/home/BackyardHills.jpg
-convert -quality 30 ../perrins-art/02-Portfolio/00-StarryNight/01-StarryStarryNight.jpg pics/home/StarryNight.jpg
-convert -quality 40 ../perrins-art/02-Portfolio/02-Dolphin/02-TheDolphin.jpeg pics/home/Dolphin.jpg
+convert -quality 40 ../perrins-art/02-Portfolio/06-Emma/EmmaSittingRelaxedAttentive-12-final-framed.heic src/images/home/Emma.jpg
+convert -quality 30 ../perrins-art/02-Portfolio/03-TheDemo/02-PaintingFull.jpeg src/images/home/TheDemo.jpg
+convert -quality 40 ../perrins-art/02-Portfolio/07-OutpostBackView/Backyard-09-finished-cropped.jpg src/images/home/BackyardHills.jpg
+convert -quality 30 ../perrins-art/02-Portfolio/00-StarryNight/01-StarryStarryNight.jpg src/images/home/StarryNight.jpg
+convert -quality 40 ../perrins-art/02-Portfolio/02-Dolphin/02-TheDolphin.jpeg src/images/home/Dolphin.jpg
 
