@@ -66,6 +66,7 @@
             margin-top: 0.5em;
         }
 
+        /*
         div.emma {
             background-color: black;
             color: ivory;
@@ -74,18 +75,19 @@
             background-color: whitesmoke;
             color: gray;
         }
-        div.starry_night {
-            background-color: black;
-            color: ivory;
-        }
         div.backyard_hills {
             background-color: mistyrose;
             color: maroon;
+        }
+        div.starry_night {
+            background-color: black;
+            color: ivory;
         }
         div.dolphin {
             background-color: #001a33;
             color: lightskyblue;
         }
+        */
 
         figure {
             width: 600px;
@@ -95,12 +97,16 @@
         }
         figure img {
             width: 100%;
+            box-sizing: border-box;
         }
         figure img.border5 {
             border: 5px solid black;
         }
         figure img.border3 {
             border: 3px solid black;
+        }
+        figure img.border_backyard_hills {
+            border: 1em solid mistyrose;
         }
         figcaption {
             text-align: center;
@@ -163,17 +169,17 @@
         </figure>
     </div>
 
+    <div class="backyard_hills">
+        <figure>
+            <img class="border_backyard_hills" src="/images/home/BackyardHills.jpg"/>
+            <figcaption>Backyard Hills</figcaption>
+        </figure>
+    </div>
+
     <div class="starry_night">
         <figure>
             <img class="border3" src="/images/home/StarryNight.jpg"/>
             <figcaption>Starry Night</figcaption>
-        </figure>
-    </div>
-
-    <div class="backyard_hills">
-        <figure>
-            <img src="/images/home/BackyardHills.jpg"/>
-            <figcaption>Backyard Hills</figcaption>
         </figure>
     </div>
 
