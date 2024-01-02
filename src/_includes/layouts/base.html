@@ -14,7 +14,7 @@
         }
 
         div.header_section {
-            width: 800px;
+            width: 1024px;
             margin: auto;
         }
         div.logo {
@@ -24,12 +24,14 @@
         div.logo img {
             width: 100%;
         }
-        hr {
+        .dividor {
             margin: 0 2em;
+            border-bottom: 1px solid black;
         }
         div.menu {
             text-align: center;
             margin-top: 0.5em;
+            margin-bottom: 1em;
         }
         div.menu a {
             text-decoration: none;
@@ -41,7 +43,7 @@
         }
         div.menu a div.current_page,
         div.menu a:hover div {
-            background-color: #EEE;
+            background-color: #EFEBE9;
         }
 
         div.title_section {
@@ -115,7 +117,8 @@
         }
 
         div.footer_section {
-            text-align: center;
+            width: 1024px;
+            margin: auto;
             font-size: 80%;
             font-weight: 300;
             color: #888;
@@ -123,6 +126,7 @@
         }
         div.footer_section p {
             margin: 0.5em auto;
+            text-align: center;
         }
     </style>
   </head>
@@ -132,7 +136,7 @@
         <a href="/"><img src="/images/home/PerrinLogo.png"/></a>
       </div>
 
-      <hr/>
+      <div class="dividor"></div>
 
       {#
       ----------------------------------------------------------------------------

@@ -1,8 +1,16 @@
+# logo
 convert -resize 200x ../perrins-art/02-Portfolio/03-TheDemo/PerrinLogo/PerrinLogo.png src/images/home/PerrinLogo.png
 
+# home
 convert -quality 40 ../perrins-art/02-Portfolio/06-Emma/EmmaSittingRelaxedAttentive-12-final-framed.heic src/images/home/Emma.jpg
 convert -quality 30 ../perrins-art/02-Portfolio/03-TheDemo/02-PaintingFull.jpeg src/images/home/TheDemo.jpg
 convert -quality 40 ../perrins-art/02-Portfolio/07-OutpostBackView/Backyard-09-finished-cropped.jpg src/images/home/BackyardHills.jpg
 convert -quality 30 ../perrins-art/02-Portfolio/00-StarryNight/01-StarryStarryNight.jpg src/images/home/StarryNight.jpg
 convert -quality 40 ../perrins-art/02-Portfolio/02-Dolphin/02-TheDolphin.jpeg src/images/home/Dolphin.jpg
 
+# about
+convert -resize 35%x ../perrins-art/04-About/books-art.png src/images/about/books-art.png
+convert -resize 35%x ../perrins-art/04-About/books-computer-new.png src/images/about/books-computer-new.png
+convert -resize 35%x ../perrins-art/04-About/books-computer-other.png src/images/about/books-computer-other.png
+convert -resize 35%x ../perrins-art/04-About/books-other.png src/images/about/books-other.png
+convert -resize 35%x ../perrins-art/04-About/books-politics.png src/images/about/books-politics.png
