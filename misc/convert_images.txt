@@ -17,3 +17,6 @@ convert -resize 35%x ../perrins-art/04-About/books-politics.png src/images/about
 
 # resume
 convert -quality 80 ../perrins-art/05-Resume/PerrinSwirlingBackground.jpg  src/images/resume/PerrinSwirlingBackground.jpg
+
+# nightmare
+convert ../perrins-art/06-Nightmare/trump-fraud.jpg -crop +0+100 -crop -0-100 src/images/nightmare/trump-fraud.jpg
