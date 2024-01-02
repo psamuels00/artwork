@@ -3,4 +3,133 @@ title: "Perrin's Resume"
 layout: 'layouts/base.html'
 ---
 
-{{title}} page is under construction.
+<style>
+    div.container {
+        background-color: #0f2d56;
+        color: white;
+    }
+    div.title_section {
+        font-size: 250%;
+        font-weight: 400;
+        color: #0f2d56;
+        padding: 0.4em;
+        margin-bottom: 0px;
+    }
+    .section {
+        width: 1024px;
+        margin: auto;
+        margin-top: 1em;
+    }
+
+    figure.selfie {
+        width: 200px;
+        height: 200px;
+        padding-bottom: 1em;
+    }
+    figure.selfie img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/resume/PerrinSwirlingBackground.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .jobs {
+        padding-bottom: 1em;
+    }
+    .job {
+        display: flex;
+        flex-direction: row;
+        gap: 3em;
+        margin: 2em 1em;
+    }
+
+    .job .position {
+        width: 200px;
+        font-weight: 800;
+    }
+    .job .dates {
+        width: 200px;
+        font-size: 110%;
+    }
+    .job .description {
+        width: 460px;
+        line-height: 1.75em;
+        font-size: 95%;
+    }
+</style>
+<div class="container">
+  <div class="title_section">
+    As a Software Engineer...
+  </div>
+  <div class="section">
+    <figure class="selfie">
+      <img src=""/>
+    </figure>
+
+    <div class="jobs">
+      <div class="job">
+        <div class="position">
+          Sr Bioinformatics Engr,<br/>
+          Quest Diagnostics
+        </div>
+        <div class="dates">May 2020 - Present</div>
+        <div class="description">
+          Yup, I work there now, building pipelines in the cloud.  AWS, Terraform, Python, SQL, Typescript, Django,
+          Celery, Redis, Gitlab, Mockoon, automated testing, CI/CD, agile, design & implementation, hiring, mentoring,
+          and did I mention testing, testing, testing?
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="position">
+          Sr Backend Engr,<br/>
+          Ancestry
+        </div>
+        <div class="dates">Apr 2018 - Apr 20202</div>
+        <div class="description">
+          This was a great job, great team.  Too bad the DNA Health product was discontinued.  AWS, Terraform, Python,
+          Java, SQLAlchemy, Flask, Sanic, GitHub, Jenkins.
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="position">
+          Sr Backend Engr,<br/>
+          Credit Karma
+        </div>
+        <div class="dates">Feb 2015 - Dec 2015</div>
+        <div class="description">
+          Worked on monolithic Web app, mostly the recommendation engine.  Developed internal tool for managing A/B tests.
+          PHP, sharded SQL.
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="position">
+          Software Engineer,<br/>
+          Lumenir
+        </div>
+        <div class="dates">2011 - 2013</div>
+        <div class="description">
+          As the first software engineer at this solar-powered generator startup, I created the front and back end of an
+          application to track distribution, leasing, billing, and usage of the flagship product, piloted in Guatemala.
+        </div>
+      </div>
+
+      <div class="job">
+        <div class="position">
+          Software Developer,<br/>
+          Microsoft, Tellme
+        </div>
+        <div class="dates">2005 - 2009</div>
+        <div class="description">
+          I started at Tellme developing voice applications using VoiceXML and Perl for the back end.  After Microsoft
+          aquired Tellme, I stayed on board, developing voice applications.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

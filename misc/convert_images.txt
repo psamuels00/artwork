@@ -14,3 +14,6 @@ convert -resize 35%x ../perrins-art/04-About/books-computer-new.png src/images/a
 convert -resize 35%x ../perrins-art/04-About/books-computer-other.png src/images/about/books-computer-other.png
 convert -resize 35%x ../perrins-art/04-About/books-other.png src/images/about/books-other.png
 convert -resize 35%x ../perrins-art/04-About/books-politics.png src/images/about/books-politics.png
+
+# resume
+convert -quality 80 ../perrins-art/05-Resume/PerrinSwirlingBackground.jpg  src/images/resume/PerrinSwirlingBackground.jpg
