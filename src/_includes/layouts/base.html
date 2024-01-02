@@ -7,6 +7,7 @@
     <title>{{ title }}</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,800&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
+
         body {
             font-family: 'Nunito Sans', sans-serif;
             font-weight: 200;
@@ -44,6 +45,18 @@
         div.menu a div.current_page,
         div.menu a:hover div {
             background-color: #EFEBE9;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0.5;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .main_content {
+            animation: fadeIn 0.25s ease-in-out;
         }
 
         div.title_section {
@@ -161,9 +174,11 @@
       </div>
     </div>
 
-    {% block content %}
-      {{ content | safe }}
-    {% endblock %}
+    <div class="main_content">
+      {% block content %}
+        {{ content | safe }}
+      {% endblock %}
+    </div>
 
     <div class="footer_section">
       <p>perrin.samuels@gmail.com</p>
