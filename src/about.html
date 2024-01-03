@@ -3,80 +3,46 @@ title: 'About Perrin'
 layout: 'layouts/base.html'
 ---
 
-<style>
-    div.container {
-        background-color: #0f2d56;
-        color: white;
-    }
-    .section {
-        width: 1024px;
-        margin: auto;
-    }
-    .section .text {
-        text-align: center;
-        padding-top: 2em;
-    }
+<div class="bg-blue-950 text-white text-sm my-6 py-10">
 
-    figcaption {
-        font-weight: 100;
-    }
-    .section .top_part {
-        margin-top: 3em;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        max-height: 700px;
-    }
+  <div class="flex flex-col lg:max-w-4xl lg:min-w-[1024px] mx-auto text-center gap-y-8">
 
-    figure.politics {
-        width: 344px;
-    }
-    figure.computer_other {
-        width: 282px;
-    }
-    figure.computer_new {
-        width: 390px;
-    }
-    figure.art {
-        width: 470px;
-    }
-    figure.other {
-        width: 342px;
-    }
-</style>
-
-<div class="container">
-  <div class="section">
-    <div class="text">
+    <div class="flex mx-auto font-extralight">
       A little more about me...  Here are<br/>
-      many of the books I've read recently.
+      some books I've read recently.
     </div>
-    <div class="top_part">
-      <figure class="politics">
-        <img src="/images/about/books-politics.png"/>
-        <figcaption>Politics</figcaption>
-      </figure>
 
-      <figure class="computer_other">
-        <img src="/images/about/books-computer-other.png"/>
-        <figcaption>Software - Lang, Algorithms</figcaption>
-      </figure>
+    <div class="lg:flex flex-row gap-8 mt-8">
+      <div class="w-2/3 mx-auto lg:w-5/12 flex flex-col gap-y-8">
+        <figure>
+          <img src="/images/about/books-politics.png"/>
+          <figcaption class="m-2">Politics</figcaption>
+        </figure>
 
-      <figure class="computer_new">
-        <img src="/images/about/books-computer-new.png"/>
-        <figcaption>Software - AI, Quantum</figcaption>
-      </figure>
+        <figure class="mx-12 mb-8">
+          <img src="/images/about/books-computer-other.png"/>
+          <figcaption class="m-2">Software - Lang, Algorithms</figcaption>
+        </figure>
+      </div>
 
-      <figure class="art">
-        <img src="/images/about/books-art.png"/>
-        <figcaption>Painting and Art</figcaption>
-      </figure>
+      <div class="lg:w-7/12 flex flex-col gap-y-8">
+        <figure class="w-2/3 mx-auto">
+          <img src="/images/about/books-computer-new.png"/>
+          <figcaption class="m-2">Software - AI, Quantum</figcaption>
+        </figure>
+
+        <figure class="w-9/12 mx-auto">
+          <img src="/images/about/books-art.png"/>
+          <figcaption class="m-2">Painting and Art</figcaption>
+        </figure>
+      </div>
     </div>
-    <div>
-      <figure class="other">
-        <img src="/images/about/books-other.png"/>
-        <figcaption>Fiction, Other</figcaption>
-      </figure>
-    </div>
+
+    <figure class="w-5/6 mx-auto">
+      <img class="max-w-sm mx-auto" src="/images/about/books-other.png"/>
+      <figcaption class="m-2">Fiction, Other</figcaption>
+    </figure>
+
   </div>
+
 </div>

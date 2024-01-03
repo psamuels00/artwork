@@ -5,174 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{ title }}</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,900;0,6..12,1000;1,6..12,200;1,6..12,800&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100&display=swap');
-
-        body {
-            font-family: 'Nunito Sans', sans-serif;
-            font-weight: 200;
-            margin: 0px;
-        }
-
-        div.header_section {
-            width: 1024px;
-            margin: auto;
-        }
-        div.logo {
-            width: 100px;
-            margin: auto;
-        }
-        div.logo img {
-            width: 100%;
-        }
-        .dividor {
-            margin: 0 2em;
-            border-bottom: 1px solid black;
-        }
-        div.menu {
-            text-align: center;
-            margin-top: 0.5em;
-            margin-bottom: 1em;
-        }
-        div.menu a {
-            text-decoration: none;
-            color: black;
-        }
-        div.menu a div {
-            display: inline-block;
-            padding: 0.25em 1em;
-        }
-        div.menu a div.current_page,
-        div.menu a:hover div {
-            background-color: #EFEBE9;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0.5;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-        .main_content {
-            animation: fadeIn 0.25s ease-in-out;
-        }
-
-        div.title_section {
-            background-color: #F4F4F4;
-            text-align: center;
-            margin-bottom: 2em;
-            padding: 1.5em 0;
-        }
-        div.title_section div {
-            width: 600px;
-            margin: auto;
-        }
-        div.title_section div.line1 {
-            font-size: 250%;
-            font-weight: 900;
-        }
-        div.title_section div.line2 {
-            margin-top: 0.25em;
-            font-size: 125%;
-            font-weight: 300;
-        }
-        div.title_section div.line3 {
-            margin-top: 0.5em;
-        }
-
-        /*
-        div.emma {
-            background-color: black;
-            color: ivory;
-        }
-        div.the_demo {
-            background-color: whitesmoke;
-            color: gray;
-        }
-        div.backyard_hills {
-            background-color: mistyrose;
-            color: maroon;
-        }
-        div.starry_night {
-            background-color: black;
-            color: ivory;
-        }
-        div.dolphin {
-            background-color: #001a33;
-            color: lightskyblue;
-        }
-        */
-
-        figure {
-            width: 600px;
-            margin: 3em auto 0 auto;
-            margin: 0 auto;
-            padding: 2em;
-        }
-        figure img {
-            width: 100%;
-            box-sizing: border-box;
-        }
-        figure img.border5 {
-            border: 5px solid black;
-        }
-        figure img.border3 {
-            border: 3px solid black;
-        }
-        figure img.border_backyard_hills {
-            border: 1em solid mistyrose;
-        }
-        figcaption {
-            text-align: center;
-            font-weight: 800;
-        }
-
-        div.footer_section {
-            width: 1024px;
-            margin: auto;
-            font-size: 80%;
-            font-weight: 300;
-            color: #888;
-            padding: 2em;
-        }
-        div.footer_section p {
-            margin: 0.5em auto;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="/global.css"/>
   </head>
   <body>
-    <div class="header_section">
-      <div class="logo">
-        <a href="/"><img src="/images/home/PerrinLogo.png"/></a>
+    <!-- mobile-first, responsive navigation -->
+    <nav>
+      <div class="lg:hidden">
+        <!-- logo and 🍔 menu button -->
+        <div class="flex justify-between m-4">
+          <a href="/">
+            <img src="/images/home/PerrinLogo.png" style="width: 80px" />
+          </a>
+          <button class="mobile-menu-button">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- mobile menu -->
+        <div class="mobile-menu hidden">
+          <a href="/" class="block py-2 px-4 text-sm hover:bg-stone-200">Home</a>
+          <a href="/portfolio" class="block py-2 px-4 text-sm hover:bg-stone-200">Portfolio</a>
+          <a href="/doodles" class="block py-2 px-4 text-sm hover:bg-stone-200">Doodles</a>
+          <a href="/about" class="block py-2 px-4 text-sm hover:bg-stone-200">About</a>
+          <a href="/resume" class="block py-2 px-4 text-sm hover:bg-stone-200">Resume</a>
+          <a href="/nightmare" class="block py-2 px-4 text-sm hover:bg-stone-200">Nightmare</a>
+        </div>
       </div>
 
-      <div class="dividor"></div>
+      <div class="hidden lg:block">
+        <!-- logo and divider -->
+        <div class="min-w-fit mx-auto mt-2">
+          <div class="flex justify-center">
+            <a href="/">
+              <img src="/images/home/PerrinLogo.png" style="width: 100px" />
+            </a>
+          </div>
+          <div class="border-b border-gray-900 my-2 mx-8"></div>
+        </div>
 
-      {#
-      ----------------------------------------------------------------------------
-      # Why doesn't this work!?
-      # > expected block end in set statement (via Template render error)
-
-      {% set homeClass = (page.url == '/') ? 'current_page' : '' %}
-      {% set portfolioClass = (page.url == '/portfolio/') ? 'current_page' : '' %}
-      {% set doodlesClass = (page.url == '/doodles/') ? 'current_page' : '' %}
-      {% set aboutClass = (page.url == '/about/') ? 'current_page' : '' %}
-      {% set resumeClass = (page.url == '/resume/') ? 'current_page' : '' %}
-      {% set nightmareClass = (page.url == '/nightmare/') ? 'current_page' : '' %}
-      ----------------------------------------------------------------------------
-      #}
-      <div class="menu"><!--
-          --><a href="/"><div class="{% if page.url == '/' %}current_page{% endif %}">Home</div></a><!--
-          --><a href="/portfolio"><div class="{% if page.url == '/portfolio/' %}current_page{% endif %}">Portfolio</div></a><!--
-          --><a href="/doodles"><div class="{% if page.url == '/doodles/' %}current_page{% endif %}">Doodles</div></a><!--
-          --><a href="/about"><div class="{% if page.url == '/about/' %}current_page{% endif %}">About</div></a><!--
-          --><a href="/resume"><div class="{% if page.url == '/resume/' %}current_page{% endif %}">Resume</div></a><!--
-          --><a href="/nightmare"><div class="{% if page.url == '/nightmare/' %}current_page{% endif %}">Nightmare</div></a>
+        <!-- primary menu -->
+        <div class="min-w-fit mx-auto">
+          <div class="flex justify-center">
+            <div class="flex text-sm font-extralight"><!--
+              --><a href="/" class="py-1 px-4 {% if page.url == '/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Home</a><!--
+              --><a href="/portfolio" class="py-1 px-4 {% if page.url == '/portfolio/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Portfolio</a><!--
+              --><a href="/doodles" class="py-1 px-4 {% if page.url == '/doodles/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Doodles</a><!--
+              --><a href="/about" class="py-1 px-4 {% if page.url == '/about/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">About</a><!--
+              --><a href="/resume" class="py-1 px-4 {% if page.url == '/resume/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Resume</a><!--
+              --><a href="/nightmare" class="py-1 px-4 {% if page.url == '/nightmare/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Nightmare</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </nav>
+
+    <script type="text/javascript">
+      // grab everything we need
+      const btn = document.querySelector("button.mobile-menu-button");
+      const menu = document.querySelector(".mobile-menu");
+
+      // add event listeners
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    </script>
 
     <div class="main_content">
       {% block content %}
@@ -180,9 +78,12 @@
       {% endblock %}
     </div>
 
-    <div class="footer_section">
-      <p>perrin.samuels@gmail.com</p>
-      <p>&copy; 2024 Perrin Inc.</p>
-    </div>
+    <footer class="flex justify-center my-12">
+      <div class="text-center font-light thin text-sm">
+        <p class="">perrin.samuels@gmail.com</p>
+        <p class="">&copy; 2024 Perrin Inc.</p>
+      </div>
+    </footer>
+
   </body>
 </html>

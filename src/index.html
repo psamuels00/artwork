@@ -3,50 +3,90 @@ title: "Perrin's Artwork"
 layout: 'layouts/base.html'
 ---
 
-<div class="title_section">
-    <div class="line1">
+<div class="bg-stone-100 text-center p-4 mt-6">
+    <div class="text-4xl font-bold my-2">
         Human Artist,
     </div>
-    <div class="line2">
+    <div class="text-xl my-2">
         software engineer, scientist, philosopher, student, and more.
     </div>
-    <div class="line3">
+    <div class="text-sm my-2">
         I'm dabbling with acrylics now.  Hence this Web site, to show my work.
+        and also, as it turns out, to learn 11ty, Nunjucks, Agile.js, and
+        Tailwind CSS.
     </div>
 </div>
 
+<div class="text-center font-bold mt-12">
 
-<div class="emma">
-    <figure>
-        <img class="border5" src="/images/home/Emma.jpg"/>
-        <figcaption>Emma</figcaption>
-    </figure>
-</div>
+    <!-- For small screens (mobile) -->
+    <div class="flex md:hidden flex-col gap-8">
+        <figure>
+            <a href="/">
+                <img class="w-full mb-2 border-4 border-stone-900" src="/images/home/Emma.jpg"/>
+            </a>
+            <figcaption>Emma</figcaption>
+        </figure>
+        <figure>
+            <a href="/">
+                <img class="w-full mb-2" src="/images/home/TheDemo.jpg"/>
+            </a>
+            <figcaption>The Demo</figcaption>
+        </figure>
+        <figure>
+            <a href="/">
+                <img class="w-full mb-2" src="/images/home/BackyardHills.jpg"/>
+            </a>
+            <figcaption>Backyard Hills</figcaption>
+        </figure>
+        <figure>
+            <a href="/">
+                <img class="w-full mb-2 border-4 border-stone-900" src="/images/home/StarryNight.jpg"/>
+            </a>
+            <figcaption>Starry Night</figcaption>
+        </figure>
+        <figure>
+            <a href="/">
+                <img class="w-full mb-2" src="/images/home/Dolphin.jpg"/>
+            </a>
+            <figcaption>Dolphin</figcaption>
+        </figure>
+    </div>
 
-<div class="the_demo">
-    <figure>
-        <img src="/images/home/TheDemo.jpg"/>
-        <figcaption>The Demo</figcaption>
-    </figure>
-</div>
+    <!-- For larger screens -->
+    <div class="hidden md:flex flex-col items-center gap-8 max-w-4xl min-w-fit mx-auto px-16">
+        <figure>
+            <a href="/">
+                <img class="max-w-2xl border-4 border-stone-900" src="/images/home/Emma.jpg"/>
+            </a>
+            <figcaption class="m-2">Emma</figcaption>
+        </figure>
+        <figure>
+            <a href="/">
+                <img class="max-w-2xl" src="/images/home/TheDemo.jpg"/>
+            </a>
+            <figcaption class="m-2">The Demo</figcaption>
+        </figure>
+        <figure>
+            <a href="/">
+                <img class="max-w-2xl" src="/images/home/BackyardHills.jpg"/>
+            </a>
+            <figcaption class="m-2">Backyard Hills</figcaption>
+        </figure>
+        <div class="flex flex-row gap-16">
+            <figure>
+                <a href="/">
+                    <img class="max-w-md border-4 border-stone-900" src="/images/home/StarryNight.jpg"/>
+                </a>
+                <figcaption class="m-2">Starry Night</figcaption>
+            </figure>
+            <figure>
+                <a href="/">
+                    <img class="max-w-md" src="/images/home/Dolphin.jpg"/>
+                </a>
+                <figcaption class="m-2">Dolphin</figcaption>
+            </figure>
+        </div>
+    </div>
 
-<div class="backyard_hills">
-    <figure>
-        <img class="border_backyard_hills" src="/images/home/BackyardHills.jpg"/>
-        <figcaption>Backyard Hills</figcaption>
-    </figure>
-</div>
-
-<div class="starry_night">
-    <figure>
-        <img class="border3" src="/images/home/StarryNight.jpg"/>
-        <figcaption>Starry Night</figcaption>
-    </figure>
-</div>
-
-<div class="dolphin">
-    <figure>
-        <img src="/images/home/Dolphin.jpg"/>
-        <figcaption>Dolphin</figcaption>
-    </figure>
 </div>
