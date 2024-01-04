@@ -1,0 +1,59 @@
+---
+title: "Perrin's Outdoors Doodles"
+layout: 'layouts/base.html'
+---
+
+<div class="max-w-4xl mx-auto text-center px-8 mt-8">
+
+  <div class="sm:grid grid-cols-3 gap-8">
+    {% set image_names = [
+      'DesertMountainTree',
+      'BigCrescentMoonNightScene',
+      'PeaField',
+      'TreeFrame',
+      'BarnFieldsMountains',
+      'TreeAndTunnel'
+    ] %}
+    {% for name in image_names %}
+      <a href="">
+        <img class="sm:my-0 my-8" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="sm:flex flex-row gap-8 mt-8">
+
+    <div class="sm:grid grid-cols-2 gap-8">
+      {% set image_names = [
+        'SkyViewThroughTreesAbove',
+        'TreeWithActiveLeaves',
+        'OceanHorizonCloudsBirds',
+        'PalmAtBeach',
+        'BeachSceneBoatOnHorizon',
+        'CoconutTreeOnBeach',
+        'ChildDrawingTreeAndFlowers',
+        'MinimalistBeachSceneHorizonClouds',
+        'MinimalistBeachScene',
+        'BackYardSketch'
+      ] %}
+      {% for name in image_names %}
+        <img class="sm:my-0 my-8" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
+      {% endfor %}
+    </div>
+
+    <div class="sm:grid grid-cols-1 gap-8">
+      {% set image_names = [
+        'VeryTallPalmTreeAtBeach',
+        'CreatureInHotAirBalloon',
+        'DolphinJumpingInSun'
+      ] %}
+      {% for name in image_names %}
+        <a href="">
+          <img class="sm:my-0 my-8" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
+        </a>
+      {% endfor %}
+    </div>
+
+  </div>
+
+</div>
