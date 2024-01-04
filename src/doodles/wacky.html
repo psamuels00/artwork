@@ -17,8 +17,11 @@ layout: 'layouts/doodles.html'
     'RescueBaloonBlower'
   ] %}
   {% for name in image_names %}
-    <a href="">
-      <img class="sm:my-0 my-8 hover:opacity-75" src="/images/doodles/categories/wacky/{{name}}.jpg"/>
-    </a>
+    <figure class="sm:my-0 my-8 text-sm font-extralight">
+      <a href="">
+        <img class="hover:opacity-75" src="/images/doodles/categories/wacky/{{name}}.jpg"/>
+      </a>
+      <figcaption>{{name | replace(r/([a-z])([A-Z])/g, "$1 $2")}}</figcaption>
+    </figure>
   {% endfor %}
 </div>

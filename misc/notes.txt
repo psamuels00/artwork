@@ -11,11 +11,11 @@ Tailwind CSS - Styling framework
 Alpine.js - modern approach to jQuery
 
 Todo
-- add labels for the Wacky and Abstract
+- ask ChatGPT: how to add gray transparent overlay on hover using tailwind
+
+- implement the single image page view
 - improve doodles main page, for mobile
 - test all doodles pages on mobile
-
-- ask ChatGPT: how to add gray transparent overlay on hover using tailwind
 
 - portfolio
 - mobile menu, single line between entries and highlight current page
