@@ -11,7 +11,6 @@ Tailwind CSS - Styling framework
 Alpine.js - modern approach to jQuery
 
 Todo
-- reorder mobile doodles menu
 - add labels for the Wacky and Abstract
 - improve doodles main page, for mobile
 - test all doodles pages on mobile
