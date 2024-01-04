@@ -9,3 +9,15 @@ Tailwind CSS - Styling framework
   https://css-tricks.com/alpine-js-the-javascript-framework-thats-used-like-jquery-written-like-vue-and-inspired-by-tailwindcss/
   https://codepen.io/chris__sev/pen/QWGjQKe
 Alpine.js - modern approach to jQuery
+
+Todo
+- reorder mobile doodles menu
+- add labels for the Wacky and Abstract
+- improve doodles main page, for mobile
+- test all doodles pages on mobile
+
+- ask ChatGPT: how to add gray transparent overlay on hover using tailwind
+
+- portfolio
+- mobile menu, single line between entries and highlight current page
+- transition page loads

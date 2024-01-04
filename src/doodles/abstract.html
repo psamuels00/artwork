@@ -1,0 +1,22 @@
+---
+title: "Perrin's Abstract Doodles"
+layout: 'layouts/doodles.html'
+---
+
+<div class="sm:grid grid-cols-3 gap-8 mt-8">
+  {% set image_names = [
+    'DesertSculptureOutskirtsOfTown',
+    'Vortex',
+    'AlienConfrontation',
+    'DizzyingSwirl',
+    'AbstractDotsAndLines',
+    'ColorfulAbstractShapes',
+    'ColorfulAbstractShapesTitle',
+    'SignedCaveDrawing'
+  ] %}
+  {% for name in image_names %}
+    <a href="">
+      <img class="sm:my-0 my-8 hover:opacity-75" src="/images/doodles/categories/abstract/{{name}}.jpg"/>
+    </a>
+  {% endfor %}
+</div>

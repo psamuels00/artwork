@@ -1,0 +1,21 @@
+---
+title: "Perrin's Animals Doodles"
+layout: 'layouts/doodles.html'
+---
+
+<div class="sm:grid grid-cols-4 gap-8 mt-8">
+  {% set image_names = [
+    'Jellyfish',
+    'EmmaSitting',
+    'TurkeyWithInflamedComb',
+    'EmmaSlightWorriedLook',
+    'IrinioDove',
+    'SSnake',
+    'RainbowBirdWithHeart'
+  ] %}
+  {% for name in image_names %}
+  <a href="">
+    <img class="sm:my-0 my-8 hover:opacity-75" src="/images/doodles/categories/animals/{{name}}.jpg"/>
+  </a>
+  {% endfor %}
+</div>
