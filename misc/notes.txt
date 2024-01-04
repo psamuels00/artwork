@@ -11,8 +11,6 @@ Tailwind CSS - Styling framework
 Alpine.js - modern approach to jQuery
 
 Todo
-- ask ChatGPT: how to add gray transparent overlay on hover using tailwind
-
 - implement the single image page view
 - improve doodles main page, for mobile
 - test all doodles pages on mobile
