@@ -4,9 +4,38 @@ layout: 'layouts/base.html'
 
 <div class="max-w-4xl mx-auto text-center px-8 mt-8">
 
-  <div class="min-w-fit mx-auto">
-    <div class="flex justify-center">
-      <div class="flex text-sm font-extralight"><!--
+  <!-- mobile-first, responsive navigation -->
+  <nav>
+    <div class="lg:hidden">
+      <!-- 🍔 menu button -->
+      <div class="flex justify-end font-thin">
+        <button class="mobile-doodles-menu-button ml-2 flex gap-2">
+          Doodles
+          <svg class="w-6 h-6 text-stone-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- mobile menu -->
+      <div class="mobile-doodles-menu hidden text-center">
+        <a href="/doodles/outdoors" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Outdoors</a>
+        <a href="/doodles/faces" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Faces</a>
+        <a href="/doodles/animals" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Animals</a>
+        <a href="/doodles/wacky" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Wacky</a>
+        <a href="/doodles/flowers" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Flowers</a>
+        <a href="/doodles/people" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">People</a>
+        <a href="/doodles/abstracts" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Abstract</a>
+        <a href="/doodles/textures" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Textures</a>
+        <a href="/doodles/stills" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Stills</a>
+      </div>
+    </div>
+
+    <div class="hidden lg:block">
+      <!-- primary menu -->
+      <div class="min-w-fit mx-auto">
+        <div class="flex justify-center">
+          <div class="flex text-sm font-extralight"><!--
         --><a href="/doodles/outdoors" class="py-3 px-4 {% if page.url == '/doodles/outdoors/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Outdoors</a><!--
         --><a href="/doodles/faces" class="py-3 px-4 {% if page.url == '/doodles/faces/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Faces</a><!--
         --><a href="/doodles/animals" class="py-3 px-4 {% if page.url == '/doodles/animals/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Animals</a><!--
@@ -16,9 +45,22 @@ layout: 'layouts/base.html'
         --><a href="/doodles/abstracts" class="py-3 px-4 {% if page.url == '/doodles/abstracts/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Abstract</a><!--
         --><a href="/doodles/textures" class="py-3 px-4 {% if page.url == '/doodles/textures/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Textures</a><!--
         --><a href="/doodles/stills" class="py-3 px-4 {% if page.url == '/doodles/stills/' %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Stills</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
+
+  <script type="text/javascript">
+    (function() {
+      const btn = document.querySelector("button.mobile-doodles-menu-button");
+      const menu = document.querySelector(".mobile-doodles-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    })()
+  </script>
 
   <div class="main_content">
     {% block content %}

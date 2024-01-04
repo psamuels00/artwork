@@ -62,14 +62,14 @@
     </nav>
 
     <script type="text/javascript">
-      // grab everything we need
-      const btn = document.querySelector("button.mobile-menu-button");
-      const menu = document.querySelector(".mobile-menu");
+      (function() {
+        const btn = document.querySelector("button.mobile-menu-button");
+        const menu = document.querySelector(".mobile-menu");
 
-      // add event listeners
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
+        btn.addEventListener("click", () => {
+          menu.classList.toggle("hidden");
+        });
+      })()
     </script>
 
     <div class="main_content">
