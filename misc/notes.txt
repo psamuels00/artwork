@@ -15,7 +15,7 @@ Alpine.js - modern approach to jQuery
 
 Todo
 - use [page > base] and [image > base] instead of skip_menu and skip_footer
-- write script to automatically generate single image pages
+- allow left/right arrow keys to flip prev/next through image pages
 - ensure full image is displayed on image page
 - improve doodles main page, for mobile
 - test all doodles pages on mobile
