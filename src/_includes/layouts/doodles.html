@@ -8,10 +8,10 @@ layout: 'layouts/base.html'
   <nav>
     <div class="lg:hidden">
       <!-- 🍔 menu button -->
-      <div class="flex justify-end font-thin">
+      <div class="flex justify-end">
         <button class="mobile-doodles-menu-button ml-2 flex gap-2">
-          Doodles
-          <svg class="w-6 h-6 text-stone-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          {{ category }}
+          <svg class="w-6 h-6 text-stone-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -19,15 +19,15 @@ layout: 'layouts/base.html'
 
       <!-- mobile menu -->
       <div class="mobile-doodles-menu hidden text-center">
-        <a href="/doodles/abstract" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Abstract</a>
-        <a href="/doodles/animals" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Animals</a>
-        <a href="/doodles/faces" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Faces</a>
-        <a href="/doodles/flowers" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Flowers</a>
-        <a href="/doodles/outdoors" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Outdoors</a>
-        <a href="/doodles/people" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">People</a>
-        <a href="/doodles/stills" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Stills</a>
-        <a href="/doodles/textures" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Textures</a>
-        <a href="/doodles/wacky" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border border-gray-200">Wacky</a>
+        <a href="/doodles/abstract" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-y border-gray-200 {% if '/doodles/abstract/' in page.url %}bg-stone-300{% endif %}">Abstract</a>
+        <a href="/doodles/animals" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/doodles/animals/' in page.url %}bg-stone-300{% endif %}">Animals</a>
+        <a href="/doodles/faces" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/doodles/faces/' in page.url %}bg-stone-300{% endif %}">Faces</a>
+        <a href="/doodles/flowers" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/doodles/flowers/' in page.url %}bg-stone-300{% endif %}">Flowers</a>
+        <a href="/doodles/outdoors" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/doodles/outdoors/' in page.url %}bg-stone-300{% endif %}">Outdoors</a>
+        <a href="/doodles/people" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/doodles/people/' in page.url %}bg-stone-300{% endif %}">People</a>
+        <a href="/doodles/stills" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/doodles/stills/' in page.url %}bg-stone-300{% endif %}">Stills</a>
+        <a href="/doodles/textures" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/doodles/textures/' in page.url %}bg-stone-300{% endif %}">Textures</a>
+        <a href="/doodles/wacky" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/doodles/wacky/' in page.url %}bg-stone-300{% endif %}">Wacky</a>
       </div>
     </div>
 

@@ -2,16 +2,21 @@
   Tutorials: https://www.11ty.dev/docs/tutorials/
 Nunjucks - Javascript templating
   Tutorial: https://learneleventyfromscratch.com/lesson/3.html#what-is-nunjucks
+  Reference: https://mozilla.github.io/nunjucks/templating.html
 Tailwind CSS - Styling framework
   https://tailwindcss.com/
   https://everythingcs.dev/blog/setup-tailwindcss-eleventy/
   https://css-tricks.com/eleventy-starter-with-tailwind-css-alpine-js/
   https://css-tricks.com/alpine-js-the-javascript-framework-thats-used-like-jquery-written-like-vue-and-inspired-by-tailwindcss/
-  https://codepen.io/chris__sev/pen/QWGjQKe
+  https://codepen.io/chris__sev/pen/QWGjQK
+  https://v1.tailwindcss.com/components/buttons
+  https://www.kindacode.com/article/tailwind-css-how-to-create-a-full-screen-overlay-menu/
 Alpine.js - modern approach to jQuery
 
 Todo
-- implement the single image page view
+- use [page > base] and [image > base] instead of skip_menu and skip_footer
+- write script to automatically generate single image pages
+- ensure full image is displayed on image page
 - improve doodles main page, for mobile
 - test all doodles pages on mobile
 
