@@ -8,6 +8,46 @@ convert -quality 40 ../perrins-art/02-Portfolio/07-OutpostBackView/Backyard-09-f
 convert -quality 30 ../perrins-art/02-Portfolio/00-StarryNight/01-StarryStarryNight.jpg src/images/home/StarryNight.jpg
 convert -quality 40 ../perrins-art/02-Portfolio/02-Dolphin/02-TheDolphin.jpeg src/images/home/Dolphin.jpg
 
+# portfolio
+mkdir src/images/portfolio
+
+# portfolio - BackyardHills
+cp -r ../perrins-art/02-Portfolio/07-OutpostBackView src/images/portfolio/BackyardHills
+rm src/images/portfolio/BackyardHills/Backyard-02-orig-drawing-cropped.jpg
+rm src/images/portfolio/BackyardHills/Backyard-03-quick-drawing.jpg
+
+# portfolio - Emma
+mkdir src/images/portfolio/Emma
+cp ../perrins-art/02-Portfolio/06-Emma/*.jpg src/images/portfolio/Emma
+for x in `(cd ../perrins-art/02-Portfolio/06-Emma; ls *.heic)`; do echo ${x%.heic}; convert -quality 40 ../perrins-art/02-Portfolio/06-Emma/$x src/images/portfolio/Emma/${x%.heic}.jpg; done
+
+# portfolio - BeachBoardwalk
+mkdir src/images/portfolio/BeachBoardwalk
+cp ../perrins-art/02-Portfolio/05-BeachBoardwalk/*.jpg src/images/portfolio/BeachBoardwalk
+
+# portfolio - DesertFlower
+mkdir src/images/portfolio/DesertFlower
+convert -quality 20 ../perrins-art/02-Portfolio/04-DesertFlower/ColorWheelDesertFlower-01-final.heic src/images/portfolio/DesertFlower/ColorWheelDesertFlower-01-final.jpg
+
+# portfolio - TheDemo
+mkdir src/images/portfolio/TheDemo
+cp ../perrins-art/02-Portfolio/03-TheDemo/*.jpeg src/images/portfolio/TheDemo
+for x in src/images/portfolio/TheDemo/*.jpeg; do mv $x ${x%.jpeg}.jpg; done
+
+# portfolio - Dolphin
+mkdir src/images/portfolio/Dolphin
+cp ../perrins-art/02-Portfolio/02-Dolphin/*.jpeg src/images/portfolio/Dolphin
+for x in src/images/portfolio/Dolphin/*.jpeg; do mv $x ${x%.jpeg}.jpg; done
+
+# portfolio - TheOnion
+mkdir src/images/portfolio/TheOnion
+cp ../perrins-art/02-Portfolio/01-TheOnion/*.jpeg src/images/portfolio/TheOnion
+for x in src/images/portfolio/TheOnion/*.jpeg; do mv $x ${x%.jpeg}.jpg; done
+
+# portfolio - StarryNight
+mkdir src/images/portfolio/StarryNight
+convert -quality 20 ../perrins-art/02-Portfolio/00-StarryNight/01-StarryStarryNight.jpg src/images/portfolio/StarryNight/01-StarryStarryNight.jpg
+
 # doodles
 (cd ../perrins-art/03-Doodles; tar cf - `find categories -name \*.jpg`) | (cd src/images/doodles; tar xvf -)
 # list names of files, per category, formatted to include in Javascript list

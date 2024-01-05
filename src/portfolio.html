@@ -1,8 +1,17 @@
 ---
-title: "Perrin's Portfolio"
-layout: 'layouts/page.html'
+layout: layouts/page.html
 ---
 
-<h1 class="text-xl font-bold text-red-500 text-center pt-8 pb-2">
-  {{title}} page is under construction.
-</h1>
+<div class="flex">
+  <div class="flex flex-col gap-8 mt-8 mx-4 md:grid md:grid-cols-3 md:mx-8">
+    {% for project in projects %}
+      <figure class="">
+        <a href="/">
+          <img class="border hover:brightness-90"
+               src="/images/portfolio/{{project.name | replace(' ', '')}}/{{project.images[0]}}"/>
+        </a>
+        <figcaption class="text-center mt-2">{{project.name}}</figcaption>
+      </figure>
+    {% endfor -%}
+  </div>
+</div>

@@ -61,7 +61,7 @@ Alpine.js - modern approach to jQuery
 - improve doodles main page, for mobile
 - ensure full image is displayed on image page
 - the portfolio, finally!
+- allow navigation of primary menus with left/right arrow keys on the keyboard
 - floating button to quickly jump to top of page
-- redesign image page navigation so fingers do not cover image to select controls
+- redesign image page navigation so fingers do not cover image to reach controls
 - transition page loads more smoothly (maybe)
-
