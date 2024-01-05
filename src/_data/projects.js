@@ -1,4 +1,4 @@
-module.exports = {
+module.exports = [
   {
     name: 'Backyard Hills',
     images: [
@@ -92,4 +92,4 @@ module.exports = {
       '01-StarryStarryNight.jpg',
     ],
   },
-}
+]
