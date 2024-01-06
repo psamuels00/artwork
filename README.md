@@ -59,11 +59,11 @@ Alpine.js - modern approach to jQuery
 
 
 ## TODO
-- add title to top of mobile pages, eg: "Portfolio"
 - show doodles menu on main doodles page for non-mobile
 - add image pages for projects
 - add a projects submenu similar to doodles
 
+- rewrite the home page to make it more DRY
 - add descriptons for each project
 - add descriptions for each project image
 - improve doodles main page, for mobile, simplify the markup

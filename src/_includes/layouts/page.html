@@ -10,7 +10,8 @@ layout: 'layouts/base.html'
       <a href="/">
         <img src="/images/home/PerrinLogo.png" style="width: 80px" />
       </a>
-      <button class="mobile-menu-button">
+      <button class="mobile-menu-button ml-2 flex gap-2">
+        {{ page.url | replace('/', '') | title }}
         <svg class="h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
