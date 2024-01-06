@@ -59,19 +59,23 @@ Alpine.js - modern approach to jQuery
 
 
 ## TODO
-- show doodles menu on main doodles page for non-mobile
-- add image pages for projects
-- add a projects submenu similar to doodles
 
-- rewrite the home page to make it more DRY
-- add descriptons for each project
-- add descriptions for each project image
-- improve doodles main page, for mobile, simplify the markup
-- ensure fully contained image on image pages, also first project image
-- allow navigation of primary menus with left/right arrow keys on the keyboard
-- floating button to quickly jump to top of any long page
-- redesign image page navigation so fingers do not cover image to reach controls
-- transition page loads more smoothly (maybe)
-- shrink all images for fast page loads
-- replace generate_doodle_image_pages.py with the 11ty approach
+### High priority
+- add a projects submenu similar to doodles
+- add image pages for projects
+- add descriptions for each project
 - upload everything and deploy to Github Pages
+
+### Medium priority
+- add descriptions for each project image
+- ensure fully contained image on image pages, also first project image
+- update the doodles main page to simplify the markup and improve spacing for mobile
+
+### Low priority
+- redesign image page navigation so fingers do not cover image to reach controls
+- allow navigation of primary menus and submenus with left/right arrow keys on the keyboard
+- add floating button to quickly jump to top of any long page
+- rewrite the home page to make it more DRY
+- use 11ty features to replace generate_doodle_image_pages.py
+- transition page loads more smoothly (maybe)
+- shrink all images further for fast page loads (maybe)
