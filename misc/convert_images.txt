@@ -50,6 +50,11 @@ for x in src/images/portfolio/TheOnion/*.jpeg; do mv $x ${x%.jpeg}.jpg; done
 mkdir src/images/portfolio/StarryNight
 convert -quality 20 ../perrins-art/02-Portfolio/00-StarryNight/01-StarryStarryNight.jpg src/images/portfolio/StarryNight/01-StarryStarryNight.jpg
 
+# portfolio: reduce the quality of all portfolio images, modify files in-place
+for x in src/images/portfolio/*; do echo $x; mogrify -quality 50 $x/*.jpg; done
+# to generate copies of everything in src/images/portfolio.sm
+# for x in src/images/portfolio/*; do echo $x; mkdir -p ${x/portfolio\//portfolio.sm\/}; mogrify -quality 50 -path ${x/portfolio\//portfolio.sm\/} $x/*.jpg; done
+
 # doodles
 (cd ../perrins-art/03-Doodles; tar cf - `find categories -name \*.jpg`) | (cd src/images/doodles; tar xvf -)
 # list names of files, per category, formatted to include in Javascript list
