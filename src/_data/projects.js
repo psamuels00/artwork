@@ -52,7 +52,6 @@ module.exports = [
       '02-PaintingFull.jpg',
       '01-OriginalPhoto.jpg',
       '14-Fence.jpg',
-      '18-Signature.jpg',
       '05-Dummy.jpg',
       '07-Dummy2.jpg',
       '04-Surfer.jpg',
@@ -65,6 +64,7 @@ module.exports = [
       '09-Dummy2Face.jpg',
       '10-Dummy2Eyes.jpg',
       '11-Dummy2Mouth.jpg',
+      '18-Signature.jpg',
     ],
   },
   {
@@ -79,9 +79,9 @@ module.exports = [
     name: 'The Onion',
     images: [
       '01-RedOnion.jpg',
-      '02-RedOnionCloseUp.jpg',
       '03-TheArtistAndRedOnion.jpg',
       '04-RedOnionFullWall.jpg',
+      '02-RedOnionCloseUp.jpg',
     ],
   },
   {
