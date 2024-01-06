@@ -61,7 +61,6 @@ Alpine.js - modern approach to jQuery
 ## TODO
 
 ### High priority
-- update dimensions of all works
 - on mobile, margins too big on portfolio and/or project page
 - upload everything and deploy to Github Pages
 

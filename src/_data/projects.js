@@ -8,7 +8,7 @@ const projects = [
     date: 'Dec, 2023',
     location: 'Concord, CA',
     media: 'Acrylic on copy paper, coated with gesso',
-    dimensions: '11" x 8.5"',
+    dimensions: '11 x 8½ inches',
     images: [
       'EmmaSittingRelaxedAttentive-12-final-framed.jpg',
       'EmmaSittingRelaxedAttentive-02-photo.jpg',
@@ -34,7 +34,7 @@ const projects = [
     date: '2020',
     location: 'Mission District, San Francisco, CA',
     media: 'Acrylic paint on thin, roll paper, covered with gesso.',
-    dimensions: '0" x 0"',
+    dimensions: '34 x 24½ inches',
     images: [
       '02-PaintingFull.jpg',
       '01-OriginalPhoto.jpg',
@@ -62,7 +62,7 @@ const projects = [
     date: '2020',
     location: 'San Francisco, CA',
     media: 'Acrylic paint on thin, roll paper, covered with gesso.',
-    dimensions: '0" x 0"',
+    dimensions: '16 x 12 inches',
     images: [
       '02-TheDolphin.jpg',
       '01-TheArtistAndTheDolphin.jpg',
@@ -77,7 +77,7 @@ const projects = [
     date: 'Dec, 2023',
     location: 'Concord, CA',
     media: 'Acrylic paint on cheap, glossy product paper',
-    dimensions: '12" x 16"',
+    dimensions: '16 x 12 inches',
     images: [
       'Backyard-09-finished-cropped.jpg',
       'Backyard-05-ref-photo.jpg',
@@ -96,7 +96,7 @@ const projects = [
     date: '2020',
     location: 'San Francisco, CA',
     media: 'Acrylic paint on thin, roll paper, covered with gesso.',
-    dimensions: '0" x 0"',
+    dimensions: '70 x 46 inches',
     images: [
       '01-RedOnion.jpg',
       '03-TheArtistAndRedOnion.jpg',
@@ -113,7 +113,7 @@ const projects = [
     date: '2013',
     location: 'Concord, CA',
     media: 'Acrylic black on untreated copy paper.',
-    dimensions: '0" x 0"',
+    dimensions: '11 x 8½ inches',
     images: [
       '01-StarryStarryNight.jpg',
     ],
@@ -126,7 +126,7 @@ const projects = [
     date: 'Oct, 2023',
     location: 'Concord, CA',
     media: 'Pencil on baking parchment paper',
-    dimensions: '16" x 24"',
+    dimensions: '24 x 16 inches',
     images: [
       'BeachBoardwalkSketch-02-bench.jpg',
       'BeachBoardwalkSketch-03-barge.jpg',
@@ -144,7 +144,7 @@ const projects = [
     date: 'Nov, 2023',
     location: 'Concord, CA',
     media: 'Acrylic on copy paper, coated with gesso',
-    dimensions: '11" x 8.5"',
+    dimensions: '11 x 8½ inches',
     images: [
       'ColorWheelDesertFlower-01-final.jpg',
     ],
