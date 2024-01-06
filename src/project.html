@@ -7,19 +7,6 @@ pagination:
 permalink: "portfolio/{{ project.name | slug }}/"
 ---
 
-<!--
-<a href="/portfolio/">
-  <div class="flex items-center py-2 mb-8 hover:bg-stone-100">
-    <svg class="text-stone-400 ml-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" width="48" height="48" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 0L0 24L24 48" />
-    </svg>
-    <div class="text-lg text-stone-400">
-      Back to Portfolio Main
-    </div>
-  </div>
-</a>
--->
-
 <div class="flex m-4 lg:m-8">
   <a href="/portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt | slug}}">
     <img class="border hover:brightness-90"
