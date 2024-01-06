@@ -6,16 +6,24 @@ layout: 'layouts/base.html'
 <nav>
   <div class="lg:hidden">
     <!-- logo and 🍔 menu button -->
-    <div class="flex justify-between m-4">
+    <div class="flex justify-between items-center m-4">
       <a href="/">
-        <img src="/images/home/PerrinLogo.png" style="width: 80px" />
+        <img class="" src="/images/home/PerrinLogo.png" style="width: 80px" />
       </a>
-      <button class="mobile-menu-button ml-2 flex gap-2">
-        {{ page.url.split('/')[1] | title }}
-        <svg class="h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
-      </button>
+      <div class="flex Xmy-auto">
+        {% set is_top_level_page = page.url.split('/').length < 4 %}
+        <div class="p-2 {% if not is_top_level_page %}hover:bg-stone-100{% endif %}">
+          <a class="{% if is_top_level_page %} pointer-events-none opacity-75 cursor-not-allowed {% else %} hover:bg-stone-100 {% endif %}"
+             href="/doodles/">
+            <div class="text-lg">{{ page.url.split('/')[1] | title }}</div>
+          </a>
+        </div>
+        <button class="mobile-menu-button hover:bg-stone-100 p-2 flex gap-2">
+          <svg class="h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
     </div>
 
     <!-- mobile menu -->
