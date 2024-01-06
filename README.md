@@ -61,17 +61,22 @@ Alpine.js - modern approach to jQuery
 ## TODO
 
 ### High priority
+- update dimensions of all works
 - on mobile, margins too big on portfolio and/or project page
-- add image pages for projects
 - upload everything and deploy to Github Pages
 
 ### Medium priority
 - ensure fully contained image on image pages, also first project image
+- eliminate cursor-not-allowed on doodles image page since it doesn't work for mobile
 - update the doodles main page to simplify the markup and improve spacing for mobile
-- add descriptions for each project image
+- remove redundancy from image names and take full advantage of slugs
+- create a filter for replace(r/([a-z])([A-Z])/g, "$1 $2") if not replaced by slugs
+- ESC does not work consistently on project image page (it does on doodles image page!)
+- product_image.html should use layouts/image.html for more DRYness
 
 ### Low priority
 - redesign image page navigation so fingers do not cover image to reach controls
+- add descriptions for each project image
 - allow navigation of primary menus and submenus with left/right arrow keys on the keyboard
 - add floating button to quickly jump to top of any long page
 - rewrite the home page to make it more DRY

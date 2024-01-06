@@ -1,4 +1,4 @@
-module.exports = [
+const projects = [
   {
     name: 'Emma',
     title: 'Emma',
@@ -150,3 +150,36 @@ module.exports = [
     ],
   },
 ]
+
+function flattened(projects) {
+  // flatten projects wrt images, and embellish each item with first/last/prev/next
+  let project_images = [];
+
+  for (const project of projects) {
+    image_first = project.images[0];
+    image_last = project.images[project.images.length - 1];
+
+    for (let i = 0; i < project.images.length; i++) {
+      image_prev = (i === 0) ? '' : project.images[i - 1];
+      image_next = (i === project.images.length - 1) ? '' : project.images[i + 1];
+
+      item = {
+        image: project.images[i],
+        image_first,
+        image_last,
+        image_prev,
+        image_next,
+        ...project,
+      }
+      delete item.images;
+
+      project_images.push(item);
+    }
+  }
+  return project_images;
+}
+
+module.exports = {
+    structured: projects,
+    flat: flattened(projects),
+};

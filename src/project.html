@@ -1,10 +1,10 @@
 ---
 layout: layouts/portfolio.html
 pagination:
-  data: projects
+  data: projects.structured
   size: 1
   alias: project
-permalink: "portfolio/{{ project.name | slugify }}/"
+permalink: "portfolio/{{ project.name | slug }}/"
 ---
 
 <!--
@@ -21,7 +21,7 @@ permalink: "portfolio/{{ project.name | slugify }}/"
 -->
 
 <div class="flex m-4 lg:m-8">
-  <a href="/portfolio/{{project.name | slugify}}">
+  <a href="/portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt | slug}}">
     <img class="border hover:brightness-90"
          src="/images/portfolio/{{project.name | replace(' ', '')}}/{{project.images[0]}}"/>
   </a>
@@ -87,7 +87,7 @@ permalink: "portfolio/{{ project.name | slugify }}/"
   <div class="flex flex-col gap-8 mt-4 mx-4 md:grid md:grid-cols-2 md:mx-8">
     {% for name in project.images %}
       {% if not loop.first %}
-        <a href="/portfolio/{{project.name | slugify}}">
+        <a href="/portfolio/{{project.name | slug}}/{{name | rmFileExt | slug}}">
           <img class="border hover:brightness-90"
                src="/images/portfolio/{{project.name | replace(' ', '')}}/{{name}}"/>
         </a>
