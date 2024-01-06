@@ -66,9 +66,9 @@ Alpine.js - modern approach to jQuery
 - upload everything and deploy to Github Pages
 
 ### Medium priority
-- add descriptions for each project image
 - ensure fully contained image on image pages, also first project image
 - update the doodles main page to simplify the markup and improve spacing for mobile
+- add descriptions for each project image
 
 ### Low priority
 - redesign image page navigation so fingers do not cover image to reach controls
