@@ -57,11 +57,18 @@ Alpine.js - modern approach to jQuery
 
 
 ## TODO
+- add title to top of mobile pages, eg: "Portfolio"
+- show doodles menu on main doodles page for non-mobile
+- add image pages for projects
+- add a projects submenu similar to doodles
 
-- improve doodles main page, for mobile
-- ensure full image is displayed on image page
-- the portfolio, finally!
+- add descriptons for each project
+- add descriptions for each project image
+- improve doodles main page, for mobile, simplify the markup
+- ensure fully contained image on image pages, also first project image
 - allow navigation of primary menus with left/right arrow keys on the keyboard
-- floating button to quickly jump to top of page
+- floating button to quickly jump to top of any long page
 - redesign image page navigation so fingers do not cover image to reach controls
 - transition page loads more smoothly (maybe)
+- shrink all images for fast page loads
+- upload everything and deploy to Github Pages

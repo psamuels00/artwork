@@ -33,6 +33,8 @@ convert -quality 20 ../perrins-art/02-Portfolio/04-DesertFlower/ColorWheelDesert
 mkdir src/images/portfolio/TheDemo
 cp ../perrins-art/02-Portfolio/03-TheDemo/*.jpeg src/images/portfolio/TheDemo
 for x in src/images/portfolio/TheDemo/*.jpeg; do mv $x ${x%.jpeg}.jpg; done
+rm src/images/portfolio/TheDemo/06-DummyHead.jpg
+rm src/images/portfolio/TheDemo/08-Dummy2Head.jpg
 
 # portfolio - Dolphin
 mkdir src/images/portfolio/Dolphin

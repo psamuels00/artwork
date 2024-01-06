@@ -5,9 +5,9 @@ layout: layouts/page.html
 <div class="flex">
   <div class="flex flex-col gap-8 mt-8 mx-4 md:grid md:grid-cols-3 md:mx-8">
     {% for project in projects %}
-      <figure class="">
-        <a href="/">
-          <img class="border hover:brightness-90"
+      <figure>
+        <a href="/portfolio/{{project.name | slugify}}">
+          <img class="hover:brightness-90"
                src="/images/portfolio/{{project.name | replace(' ', '')}}/{{project.images[0]}}"/>
         </a>
         <figcaption class="text-center mt-2">{{project.name}}</figcaption>
