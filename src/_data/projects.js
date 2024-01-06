@@ -1,17 +1,5 @@
 module.exports = [
   {
-    name: 'Backyard Hills',
-    images: [
-      'Backyard-09-finished-cropped.jpg',
-      'Backyard-05-ref-photo.jpg',
-      'Backyard-01-orig-drawing.jpg',
-      'Backyard-06-in-progress-1.jpg',
-      'Backyard-07-in-progress-2.jpg',
-      'Backyard-08-finished.jpg',
-      'Backyard-04-both-drawings.jpg',
-    ],
-  },
-  {
     name: 'Emma',
     images: [
       'EmmaSittingRelaxedAttentive-12-final-framed.jpg',
@@ -27,23 +15,6 @@ module.exports = [
       'EmmaSittingRelaxedAttentive-11-final.jpg',
       'EmmaSittingRelaxedAttentive-04-photo-and-drawing.jpg',
       'EmmaSittingRelaxedAttentive-06-second-drawing.jpg',
-    ],
-  },
-  {
-    name: 'Beach Boardwalk',
-    images: [
-      'BeachBoardwalkSketch-02-bench.jpg',
-      'BeachBoardwalkSketch-03-barge.jpg',
-      'BeachBoardwalkSketch-04-lifeguard.jpg',
-      'BeachBoardwalkSketch-05-kite.jpg',
-      'BeachBoardwalkSketch-06-surfers.jpg',
-      'BeachBoardwalkSketch-01-full.jpg',
-    ],
-  },
-  {
-    name: 'Desert Flower',
-    images: [
-      'ColorWheelDesertFlower-01-final.jpg',
     ],
   },
   {
@@ -76,6 +47,18 @@ module.exports = [
     ],
   },
   {
+    name: 'Backyard Hills',
+    images: [
+      'Backyard-09-finished-cropped.jpg',
+      'Backyard-05-ref-photo.jpg',
+      'Backyard-01-orig-drawing.jpg',
+      'Backyard-06-in-progress-1.jpg',
+      'Backyard-07-in-progress-2.jpg',
+      'Backyard-08-finished.jpg',
+      'Backyard-04-both-drawings.jpg',
+    ],
+  },
+  {
     name: 'The Onion',
     images: [
       '01-RedOnion.jpg',
@@ -88,6 +71,23 @@ module.exports = [
     name: 'Starry Night',
     images: [
       '01-StarryStarryNight.jpg',
+    ],
+  },
+  {
+    name: 'Beach Boardwalk',
+    images: [
+      'BeachBoardwalkSketch-02-bench.jpg',
+      'BeachBoardwalkSketch-03-barge.jpg',
+      'BeachBoardwalkSketch-04-lifeguard.jpg',
+      'BeachBoardwalkSketch-05-kite.jpg',
+      'BeachBoardwalkSketch-06-surfers.jpg',
+      'BeachBoardwalkSketch-01-full.jpg',
+    ],
+  },
+  {
+    name: 'Desert Flower',
+    images: [
+      'ColorWheelDesertFlower-01-final.jpg',
     ],
   },
 ]
