@@ -1,0 +1,69 @@
+---
+layout: 'layouts/page.html'
+---
+
+<div class="text-center px-8 lg:mt-4">
+
+  <!-- mobile-first, responsive navigation -->
+  <nav>
+    <div class="lg:hidden mb-4">
+      <!-- 🍔 menu button -->
+      <div class="flex justify-end items-center">
+        <div class="p-2">{{ project.name }}</div>
+        <button class="mobile-portfolio-menu-button flex p-2 gap-4 hover:bg-stone-100">
+          <svg class="w-6 text-stone-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- mobile menu -->
+      <div class="mobile-portfolio-menu hidden text-center">
+        <a href="/portfolio/emma" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-y border-gray-200 {% if '/portfolio/emma/' in page.url %}bg-stone-300{% endif %}">Emma</a>
+        <a href="/portfolio/the-demo" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/the-demo/' in page.url %}bg-stone-300{% endif %}">The Demo</a>
+        <a href="/portfolio/dolphin" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/dolphin/' in page.url %}bg-stone-300{% endif %}">Dolphin</a>
+        <a href="/portfolio/backyard-hills" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/backyard-hills/' in page.url %}bg-stone-300{% endif %}">Backyard Hills</a>
+        <a href="/portfolio/the-onion" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/the-onion/' in page.url %}bg-stone-300{% endif %}">The Onion</a>
+        <a href="/portfolio/starry-night" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/starry-night/' in page.url %}bg-stone-300{% endif %}">Starry Night</a>
+        <a href="/portfolio/beach-boardwalk" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/beach-boardwalk/' in page.url %}bg-stone-300{% endif %}">Beach Boardwalk</a>
+        <a href="/portfolio/desert-flower" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/desert-flower/' in page.url %}bg-stone-300{% endif %}">Desert Flower</a>
+      </div>
+    </div>
+
+    <div class="hidden lg:block mb-6">
+      <!-- primary menu -->
+      <div class="min-w-fit mx-auto">
+        <div class="flex justify-center">
+          <div class="flex text-sm font-extralight"><!--
+        --><a href="/portfolio/emma" class="py-3 px-4 {% if '/portfolio/emma/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Emma</a><!--
+        --><a href="/portfolio/the-demo" class="py-3 px-4 {% if '/portfolio/the-demo/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">The Demo</a><!--
+        --><a href="/portfolio/dolphin" class="py-3 px-4 {% if '/portfolio/dolphin/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Dolphin</a><!--
+        --><a href="/portfolio/backyard-hills" class="py-3 px-4 {% if '/portfolio/backyard-hills/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Hills</a><!--
+        --><a href="/portfolio/the-onion" class="py-3 px-4 {% if '/portfolio/the-onion/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Onion</a><!--
+        --><a href="/portfolio/starry-night" class="py-3 px-4 {% if '/portfolio/starry-night/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Starry</a><!--
+        --><a href="/portfolio/beach-boardwalk" class="py-3 px-4 {% if '/portfolio/beach-boardwalk/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Boardwalk</a><!--
+        --><a href="/portfolio/desert-flower" class="py-3 px-4 {% if '/portfolio/desert-flower/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Desert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <script type="text/javascript">
+    (function() {
+      const btn = document.querySelector("button.mobile-portfolio-menu-button");
+      const menu = document.querySelector(".mobile-portfolio-menu");
+
+      btn.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    })()
+  </script>
+
+  <div class="main_content">
+    {% block content %}
+      {{ content | safe }}
+    {% endblock %}
+  </div>
+
+</div>

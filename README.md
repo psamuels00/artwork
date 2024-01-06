@@ -61,7 +61,6 @@ Alpine.js - modern approach to jQuery
 ## TODO
 
 ### High priority
-- add a projects submenu similar to doodles
 - add image pages for projects
 - add descriptions for each project
 - upload everything and deploy to Github Pages
@@ -77,5 +76,6 @@ Alpine.js - modern approach to jQuery
 - add floating button to quickly jump to top of any long page
 - rewrite the home page to make it more DRY
 - use 11ty features to replace generate_doodle_image_pages.py
+- eliminate the categories directory in /images/doodles/categories/*
 - transition page loads more smoothly (maybe)
 - shrink all images further for fast page loads (maybe)

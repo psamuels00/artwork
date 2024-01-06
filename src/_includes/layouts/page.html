@@ -10,11 +10,11 @@ layout: 'layouts/base.html'
       <a href="/">
         <img class="" src="/images/home/PerrinLogo.png" style="width: 80px" />
       </a>
-      <div class="flex Xmy-auto">
+      <div class="flex">
         {% set is_top_level_page = page.url.split('/').length < 4 %}
         <div class="p-2 {% if not is_top_level_page %}hover:bg-stone-100{% endif %}">
           <a class="{% if is_top_level_page %} pointer-events-none opacity-75 cursor-not-allowed {% else %} hover:bg-stone-100 {% endif %}"
-             href="/doodles/">
+             href="/{{ page.url.split('/')[1] }}/">
             <div class="text-lg">{{ page.url.split('/')[1] | title }}</div>
           </a>
         </div>
