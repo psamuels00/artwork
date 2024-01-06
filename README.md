@@ -24,6 +24,8 @@ Then access the site at http://localhost:8080.
 
 ## Generated Doodle Image Pages
 
+_In retrospect, this can be done using 11ty pagination and should be removed.  See TODO._
+
 There is a separate page for each doodle image.  These pages are generated automatically.
 When a change is made to the images included under each doodle category, or if the order
 of the images on the category page has changed, regenerate the image pages:
@@ -71,4 +73,5 @@ Alpine.js - modern approach to jQuery
 - redesign image page navigation so fingers do not cover image to reach controls
 - transition page loads more smoothly (maybe)
 - shrink all images for fast page loads
+- replace generate_doodle_image_pages.py with the 11ty approach
 - upload everything and deploy to Github Pages
