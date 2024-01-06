@@ -61,8 +61,9 @@ Alpine.js - modern approach to jQuery
 ## TODO
 
 ### High priority
+- can still select link on page to same page on mobile
+- on mobile, margins too big on portfolio and/or project page
 - add image pages for projects
-- add descriptions for each project
 - upload everything and deploy to Github Pages
 
 ### Medium priority

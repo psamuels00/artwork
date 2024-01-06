@@ -1,6 +1,14 @@
 module.exports = [
   {
     name: 'Emma',
+    title: 'Emma',
+    description: 'Emma sitting relaxed, attentive.  My first attempt to focus on tone, ' +
+                 'trying to achieve a nice tonal balance.',
+    category: 'Portrait painting',
+    date: 'Dec, 2023',
+    location: 'Concord, CA',
+    media: 'Acrylic on copy paper, coated with gesso',
+    dimensions: '11" x 8.5"',
     images: [
       'EmmaSittingRelaxedAttentive-12-final-framed.jpg',
       'EmmaSittingRelaxedAttentive-02-photo.jpg',
@@ -19,6 +27,14 @@ module.exports = [
   },
   {
     name: 'The Demo',
+    title: 'The Demo',
+    description: 'This is a painting of a human dummy performing a demo of a wall dummy.  It is my "masterpiece" ' +
+                 'product of Covid lockdown.',
+    category: 'Portrait painting',
+    date: '2020',
+    location: 'Mission District, San Francisco, CA',
+    media: 'Acrylic paint on thin, roll paper, covered with gesso.',
+    dimensions: '0" x 0"',
     images: [
       '02-PaintingFull.jpg',
       '01-OriginalPhoto.jpg',
@@ -40,6 +56,13 @@ module.exports = [
   },
   {
     name: 'Dolphin',
+    title: 'Dolphin',
+    description: 'My second painting.  My first background.',
+    category: 'Seascape painting',
+    date: '2020',
+    location: 'San Francisco, CA',
+    media: 'Acrylic paint on thin, roll paper, covered with gesso.',
+    dimensions: '0" x 0"',
     images: [
       '02-TheDolphin.jpg',
       '01-TheArtistAndTheDolphin.jpg',
@@ -48,6 +71,13 @@ module.exports = [
   },
   {
     name: 'Backyard Hills',
+    title: 'Outpost Backyard Hills',
+    description: 'View of the hills from the back yard of The Outpost.',
+    category: 'Landscape painting',
+    date: 'Dec, 2023',
+    location: 'Concord, CA',
+    media: 'Acrylic paint on cheap, glossy product paper',
+    dimensions: '12" x 16"',
     images: [
       'Backyard-09-finished-cropped.jpg',
       'Backyard-05-ref-photo.jpg',
@@ -60,6 +90,13 @@ module.exports = [
   },
   {
     name: 'The Onion',
+    title: 'The Onion',
+    description: 'My first painting, a product of Covid lockdown and the need to express myself.',
+    category: 'Still life painting',
+    date: '2020',
+    location: 'San Francisco, CA',
+    media: 'Acrylic paint on thin, roll paper, covered with gesso.',
+    dimensions: '0" x 0"',
     images: [
       '01-RedOnion.jpg',
       '03-TheArtistAndRedOnion.jpg',
@@ -69,12 +106,27 @@ module.exports = [
   },
   {
     name: 'Starry Night',
+    title: 'Starry Night',
+    description: 'A one-off, early painting that happened one day while phoning in to a boring meeting at work, ' +
+                 'holding a paintbrush with black paint, and staring at my wallpaper image of the famous Cypresses.',
+    category: 'Landscape painting',
+    date: '2013',
+    location: 'Concord, CA',
+    media: 'Acrylic black on untreated copy paper.',
+    dimensions: '0" x 0"',
     images: [
       '01-StarryStarryNight.jpg',
     ],
   },
   {
     name: 'Beach Boardwalk',
+    title: 'Beach Boardwalk',
+    description: 'A sketch I made from pure thin air for a painting, not yet painted.',
+    category: 'Landscape drawing',
+    date: 'Oct, 2023',
+    location: 'Concord, CA',
+    media: 'Pencil on baking parchment paper',
+    dimensions: '16" x 24"',
     images: [
       'BeachBoardwalkSketch-02-bench.jpg',
       'BeachBoardwalkSketch-03-barge.jpg',
@@ -86,6 +138,13 @@ module.exports = [
   },
   {
     name: 'Desert Flower',
+    title: 'Color Wheel Desert Flower',
+    description: 'After making a color wheel, the leftover paint expressed itself as a landscape.',
+    category: 'Landscape painting',
+    date: 'Nov, 2023',
+    location: 'Concord, CA',
+    media: 'Acrylic on copy paper, coated with gesso',
+    dimensions: '11" x 8.5"',
     images: [
       'ColorWheelDesertFlower-01-final.jpg',
     ],
