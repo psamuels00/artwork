@@ -74,6 +74,7 @@ Alpine.js - modern approach to jQuery
 - product_image.html should use layouts/image.html for more DRYness
 
 ### Low priority
+- overall more consistency with the break points: sm, md, lg
 - redesign image page navigation so fingers do not cover image to reach controls
 - add descriptions for each project image
 - allow navigation of primary menus and submenus with left/right arrow keys on the keyboard
