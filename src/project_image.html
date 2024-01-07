@@ -8,7 +8,7 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt | slug }}
 ---
 
 <div class="flex flex-col h-screen">
-  <a href="/portfolio/{{item.name | slug}}">
+  <a href="{{'/portfolio/' | url}}{{item.name | slug}}/">
     <div class="flex justify-between items-center p-2 hover:bg-stone-100">
       <!-- Empty space, same width as "X" -->
       <svg width="48" height="48" />
@@ -25,22 +25,22 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt | slug }}
   </a>
 
   <div class="flex mx-auto">
-    <a href="{{item.image_first | rmFileExt }}">
+    <a href="{{item.image_first | rmFileExt | url}}">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if item.image_prev === '' %}opacity-50 cursor-not-allowed{% endif %}">
         First
       </button>
     </a>
-    <a href="{{item.image_prev | rmFileExt }}">
+    <a href="{{item.image_prev | rmFileExt | url}}">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if item.image_prev === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Prev
       </button>
     </a>
-    <a href="{{item.image_next | rmFileExt }}">
+    <a href="{{item.image_next | rmFileExt | url}}">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if item.image_next === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Next
       </button>
     </a>
-    <a href="{{item.image_last | rmFileExt }}">
+    <a href="{{item.image_last | rmFileExt | url}}">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if item.image_next === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Last
       </button>
@@ -52,25 +52,25 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt | slug }}
   </div>
 
   <div class="flex-grow mx-auto">
-    <img class="p-2 Xsm:w-3/4 Xmd:w-1/2 mx-auto" src="/images/portfolio/{{item.name | replace(' ', '')}}/{{item.image}}"/>
+    <img class="p-2 Xsm:w-3/4 Xmd:w-1/2 mx-auto" src="{{'/images/portfolio/' | url}}{{item.name | replace(' ', '')}}/{{item.image}}"/>
   </div>
 </div>
 
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
-        window.location.href = '/portfolio/{{item.name | slug}}/'
+        window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/'
     }
 
     {% if item.image_prev %}
       if (event.key === 'ArrowLeft') {
-        window.location.href = '{{item.image_prev | rmFileExt}}'
+        window.location.href = '{{item.image_prev | rmFileExt | url}}'
       }
     {% endif %}
 
     {% if item.image_next %}
       if (event.key === 'ArrowRight') {
-        window.location.href = '{{item.image_next | rmFileExt}}'
+        window.location.href = '{{item.image_next | rmFileExt | url}}'
       }
     {% endif %}
   });

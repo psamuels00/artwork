@@ -8,9 +8,9 @@ permalink: "portfolio/{{ project.name | slug }}/"
 ---
 
 <div class="flex my-4 mb-4 md:mb-8 lg:my-8">
-  <a href="/portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt | slug}}">
-    <img class="border hover:brightness-90"
-         src="/images/portfolio/{{project.name | replace(' ', '')}}/{{project.images[0]}}"/>
+  <a href="{{'/portfolio/' | url}}{{project.name | slug}}/{{project.images[0] | rmFileExt}}">
+    {% set src = '/images/portfolio/' + project.name.replace(' ', '') + '/' + project.images[0] %}
+    <img class="border hover:brightness-90" src="{{src | url}}"/>
   </a>
 </div>
 
@@ -74,9 +74,9 @@ permalink: "portfolio/{{ project.name | slug }}/"
   <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
     {% for name in project.images %}
       {% if not loop.first %}
-        <a href="/portfolio/{{project.name | slug}}/{{name | rmFileExt | slug}}">
-          <img class="border hover:brightness-90"
-               src="/images/portfolio/{{project.name | replace(' ', '')}}/{{name}}"/>
+        <a href="{{'/portfolio/' | url}}{{project.name | slug}}/{{name | rmFileExt | slug}}">
+          {% set src = '/images/portfolio/' + project.name.replace(' ', '') + '/' + name %}
+          <img class="border hover:brightness-90" src="{{src | url}}"/>
         </a>
       {% endif -%}
     {% endfor -%}

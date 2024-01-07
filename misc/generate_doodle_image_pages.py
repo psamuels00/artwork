@@ -72,14 +72,14 @@ def generate_image_pages(category):
     lines = read_file(file)
 
     names = parse_category_page(lines, category)
-    first = "../" + names[0]
-    last = "../" + names[-1]
+    first = "../" + names[0] + '/'
+    last = "../" + names[-1] + '/'
 
     offset = 0
     while offset < len(names):
         name = names[offset]
-        prev = "''" if offset == 0 else "../" + names[offset - 1]
-        next = "''" if offset == len(names) - 1 else "../" + names[offset + 1]
+        prev = "''" if offset == 0 else "../" + names[offset - 1] + '/'
+        next = "''" if offset == len(names) - 1 else "../" + names[offset + 1] + '/'
         content = build_image_page_content(category, name, first, last, prev, next)
 
         out_file = os.path.join(categories_pages_path, category, name) + ".html"

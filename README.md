@@ -64,6 +64,8 @@ Alpine.js - modern approach to jQuery
 ## TODO
 
 ### High priority
+- finish converting for /artwork/: doodles.html
+- finish converting for /artwork/: project_images.html
 - upload everything and deploy to Github Pages
 
 ### Medium priority

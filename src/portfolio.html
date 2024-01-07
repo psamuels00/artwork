@@ -6,9 +6,9 @@ layout: layouts/portfolio.html
   <div class="flex flex-col gap-8 md:grid md:grid-cols-3">
     {% for project in projects.structured %}
       <figure>
-        <a href="/portfolio/{{project.name | slug}}">
-          <img class="hover:brightness-90"
-               src="/images/portfolio/{{project.name | replace(' ', '')}}/{{project.images[0]}}"/>
+        <a href="{{'/portfolio/' | url}}{{project.name | slug}}/">
+          {% set src = '/images/portfolio/' + project.name.replace(' ', '') + '/' + project.images[0] %}
+          <img class="hover:brightness-90" src="{{src | url}}"/>
         </a>
         <figcaption class="text-center mt-2">{{project.name}}</figcaption>
       </figure>
