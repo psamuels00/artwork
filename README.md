@@ -74,6 +74,7 @@ Alpine.js - modern approach to jQuery
 - create a filter for replace(r/([a-z])([A-Z])/g, "$1 $2") if not replaced by slugs
 - ESC does not work consistently on image pages (it used to before project image pages)
 - product_image.html should use layouts/image.html for more DRYness
+- move PerrinLogo.png to src/images/meta and remove src/images/home/*
 
 ### Low priority
 - redesign image page navigation so fingers do not cover image to reach controls
