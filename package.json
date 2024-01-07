@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npx @11ty/eleventy & tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify",
+    "develop": "tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch & npx @11ty/eleventy --serve",
     "css": "tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
     "prod": "concurrently \"npx @11ty/eleventy\" \"tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify\"",

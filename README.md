@@ -19,8 +19,11 @@ To build the pages and serve them up during development, run the following comma
     npm run css - Tailwind transformations
     npm start - Build pages and run 11ty server
 
-Then access the site at http://localhost:8080.
+...or start both in the same terminal:
 
+    npm run develop
+
+Then access the site at http://localhost:8080.
 
 ## Generated Doodle Image Pages
 
