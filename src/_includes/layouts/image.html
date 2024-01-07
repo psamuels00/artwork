@@ -3,21 +3,19 @@ layout: 'layouts/base.html'
 ---
 
 <div class="flex flex-col h-screen">
-  <a href="/doodles/{{category}}">
-    <div class="flex justify-between items-center p-2 hover:bg-stone-100">
-      <!-- Empty space, same width as "X" -->
-      <svg width="48" height="48" />
+  <div onclick="window.history.back()" class="flex justify-between items-center p-2 hover:bg-stone-100">
+    <!-- Empty space, same width as "X" -->
+    <svg width="48" height="48" />
 
-      <div class="mx-auto text-3xl font-light">
-        {{ category | capitalize }}
-      </div>
-
-      <!-- An "X" -->
-      <svg class="text-stone-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" width="48" height="48" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M6 6L42 42M6 42L42 6"/>
-      </svg>
+    <div class="mx-auto text-3xl font-light">
+      {{ category | capitalize }}
     </div>
-  </a>
+
+    <!-- An "X" -->
+    <svg class="text-stone-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" width="48" height="48" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M6 6L42 42M6 42L42 6"/>
+    </svg>
+  </div>
 
   <div class="flex mx-auto">
     <a href="{{first}}">
@@ -54,7 +52,7 @@ layout: 'layouts/base.html'
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
-        window.location.href = '/doodles/{{category}}/'
+      window.history.back()
     }
 
     {% if prev %}

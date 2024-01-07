@@ -73,9 +73,8 @@ Alpine.js - modern approach to jQuery
 - product_image.html should use layouts/image.html for more DRYness
 
 ### Low priority
-- the "X" to leave an image page is not great because it always takes you to the top of the portfolio or doodles page
-- overall more consistency with the break points: sm, md, lg
 - redesign image page navigation so fingers do not cover image to reach controls
+- overall more consistency with the break points: sm, md, lg
 - add descriptions for each project image
 - allow navigation of primary menus and submenus with left/right arrow keys on the keyboard
 - add floating button to quickly jump to top of any long page
