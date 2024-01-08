@@ -65,7 +65,8 @@
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
-        window.location.href = '/artwork/portfolio/dolphin/'
+        event.preventDefault();
+        window.location.href = '../'
     }
 
     
