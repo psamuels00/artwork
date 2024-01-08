@@ -59,7 +59,8 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
-        window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/'
+        event.preventDefault();
+        window.location.href = '../'
     }
 
     {% if item.image_prev %}
