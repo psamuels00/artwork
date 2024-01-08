@@ -4,7 +4,7 @@ pagination:
   data: projects.flat
   size: 1
   alias: item
-permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt | slug }}"
+permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}"
 ---
 
 <div class="flex flex-col h-screen">
