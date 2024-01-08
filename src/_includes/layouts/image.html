@@ -54,8 +54,7 @@ layout: 'layouts/base.html'
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape') {
-        const href = '/doodles/' + category + '/';
-        window.location.href = '{{href | url}}'
+        window.location.href = '{{'/doodles/' | url}}{{category}}/'
     }
 
     {% if prev %}

@@ -64,13 +64,13 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 
     {% if item.image_prev %}
       if (event.key === 'ArrowLeft') {
-        window.location.href = '{{item.image_prev | rmFileExt | url}}'
+        window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_prev | rmFileExt}}/'
       }
     {% endif %}
 
     {% if item.image_next %}
       if (event.key === 'ArrowRight') {
-        window.location.href = '{{item.image_next | rmFileExt | url}}'
+        window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_next | rmFileExt}}/'
       }
     {% endif %}
   });
