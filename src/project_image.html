@@ -25,22 +25,22 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
   </a>
 
   <div class="flex mx-auto">
-    <a href="{{item.image_first | rmFileExt | url}}">
+    <a href="{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_first | rmFileExt}}/">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if item.image_prev === '' %}opacity-50 cursor-not-allowed{% endif %}">
         First
       </button>
     </a>
-    <a href="{{item.image_prev | rmFileExt | url}}">
+    <a href="{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_prev | rmFileExt}}/">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if item.image_prev === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Prev
       </button>
     </a>
-    <a href="{{item.image_next | rmFileExt | url}}">
+    <a href="{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_next | rmFileExt}}/">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if item.image_next === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Next
       </button>
     </a>
-    <a href="{{item.image_last | rmFileExt | url}}">
+    <a href="{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_last | rmFileExt}}/">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if item.image_next === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Last
       </button>
