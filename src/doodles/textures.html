@@ -23,8 +23,8 @@ category: 'Textures'
     'SunThruBlueGlassTexture'
   ] %}
   {% for name in image_names %}
-    <a href="{{name}}">
-      <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/textures/{{name}}.jpg"/>
+    <a href="{{('/doodles/textures/' + name) | url}}/">
+      <img class="sm:my-0 my-8 hover:brightness-90" src="{{'/images/' | url}}doodles/categories/textures/{{name}}.jpg"/>
     </a>
   {% endfor %}
 </div>

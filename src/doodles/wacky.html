@@ -19,8 +19,8 @@ category: 'Wacky'
   ] %}
   {% for name in image_names %}
     <figure class="sm:my-0 my-8 text-sm font-extralight">
-      <a href="{{name}}">
-        <img class="hover:brightness-90" src="/images/doodles/categories/wacky/{{name}}.jpg"/>
+      <a href="{{('/doodles/wacky/' + name) | url}}/">
+        <img class="hover:brightness-90" src="{{'/images/' | url}}doodles/categories/wacky/{{name}}.jpg"/>
       </a>
       <figcaption>{{name | replace(r/([a-z])([A-Z])/g, "$1 $2")}}</figcaption>
     </figure>

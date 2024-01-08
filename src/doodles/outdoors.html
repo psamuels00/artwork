@@ -15,7 +15,7 @@ category: 'Outdoors'
   ] %}
   {% for name in image_names %}
     <a href="{{name}}">
-      <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
+      <img class="sm:my-0 my-8 hover:brightness-90" src="{{'/images/' | url}}doodles/categories/outdoors/{{name}}.jpg"/>
     </a>
   {% endfor %}
 </div>
@@ -36,8 +36,8 @@ category: 'Outdoors'
       'BackYardSketch'
     ] %}
     {% for name in image_names %}
-      <a href="{{name}}">
-        <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
+      <a href="{{('/doodles/outdoors/' + name) | url}}/">
+        <img class="sm:my-0 my-8 hover:brightness-90" src="{{'/images/' | url}}doodles/categories/outdoors/{{name}}.jpg"/>
       </a>
     {% endfor %}
   </div>
@@ -50,7 +50,7 @@ category: 'Outdoors'
     ] %}
     {% for name in image_names %}
       <a href="{{name}}">
-        <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
+        <img class="sm:my-0 my-8 hover:brightness-90" src="{{'/images/' | url}}doodles/categories/outdoors/{{name}}.jpg"/>
       </a>
     {% endfor %}
   </div>

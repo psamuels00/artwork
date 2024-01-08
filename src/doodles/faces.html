@@ -26,8 +26,8 @@ category: 'Faces'
     'SketchyFace'
   ] %}
   {% for name in image_names %}
-    <a href="{{name}}">
-      <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/faces/{{name}}.jpg"/>
+    <a href="{{('/doodles/faces/' + name) | url}}/">
+      <img class="sm:my-0 my-8 hover:brightness-90" src="{{'/images/' | url}}doodles/categories/faces/{{name}}.jpg"/>
     </a>
   {% endfor %}
 </div>
