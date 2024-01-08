@@ -7,7 +7,7 @@ const projects = [
     category: 'Portrait painting',
     date: 'Dec, 2023',
     location: 'Concord, CA',
-    media: 'Acrylic on copy paper, coated with gesso',
+    medium: 'Acrylic on copy paper, coated with gesso',
     dimensions: '11 x 8½ inches',
     images: [
       'EmmaSittingRelaxedAttentive-12-final-framed.jpg',
@@ -33,7 +33,7 @@ const projects = [
     category: 'Portrait painting',
     date: '2020',
     location: 'Mission District, San Francisco, CA',
-    media: 'Acrylic paint on thin, roll paper, covered with gesso.',
+    medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     dimensions: '34 x 24½ inches',
     images: [
       '02-PaintingFull.jpg',
@@ -61,7 +61,7 @@ const projects = [
     category: 'Seascape painting',
     date: '2020',
     location: 'San Francisco, CA',
-    media: 'Acrylic paint on thin, roll paper, covered with gesso.',
+    medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     dimensions: '16 x 12 inches',
     images: [
       '02-TheDolphin.jpg',
@@ -76,7 +76,7 @@ const projects = [
     category: 'Landscape painting',
     date: 'Dec, 2023',
     location: 'Concord, CA',
-    media: 'Acrylic paint on cheap, glossy product paper',
+    medium: 'Acrylic paint on cheap, glossy product paper',
     dimensions: '16 x 12 inches',
     images: [
       'Backyard-09-finished-cropped.jpg',
@@ -95,7 +95,7 @@ const projects = [
     category: 'Still life painting',
     date: '2020',
     location: 'San Francisco, CA',
-    media: 'Acrylic paint on thin, roll paper, covered with gesso.',
+    medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     dimensions: '70 x 46 inches',
     images: [
       '01-RedOnion.jpg',
@@ -112,7 +112,7 @@ const projects = [
     category: 'Landscape painting',
     date: '2013',
     location: 'Concord, CA',
-    media: 'Acrylic black on untreated copy paper.',
+    medium: 'Acrylic black on untreated copy paper.',
     dimensions: '11 x 8½ inches',
     images: [
       '01-StarryStarryNight.jpg',
@@ -125,7 +125,7 @@ const projects = [
     category: 'Landscape drawing',
     date: 'Oct, 2023',
     location: 'Concord, CA',
-    media: 'Pencil on baking parchment paper',
+    medium: 'Pencil on baking parchment paper',
     dimensions: '24 x 16 inches',
     images: [
       'BeachBoardwalkSketch-02-bench.jpg',
@@ -143,7 +143,7 @@ const projects = [
     category: 'Landscape painting',
     date: 'Nov, 2023',
     location: 'Concord, CA',
-    media: 'Acrylic on copy paper, coated with gesso',
+    medium: 'Acrylic on copy paper, coated with gesso',
     dimensions: '11 x 8½ inches',
     images: [
       'ColorWheelDesertFlower-01-final.jpg',
