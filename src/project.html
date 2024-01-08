@@ -74,7 +74,7 @@ permalink: "portfolio/{{ project.name | slug }}/"
   <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
     {% for name in project.images %}
       {% if not loop.first %}
-        <a href="{{'/portfolio/' | url}}{{project.name | slug}}/{{name | rmFileExt | slug}}">
+        <a href="{{'/portfolio/' | url}}{{project.name | slug}}/{{name | rmFileExt}}">
           {% set src = '/images/portfolio/' + project.name.replace(' ', '') + '/' + name %}
           <img class="border hover:brightness-90" src="{{src | url}}"/>
         </a>
