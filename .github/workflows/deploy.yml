@@ -1,4 +1,4 @@
-name: Deploy Perrin's Art to GitHub Pages
+name: Deploy Perrin's Artwork to GitHub Pages
 
 on:
   push:
