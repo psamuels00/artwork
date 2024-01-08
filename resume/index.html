@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Perrin&#39;s Resume</title>
+    <link rel="shortcut icon" type="image/png" href="/artwork/images/meta/emma_face.png"/>
+    <link rel="stylesheet" href="/artwork/global.css"/>
+  </head>
+  <body>
+
+    <div class="main_content">
+      
+        
+<!-- mobile-first, responsive navigation -->
+<nav>
+  <div class="lg:hidden">
+    <!-- logo and 🍔 menu button -->
+    <div class="flex justify-between items-center m-4">
+      <a href="/artwork/">
+        <img src="/artwork/images/home/PerrinLogo.png" style="width: 80px" />
+      </a>
+      <div class="flex">
+        
+        
+          <div class="p-2 text-lg">Resume</div>
+        
+
+        <button class="mobile-menu-button hover:bg-stone-100 p-2 flex gap-2">
+          <svg class="h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div class="mobile-menu hidden text-center">
+      <a href="/artwork/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-y border-gray-200">Home</a>
+      <a href="/artwork/portfolio/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-b border-gray-200">Portfolio</a>
+      <a href="/artwork/doodles/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-b border-gray-200">Doodles</a>
+      <a href="/artwork/about/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-b border-gray-200">About</a>
+      <a href="/artwork/resume/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 bg-stone-300 border-b border-gray-200">Resume</a>
+      <a href="/artwork/nightmare/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-b border-gray-200">Nightmare</a>
+    </div>
+  </div>
+
+  <div class="hidden lg:block">
+    <!-- logo and divider -->
+    <div class="min-w-fit mx-auto mt-2">
+      <div class="flex justify-center">
+        <a href="/artwork/">
+          <img src="/artwork/images/home/PerrinLogo.png" style="width: 100px" />
+        </a>
+      </div>
+      <div class="border-b border-gray-900 my-2 mx-8"></div>
+    </div>
+
+    <!-- primary menu -->
+    <div class="min-w-fit mx-auto">
+      <div class="flex justify-center">
+        <div class="flex text-sm font-extralight"><!--
+          --><a href="/artwork/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">Home</a><!--
+          --><a href="/artwork/portfolio/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">Portfolio</a><!--
+          --><a href="/artwork/doodles/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">Doodles</a><!--
+          --><a href="/artwork/about/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">About</a><!--
+          --><a href="/artwork/resume/" class="py-1 px-4 bg-stone-300 transition-colors duration-300 hover:bg-stone-200">Resume</a><!--
+          --><a href="/artwork/nightmare/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">Nightmare</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script type="text/javascript">
+  (function() {
+    const btn = document.querySelector("button.mobile-menu-button");
+    const menu = document.querySelector(".mobile-menu");
+
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  })()
+</script>
+
+<div class="main_content">
+  
+    
+<div class="bg-gray-100 mt-6 py-6 text-center">
+  <div class="font-light text-4xl mx-2">
+    As a Software Engineer...
+  </div>
+</div>
+
+<div class="bg-blue-950 text-white text-sm">
+  <div class="py-8">
+    <img class="mx-auto rounded-full"
+         src="/artwork/images/resume/PerrinSwirlingBackground.jpg"
+         style="width: 200px;">
+  </div>
+
+  <div class="max-w-4xl mx-auto">
+    <table>
+      <thead>
+        <tr>
+          <th class="w-full lg:w-3/12"></th>
+          <th class="w-full lg:w-2/12"></th>
+          <th class="w-full lg:w-7/12"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr class="flex flex-col lg:table-row align-top">
+          <td class="font-bold p-4 py-0">
+            Sr Bioinformatics Engr,<br/>
+            Quest Diagnostics
+          </td>
+          <td class="p-4 pt-1 pb-3 lg:py-0">
+            May 2020 &ndash; Present
+          </td>
+          <td class="p-4 pt-0 pb-8 lg:pt-0">
+            Yup, I work there now, building pipelines in the cloud.  AWS, Terraform, Python, SQL, Typescript, Django,
+            Celery, Redis, Gitlab, Mockoon, automated testing, CI/CD, agile, design & implementation, hiring, mentoring,
+            and did I mention testing, testing, testing?
+          </td>
+        </tr>
+
+        <tr class="flex flex-col lg:table-row align-top">
+          <td class="font-bold p-4 py-0">
+            Sr Backend Engr,<br/>
+            Ancestry
+          </td>
+          <td class="p-4 pt-1 pb-3 lg:py-0">
+            Apr 2018 &ndash; Apr 2020
+          </td>
+          <td class="p-4 pt-0 pb-8 lg:pt-0">
+            This was a great job, great team.  Too bad the DNA Health product was discontinued.  AWS, Terraform, Python,
+            Java, SQLAlchemy, Flask, Sanic, GitHub, Jenkins.
+          </td>
+        </tr>
+
+        <tr class="flex flex-col lg:table-row align-top">
+          <td class="font-bold p-4 py-0">
+            Sr Backend Engr,<br/>
+            Credit Karma
+          </td>
+          <td class="p-4 pt-1 pb-3 lg:py-0">
+            Feb 2015 &ndash; Dec 2015
+          </td>
+          <td class="p-4 pt-0 pb-8 lg:pt-0">
+            Worked on monolithic Web app, mostly the recommendation engine.  Developed internal tool for managing A/B tests.
+            PHP, sharded SQL.
+          </td>
+        </tr>
+
+        <tr class="flex flex-col lg:table-row align-top">
+          <td class="font-bold p-4 py-0">
+            Software Engineer,<br/>
+            Lumenir
+          </td>
+          <td class="p-4 pt-1 pb-3 lg:py-0">
+            2011 &ndash; 2013
+          </td>
+          <td class="p-4 pt-0 pb-8 lg:pt-0">
+            As the first software engineer at this solar-powered generator startup, I created the front and back end of an
+            application to track distribution, leasing, billing, and usage of the flagship product, piloted in Guatemala.
+          </td>
+        </tr>
+
+        <tr class="flex flex-col lg:table-row align-top">
+          <td class="font-bold p-4 py-0">
+            Software Developer,<br/>
+            Microsoft, Tellme
+          </td>
+          <td class="p-4 pt-1 pb-3 lg:py-0">
+            2005 &ndash; 2009
+          </td>
+          <td class="p-4 pt-0 pb-8 lg:pt-0">
+            I started at Tellme developing voice applications using VoiceXML and Perl for the back end.  After Microsoft
+            aquired Tellme, I stayed on board, developing voice applications.
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pb-8 italic text-center">
+    See my full resume
+    <a class="text-blue-500 underline" target="_blank"
+       href="/artwork/images/resume/resume.pdf">here</a>
+    <span class="lg:hidden"><br/></span>
+    ...and more than you want at
+    <a class="text-blue-500 underline" target="_blank"
+       href="https://www.linkedin.com/in/PerrinSamuels/">LinkedIn</a>.
+  </div>
+
+</div>
+
+  
+</div>
+
+<footer class="flex justify-center my-12">
+  <div class="text-center font-light thin text-sm">
+    <div class="flex">
+      perrin.samuels
+      <span>@</span>
+      gmail.com
+    </div>
+    <p>&copy;2024 Perrin Inc.</p>
+    
+  </div>
+</footer>
+      
+    </div>
+
+  </body>
+</html>
