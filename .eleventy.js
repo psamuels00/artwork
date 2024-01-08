@@ -16,7 +16,7 @@ module.exports = config => {
       input: 'src',
       output: 'dist'
     },
-    pathPrefix: '/art/',
+    pathPrefix: '/artwork/',
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk'
