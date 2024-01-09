@@ -61,12 +61,14 @@ layout: 'layouts/base.html'
 
     {% if prev %}
       if (event.key === 'ArrowLeft') {
+        event.preventDefault();
         window.location.href = '{{prev | url}}'
       }
     {% endif %}
 
     {% if next %}
       if (event.key === 'ArrowRight') {
+        event.preventDefault();
         window.location.href = '{{next | url}}'
       }
     {% endif %}
