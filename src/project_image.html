@@ -51,11 +51,8 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
     {{ item.image | cleanupHack | rmFileExt | replace(r/([a-z])([A-Z])/g, "$1 $2")}}
   </div>
 
-  <div class="flex-grow Xmx-auto">
-    <img class="p-2 max-w-lg Xsm:w-3/4 Xmd:w-1/2 mx-auto" src="/images/portfolio/{{item.name | replace(' ', '')}}/{{item.image}}"/>
-  </div>
-  <div class="hidden bg-purple-300">
-    <img class="object-contain h-48 w-96" src="/images/portfolio/{{item.name | replace(' ', '')}}/{{item.image}}"/>
+  <div class="flex-grow mx-auto">
+    <img class="p-2 Xsm:w-3/4 Xmd:w-1/2 mx-auto" src="/images/portfolio/{{item.name | replace(' ', '')}}/{{item.image}}"/>
   </div>
 </div>
 
@@ -68,14 +65,12 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 
     {% if item.image_prev %}
       if (event.key === 'ArrowLeft') {
-        event.preventDefault();
         window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_prev | rmFileExt}}/'
       }
     {% endif %}
 
     {% if item.image_next %}
       if (event.key === 'ArrowRight') {
-        event.preventDefault();
         window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_next | rmFileExt}}/'
       }
     {% endif %}

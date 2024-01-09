@@ -91,17 +91,14 @@ permalink: "portfolio/{{ project.name | slug }}/"
     }
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
       window.location.href = '{{'/' | url}}portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt}}/'
     }
 
     if (event.key === 'ArrowLeft') {
-      event.preventDefault();
       window.location.href = '{{'/' | url}}portfolio/{{project.prev | slug}}/'
     }
 
     if (event.key === 'ArrowRight') {
-      event.preventDefault();
       window.location.href = '{{'/' | url}}portfolio/{{project.next | slug}}/'
     }
   });

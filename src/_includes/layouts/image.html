@@ -3,7 +3,7 @@ layout: 'layouts/base.html'
 ---
 
 
-<div class="h-screen">
+<div class="flex flex-col h-screen">
   <a href="/doodles/{{category}}/">
     <div class="flex justify-between items-center p-2 hover:bg-stone-100">
       <!-- Empty space, same width as "X" -->
@@ -20,11 +20,7 @@ layout: 'layouts/base.html'
     </div>
   </a>
 
-  <div class="hidden text-center">
-    <a href="{{first}}"><button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 {% if prev === '' %}opacity-50 cursor-not-allowed{% endif %}">First</button></a><a href="{{prev}}"><button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 {% if prev === '' %}opacity-50 cursor-not-allowed{% endif %}">Prev</button></a><a href="{{next}}"><button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 {% if next === '' %}opacity-50 cursor-not-allowed{% endif %}">Next</button></a><a href="{{last}}"><button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 {% if next === '' %}opacity-50 cursor-not-allowed{% endif %}">Last</button></a>
-  </div>
-
-  <div class="text-center">
+  <div class="flex mx-auto gap-2">
     <a href="{{first}}">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 {% if prev === '' %}opacity-50 cursor-not-allowed{% endif %}">
         First
@@ -51,8 +47,8 @@ layout: 'layouts/base.html'
     {{ title }}
   </div>
 
-  <div class="h-full Xmax-h-full flex">
-    <img class="object-contain p-2" src="/images/{{curr}}"/>
+  <div class="flex-grow mx-auto">
+    <img class="p-2 sm:w-3/4 md:w-1/2 mx-auto" src="/images/{{curr}}"/>
   </div>
 </div>
 
@@ -65,14 +61,12 @@ layout: 'layouts/base.html'
 
     {% if prev %}
       if (event.key === 'ArrowLeft') {
-        event.preventDefault();
         window.location.href = '{{prev | url}}'
       }
     {% endif %}
 
     {% if next %}
       if (event.key === 'ArrowRight') {
-        event.preventDefault();
         window.location.href = '{{next | url}}'
       }
     {% endif %}
