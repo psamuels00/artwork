@@ -295,14 +295,17 @@
     }
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/the-onion/01-RedOnion/'
     }
 
     if (event.key === 'ArrowLeft') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/backyard-hills/'
     }
 
     if (event.key === 'ArrowRight') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/starry-night/'
     }
   });
@@ -337,6 +340,7 @@
     
   });
 </script>
+
       
     </div>
 

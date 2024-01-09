@@ -57,8 +57,11 @@
     Dummy2Left Hand
   </div>
 
-  <div class="flex-grow mx-auto">
-    <img class="p-2 Xsm:w-3/4 Xmd:w-1/2 mx-auto" src="/artwork/images/portfolio/TheDemo/12-Dummy2LeftHand.jpg">
+  <div class="flex-grow Xmx-auto">
+    <img class="p-2 max-w-lg Xsm:w-3/4 Xmd:w-1/2 mx-auto" src="/artwork/images/portfolio/TheDemo/12-Dummy2LeftHand.jpg">
+  </div>
+  <div class="hidden bg-purple-300">
+    <img class="object-contain h-48 w-96" src="/artwork/images/portfolio/TheDemo/12-Dummy2LeftHand.jpg">
   </div>
 </div>
 
@@ -71,17 +74,20 @@
 
     
       if (event.key === 'ArrowLeft') {
+        event.preventDefault();
         window.location.href = '/artwork/portfolio/the-demo/04-Surfer/'
       }
     
 
     
       if (event.key === 'ArrowRight') {
+        event.preventDefault();
         window.location.href = '/artwork/portfolio/the-demo/13-Dummy2RightHand/'
       }
     
   });
 </script>
+
       
     </div>
 

@@ -280,14 +280,17 @@
     }
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/starry-night/01-StarryStarryNight/'
     }
 
     if (event.key === 'ArrowLeft') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/the-onion/'
     }
 
     if (event.key === 'ArrowRight') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/beach-boardwalk/'
     }
   });
@@ -322,6 +325,7 @@
     
   });
 </script>
+
       
     </div>
 

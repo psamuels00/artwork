@@ -310,14 +310,17 @@
     }
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/backyard-hills/Backyard-09-finished-cropped/'
     }
 
     if (event.key === 'ArrowLeft') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/dolphin/'
     }
 
     if (event.key === 'ArrowRight') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/the-onion/'
     }
   });
@@ -352,6 +355,7 @@
     
   });
 </script>
+
       
     </div>
 

@@ -290,14 +290,17 @@
     }
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/dolphin/02-TheDolphin/'
     }
 
     if (event.key === 'ArrowLeft') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/the-demo/'
     }
 
     if (event.key === 'ArrowRight') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/backyard-hills/'
     }
   });
@@ -332,6 +335,7 @@
     
   });
 </script>
+
       
     </div>
 

@@ -14,7 +14,7 @@
       
         
 
-<div class="flex flex-col h-screen">
+<div class="h-screen">
   <a href="/artwork/doodles/outdoors/">
     <div class="flex justify-between items-center p-2 hover:bg-stone-100">
       <!-- Empty space, same width as "X" -->
@@ -31,7 +31,11 @@
     </div>
   </a>
 
-  <div class="flex mx-auto gap-2">
+  <div class="hidden text-center">
+    <a href="../DesertMountainTree/"><button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 ">First</button></a><a href="../BeachSceneBoatOnHorizon/"><button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 ">Prev</button></a><a href="../ChildDrawingTreeAndFlowers/"><button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 ">Next</button></a><a href="../DolphinJumpingInSun/"><button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 ">Last</button></a>
+  </div>
+
+  <div class="text-center">
     <a href="../DesertMountainTree/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3 ">
         First
@@ -58,8 +62,8 @@
     Coconut Tree On Beach
   </div>
 
-  <div class="flex-grow mx-auto">
-    <img class="p-2 sm:w-3/4 md:w-1/2 mx-auto" src="/artwork/images/doodles/categories/outdoors/CoconutTreeOnBeach.jpg">
+  <div class="h-full Xmax-h-full flex">
+    <img class="object-contain p-2" src="/artwork/images/doodles/categories/outdoors/CoconutTreeOnBeach.jpg">
   </div>
 </div>
 
@@ -72,12 +76,14 @@
 
     
       if (event.key === 'ArrowLeft') {
+        event.preventDefault();
         window.location.href = '../BeachSceneBoatOnHorizon/'
       }
     
 
     
       if (event.key === 'ArrowRight') {
+        event.preventDefault();
         window.location.href = '../ChildDrawingTreeAndFlowers/'
       }
     

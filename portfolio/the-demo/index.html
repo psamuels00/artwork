@@ -355,14 +355,17 @@
     }
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/the-demo/02-PaintingFull/'
     }
 
     if (event.key === 'ArrowLeft') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/emma/'
     }
 
     if (event.key === 'ArrowRight') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/dolphin/'
     }
   });
@@ -397,6 +400,7 @@
     
   });
 </script>
+
       
     </div>
 

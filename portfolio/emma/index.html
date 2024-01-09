@@ -340,14 +340,17 @@
     }
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/emma/EmmaSittingRelaxedAttentive-12-final-framed/'
     }
 
     if (event.key === 'ArrowLeft') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/desert-flower/'
     }
 
     if (event.key === 'ArrowRight') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/the-demo/'
     }
   });
@@ -382,6 +385,7 @@
     
   });
 </script>
+
       
     </div>
 

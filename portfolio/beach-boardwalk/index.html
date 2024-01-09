@@ -305,14 +305,17 @@
     }
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/beach-boardwalk/BeachBoardwalkSketch-02-bench/'
     }
 
     if (event.key === 'ArrowLeft') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/starry-night/'
     }
 
     if (event.key === 'ArrowRight') {
+      event.preventDefault();
       window.location.href = '/artwork/portfolio/desert-flower/'
     }
   });
@@ -347,6 +350,7 @@
     
   });
 </script>
+
       
     </div>
 
