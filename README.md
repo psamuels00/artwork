@@ -42,7 +42,7 @@ after making formatting changes to one of the files that is parsed.
 ## TODO
 
 ### High priority
-- allow navigation of primary menus and submenus with left/right arrow keys on the keyboard
+- allow navigation of submenus on Portfolio and Doodles pages using left/right arrow keys
 - ensure fully contained image on image pages, also first project image
 
 ### Medium priority

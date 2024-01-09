@@ -81,3 +81,15 @@ layout: 'layouts/doodles.html'
 <div class="m-4 text-stone-400 italic">
   All doodles were made as drawings in the iPhone Notes app.
 </div>
+
+<script type="text/javascript">
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'ArrowLeft') {
+      window.location.href = '{{'/portfolio/' | url}}'
+    }
+
+    if (event.key === 'ArrowRight') {
+      window.location.href = '{{'/about/' | url}}'
+    }
+  });
+</script>
