@@ -1,5 +1,8 @@
 ---
 layout: layouts/portfolio.html
+prev: '/'
+next: '/doodles/'
+enter: '/portfolio/emma/'
 ---
 
 <div class="flex">
@@ -15,15 +18,3 @@ layout: layouts/portfolio.html
     {% endfor -%}
   </div>
 </div>
-
-<script type="text/javascript">
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowLeft') {
-      window.location.href = '{{'/' | url}}'
-    }
-
-    if (event.key === 'ArrowRight') {
-      window.location.href = '{{'/doodles/' | url}}'
-    }
-  });
-</script>

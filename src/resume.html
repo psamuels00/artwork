@@ -1,6 +1,8 @@
 ---
 title: "Perrin's Resume"
 layout: 'layouts/page.html'
+prev: '/about/'
+next: '/nightmare/'
 ---
 
 <div class="bg-gray-100 mt-6 py-6 text-center">
@@ -114,15 +116,3 @@ layout: 'layouts/page.html'
   </div>
 
 </div>
-
-<script type="text/javascript">
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowLeft') {
-      window.location.href = '{{'/about/' | url}}'
-    }
-
-    if (event.key === 'ArrowRight') {
-      window.location.href = '{{'/nightmare/' | url}}'
-    }
-  });
-</script>

@@ -85,12 +85,21 @@ permalink: "portfolio/{{ project.name | slug }}/"
 
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      window.location.href = '{{'/portfolio/' | url}}'
+    }
+
+    if (event.key === 'Enter') {
+      window.location.href = '{{'/' | url}}portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt}}/'
+    }
+
     if (event.key === 'ArrowLeft') {
-      window.location.href = '{{'/' | url}}'
+      window.location.href = '{{'/' | url}}portfolio/{{project.prev | slug}}/'
     }
 
     if (event.key === 'ArrowRight') {
-      window.location.href = '{{'/doodles/' | url}}'
+      window.location.href = '{{'/' | url}}portfolio/{{project.next | slug}}/'
     }
   });
 </script>

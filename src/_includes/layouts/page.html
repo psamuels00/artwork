@@ -101,3 +101,32 @@ layout: 'layouts/base.html'
     {% endif %}
   </div>
 </footer>
+
+<script type="text/javascript">
+  document.addEventListener('keydown', function (event) {
+    {% if escape %}
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        window.location.href = '{{escape | url}}'
+      }
+    {% endif %}
+
+    {% if enter %}
+      if (event.key === 'Enter') {
+        window.location.href = '{{enter | url}}'
+      }
+    {% endif %}
+
+    {% if prev %}
+      if (event.key === 'ArrowLeft') {
+        window.location.href = '{{prev | url}}'
+      }
+    {% endif %}
+
+    {% if next %}
+      if (event.key === 'ArrowRight') {
+        window.location.href = '{{next | url}}'
+      }
+    {% endif %}
+  });
+</script>

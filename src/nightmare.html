@@ -1,6 +1,8 @@
 ---
 title: "Perrin's Country's Nightmare"
 layout: 'layouts/page.html'
+prev: '/resume/'
+next: '/'
 ---
 
 <div class="max-w-4xl min-w-fit mx-auto">
@@ -19,15 +21,3 @@ layout: 'layouts/page.html'
     </div>
   </div>
 </div>
-
-<script type="text/javascript">
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowLeft') {
-      window.location.href = '{{'/resume/' | url}}'
-    }
-
-    if (event.key === 'ArrowRight') {
-      window.location.href = '{{'/' | url}}'
-    }
-  });
-</script>
