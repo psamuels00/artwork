@@ -37,7 +37,7 @@
 
     <!-- mobile menu -->
     <div class="mobile-menu hidden text-center">
-      <a href="/artwork/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-y border-gray-200">Home</a>
+      <a href="/artwork/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 bg-stone-300 border-y border-gray-200">Home</a>
       <a href="/artwork/portfolio/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-b border-gray-200">Portfolio</a>
       <a href="/artwork/doodles/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-b border-gray-200">Doodles</a>
       <a href="/artwork/about/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100  border-b border-gray-200">About</a>
@@ -61,7 +61,7 @@
     <div class="min-w-fit mx-auto">
       <div class="flex justify-center">
         <div class="flex text-sm font-extralight"><!--
-          --><a href="/artwork/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">Home</a><!--
+          --><a href="/artwork/" class="py-1 px-4 bg-stone-300 transition-colors duration-300 hover:bg-stone-200">Home</a><!--
           --><a href="/artwork/portfolio/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">Portfolio</a><!--
           --><a href="/artwork/doodles/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">Doodles</a><!--
           --><a href="/artwork/about/" class="py-1 px-4  transition-colors duration-300 hover:bg-stone-200">About</a><!--
@@ -188,6 +188,25 @@
   </div>
 </footer>
 
+<script type="text/javascript">
+  document.addEventListener('keydown', function (event) {
+    
+
+    
+
+    
+      if (event.key === 'ArrowLeft') {
+        window.location.href = '/artwork/nightmare/'
+      }
+    
+
+    
+      if (event.key === 'ArrowRight') {
+        window.location.href = '/artwork/portfolio/'
+      }
+    
+  });
+</script>
       
     </div>
 
