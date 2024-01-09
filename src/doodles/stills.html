@@ -10,8 +10,8 @@ category: 'Stills'
     'MiniVersionOfTheOnion'
   ] %}
   {% for name in image_names %}
-    <a href="{{('/doodles/stills/' + name) | url}}/">
-      <img class="sm:my-0 my-8 hover:brightness-90" src="{{'/images/' | url}}doodles/categories/stills/{{name}}.jpg"/>
+    <a href="/doodles/stills/{{name}}/">
+      <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/stills/{{name}}.jpg"/>
     </a>
   {% endfor %}
 </div>

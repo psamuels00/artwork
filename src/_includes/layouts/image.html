@@ -2,8 +2,9 @@
 layout: 'layouts/base.html'
 ---
 
+
 <div class="flex flex-col h-screen">
-  <a href="{{('/doodles/' + category + '/') | url}}">
+  <a href="/doodles/{{category}}/">
     <div class="flex justify-between items-center p-2 hover:bg-stone-100">
       <!-- Empty space, same width as "X" -->
       <svg width="48" height="48" />
@@ -20,22 +21,22 @@ layout: 'layouts/base.html'
   </a>
 
   <div class="flex mx-auto">
-    <a href="{{first | url}}">
+    <a href="{{first}}">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if prev === '' %}opacity-50 cursor-not-allowed{% endif %}">
         First
       </button>
     </a>
-    <a href="{{prev | url}}">
+    <a href="{{prev}}">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if prev === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Prev
       </button>
     </a>
-    <a href="{{next | url}}">
+    <a href="{{next}}">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if next === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Next
       </button>
     </a>
-    <a href="{{last | url}}">
+    <a href="{{last}}">
       <button class="hover:bg-stone-200 text-stone-800 py-2 px-3 {% if next === '' %}opacity-50 cursor-not-allowed{% endif %}">
         Last
       </button>
@@ -47,7 +48,7 @@ layout: 'layouts/base.html'
   </div>
 
   <div class="flex-grow mx-auto">
-    <img class="p-2 sm:w-3/4 md:w-1/2 mx-auto" src="{{('/images/' + curr) | url}}"/>
+    <img class="p-2 sm:w-3/4 md:w-1/2 mx-auto" src="/images/{{curr}}"/>
   </div>
 </div>
 

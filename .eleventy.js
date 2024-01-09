@@ -1,9 +1,14 @@
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+
 module.exports = config => {
+  // copy files
   config.addPassthroughCopy('src/images/');
   config.addPassthroughCopy({
     'global.out.css': 'global.css',
   });
 
+  // manage URLs
+  config.addPlugin(EleventyHtmlBasePlugin);
   config.addFilter('rmFileExt', value => {
     return value.replace(/\..+$/, '');
   });

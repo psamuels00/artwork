@@ -7,8 +7,8 @@ layout: 'layouts/base.html'
   <div class="lg:hidden">
     <!-- logo and 🍔 menu button -->
     <div class="flex justify-between items-center m-4">
-      <a href="{{'/' | url}}">
-        <img src="{{'/images/home/PerrinLogo.png' | url}}" style="width: 80px" />
+      <a href="/">
+        <img src="/images/home/PerrinLogo.png" style="width: 80px" />
       </a>
       <div class="flex">
         {% set is_top_level_page = page.url.split('/').length < 4 %}
@@ -16,8 +16,7 @@ layout: 'layouts/base.html'
           <div class="p-2 text-lg">{{ page.url.split('/')[1] | title }}</div>
         {% else %}
           <div class="p-2 hover:bg-stone-100">
-            {% set href = '/' + page.url.split('/')[1] + '/' %}
-            <a href="{{ href | url }}">
+            <a href="/{{page.url.split('/')[1]}}/">
               <div class="text-lg">{{ page.url.split('/')[1] | title }}</div>
             </a>
           </div>
@@ -33,12 +32,12 @@ layout: 'layouts/base.html'
 
     <!-- mobile menu -->
     <div class="mobile-menu hidden text-center">
-      <a href="{{'/' | url}}" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if site.data.pathPrefix == page.url %}bg-stone-300{% endif %} border-y border-gray-200">Home</a>
-      <a href="{{'/portfolio/' | url}}" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/portfolio/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Portfolio</a>
-      <a href="{{'/doodles/' | url}}" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/doodles/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Doodles</a>
-      <a href="{{'/about/' | url}}" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/about/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">About</a>
-      <a href="{{'/resume/' | url}}" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/resume/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Resume</a>
-      <a href="{{'/nightmare/' | url}}" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/nightmare/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Nightmare</a>
+      <a href="/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if site.data.pathPrefix == page.url %}bg-stone-300{% endif %} border-y border-gray-200">Home</a>
+      <a href="/portfolio/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/portfolio/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Portfolio</a>
+      <a href="/doodles/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/doodles/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Doodles</a>
+      <a href="/about/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/about/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">About</a>
+      <a href="/resume/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/resume/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Resume</a>
+      <a href="/nightmare/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/nightmare/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Nightmare</a>
     </div>
   </div>
 
@@ -46,8 +45,8 @@ layout: 'layouts/base.html'
     <!-- logo and divider -->
     <div class="min-w-fit mx-auto mt-2">
       <div class="flex justify-center">
-        <a href="{{'/' | url}}">
-          <img src="{{'/images/home/PerrinLogo.png' | url}}" style="width: 100px" />
+        <a href="/">
+          <img src="/images/home/PerrinLogo.png" style="width: 100px" />
         </a>
       </div>
       <div class="max-w-4xl mx-auto border-b border-gray-900 my-2"></div>
@@ -57,12 +56,12 @@ layout: 'layouts/base.html'
     <div class="min-w-fit mx-auto">
       <div class="flex justify-center">
         <div class="flex text-sm font-extralight"><!--
-          --><a href="{{'/' | url}}" class="py-1 px-4 {% if site.data.pathPrefix == page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Home</a><!--
-          --><a href="{{'/portfolio/' | url}}" class="py-1 px-4 {% if '/portfolio/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Portfolio</a><!--
-          --><a href="{{'/doodles/' | url}}" class="py-1 px-4 {% if '/doodles/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Doodles</a><!--
-          --><a href="{{'/about/' | url}}" class="py-1 px-4 {% if '/about/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">About</a><!--
-          --><a href="{{'/resume/' | url}}" class="py-1 px-4 {% if '/resume/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Resume</a><!--
-          --><a href="{{'/nightmare/' | url}}" class="py-1 px-4 {% if '/nightmare/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Nightmare</a>
+          --><a href="/" class="py-1 px-4 {% if site.data.pathPrefix == page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Home</a><!--
+          --><a href="/portfolio/" class="py-1 px-4 {% if '/portfolio/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Portfolio</a><!--
+          --><a href="/doodles/" class="py-1 px-4 {% if '/doodles/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Doodles</a><!--
+          --><a href="/about/" class="py-1 px-4 {% if '/about/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">About</a><!--
+          --><a href="/resume/" class="py-1 px-4 {% if '/resume/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Resume</a><!--
+          --><a href="/nightmare/" class="py-1 px-4 {% if '/nightmare/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Nightmare</a>
         </div>
       </div>
     </div>
