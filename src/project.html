@@ -85,12 +85,12 @@ permalink: "portfolio/{{ project.name | slug }}/"
 
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' || event.key === 'ArrowUp') {
       event.preventDefault();
       window.location.href = '{{'/portfolio/' | url}}'
     }
 
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === 'ArrowDown') {
       window.location.href = '{{'/' | url}}portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt}}/'
     }
 

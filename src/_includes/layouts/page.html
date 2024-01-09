@@ -105,14 +105,14 @@ layout: 'layouts/base.html'
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
     {% if escape %}
-      if (event.key === 'Escape') {
+      if (event.key === 'Escape' || event.key === 'ArrowUp') {
         event.preventDefault();
         window.location.href = '{{escape | url}}'
       }
     {% endif %}
 
     {% if enter %}
-      if (event.key === 'Enter') {
+      if (event.key === 'Enter' || event.key === 'ArrowDown') {
         window.location.href = '{{enter | url}}'
       }
     {% endif %}
