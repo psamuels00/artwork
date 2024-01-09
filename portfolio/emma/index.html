@@ -334,12 +334,12 @@
 
 <script type="text/javascript">
   document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape') {
+    if (event.key === 'Escape' || event.key === 'ArrowUp') {
       event.preventDefault();
       window.location.href = '/artwork/portfolio/'
     }
 
-    if (event.key === 'Enter') {
+    if (event.key === 'Enter' || event.key === 'ArrowDown') {
       window.location.href = '/artwork/portfolio/emma/EmmaSittingRelaxedAttentive-12-final-framed/'
     }
 
