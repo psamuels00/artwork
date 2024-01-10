@@ -65,7 +65,7 @@ after making formatting changes to one of the files that is parsed.
 **Rewrite to fully embrace Tailwind**
 - rewrite the home page to make it more DRY
 - update the doodles main page to simplify the markup and improve spacing for mobile
-- Eliminate this: {% set totalHack = (project.name == 'The Onion') ? 'w-2/3' : '' %}
+- eliminate the "totalHack" in portfolio.html
 
 **Restructure**
 - move PerrinLogo.png to src/images/meta and remove src/images/home/*

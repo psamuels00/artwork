@@ -8,7 +8,17 @@ enter: '/portfolio/emma/'
 <div class="flex w-full">
   <div class="flex flex-col gap-8 md:grid md:grid-cols-3">
     {% for project in projects.structured %}
-      {% set totalHack = (project.name == 'The Onion') ? 'w-2/3' : '' %}
+
+      {% set totalHack = '' %}
+      {% if project.name === 'The Onion' %}
+        {% set totalHack = 'w-2/3' %}
+      {% endif %}
+      {#
+         BTW, this is actually a hack upon a hack because the following preferred hack,
+         using the ternary operator, causes a TemplateContentRenderError!? 🙁
+         {% set totalHack = ((project.name === 'The Onion') ? 'w-2/3' : '') %}
+      #}
+
       <figure class="mx-auto {{totalHack}}">
         <a href="/portfolio/{{project.name | slug}}/">
           <img class="hover:brightness-90"
