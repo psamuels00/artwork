@@ -1,3 +1,12 @@
+shave_sides() {
+    convert $7 $5 \
+        -gravity North -chop 0x$1 \
+        -gravity East -chop $2x0 \
+        -gravity South -chop 0x$3 \
+        -gravity West -chop $4x0 \
+        $6
+}
+
 # logo
 convert -resize 200x ../perrins-art/02-Portfolio/03-TheDemo/PerrinLogo/PerrinLogo.png src/images/home/PerrinLogo.png
 
@@ -27,7 +36,7 @@ cp ../perrins-art/02-Portfolio/05-BeachBoardwalk/*.jpg src/images/portfolio/Beac
 
 # portfolio - DesertFlower
 mkdir src/images/portfolio/DesertFlower
-convert -quality 20 ../perrins-art/02-Portfolio/04-DesertFlower/ColorWheelDesertFlower-01-final.heic src/images/portfolio/DesertFlower/ColorWheelDesertFlower-01-final.jpg
+shave_sides 60 140 25 70 ../perrins-art/02-Portfolio/04-DesertFlower/ColorWheelDesertFlower-01-final.heic src/images/portfolio/DesertFlower/ColorWheelDesertFlower-01-final.jpg '-quality 20'
 
 # portfolio - TheDemo
 mkdir src/images/portfolio/TheDemo
@@ -35,16 +44,20 @@ cp ../perrins-art/02-Portfolio/03-TheDemo/*.jpeg src/images/portfolio/TheDemo
 for x in src/images/portfolio/TheDemo/*.jpeg; do mv $x ${x%.jpeg}.jpg; done
 rm src/images/portfolio/TheDemo/06-DummyHead.jpg
 rm src/images/portfolio/TheDemo/08-Dummy2Head.jpg
+shave_sides 70 40 110 20 ../perrins-art/02-Portfolio/03-TheDemo/02-PaintingFull.jpeg \
+    src/images/portfolio/TheDemo/02-PaintingFull.jpg
 
 # portfolio - Dolphin
 mkdir src/images/portfolio/Dolphin
 cp ../perrins-art/02-Portfolio/02-Dolphin/*.jpeg src/images/portfolio/Dolphin
 for x in src/images/portfolio/Dolphin/*.jpeg; do mv $x ${x%.jpeg}.jpg; done
+cp ../perrins-art/02-Portfolio/02-Dolphin/*.png src/images/portfolio/Dolphin
 
 # portfolio - TheOnion
 mkdir src/images/portfolio/TheOnion
 cp ../perrins-art/02-Portfolio/01-TheOnion/*.jpeg src/images/portfolio/TheOnion
 for x in src/images/portfolio/TheOnion/*.jpeg; do mv $x ${x%.jpeg}.jpg; done
+cp ../perrins-art/02-Portfolio/01-TheOnion/01-RedOnion.png src/images/portfolio/TheOnion
 
 # portfolio - StarryNight
 mkdir src/images/portfolio/StarryNight

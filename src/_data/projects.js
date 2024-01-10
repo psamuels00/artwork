@@ -9,6 +9,7 @@ const projects = [
     location: 'Concord, CA',
     medium: 'Acrylic on copy paper, coated with gesso',
     dimensions: '11 x 8½ inches',
+    background: '#FEF9E7',
     images: [
       'EmmaSittingRelaxedAttentive-12-final-framed.jpg',
       'EmmaSittingRelaxedAttentive-02-photo.jpg',
@@ -35,6 +36,8 @@ const projects = [
     location: 'Mission District, San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     dimensions: '34 x 24½ inches',
+    background: 'silver',
+    //background: '#AAB7B8',
     images: [
       '02-PaintingFull.jpg',
       '01-OriginalPhoto.jpg',
@@ -63,8 +66,9 @@ const projects = [
     location: 'San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     dimensions: '16 x 12 inches',
+    background: '#5DADE2',
     images: [
-      '02-TheDolphin.jpg',
+      '02-TheDolphin.png',
       '01-TheArtistAndTheDolphin.jpg',
       '03-TheDolphinCropped.jpg',
     ],
@@ -78,6 +82,7 @@ const projects = [
     location: 'Concord, CA',
     medium: 'Acrylic paint on cheap, glossy product paper',
     dimensions: '16 x 12 inches',
+    background: '#FFD580',
     images: [
       'Backyard-09-finished-cropped.jpg',
       'Backyard-05-ref-photo.jpg',
@@ -97,8 +102,9 @@ const projects = [
     location: 'San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     dimensions: '70 x 46 inches',
+    background: '#A95C68',
     images: [
-      '01-RedOnion.jpg',
+      '01-RedOnion.png',
       '03-TheArtistAndRedOnion.jpg',
       '04-RedOnionFullWall.jpg',
       '02-RedOnionCloseUp.jpg',
@@ -111,9 +117,10 @@ const projects = [
                  'holding a paintbrush with black paint, and staring at my wallpaper image of the famous Cypresses.',
     category: 'Landscape painting',
     date: '2013',
-    location: 'Concord, CA',
+    location: 'San Francisco, CA',
     medium: 'Acrylic black on untreated copy paper.',
     dimensions: '11 x 8½ inches',
+    background: '#DAA520',
     images: [
       '01-StarryStarryNight.jpg',
     ],
@@ -127,6 +134,7 @@ const projects = [
     location: 'Concord, CA',
     medium: 'Pencil on baking parchment paper',
     dimensions: '24 x 16 inches',
+    background: '#C2B280',
     images: [
       'BeachBoardwalkSketch-02-bench.jpg',
       'BeachBoardwalkSketch-03-barge.jpg',
@@ -145,6 +153,7 @@ const projects = [
     location: 'Concord, CA',
     medium: 'Acrylic on copy paper, coated with gesso',
     dimensions: '11 x 8½ inches',
+    background: '#8A9A5B',
     images: [
       'ColorWheelDesertFlower-01-final.jpg',
     ],

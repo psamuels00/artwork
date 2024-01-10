@@ -43,7 +43,8 @@ after making formatting changes to one of the files that is parsed.
 ## TODO
 
 ### High priority
-_none_
+- eliminate cursor-not-allowed on doodles image page since disabled next/prev
+  are not right, and it doesn't work at all for mobile
 
 ### Medium priority
 - redesign image page navigation so fingers do not cover image to reach controls
@@ -64,13 +65,13 @@ _none_
 **Rewrite to fully embrace Tailwind**
 - rewrite the home page to make it more DRY
 - update the doodles main page to simplify the markup and improve spacing for mobile
+- Eliminate this: {% set totalHack = (project.name == 'The Onion') ? 'w-2/3' : '' %}
 
 **Restructure**
 - move PerrinLogo.png to src/images/meta and remove src/images/home/*
 - eliminate the categories directory in /images/doodles/categories/*
 
 **UI design**
-- eliminate cursor-not-allowed on doodles image page since it doesn't work for mobile
 - the "X" to leave image page always goes to top of previous page
 - overall more consistency with the break points: sm, md, lg
 - add floating button to quickly jump to top of any long page
