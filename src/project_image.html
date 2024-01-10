@@ -51,8 +51,9 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
     {{ item.image | cleanupHack | rmFileExt | replace(r/([a-z])([A-Z])/g, "$1 $2")}}
   </div>
 
-  <div class="flex-grow mx-auto">
-    <img class="p-2 Xsm:w-3/4 Xmd:w-1/2 mx-auto" src="/images/portfolio/{{item.name | replace(' ', '')}}/{{item.image}}"/>
+  <div class="h-full" style="height: calc(100% - 144px)">
+    <img class="object-scale-down h-full m-auto"
+         src="/images/portfolio/{{item.name | replace(' ', '')}}/{{item.image}}"/>
   </div>
 </div>
 

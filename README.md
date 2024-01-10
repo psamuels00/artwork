@@ -43,10 +43,11 @@ after making formatting changes to one of the files that is parsed.
 ## TODO
 
 ### High priority
-- ensure fully contained image on image pages, also first project image
+_none_
 
 ### Medium priority
 - redesign image page navigation so fingers do not cover image to reach controls
+- ensure top image on project page fits on screen fully
 
 ### Low priority
 
