@@ -102,34 +102,36 @@ layout: 'layouts/base.html'
   </div>
 </footer>
 
-<script type="text/javascript">
-  document.addEventListener('keydown', function (event) {
-    {% if escape %}
-      if (event.key === 'Escape' || event.key === 'ArrowUp') {
-        event.preventDefault();
-        window.location.href = '{{escape | url}}'
-      }
-    {% endif %}
+{% if escape or enter or prev or next %}
+  <script type="text/javascript">
+    document.addEventListener('keydown', function (event) {
+      {% if escape %}
+        if (event.key === 'Escape' || event.key === 'ArrowUp') {
+          event.preventDefault();
+          window.location.href = '{{escape | url}}'
+        }
+      {% endif %}
 
-    {% if enter %}
-      if (event.key === 'Enter' || event.key === 'ArrowDown') {
-        event.preventDefault();
-        window.location.href = '{{enter | url}}'
-      }
-    {% endif %}
+      {% if enter %}
+        if (event.key === 'Enter' || event.key === 'ArrowDown') {
+          event.preventDefault();
+          window.location.href = '{{enter | url}}'
+        }
+      {% endif %}
 
-    {% if prev %}
-      if (event.key === 'ArrowLeft') {
-        event.preventDefault();
-        window.location.href = '{{prev | url}}'
-      }
-    {% endif %}
+      {% if prev %}
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          window.location.href = '{{prev | url}}'
+        }
+      {% endif %}
 
-    {% if next %}
-      if (event.key === 'ArrowRight') {
-        event.preventDefault();
-        window.location.href = '{{next | url}}'
-      }
-    {% endif %}
-  });
-</script>
+      {% if next %}
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          window.location.href = '{{next | url}}'
+        }
+      {% endif %}
+    });
+  </script>
+{% endif %}
