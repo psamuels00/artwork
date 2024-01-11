@@ -81,4 +81,5 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
       }
     {% endif %}
   });
+  document.body.classList.add('{{item.bg_color_page}}');
 </script>

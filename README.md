@@ -26,6 +26,17 @@ To build the pages and serve them up during development, run the following comma
 
 Then access the site at http://localhost:8080.
 
+
+## Data-driven Colors for Project Pages
+
+Each portfolio project has an associated color, namely for the page background.
+These are not recognized by Tailwind.  As a workaround, a bogus file named
+project_colors.html is maintained with a reference to each color that is
+referenced in _data/projects.js.
+
+There must be a better way to handle colors referenced only in a data file.
+
+
 ## Generated Doodle Image Pages
 
 _In retrospect, this can be done using 11ty pagination and should be removed.  See TODO._
@@ -42,9 +53,16 @@ after making formatting changes to one of the files that is parsed.
 
 ## TODO
 
-### High priority
+### Final Touches
+- add onion to home page
+- add support for swipe-left and swipe-right
 - eliminate cursor-not-allowed on doodles image page since disabled next/prev
   are not right, and it doesn't work at all for mobile
+- add Next/Prev buttons to bottom of project page
+- <div class="h-[calc(100%-144px)]">
+
+### High priority
+_None_
 
 ### Medium priority
 - redesign image page navigation so fingers do not cover image to reach controls
@@ -66,10 +84,13 @@ after making formatting changes to one of the files that is parsed.
 - rewrite the home page to make it more DRY
 - update the doodles main page to simplify the markup and improve spacing for mobile
 - eliminate the "totalHack" in portfolio.html
+- Eliminate the need for project_colors.html.
+  But how?... Maybe using @apply in a custom style sheet??
 
 **Restructure**
 - move PerrinLogo.png to src/images/meta and remove src/images/home/*
 - eliminate the categories directory in /images/doodles/categories/*
+- try moving project.html, project_image.html, and project_colors.html to portfolio/
 
 **UI design**
 - the "X" to leave image page always goes to top of previous page

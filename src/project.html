@@ -7,66 +7,59 @@ pagination:
 permalink: "portfolio/{{ project.name | slug }}/"
 ---
 
-<div class="flex justify-center my-4 mb-4 md:mb-8 lg:my-8">
+<div class="flex justify-center my-4">
   <a href="/portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt}}/">
     <img class="hover:brightness-90"
          src="/images/portfolio/{{project.name.replace(' ', '')}}/{{project.images[0]}}"/>
   </a>
 </div>
 
-<div class="hidden info-box-show flex flex-col hover:bg-stone-100 md:my-3 lg:mb-6 py-2 px-4 rounded-lg">
-  <button class="info-button-show flex justify-end hover:bg-stone-100">
-    Show Info
-  </button>
-</div>
+<div class="flex flex-col">
 
-<div class="info-box flex flex-col bg-stone-100 md:my-3 lg:mb-6 py-2 px-4 rounded-lg">
-  <button class="info-button flex justify-end hover:bg-stone-100">
-    Hide Info
-  </button>
-  {% set fields = [
-    ['title', 'title'],
-    ['description', 'descr'],
-    ['category', 'category'],
-    ['date', 'date'],
-    ['location', 'location'],
-    ['medium', 'medium'],
-    ['dimensions', 'size']
-  ] %}
+  <div class="flex">
+    <button id="hide-info" class="ml-auto py-2 px-3 {{project.bg_color_button}}">
+      Hide Info
+    </button>
+    <button id="show-info" class="ml-auto py-2 px-3 {{project.bg_color_button}} hidden">
+      Show Info
+    </button>
+  </div>
 
-  {% for field in fields %}
-    <div class="hidden my-1 sm:flex flex-row gap-3">
-      <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">{{field[0] | title}}:</p>
-      <p class="w-3/4 md:w-2/3 mb-1 text-left">{{project[field[0]]}}</p>
-    </div>
-  {% endfor %}
+  <div id="info-box" class="flex flex-col mt-2 sm:mb-2">
+    {% set fields = [
+      ['title', 'title'],
+      ['description', 'descr'],
+      ['category', 'category'],
+      ['date', 'date'],
+      ['location', 'location'],
+      ['medium', 'medium'],
+      ['dimensions', 'size']
+    ] %}
 
-  {% for field in fields %}
-    <div class="sm:hidden my-1 flex flex-row gap-3">
-      <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">{{field[1] | title}}:</p>
-      <p class="w-3/4 md:w-2/3 mb-1 text-left">{{project[field[0]]}}</p>
-    </div>
-  {% endfor %}
+    {% for field in fields %}
+      <div class="my-1 flex flex-row gap-3">
+        <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">{{field[1] | title}}:</p>
+        <p class="w-3/4 md:w-2/3 mb-1 text-left">{{project[field[0]]}}</p>
+      </div>
+    {% endfor %}
+  </div>
 
 </div>
 
 <script type="text/javascript">
   (function() {
-    const btn = document.querySelector("button.info-button");
-    const info = document.querySelector(".info-box");
+    const hideBtn = document.getElementById('hide-info');
+    const showBtn = document.getElementById('show-info');
+    const infoBox = document.getElementById('info-box');
 
-    btn.addEventListener("click", () => {
-      info.classList.toggle("hidden");
-      info_show.classList.toggle("hidden");
-    });
+    function toggleInfoBox() {
+      infoBox.classList.toggle("hidden");
+      showBtn.classList.toggle("hidden");
+      hideBtn.classList.toggle("hidden");
+    }
 
-    const btn_show = document.querySelector("button.info-button-show");
-    const info_show = document.querySelector(".info-box-show");
-
-    btn_show.addEventListener("click", () => {
-      info.classList.toggle("hidden");
-      info_show.classList.toggle("hidden");
-    });
+    hideBtn.addEventListener("click", toggleInfoBox);
+    showBtn.addEventListener("click", toggleInfoBox);
   })()
 </script>
 
@@ -105,5 +98,5 @@ permalink: "portfolio/{{ project.name | slug }}/"
       window.location.href = '{{'/' | url}}portfolio/{{project.next | slug}}/'
     }
   });
-  document.body.style.backgroundColor = '{{project.background}}'
+  document.body.classList.add('{{project.bg_color_page}}');
 </script>
