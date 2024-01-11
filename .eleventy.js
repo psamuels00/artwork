@@ -6,6 +6,9 @@ module.exports = config => {
   config.addPassthroughCopy({
     'global.out.css': 'global.css',
   });
+  config.addPassthroughCopy({
+    'src/_includes/js/': 'js/',
+  });
 
   // manage URLs
   config.addPlugin(EleventyHtmlBasePlugin);

@@ -54,11 +54,12 @@ after making formatting changes to one of the files that is parsed.
 ## TODO
 
 ### Final Touches
-- add support for swipe-left and swipe-right
+- add support for swipe-left and swipe-right on single image pages
 - eliminate cursor-not-allowed on doodles image page since disabled next/prev
   are not right, and it doesn't work at all for mobile
 - add Next/Prev buttons to bottom of project page
 - <div class="h-[calc(100%-144px)]">
+- Some images on project single image pages are aligned too low on iPhone
 
 ### High priority
 _None_
