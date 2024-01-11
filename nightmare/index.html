@@ -88,7 +88,7 @@
 <div class="main_content">
   
     
-<div class="max-w-4xl min-w-fit mx-auto">
+<div id="swipeable" class="max-w-4xl min-w-fit mx-auto">
   <div class="flex flex-col items-center px-4">
     <img class="mt-16 mb-8" src="/artwork/images/nightmare/trump-fraud.jpg">
     <div class="flex flex-col lg:flex-row gap-x-2 text-xs text-blue-400 text-center">
@@ -121,24 +121,36 @@
 
 
   <script type="text/javascript">
+    function gotoPrev(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/resume/'
+      
+    }
+
+    function gotoNext(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/'
+      
+    }
+
+    
+      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+    
+
     document.addEventListener('keydown', function (event) {
       
 
       
 
-      
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          window.location.href = '/artwork/resume/'
-        }
-      
+      if (event.key === 'ArrowLeft') {
+        gotoPrev(event);
+      }
 
-      
-        if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          window.location.href = '/artwork/'
-        }
-      
+      if (event.key === 'ArrowRight') {
+        gotoNext(event);
+      }
     });
   </script>
 

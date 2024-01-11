@@ -60,7 +60,7 @@
     Curlies Texture
   </div>
 
-  <div id="the_image" style="height: calc(100% - 144px)">
+  <div id="swipeable" style="height: calc(100% - 144px)">
     <img class="p-1 sm:p-2 lg:p-4 object-scale-down h-full mx-auto" src="/artwork/images/doodles/categories/textures/CurliesTexture.jpg">
   </div>
   <div class="h-screen"></div>
@@ -68,15 +68,21 @@
 </div>
 
 <script type="text/javascript">
-  function gotoPrev() {
-    event.preventDefault();
-    window.location.href = '../AlgaeTexture/'
+  function gotoPrev(event) {
+    
+      event.preventDefault();
+      window.location.href = '../AlgaeTexture/'
+    
   }
 
-  function gotoNext() {
-    event.preventDefault();
-    window.location.href = '../PeasTexture/'
+  function gotoNext(event) {
+    
+      event.preventDefault();
+      window.location.href = '../PeasTexture/'
+    
   }
+
+  swipeLeftRight('swipeable', gotoPrev, gotoNext);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {
@@ -84,37 +90,16 @@
         window.location.href = '../'
     }
 
-    
-      if (event.key === 'ArrowLeft') {
-        gotoPrev();
-      }
-    
-
-    
-      if (event.key === 'ArrowRight') {
-        gotoNext();
-      }
-    
-  });
-
-  
-    function dispatchSwipe(el, direction) {
-      
-        if (direction === 'r') {
-          gotoPrev();
-        }
-      
-
-      
-        if (direction === 'l') {
-          gotoNext();
-        }
-      
+    if (event.key === 'ArrowLeft') {
+      gotoPrev(event);
     }
 
-    detectSwipe('the_image', dispatchSwipe);
-  
+    if (event.key === 'ArrowRight') {
+      gotoNext(event);
+    }
+  });
 </script>
+
       
     </div>
 

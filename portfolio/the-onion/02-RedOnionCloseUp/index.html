@@ -59,7 +59,7 @@
     Red Onion Close Up
   </div>
 
-  <div id="the_image" style="height: calc(100% - 144px)">
+  <div id="swipeable" style="height: calc(100% - 144px)">
     <img class="p-1 sm:p-2 lg:p-4 object-scale-down h-full mx-auto" src="/artwork/images/portfolio/TheOnion/02-RedOnionCloseUp.jpg">
   </div>
   <div class="h-screen"></div>
@@ -67,15 +67,18 @@
 </div>
 
 <script type="text/javascript">
-  function gotoPrev() {
-    event.preventDefault();
-    window.location.href = '/artwork/portfolio/the-onion/04-RedOnionFullWall/';
+  function gotoPrev(event) {
+    
+      event.preventDefault();
+      window.location.href = '/artwork/portfolio/the-onion/04-RedOnionFullWall/';
+    
   }
 
-  function gotoNext() {
-    event.preventDefault();
-    window.location.href = '/artwork/portfolio/the-onion//';
+  function gotoNext(event) {
+    
   }
+
+  swipeLeftRight('swipeable', gotoPrev, gotoNext);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {
@@ -83,28 +86,14 @@
       window.location.href = '../'
     }
 
-    
-      if (event.key === 'ArrowLeft') {
-        gotoPrev();
-      }
-    
-
-    
-  });
-
-  
-    function dispatchSwipe(el, direction) {
-      
-        if (direction === 'r') {
-          gotoPrev();
-        }
-      
-
-      
+    if (event.key === 'ArrowLeft') {
+      gotoPrev(event);
     }
 
-    detectSwipe('the_image', dispatchSwipe);
-  
+    if (event.key === 'ArrowRight') {
+      gotoNext(event);
+    }
+  });
 
   document.body.classList.add('bg-onion-300');
 </script>

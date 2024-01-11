@@ -155,7 +155,7 @@
   <div class="main_content">
     
       
-<div class="sm:grid grid-cols-3 gap-8">
+<div id="swipeable" class="sm:grid grid-cols-3 gap-8">
   
   
     <a href="/artwork/doodles/people/GeorgeMiniTheDemoSharpOutline/">
@@ -208,6 +208,24 @@
 
 
   <script type="text/javascript">
+    function gotoPrev(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/doodles/outdoors/'
+      
+    }
+
+    function gotoNext(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/doodles/stills/'
+      
+    }
+
+    
+      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+    
+
     document.addEventListener('keydown', function (event) {
       
         if (event.key === 'Escape' || event.key === 'ArrowUp') {
@@ -223,19 +241,13 @@
         }
       
 
-      
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          window.location.href = '/artwork/doodles/outdoors/'
-        }
-      
+      if (event.key === 'ArrowLeft') {
+        gotoPrev(event);
+      }
 
-      
-        if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          window.location.href = '/artwork/doodles/stills/'
-        }
-      
+      if (event.key === 'ArrowRight') {
+        gotoNext(event);
+      }
     });
   </script>
 

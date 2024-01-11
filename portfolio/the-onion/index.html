@@ -92,7 +92,7 @@
 <div class="main_content">
   
     
-<div class="text-center px-8 lg:mt-4">
+<div class="text-center px-2 md:px-4 lg:px-8 lg:mt-4">
 
   <!-- mobile-first, responsive navigation -->
   <nav>
@@ -153,64 +153,85 @@
   <div class="main_content">
     
       
-<div class="flex justify-center my-4">
-  <a href="/artwork/portfolio/the-onion/01-RedOnion/">
-    <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/01-RedOnion.png">
-  </a>
-</div>
-
-<div class="flex flex-col">
-
-  <div class="flex">
-    <button id="hide-info" class="ml-auto py-2 px-3 bg-stone-100 hover:bg-stone-200">
-      Hide Info
-    </button>
-    <button id="show-info" class="ml-auto py-2 px-3 bg-stone-100 hover:bg-stone-200 hidden">
-      Show Info
-    </button>
+<div id="swipeable">
+  <div class="flex justify-center my-4">
+    <a href="/artwork/portfolio/the-onion/01-RedOnion/">
+      <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/01-RedOnion.png">
+    </a>
   </div>
 
-  <div id="info-box" class="flex flex-col mt-2 sm:mb-2">
-    
+  <div class="flex flex-col">
+    <div class="flex">
+      <button id="hide-info" class="ml-auto py-2 px-3 bg-stone-100 hover:bg-stone-200">
+        Hide Info
+      </button>
+      <button id="show-info" class="ml-auto py-2 px-3 bg-stone-100 hover:bg-stone-200 hidden">
+        Show Info
+      </button>
+    </div>
 
-    
+    <div id="info-box" class="flex flex-col mt-2 sm:mb-2">
+      
+
+      
       <div class="my-1 flex flex-row gap-3">
         <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">Title:</p>
         <p class="w-3/4 md:w-2/3 mb-1 text-left">The Onion</p>
       </div>
-    
+      
       <div class="my-1 flex flex-row gap-3">
         <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">Descr:</p>
         <p class="w-3/4 md:w-2/3 mb-1 text-left">My first painting, a product of Covid lockdown and the need to express myself.</p>
       </div>
-    
+      
       <div class="my-1 flex flex-row gap-3">
         <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">Category:</p>
         <p class="w-3/4 md:w-2/3 mb-1 text-left">Still life painting</p>
       </div>
-    
+      
       <div class="my-1 flex flex-row gap-3">
         <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">Date:</p>
         <p class="w-3/4 md:w-2/3 mb-1 text-left">2020</p>
       </div>
-    
+      
       <div class="my-1 flex flex-row gap-3">
         <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">Location:</p>
         <p class="w-3/4 md:w-2/3 mb-1 text-left">San Francisco, CA</p>
       </div>
-    
+      
       <div class="my-1 flex flex-row gap-3">
         <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">Medium:</p>
         <p class="w-3/4 md:w-2/3 mb-1 text-left">Acrylic paint on thin, roll paper, covered with gesso.</p>
       </div>
-    
+      
       <div class="my-1 flex flex-row gap-3">
         <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">Size:</p>
         <p class="w-3/4 md:w-2/3 mb-1 text-left">70 x 46 inches</p>
       </div>
-    
+      
+    </div>
   </div>
 
+  <div class="flex">
+    <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
+      
+      
+      
+      <a href="/artwork/portfolio/the-onion/03-TheArtistAndRedOnion/">
+        <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/03-TheArtistAndRedOnion.jpg">
+      </a>
+      
+      
+      <a href="/artwork/portfolio/the-onion/04-RedOnionFullWall/">
+        <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/04-RedOnionFullWall.jpg">
+      </a>
+      
+      
+      <a href="/artwork/portfolio/the-onion/02-RedOnionCloseUp/">
+        <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/02-RedOnionCloseUp.jpg">
+      </a>
+      </div>
+  </div>
 </div>
 
 <script type="text/javascript">
@@ -230,28 +251,19 @@
   })()
 </script>
 
-<div class="flex">
-  <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
-    
-      
-      
-        <a href="/artwork/portfolio/the-onion/03-TheArtistAndRedOnion/">
-          <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/03-TheArtistAndRedOnion.jpg">
-        </a>
-      
-      
-        <a href="/artwork/portfolio/the-onion/04-RedOnionFullWall/">
-          <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/04-RedOnionFullWall.jpg">
-        </a>
-      
-      
-        <a href="/artwork/portfolio/the-onion/02-RedOnionCloseUp/">
-          <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/02-RedOnionCloseUp.jpg">
-        </a>
-      </div>
-</div>
-
 <script type="text/javascript">
+  function gotoPrev(event) {
+    event.preventDefault();
+    window.location.href = '/artwork/portfolio/backyard-hills/'
+  }
+
+  function gotoNext(event) {
+    event.preventDefault();
+    window.location.href = '/artwork/portfolio/starry-night/'
+  }
+
+  swipeLeftRight('swipeable', gotoPrev, gotoNext);
+
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {
       event.preventDefault();
@@ -264,15 +276,14 @@
     }
 
     if (event.key === 'ArrowLeft') {
-      event.preventDefault();
-      window.location.href = '/artwork/portfolio/backyard-hills/'
+      gotoPrev(event);
     }
 
     if (event.key === 'ArrowRight') {
-      event.preventDefault();
-      window.location.href = '/artwork/portfolio/starry-night/'
+      gotoNext(event);
     }
   });
+
   document.body.classList.add('bg-onion-300');
 </script>
 

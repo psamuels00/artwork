@@ -155,7 +155,7 @@
   <div class="main_content">
     
       
-<div class="sm:grid grid-cols-3 gap-8">
+<div id="swipeable" class="sm:grid grid-cols-3 gap-8">
   
   
     <figure class="sm:my-0 my-8 text-sm font-extralight">
@@ -250,6 +250,24 @@
 
 
   <script type="text/javascript">
+    function gotoPrev(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/doodles/textures/'
+      
+    }
+
+    function gotoNext(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/doodles/abstract/'
+      
+    }
+
+    
+      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+    
+
     document.addEventListener('keydown', function (event) {
       
         if (event.key === 'Escape' || event.key === 'ArrowUp') {
@@ -265,19 +283,13 @@
         }
       
 
-      
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          window.location.href = '/artwork/doodles/textures/'
-        }
-      
+      if (event.key === 'ArrowLeft') {
+        gotoPrev(event);
+      }
 
-      
-        if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          window.location.href = '/artwork/doodles/abstract/'
-        }
-      
+      if (event.key === 'ArrowRight') {
+        gotoNext(event);
+      }
     });
   </script>
 

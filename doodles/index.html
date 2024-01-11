@@ -151,7 +151,7 @@
   <div class="main_content">
     
       
-<div class="max-w-4xl mx-auto text-center">
+<div id="swipeable" class="max-w-4xl mx-auto text-center">
   <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-4 mx-4">
 
     <div class="w-7/12 sm:w-full flex flex-col mx-auto">
@@ -250,6 +250,24 @@
 
 
   <script type="text/javascript">
+    function gotoPrev(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/portfolio/'
+      
+    }
+
+    function gotoNext(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/about/'
+      
+    }
+
+    
+      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+    
+
     document.addEventListener('keydown', function (event) {
       
 
@@ -260,19 +278,13 @@
         }
       
 
-      
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          window.location.href = '/artwork/portfolio/'
-        }
-      
+      if (event.key === 'ArrowLeft') {
+        gotoPrev(event);
+      }
 
-      
-        if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          window.location.href = '/artwork/about/'
-        }
-      
+      if (event.key === 'ArrowRight') {
+        gotoNext(event);
+      }
     });
   </script>
 

@@ -88,7 +88,7 @@
 <div class="main_content">
   
     
-<div class="text-center px-8 lg:mt-4">
+<div class="text-center px-2 md:px-4 lg:px-8 lg:mt-4">
 
   <!-- mobile-first, responsive navigation -->
   <nav>
@@ -149,7 +149,7 @@
   <div class="main_content">
     
       
-<div class="flex w-full">
+<div id="swipeable" class="flex w-full">
   <div class="flex flex-col gap-8 md:grid md:grid-cols-3">
     
 
@@ -272,6 +272,24 @@
 
 
   <script type="text/javascript">
+    function gotoPrev(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/'
+      
+    }
+
+    function gotoNext(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/doodles/'
+      
+    }
+
+    
+      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+    
+
     document.addEventListener('keydown', function (event) {
       
 
@@ -282,19 +300,13 @@
         }
       
 
-      
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          window.location.href = '/artwork/'
-        }
-      
+      if (event.key === 'ArrowLeft') {
+        gotoPrev(event);
+      }
 
-      
-        if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          window.location.href = '/artwork/doodles/'
-        }
-      
+      if (event.key === 'ArrowRight') {
+        gotoNext(event);
+      }
     });
   </script>
 

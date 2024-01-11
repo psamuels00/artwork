@@ -88,7 +88,7 @@
 <div class="main_content">
   
     
-<div class="bg-blue-950 text-white text-sm my-6 py-10">
+<div id="swipeable" class="bg-blue-950 text-white text-sm my-6 py-10">
 
   <div class="flex flex-col lg:max-w-4xl lg:min-w-[1024px] mx-auto text-center gap-y-8">
 
@@ -136,18 +136,6 @@
 
 </div>
 
-<script type="text/javascript">
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowLeft') {
-      window.location.href = '/artwork/doodles/'
-    }
-
-    if (event.key === 'ArrowRight') {
-      window.location.href = '/artwork/resume/'
-    }
-  });
-</script>
-
   
 </div>
 
@@ -166,24 +154,36 @@
 
 
   <script type="text/javascript">
+    function gotoPrev(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/doodles/'
+      
+    }
+
+    function gotoNext(event) {
+      
+        event.preventDefault();
+        window.location.href = '/artwork/resume/'
+      
+    }
+
+    
+      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+    
+
     document.addEventListener('keydown', function (event) {
       
 
       
 
-      
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          window.location.href = '/artwork/doodles/'
-        }
-      
+      if (event.key === 'ArrowLeft') {
+        gotoPrev(event);
+      }
 
-      
-        if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          window.location.href = '/artwork/resume/'
-        }
-      
+      if (event.key === 'ArrowRight') {
+        gotoNext(event);
+      }
     });
   </script>
 

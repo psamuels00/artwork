@@ -1,44 +1,61 @@
-function detectSwipe(el,func) {
-  swipe_det = new Object();
-  swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
-  var min_x = 30;  //min x swipe for horizontal swipe
-  var max_x = 30;  //max x difference for vertical swipe
-  var min_y = 50;  //min y swipe for vertical swipe
-  var max_y = 60;  //max y difference for horizontal swipe
-  var direc = "";
-  ele = document.getElementById(el);
+function detectSwipe(elem_id, func) {
+  let points = { sX: 0, sY: 0, eX: 0, eY: 0 };
 
-  ele.addEventListener('touchstart', function(e){
-    var t = e.touches[0];
-    swipe_det.sX = t.screenX;
-    swipe_det.sY = t.screenY;
-  },false);
+  const min_x = 30;
+  const max_x = 30;
+  const min_y = 50;
+  const max_y = 60;
 
-  ele.addEventListener('touchmove',function(e){
-    e.preventDefault();
-    var t = e.touches[0];
-    swipe_det.eX = t.screenX;
-    swipe_det.eY = t.screenY;
-  },false);
+  elem = document.getElementById(elem_id);
 
-  ele.addEventListener('touchend',function(e){
-    //horizontal detection
-    if ((((swipe_det.eX - min_x > swipe_det.sX) || (swipe_det.eX + min_x < swipe_det.sX)) && ((swipe_det.eY < swipe_det.sY + max_y) && (swipe_det.sY > swipe_det.eY - max_y) && (swipe_det.eX > 0)))) {
-      if(swipe_det.eX > swipe_det.sX) direc = "r";
-      else direc = "l";
+  elem.addEventListener('touchstart', e => {
+    const t = e.touches[0];
+    points.sX = t.screenX;
+    points.sY = t.screenY;
+  });
+
+  elem.addEventListener('touchmove', e => {
+    const t = e.touches[0];
+    points.eX = t.screenX;
+    points.eY = t.screenY;
+
+    const horzX = (points.eX - min_x > points.sX) || (points.eX + min_x < points.sX);
+    const horzY = (points.eY < points.sY + max_y) && (points.sY > points.eY - max_y) && (points.eX > 0);
+    if (horzX && horzY) {
+        e.preventDefault();
+    }
+  });
+
+  elem.addEventListener('touchend', e => {
+    const horzX = (points.eX - min_x > points.sX) || (points.eX + min_x < points.sX);
+    const horzY = (points.eY < points.sY + max_y) && (points.sY > points.eY - max_y) && (points.eX > 0);
+    const vertX = (points.eY - min_y > points.sY) || (points.eY + min_y < points.sY)
+    const vertY = (points.eX < points.sX + max_x) && (points.sX > points.eX - max_x) && (points.eY > 0)
+
+    let direction = '';
+    if (horzX && horzY) {
+      direction = (points.eX > points.sX) ? 'r' : 'l';
+    } else if (vertX && vertY) {
+      direction = (points.eY > points.sY) ? 'd' : 'up';
     }
 
-    //vertical detection
-    else if ((((swipe_det.eY - min_y > swipe_det.sY) || (swipe_det.eY + min_y < swipe_det.sY)) && ((swipe_det.eX < swipe_det.sX + max_x) && (swipe_det.sX > swipe_det.eX - max_x) && (swipe_det.eY > 0)))) {
-      if(swipe_det.eY > swipe_det.sY) direc = "d";
-      else direc = "u";
+    if (['l', 'r'].includes(direction)) {
+      e.preventDefault();
+      func(elem_id, e, direction);
     }
 
-    if (direc != "") {
-      if(typeof func == 'function') func(el, direc);
-    }
+    points = { sX: 0, sY: 0, eX: 0, eY: 0 };
+  });
+}
 
-    direc = "";
-    swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
-  },false);
+function swipeLeftRight(elem_id, leftFunc, rightFunc) {
+  function dispatchSwipe(elem_id, event, direction) {
+    if (direction === 'r') {
+      leftFunc(event);
+    } else if (direction === 'l') {
+      rightFunc(event);
+    }
+  }
+
+  detectSwipe(elem_id, dispatchSwipe);
 }
