@@ -48,7 +48,7 @@ layout: 'layouts/base.html'
     {{ title }}
   </div>
 
-  <div id="the_image" style="height: calc(100% - 144px)">
+  <div id="swipeable" style="height: calc(100% - 144px)">
     <img class="p-1 sm:p-2 lg:p-4 object-scale-down h-full mx-auto"
          src="/images/{{curr}}"/>
   </div>
@@ -57,15 +57,21 @@ layout: 'layouts/base.html'
 </div>
 
 <script type="text/javascript">
-  function gotoPrev() {
-    event.preventDefault();
-    window.location.href = '{{prev | url}}'
+  function gotoPrev(event) {
+    {% if prev %}
+      event.preventDefault();
+      window.location.href = '{{prev | url}}'
+    {% endif %}
   }
 
-  function gotoNext() {
-    event.preventDefault();
-    window.location.href = '{{next | url}}'
+  function gotoNext(event) {
+    {% if next %}
+      event.preventDefault();
+      window.location.href = '{{next | url}}'
+    {% endif %}
   }
+
+  swipeLeftRight('swipeable', gotoPrev, gotoNext);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {
@@ -73,34 +79,12 @@ layout: 'layouts/base.html'
         window.location.href = '../'
     }
 
-    {% if prev %}
-      if (event.key === 'ArrowLeft') {
-        gotoPrev();
-      }
-    {% endif %}
-
-    {% if next %}
-      if (event.key === 'ArrowRight') {
-        gotoNext();
-      }
-    {% endif %}
-  });
-
-  {% if prev or next %}
-    function dispatchSwipe(el, direction) {
-      {% if prev %}
-        if (direction === 'r') {
-          gotoPrev();
-        }
-      {% endif %}
-
-      {% if next %}
-        if (direction === 'l') {
-          gotoNext();
-        }
-      {% endif %}
+    if (event.key === 'ArrowLeft') {
+      gotoPrev(event);
     }
 
-    detectSwipe('the_image', dispatchSwipe);
-  {% endif %}
+    if (event.key === 'ArrowRight') {
+      gotoNext(event);
+    }
+  });
 </script>

@@ -5,7 +5,7 @@ prev: '/doodles/'
 next: '/resume/'
 ---
 
-<div class="bg-blue-950 text-white text-sm my-6 py-10">
+<div id="swipeable" class="bg-blue-950 text-white text-sm my-6 py-10">
 
   <div class="flex flex-col lg:max-w-4xl lg:min-w-[1024px] mx-auto text-center gap-y-8">
 
@@ -52,15 +52,3 @@ next: '/resume/'
   </div>
 
 </div>
-
-<script type="text/javascript">
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowLeft') {
-      window.location.href = '{{'/doodles/' | url}}'
-    }
-
-    if (event.key === 'ArrowRight') {
-      window.location.href = '{{'/resume/' | url}}'
-    }
-  });
-</script>

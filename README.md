@@ -57,6 +57,7 @@ after making formatting changes to one of the files that is parsed.
 _None_
 
 ### Medium priority
+- customize hide/show info control for mobile
 - update images on home page
 - ensure top image on project page fits on screen fully
 - some images on project single image pages are aligned too low on iPhone
@@ -72,6 +73,7 @@ _None_
 **Rewrite to fully embrace Eleventy**
 - use 11ty features to replace generate_doodle_image_pages.py
 - product_image.html should use layouts/image.html for more DRYness
+- build portfolio menu from data in projects.js, including new ordering options
 
 **Rewrite to fully embrace Tailwind**
 - rewrite the home page to make it more DRY
@@ -86,9 +88,10 @@ _None_
 - try moving project.html, project_image.html, and project_colors.html to portfolio/
 
 **UI design**
+- add support for dark backgrounds, esp to use black for The Demo
+- display N/M (project #N of M projects) with project title in mobile menu
 - eliminate cursor-not-allowed on doodles image page since disabled next/prev
   are not right, and it doesn't work at all for mobile
-- add support for swipe-left and swipe-right on a project or doodles category page
 - overall more consistency with the break points across pages: sm, md, lg
 - the "X" to leave image page always goes to top of previous page
 - add floating button to quickly jump to top of any long page
@@ -97,3 +100,5 @@ _None_
 - create a filter for replace(r/([a-z])([A-Z])/g, "$1 $2") if not replaced by slugs
 - redesign image page navigation so fingers do not cover image to reach controls
 - add Next/Prev buttons to bottom of project pages
+- maybe show two categories/pics per row on doodles main page on mobile
+- maybe list the doodles in alphabetical order so they match the menus, at least on mobile

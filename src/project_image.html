@@ -52,7 +52,7 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
     {{ item.image | cleanupHack | rmFileExt | replace(r/([a-z])([A-Z])/g, "$1 $2")}}
   </div>
 
-  <div id="the_image" style="height: calc(100% - 144px)">
+  <div id="swipeable" style="height: calc(100% - 144px)">
     <img class="p-1 sm:p-2 lg:p-4 object-scale-down h-full mx-auto"
          src="/images/portfolio/{{item.name | replace(' ', '')}}/{{item.image}}"/>
   </div>
@@ -61,15 +61,21 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 </div>
 
 <script type="text/javascript">
-  function gotoPrev() {
-    event.preventDefault();
-    window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_prev | rmFileExt}}/';
+  function gotoPrev(event) {
+    {% if item.image_prev %}
+      event.preventDefault();
+      window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_prev | rmFileExt}}/';
+    {% endif %}
   }
 
-  function gotoNext() {
-    event.preventDefault();
-    window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_next | rmFileExt}}/';
+  function gotoNext(event) {
+    {% if item.image_next %}
+      event.preventDefault();
+      window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_next | rmFileExt}}/';
+    {% endif %}
   }
+
+  swipeLeftRight('swipeable', gotoPrev, gotoNext);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {
@@ -77,36 +83,14 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
       window.location.href = '../'
     }
 
-    {% if item.image_prev %}
-      if (event.key === 'ArrowLeft') {
-        gotoPrev();
-      }
-    {% endif %}
-
-    {% if item.image_next %}
-      if (event.key === 'ArrowRight') {
-        gotoNext();
-      }
-    {% endif %}
-  });
-
-  {% if item.image_prev or item.image_next %}
-    function dispatchSwipe(el, direction) {
-      {% if item.image_prev %}
-        if (direction === 'r') {
-          gotoPrev();
-        }
-      {% endif %}
-
-      {% if item.image_next %}
-        if (direction === 'l') {
-          gotoNext();
-        }
-      {% endif %}
+    if (event.key === 'ArrowLeft') {
+      gotoPrev(event);
     }
 
-    detectSwipe('the_image', dispatchSwipe);
-  {% endif %}
+    if (event.key === 'ArrowRight') {
+      gotoNext(event);
+    }
+  });
 
   document.body.classList.add('{{item.bg_color_page}}');
 </script>

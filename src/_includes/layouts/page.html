@@ -104,6 +104,24 @@ layout: 'layouts/base.html'
 
 {% if escape or enter or prev or next %}
   <script type="text/javascript">
+    function gotoPrev(event) {
+      {% if prev %}
+        event.preventDefault();
+        window.location.href = '{{prev | url}}'
+      {% endif %}
+    }
+
+    function gotoNext(event) {
+      {% if next %}
+        event.preventDefault();
+        window.location.href = '{{next | url}}'
+      {% endif %}
+    }
+
+    {% if prev or next %}
+      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+    {% endif %}
+
     document.addEventListener('keydown', function (event) {
       {% if escape %}
         if (event.key === 'Escape' || event.key === 'ArrowUp') {
@@ -119,19 +137,13 @@ layout: 'layouts/base.html'
         }
       {% endif %}
 
-      {% if prev %}
-        if (event.key === 'ArrowLeft') {
-          event.preventDefault();
-          window.location.href = '{{prev | url}}'
-        }
-      {% endif %}
+      if (event.key === 'ArrowLeft') {
+        gotoPrev(event);
+      }
 
-      {% if next %}
-        if (event.key === 'ArrowRight') {
-          event.preventDefault();
-          window.location.href = '{{next | url}}'
-        }
-      {% endif %}
+      if (event.key === 'ArrowRight') {
+        gotoNext(event);
+      }
     });
   </script>
 {% endif %}

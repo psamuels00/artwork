@@ -8,36 +8,15 @@ escape: '/doodles/'
 enter: '/doodles/outdoors/DesertMountainTree/'
 ---
 
-<div class="sm:grid grid-cols-3 gap-8">
-  {% set image_names = [
-    'DesertMountainTree',
-    'BigCrescentMoonNightScene',
-    'PeaField',
-    'TreeFrame',
-    'BarnFieldsMountains',
-    'TreeAndTunnel'
-  ] %}
-  {% for name in image_names %}
-    <a href="/doodles/outdoors/{{name}}/">
-      <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
-    </a>
-  {% endfor %}
-</div>
-
-<div class="sm:flex flex-row gap-8 mt-8">
-
-  <div class="sm:grid grid-cols-2 gap-8">
+<div id="swipeable">
+  <div class="sm:grid grid-cols-3 gap-8">
     {% set image_names = [
-      'SkyViewThroughTreesAbove',
-      'TreeWithActiveLeaves',
-      'OceanHorizonCloudsBirds',
-      'PalmAtBeach',
-      'BeachSceneBoatOnHorizon',
-      'CoconutTreeOnBeach',
-      'ChildDrawingTreeAndFlowers',
-      'MinimalistBeachSceneHorizonClouds',
-      'MinimalistBeachScene',
-      'BackYardSketch'
+      'DesertMountainTree',
+      'BigCrescentMoonNightScene',
+      'PeaField',
+      'TreeFrame',
+      'BarnFieldsMountains',
+      'TreeAndTunnel'
     ] %}
     {% for name in image_names %}
       <a href="/doodles/outdoors/{{name}}/">
@@ -46,17 +25,40 @@ enter: '/doodles/outdoors/DesertMountainTree/'
     {% endfor %}
   </div>
 
-  <div class="sm:grid grid-cols-1 gap-8">
-    {% set image_names = [
-      'VeryTallPalmTreeAtBeach',
-      'CreatureInHotAirBalloon',
-      'DolphinJumpingInSun'
-    ] %}
-    {% for name in image_names %}
-      <a href="/doodles/outdoors/{{name}}/">
-        <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
-      </a>
-    {% endfor %}
-  </div>
+  <div class="sm:flex flex-row gap-8 mt-8">
 
+    <div class="sm:grid grid-cols-2 gap-8">
+      {% set image_names = [
+        'SkyViewThroughTreesAbove',
+        'TreeWithActiveLeaves',
+        'OceanHorizonCloudsBirds',
+        'PalmAtBeach',
+        'BeachSceneBoatOnHorizon',
+        'CoconutTreeOnBeach',
+        'ChildDrawingTreeAndFlowers',
+        'MinimalistBeachSceneHorizonClouds',
+        'MinimalistBeachScene',
+        'BackYardSketch'
+      ] %}
+      {% for name in image_names %}
+        <a href="/doodles/outdoors/{{name}}/">
+          <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
+        </a>
+      {% endfor %}
+    </div>
+
+    <div class="sm:grid grid-cols-1 gap-8">
+      {% set image_names = [
+        'VeryTallPalmTreeAtBeach',
+        'CreatureInHotAirBalloon',
+        'DolphinJumpingInSun'
+      ] %}
+      {% for name in image_names %}
+        <a href="/doodles/outdoors/{{name}}/">
+          <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/outdoors/{{name}}.jpg"/>
+        </a>
+      {% endfor %}
+    </div>
+
+  </div>
 </div>
