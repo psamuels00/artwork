@@ -53,18 +53,12 @@ after making formatting changes to one of the files that is parsed.
 
 ## TODO
 
-### Final Touches
-- add Next/Prev buttons to bottom of project page
-- eliminate cursor-not-allowed on doodles image page since disabled next/prev
-  are not right, and it doesn't work at all for mobile
-- Some images on project single image pages are aligned too low on iPhone
-
 ### High priority
 _None_
 
 ### Medium priority
-- redesign image page navigation so fingers do not cover image to reach controls
 - ensure top image on project page fits on screen fully
+- Some images on project single image pages are aligned too low on iPhone
 
 ### Low priority
 
@@ -91,9 +85,14 @@ _None_
 - try moving project.html, project_image.html, and project_colors.html to portfolio/
 
 **UI design**
+- eliminate cursor-not-allowed on doodles image page since disabled next/prev
+  are not right, and it doesn't work at all for mobile
+- add support for swipe-left and swipe-right on a project or doodles category page
+- overall more consistency with the break points across pages: sm, md, lg
 - the "X" to leave image page always goes to top of previous page
-- overall more consistency with the break points: sm, md, lg
 - add floating button to quickly jump to top of any long page
 - transition page loads more smoothly (maybe)
 - remove redundancy from image names and take full advantage of slugs
 - create a filter for replace(r/([a-z])([A-Z])/g, "$1 $2") if not replaced by slugs
+- redesign image page navigation so fingers do not cover image to reach controls
+- add Next/Prev buttons to bottom of project pages
