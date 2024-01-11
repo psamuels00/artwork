@@ -57,8 +57,9 @@ after making formatting changes to one of the files that is parsed.
 _None_
 
 ### Medium priority
+- update images on home page
 - ensure top image on project page fits on screen fully
-- Some images on project single image pages are aligned too low on iPhone
+- some images on project single image pages are aligned too low on iPhone
 
 ### Low priority
 
