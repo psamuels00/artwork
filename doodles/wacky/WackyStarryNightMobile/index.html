@@ -7,6 +7,7 @@
     <title>Wacky Starry Night Mobile</title>
     <link rel="shortcut icon" type="image/png" href="/artwork/images/meta/emma_face.png">
     <link rel="stylesheet" href="/artwork/global.css">
+    <script src="/artwork/js/swipe.js"></script>
   </head>
   <body>
 
@@ -59,7 +60,7 @@
     Wacky Starry Night Mobile
   </div>
 
-  <div style="height: calc(100% - 144px)">
+  <div id="the_image" style="height: calc(100% - 144px)">
     <img class="p-1 sm:p-2 lg:p-4 object-scale-down h-full mx-auto" src="/artwork/images/doodles/categories/wacky/WackyStarryNightMobile.jpg">
   </div>
   <div class="h-screen"></div>
@@ -67,6 +68,16 @@
 </div>
 
 <script type="text/javascript">
+  function gotoPrev() {
+    event.preventDefault();
+    window.location.href = '../Egghead/'
+  }
+
+  function gotoNext() {
+    event.preventDefault();
+    window.location.href = '../RainbowAmoeba/'
+  }
+
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {
         event.preventDefault();
@@ -75,20 +86,35 @@
 
     
       if (event.key === 'ArrowLeft') {
-        event.preventDefault();
-        window.location.href = '../Egghead/'
+        gotoPrev();
       }
     
 
     
       if (event.key === 'ArrowRight') {
-        event.preventDefault();
-        window.location.href = '../RainbowAmoeba/'
+        gotoNext();
       }
     
   });
-</script>
 
+  
+    function dispatchSwipe(el, direction) {
+      
+        if (direction === 'r') {
+          gotoPrev();
+        }
+      
+
+      
+        if (direction === 'l') {
+          gotoNext();
+        }
+      
+    }
+
+    detectSwipe('the_image', dispatchSwipe);
+  
+</script>
       
     </div>
 
