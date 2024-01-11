@@ -168,11 +168,13 @@ const projects = [
 ]
 
 function navigable(projects) {
-  // embellish each project with prev/next
+  // embellish each project with prev/next and project_number/max_project_number
   return projects.map((object, offset) => ({
     ...object,
     prev: (offset == 0 ? projects[projects.length - 1].name : projects[offset - 1].name),
     next: (offset == (projects.length - 1) ? projects[0].name : projects[offset + 1].name),
+    project_number: offset + 1,
+    max_project_number: projects.length,
   }))
 }
 
