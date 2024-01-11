@@ -54,7 +54,6 @@ after making formatting changes to one of the files that is parsed.
 ## TODO
 
 ### Final Touches
-- add onion to home page
 - add support for swipe-left and swipe-right
 - eliminate cursor-not-allowed on doodles image page since disabled next/prev
   are not right, and it doesn't work at all for mobile
