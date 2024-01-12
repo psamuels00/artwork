@@ -7,6 +7,7 @@
     <title></title>
     <link rel="shortcut icon" type="image/png" href="/artwork/images/meta/emma_face.png">
     <link rel="stylesheet" href="/artwork/global.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/artwork/js/swipe.js"></script>
   </head>
   <body>
@@ -258,13 +259,11 @@
 </script>
 
 <script type="text/javascript">
-  function gotoPrev(event) {
-    event.preventDefault();
+  function gotoPrev() {
     window.location.href = '/artwork/portfolio/backyard-hills/'
   }
 
-  function gotoNext(event) {
-    event.preventDefault();
+  function gotoNext() {
     window.location.href = '/artwork/portfolio/starry-night/'
   }
 
@@ -282,11 +281,11 @@
     }
 
     if (event.key === 'ArrowLeft') {
-      gotoPrev(event);
+      gotoPrev();
     }
 
     if (event.key === 'ArrowRight') {
-      gotoNext(event);
+      gotoNext();
     }
   });
 
