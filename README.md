@@ -58,7 +58,7 @@ _None_
 
 ### Medium priority
 - get some better pics of Starry Night and the Beach Boardwalk
-- show just the image if user clicks on image in single image page
+- Next/Prev should wraparound
 - eliminate cursor-not-allowed on doodles image page since disabled next/prev
   are not right, and it doesn't work at all for mobile
 
@@ -66,6 +66,8 @@ _None_
 
 **New feature**
 - add descriptions for each project image
+- when user clicks on image on single image page, show a high-res version of the image,
+  or at least for key images; maybe add "high-res" link on project page in info box.
 
 **Performance improvement**
 - shrink more images for faster page loads (maybe)
