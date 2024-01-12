@@ -162,12 +162,17 @@
 
   <div class="flex flex-col">
     <div class="flex">
-      <button id="hide-info" class="ml-auto py-2 px-3 bg-stone-100 hover:bg-stone-200">
-        Hide Info
+      <button class="hide-show-info ml-auto">
+        less info
       </button>
-      <button id="show-info" class="ml-auto py-2 px-3 bg-stone-100 hover:bg-stone-200 hidden">
-        Show Info
+      <button class="hide-show-info ml-auto hidden">
+        more info
       </button>
+      <!-- A chevron down/up arrow -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        <polyline class="hide-show-info" points="18 15 12 9 6 15"></polyline>
+        <polyline class="hide-show-info hidden" points="6 9 12 15 18 9"></polyline>
+      </svg>
     </div>
 
     <div id="info-box" class="flex flex-col mt-2 sm:mb-2">
@@ -246,18 +251,19 @@
 
 <script type="text/javascript">
   (function() {
-    const hideBtn = document.getElementById('hide-info');
-    const showBtn = document.getElementById('show-info');
+    const hideShowBtns = document.getElementsByClassName('hide-show-info');
     const infoBox = document.getElementById('info-box');
 
     function toggleInfoBox() {
-      infoBox.classList.toggle("hidden");
-      showBtn.classList.toggle("hidden");
-      hideBtn.classList.toggle("hidden");
+      for (let elem of hideShowBtns) {
+        elem.classList.toggle('hidden');
+      }
+      infoBox.classList.toggle('hidden');
     }
 
-    hideBtn.addEventListener("click", toggleInfoBox);
-    showBtn.addEventListener("click", toggleInfoBox);
+    for (let elem of hideShowBtns) {
+      elem.addEventListener('click', toggleInfoBox);
+    }
   })()
 </script>
 
