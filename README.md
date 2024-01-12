@@ -67,7 +67,8 @@ _None_
 - add descriptions for each project image
 
 **Performance improvement**
-- shrink all images further for faster page loads (maybe)
+- swiping left/right does not work perfectly, maybe replace DYI with HammerJS
+- shrink more images for faster page loads (maybe)
 
 **Rewrite to fully embrace Eleventy**
 - use 11ty features to replace generate_doodle_image_pages.py
