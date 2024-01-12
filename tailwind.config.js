@@ -24,7 +24,9 @@ module.exports = {
         fit_in_viewport_lg: 'calc(100vh - 205px - 10px)',
 
         // and similarly for single image pages, except no margin needed bc images have padding
-        fit_in_viewport_single: 'calc(100vh - 144px)',
+        // ...although  there is a mystery 110px additional adjustment needed for iPhone!?
+        fit_in_viewport_single: 'calc(100vh - 144px - 110px)',
+        fit_in_viewport_single_sm: 'calc(100vh - 144px)',
       },
     },
   },

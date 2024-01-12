@@ -49,8 +49,11 @@ layout: 'layouts/base.html'
   </div>
 
   <div id="swipeable">
-    <img class="p-1 sm:p-2 lg:p-4 max-h-fit_in_viewport_single mx-auto"
-         src="/images/{{curr}}" />
+    <a href="/images/{{curr}}">
+      <img class="p-1 sm:p-2 lg:p-4 mx-auto
+                  max-h-fit_in_viewport_single sm:max-h-fit_in_viewport_single_sm"
+           src="/images/{{curr}}" />
+    </a>
   </div>
 
 </div>
