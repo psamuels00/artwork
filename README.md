@@ -57,7 +57,6 @@ after making formatting changes to one of the files that is parsed.
 _None_
 
 ### Medium priority
-- customize hide/show info control for mobile
 - update images on home page
 - ensure top image on project page fits on screen fully
 - some images on project single image pages are aligned too low on iPhone
