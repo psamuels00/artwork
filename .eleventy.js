@@ -1,4 +1,6 @@
 const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const path = require('path');
+const sizeOf = require('image-size');
 
 module.exports = config => {
   // copy files
@@ -17,6 +19,13 @@ module.exports = config => {
   });
   config.addFilter('cleanupHack', value => {
     return value.replace(/^(.+-)?\d\d-/, '');
+  });
+
+  // image orientation
+  config.addFilter('isLandscape', imagePath => {
+    const fullPath = path.join(__dirname, 'src', imagePath);
+    const dimensions = sizeOf(imagePath);
+    return dimensions.width > dimensions.height;
   });
 
   return {
