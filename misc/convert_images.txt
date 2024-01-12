@@ -10,13 +10,6 @@ shave_sides() {
 # logo
 convert -resize 200x ../perrins-art/02-Portfolio/03-TheDemo/PerrinLogo/PerrinLogo.png src/images/home/PerrinLogo.png
 
-# home
-convert -quality 40 ../perrins-art/02-Portfolio/06-Emma/EmmaSittingRelaxedAttentive-12-final-framed.heic src/images/home/Emma.jpg
-convert -quality 30 ../perrins-art/02-Portfolio/03-TheDemo/02-PaintingFull.jpeg src/images/home/TheDemo.jpg
-convert -quality 40 ../perrins-art/02-Portfolio/07-OutpostBackView/Backyard-09-finished-cropped.jpg src/images/home/BackyardHills.jpg
-convert -quality 30 ../perrins-art/02-Portfolio/00-StarryNight/01-StarryStarryNight.jpg src/images/home/StarryNight.jpg
-convert -quality 40 ../perrins-art/02-Portfolio/02-Dolphin/02-TheDolphin.jpeg src/images/home/Dolphin.jpg
-
 # portfolio
 mkdir src/images/portfolio
 
@@ -46,6 +39,8 @@ rm src/images/portfolio/TheDemo/06-DummyHead.jpg
 rm src/images/portfolio/TheDemo/08-Dummy2Head.jpg
 shave_sides 70 40 110 20 ../perrins-art/02-Portfolio/03-TheDemo/02-PaintingFull.jpeg \
     src/images/portfolio/TheDemo/02-PaintingFull.jpg
+shave_sides 70 40 110 20 ../perrins-art/02-Portfolio/03-TheDemo/02-PaintingFull.jpeg \
+    src/images/portfolio/TheDemo/02-PaintingFull-Reduced.jpg '-quality 50'
 
 # portfolio - Dolphin
 mkdir src/images/portfolio/Dolphin

@@ -57,9 +57,9 @@ after making formatting changes to one of the files that is parsed.
 _None_
 
 ### Medium priority
-- update images on home page
 - ensure top image on project page fits on screen fully
 - some images on project single image pages are aligned too low on iPhone
+- get some better pics of Starry Night and the Beach Boardwalk
 
 ### Low priority
 
@@ -82,7 +82,7 @@ _None_
   But how?... Maybe using @apply in a custom style sheet??
 
 **Restructure**
-- move PerrinLogo.png to src/images/meta and remove src/images/home/*
+- move PerrinLogo.png to src/images/meta and remove src/images/home
 - eliminate the categories directory in /images/doodles/categories/*
 - try moving project.html, project_image.html, and project_colors.html to portfolio/
 
