@@ -14,8 +14,17 @@ module.exports = {
           300: '#c36876',
         },
         sand: {
-          400: '#c2b280'
+          400: '#c2b280',
         },
+      },
+      maxHeight: {
+        // 142px and 205px are the combined height of the navigation headers
+        // 10px is an arbitrary margin
+        fit_in_viewport: 'calc(100vh - 142px - 10px)',
+        fit_in_viewport_lg: 'calc(100vh - 205px - 10px)',
+
+        // and similarly for single image pages, except no margin needed bc images have padding
+        fit_in_viewport_single: 'calc(100vh - 144px)',
       },
     },
   },

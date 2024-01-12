@@ -48,11 +48,10 @@ layout: 'layouts/base.html'
     {{ title }}
   </div>
 
-  <div id="swipeable" style="height: calc(100% - 144px)">
-    <img class="p-1 sm:p-2 lg:p-4 object-scale-down h-full mx-auto"
-         src="/images/{{curr}}"/>
+  <div id="swipeable">
+    <img class="p-1 sm:p-2 lg:p-4 max-h-fit_in_viewport_single mx-auto"
+         src="/images/{{curr}}" />
   </div>
-  <div class="h-screen"></div>
 
 </div>
 

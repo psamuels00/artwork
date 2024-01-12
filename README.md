@@ -57,9 +57,10 @@ after making formatting changes to one of the files that is parsed.
 _None_
 
 ### Medium priority
-- ensure top image on project page fits on screen fully
-- some images on project single image pages are aligned too low on iPhone
 - get some better pics of Starry Night and the Beach Boardwalk
+- show just the image if user clicks on image in single image page
+- eliminate cursor-not-allowed on doodles image page since disabled next/prev
+  are not right, and it doesn't work at all for mobile
 
 ### Low priority
 
@@ -67,7 +68,6 @@ _None_
 - add descriptions for each project image
 
 **Performance improvement**
-- swiping left/right does not work perfectly, maybe replace DYI with HammerJS
 - shrink more images for faster page loads (maybe)
 
 **Rewrite to fully embrace Eleventy**
@@ -90,10 +90,8 @@ _None_
 **UI design**
 - add support for dark backgrounds, esp to use black for The Demo
 - display N/M (project #N of M projects) with project title in mobile menu
-- eliminate cursor-not-allowed on doodles image page since disabled next/prev
-  are not right, and it doesn't work at all for mobile
 - overall more consistency with the break points across pages: sm, md, lg
-- the "X" to leave image page always goes to top of previous page
+- the "X" to leave image page always takes the user to top of previous page
 - add floating button to quickly jump to top of any long page
 - transition page loads more smoothly (maybe)
 - remove redundancy from image names and take full advantage of slugs
