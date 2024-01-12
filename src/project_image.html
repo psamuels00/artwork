@@ -61,16 +61,14 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 </div>
 
 <script type="text/javascript">
-  function gotoPrev(event) {
+  function gotoPrev() {
     {% if item.image_prev %}
-      event.preventDefault();
       window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_prev | rmFileExt}}/';
     {% endif %}
   }
 
-  function gotoNext(event) {
+  function gotoNext() {
     {% if item.image_next %}
-      event.preventDefault();
       window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_next | rmFileExt}}/';
     {% endif %}
   }
@@ -84,11 +82,11 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
     }
 
     if (event.key === 'ArrowLeft') {
-      gotoPrev(event);
+      gotoPrev();
     }
 
     if (event.key === 'ArrowRight') {
-      gotoNext(event);
+      gotoNext();
     }
   });
 

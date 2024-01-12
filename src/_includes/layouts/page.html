@@ -104,16 +104,14 @@ layout: 'layouts/base.html'
 
 {% if escape or enter or prev or next %}
   <script type="text/javascript">
-    function gotoPrev(event) {
+    function gotoPrev() {
       {% if prev %}
-        event.preventDefault();
         window.location.href = '{{prev | url}}'
       {% endif %}
     }
 
-    function gotoNext(event) {
+    function gotoNext() {
       {% if next %}
-        event.preventDefault();
         window.location.href = '{{next | url}}'
       {% endif %}
     }
@@ -138,11 +136,11 @@ layout: 'layouts/base.html'
       {% endif %}
 
       if (event.key === 'ArrowLeft') {
-        gotoPrev(event);
+        gotoPrev();
       }
 
       if (event.key === 'ArrowRight') {
-        gotoNext(event);
+        gotoNext();
       }
     });
   </script>

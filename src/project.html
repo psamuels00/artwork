@@ -84,13 +84,11 @@ permalink: "portfolio/{{ project.name | slug }}/"
 </script>
 
 <script type="text/javascript">
-  function gotoPrev(event) {
-    event.preventDefault();
+  function gotoPrev() {
     window.location.href = '{{'/' | url}}portfolio/{{project.prev | slug}}/'
   }
 
-  function gotoNext(event) {
-    event.preventDefault();
+  function gotoNext() {
     window.location.href = '{{'/' | url}}portfolio/{{project.next | slug}}/'
   }
 
@@ -108,11 +106,11 @@ permalink: "portfolio/{{ project.name | slug }}/"
     }
 
     if (event.key === 'ArrowLeft') {
-      gotoPrev(event);
+      gotoPrev();
     }
 
     if (event.key === 'ArrowRight') {
-      gotoNext(event);
+      gotoNext();
     }
   });
 
