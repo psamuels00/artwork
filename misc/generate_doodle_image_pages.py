@@ -78,8 +78,8 @@ def generate_image_pages(category):
     offset = 0
     while offset < len(names):
         name = names[offset]
-        prev = "''" if offset == 0 else "../" + names[offset - 1] + '/'
-        next = "''" if offset == len(names) - 1 else "../" + names[offset + 1] + '/'
+        prev = "../" + names[len(names) - 1 if offset == 0 else offset - 1] + "/"
+        next = "../" + names[0 if offset == len(names) - 1 else offset + 1] + "/"
         content = build_image_page_content(category, name, first, last, prev, next)
 
         out_file = os.path.join(categories_pages_path, category, name) + ".html"
