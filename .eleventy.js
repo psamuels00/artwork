@@ -3,6 +3,9 @@ const path = require('path');
 const sizeOf = require('image-size');
 
 module.exports = config => {
+  // logging
+  config.setQuietMode(false);
+
   // copy files
   config.addPassthroughCopy('src/images/');
   config.addPassthroughCopy({
