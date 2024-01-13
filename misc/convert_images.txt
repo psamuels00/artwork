@@ -56,7 +56,7 @@ cp ../perrins-art/02-Portfolio/01-TheOnion/01-RedOnion.png src/images/portfolio/
 
 # portfolio - StarryNight
 mkdir src/images/portfolio/StarryNight
-convert -quality 20 ../perrins-art/02-Portfolio/00-StarryNight/01-StarryStarryNight.jpg src/images/portfolio/StarryNight/01-StarryStarryNight.jpg
+convert -quality 30 ../perrins-art/02-Portfolio/00-StarryNight/StarryStarryNight.heic src/images/portfolio/StarryNight/StarryStarryNight.jpg
 
 # portfolio: reduce the quality of all portfolio images, modify files in-place
 for x in src/images/portfolio/*; do echo $x; mogrify -quality 50 $x/*.jpg; done

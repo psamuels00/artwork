@@ -127,7 +127,7 @@ const projects = [
     bg_color_page:'bg-yellow-500',
     bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
-      '01-StarryStarryNight.jpg',
+      'StarryStarryNight.jpg',
     ],
   },
   {
