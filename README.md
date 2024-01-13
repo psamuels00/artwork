@@ -78,7 +78,6 @@ _None_
   But how?... Maybe using @apply in a custom style sheet??
 
 **Restructure Files**
-- move PerrinLogo.png to src/images/meta and remove src/images/home
 - eliminate the categories directory in /images/doodles/categories/*
 
 **UI design**

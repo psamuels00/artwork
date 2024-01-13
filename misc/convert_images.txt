@@ -8,7 +8,8 @@ shave_sides() {
 }
 
 # logo
-convert -resize 200x ../perrins-art/02-Portfolio/03-TheDemo/PerrinLogo/PerrinLogo.png src/images/home/PerrinLogo.png
+mkdir src/images/meta
+convert -resize 200x ../perrins-art/02-Portfolio/03-TheDemo/PerrinLogo/PerrinLogo.png src/images/meta/PerrinLogo.png
 
 # portfolio
 mkdir src/images/portfolio
