@@ -48,7 +48,7 @@ def parse_category_page(lines, category):
 def build_image_page_content(category, name, first, last, prev, next):
     title = re.sub(r'([a-z])([A-Z])', r'\1 \2', name)
     print(f"{category:10} {title}")
-    curr = f"doodles/categories/{category}/{name}.jpg"
+    curr = f"doodles/{category}/{name}.jpg"
 
     record = [
         "---",

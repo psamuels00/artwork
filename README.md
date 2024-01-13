@@ -44,6 +44,8 @@ _None_
 
 ### Medium priority
 - get some better pics of the Beach Boardwalk
+- get it working on perrin-art.com
+- Next/Prev should go to the next/prev project or category
 
 ### Low priority
 
@@ -55,18 +57,15 @@ _None_
 **Performance improvement**
 - shrink more images for faster page loads (maybe)
 
-**Rewrite to fully embrace Eleventy**
+**Rewrite to improve code and fully embrace Eleventy**
 - use 11ty features to replace generate_doodle_image_pages.py
 - product_image.html should use layouts/image.html for more DRYness
 - build portfolio menu from data in projects.js, including new ordering options
 
-**Rewrite to fully embrace Tailwind**
+**Rewrite to improve code and fully embrace Tailwind**
 - rewrite the home page to make it more DRY
 - update the doodles main page to simplify the markup and improve spacing for mobile
 - eliminate the "totalHack" in portfolio.html
-
-**Restructure Files**
-- eliminate the categories directory in /images/doodles/categories/*
 
 **UI design**
 - add support for dark backgrounds, esp to use black for The Demo

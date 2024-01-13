@@ -67,9 +67,9 @@ for x in src/images/portfolio/*; do echo $x; mogrify -quality 50 $x/*.jpg; done
 # for x in src/images/portfolio/*; do echo $x; mkdir -p ${x/portfolio\//portfolio.sm\/}; mogrify -quality 50 -path ${x/portfolio\//portfolio.sm\/} $x/*.jpg; done
 
 # doodles
-(cd ../perrins-art/03-Doodles; tar cf - `find categories -name \*.jpg`) | (cd src/images/doodles; tar xvf -)
+(cd ../perrins-art/03-Doodles/categories; tar cf - `find * -name \*.jpg`) | (cd src/images/doodles; tar xvf -)
 # list names of files, per category, formatted to include in Javascript list
-for x in `ls src/images/doodles/categories`; do echo $x; ls -1 src/images/doodles/categories/$x | perl -pe "s/^/    '/; s/.jpg$/',/"; echo; done
+for x in `ls src/images/doodles`; do echo $x; ls -1 src/images/doodles/$x | perl -pe "s/^/    '/; s/.jpg$/',/"; echo; done
 
 # about
 convert -resize 35%x ../perrins-art/04-About/books-art.png src/images/about/books-art.png
