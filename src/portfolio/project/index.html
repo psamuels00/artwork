@@ -7,68 +7,66 @@ pagination:
 permalink: "portfolio/{{ project.name | slug }}/"
 ---
 
-<div id="swipeable">
-  <div class="flex justify-center my-4">
-    <a href="/portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt}}/">
-      <img class="hover:brightness-90
-                  max-h-fit_in_viewport
-                  lg:max-h-fit_in_viewport_lg"
-           src="/images/portfolio/{{project.name.replace(' ', '')}}/{{project.images[0]}}" />
-    </a>
-  </div>
+<div class="flex justify-center my-4">
+  <a href="/portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt}}/">
+    <img class="hover:brightness-90
+                max-h-fit_in_viewport
+                lg:max-h-fit_in_viewport_lg"
+         src="/images/portfolio/{{project.name.replace(' ', '')}}/{{project.images[0]}}" />
+  </a>
+</div>
 
-  <div class="flex flex-col">
-    <div class="flex">
-      <button class="hide-show-info ml-auto">
-        show less
-      </button>
-      <button class="hide-show-info ml-auto hidden">
-        show more
-      </button>
-      <!-- A chevron down/up arrow -->
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"
-           stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-        <polyline class="hide-show-info" points="18 15 12 9 6 15" />
-        <polyline class="hide-show-info hidden" points="6 9 12 15 18 9" />
-      </svg>
-    </div>
-
-    <div id="info-box" class="flex flex-col mt-2 sm:mb-2">
-      {% set fields = [
-      ['title', 'title'],
-      ['description', 'descr'],
-      ['category', 'category'],
-      ['date', 'date'],
-      ['location', 'location'],
-      ['medium', 'medium'],
-      ['size', 'size']
-      ] %}
-
-      {% for field in fields %}
-      <div class="my-1 flex flex-row gap-3">
-        <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">
-          <span class="inline sm:hidden">{{field[1] | title}}:</span>
-          <span class="hidden sm:inline">{{field[0] | title}}:</span>
-        </p>
-        <p class="w-3/4 md:w-2/3 mb-1 text-left">
-          {{project[field[0]]}}
-        </p>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-
+<div class="flex flex-col">
   <div class="flex">
-    <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
-      {% for name in project.images %}
-      {% if not loop.first %}
-      <a href="/portfolio/{{project.name | slug}}/{{name | rmFileExt}}/">
-        <img class="hover:brightness-90"
-             src="/images/portfolio/{{project.name.replace(' ', '')}}/{{name}}"/>
-      </a>
-      {% endif -%}
-      {% endfor -%}
+    <button class="hide-show-info ml-auto">
+      show less
+    </button>
+    <button class="hide-show-info ml-auto hidden">
+      show more
+    </button>
+    <!-- A chevron down/up arrow -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24"
+         stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      <polyline class="hide-show-info" points="18 15 12 9 6 15" />
+      <polyline class="hide-show-info hidden" points="6 9 12 15 18 9" />
+    </svg>
+  </div>
+
+  <div id="info-box" class="flex flex-col mt-2 sm:mb-2">
+    {% set fields = [
+    ['title', 'title'],
+    ['description', 'descr'],
+    ['category', 'category'],
+    ['date', 'date'],
+    ['location', 'location'],
+    ['medium', 'medium'],
+    ['size', 'size']
+    ] %}
+
+    {% for field in fields %}
+    <div class="my-1 flex flex-row gap-3">
+      <p class="w-1/4 md:w-1/3 mb-1 text-right font-medium">
+        <span class="inline sm:hidden">{{field[1] | title}}:</span>
+        <span class="hidden sm:inline">{{field[0] | title}}:</span>
+      </p>
+      <p class="w-3/4 md:w-2/3 mb-1 text-left">
+        {{project[field[0]]}}
+      </p>
     </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="flex">
+  <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
+    {% for name in project.images %}
+    {% if not loop.first %}
+    <a href="/portfolio/{{project.name | slug}}/{{name | rmFileExt}}/">
+      <img class="hover:brightness-90"
+           src="/images/portfolio/{{project.name.replace(' ', '')}}/{{name}}"/>
+    </a>
+    {% endif -%}
+    {% endfor -%}
   </div>
 </div>
 
@@ -99,7 +97,7 @@ permalink: "portfolio/{{ project.name | slug }}/"
     window.location.href = '{{'/' | url}}portfolio/{{project.next | slug}}/'
   }
 
-  swipeLeftRight('swipeable', gotoPrev, gotoNext);
+  swipeLeftRight(gotoPrev, gotoNext);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {

@@ -3,7 +3,7 @@ layout: 'layouts/base.html'
 ---
 
 
-<div id="swipeable" class="flex flex-col h-screen">
+<div class="flex flex-col h-screen">
 
   <a href="/doodles/{{category}}/">
     <div class="flex justify-between items-center p-2 hover:bg-stone-100 hover:brightness-95">
@@ -73,7 +73,7 @@ layout: 'layouts/base.html'
     {% endif %}
   }
 
-  swipeLeftRight('swipeable', gotoPrev, gotoNext);
+  swipeLeftRight(gotoPrev, gotoNext);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {

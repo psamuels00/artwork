@@ -117,7 +117,7 @@ layout: 'layouts/base.html'
     }
 
     {% if prev or next %}
-      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+      swipeLeftRight(gotoPrev, gotoNext);
     {% endif %}
 
     document.addEventListener('keydown', function (event) {

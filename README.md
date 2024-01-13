@@ -80,3 +80,5 @@ _None_
 - add Next/Prev buttons to bottom of project pages
 - maybe show two categories/pics per row on doodles main page on mobile
 - maybe list the doodles in alphabetical order so they match the menus, at least on mobile
+- pic at top of project page not showing at all on iPhone in landscape orientation
+- add margin below secondary doodles menu on mobile, there is none in landscape orientation
