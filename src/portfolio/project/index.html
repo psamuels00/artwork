@@ -10,7 +10,9 @@ permalink: "portfolio/{{ project.name | slug }}/"
 <div id="swipeable">
   <div class="flex justify-center my-4">
     <a href="/portfolio/{{project.name | slug}}/{{project.images[0] | rmFileExt}}/">
-      <img class="hover:brightness-90 max-h-fit_in_viewport lg:max-h-fit_in_viewport_lg"
+      <img class="hover:brightness-90
+                  max-h-fit_in_viewport
+                  lg:max-h-fit_in_viewport_lg"
            src="/images/portfolio/{{project.name.replace(' ', '')}}/{{project.images[0]}}" />
     </a>
   </div>

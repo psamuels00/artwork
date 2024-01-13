@@ -10,7 +10,7 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 <div class="flex flex-col h-screen {{item.bg_color_page}}">
 
   <a href="/portfolio/{{item.name | slug}}/">
-    <div class="flex justify-between items-center p-2 hover:bg-stone-100 hover:opacity-50">
+    <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50">
       <!-- Empty space, same width as "X" -->
       <svg width="48" height="48" />
 
@@ -52,10 +52,9 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
     {{ item.image | cleanupHack | rmFileExt | replace(r/([a-z])([A-Z])/g, "$1 $2")}}
   </div>
 
-  <div id="swipeable">
+  <div id="swipeable" class="overflow-hidden">
     <a href="/images/portfolio/{{item.name.replace(' ', '')}}/{{item.image}}">
-      <img class="p-1 sm:p-2 lg:p-4 mx-auto
-                  max-h-fit_in_viewport_single_sm"
+      <img class="p-1 sm:p-2 lg:p-4 max-h-full mx-auto"
            src="/images/portfolio/{{item.name.replace(' ', '')}}/{{item.image}}" />
     </a>
   </div>
