@@ -3,14 +3,9 @@
 [Web site](https://psamuels00.github.io/artwork/)
 to show my artwork and to learn some new tools for front-end Web development.
 
-
-## Tools
-
 - 11ty - Static Site builder
 - Nunjucks - Javascript templating
 - Tailwind CSS - Styling framework
-- Alpine.js - modern approach to jQuery
-- Python - generate pages
 
 
 ## Development Environment
@@ -39,7 +34,8 @@ There must be a better way to handle colors referenced only in a data file.
 
 ## Generated Doodle Image Pages
 
-_In retrospect, this can be done using 11ty pagination and should be removed.  See TODO._
+_In retrospect, this can be done using 11ty pagination (as was done subsequently
+for the Portfolio pages).  See TODO._
 
 There is a separate page for each doodle image.  These pages are generated automatically.
 When a change is made to the images included under each doodle category, or if the order
@@ -81,7 +77,7 @@ _None_
 - Eliminate the need for project_colors.html.
   But how?... Maybe using @apply in a custom style sheet??
 
-**Restructure**
+**Restructure Files**
 - move PerrinLogo.png to src/images/meta and remove src/images/home
 - eliminate the categories directory in /images/doodles/categories/*
 - try moving project.html, project_image.html, and project_colors.html to portfolio/
