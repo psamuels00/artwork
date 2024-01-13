@@ -21,7 +21,7 @@
     <!-- logo and 🍔 menu button -->
     <div class="flex justify-between items-center m-4">
       <a href="/artwork/">
-        <img src="/artwork/images/home/PerrinLogo.png" style="width: 80px">
+        <img class="w-[80px]" src="/artwork/images/meta/PerrinLogo.png">
       </a>
       <div class="flex">
         
@@ -53,7 +53,7 @@
     <div class="min-w-fit mx-auto mt-2">
       <div class="flex justify-center">
         <a href="/artwork/">
-          <img src="/artwork/images/home/PerrinLogo.png" style="width: 100px">
+          <img class="w-[100px]" src="/artwork/images/meta/PerrinLogo.png">
         </a>
       </div>
       <div class="max-w-4xl mx-auto border-b border-gray-900 my-2"></div>
@@ -150,11 +150,10 @@
   <div class="main_content">
     
       
-<div id="swipeable" class="flex w-full">
+<div class="flex w-full">
   <div class="flex flex-col gap-8 md:grid md:grid-cols-3">
     
 
-      
       
       
 
@@ -168,7 +167,6 @@
 
       
       
-      
 
       <figure class="mx-auto ">
         <a href="/artwork/portfolio/the-demo/">
@@ -178,7 +176,6 @@
       </figure>
     
 
-      
       
       
 
@@ -192,7 +189,6 @@
 
       
       
-      
 
       <figure class="mx-auto ">
         <a href="/artwork/portfolio/backyard-hills/">
@@ -204,11 +200,8 @@
 
       
       
-        
-      
-      
 
-      <figure class="mx-auto w-2/3">
+      <figure class="mx-auto  w-2/3 ">
         <a href="/artwork/portfolio/the-onion/">
           <img class="hover:brightness-90" src="/artwork/images/portfolio/TheOnion/01-RedOnion.png">
         </a>
@@ -216,7 +209,6 @@
       </figure>
     
 
-      
       
       
 
@@ -230,7 +222,6 @@
 
       
       
-      
 
       <figure class="mx-auto ">
         <a href="/artwork/portfolio/beach-boardwalk/">
@@ -240,7 +231,6 @@
       </figure>
     
 
-      
       
       
 
@@ -286,7 +276,7 @@
     }
 
     
-      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+      swipeLeftRight(gotoPrev, gotoNext);
     
 
     document.addEventListener('keydown', function (event) {

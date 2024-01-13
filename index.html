@@ -21,7 +21,7 @@
     <!-- logo and 🍔 menu button -->
     <div class="flex justify-between items-center m-4">
       <a href="/artwork/">
-        <img src="/artwork/images/home/PerrinLogo.png" style="width: 80px">
+        <img class="w-[80px]" src="/artwork/images/meta/PerrinLogo.png">
       </a>
       <div class="flex">
         
@@ -53,7 +53,7 @@
     <div class="min-w-fit mx-auto mt-2">
       <div class="flex justify-center">
         <a href="/artwork/">
-          <img src="/artwork/images/home/PerrinLogo.png" style="width: 100px">
+          <img class="w-[100px]" src="/artwork/images/meta/PerrinLogo.png">
         </a>
       </div>
       <div class="max-w-4xl mx-auto border-b border-gray-900 my-2"></div>
@@ -89,7 +89,7 @@
 <div class="main_content">
   
     
-<div id="swipeable">
+<div>
   <div class="bg-stone-100 text-center p-4 mt-6">
       <div class="text-4xl font-bold my-2">
           Human Artist,
@@ -149,7 +149,7 @@
       <div class="hidden md:flex flex-col items-center gap-8 max-w-4xl min-w-fit mx-auto px-16">
           <figure>
               <a href="/artwork/portfolio/emma/">
-                  <img class="max-w-2xl Xborder-4 border-stone-900 hover:brightness-90" src="/artwork/images/portfolio/Emma/EmmaSittingRelaxedAttentive-12-final-framed.jpg">
+                  <img class="max-w-2xl border-stone-900 hover:brightness-90" src="/artwork/images/portfolio/Emma/EmmaSittingRelaxedAttentive-12-final-framed.jpg">
               </a>
               <figcaption class="m-2">Emma</figcaption>
           </figure>
@@ -219,7 +219,7 @@
     }
 
     
-      swipeLeftRight('swipeable', gotoPrev, gotoNext);
+      swipeLeftRight(gotoPrev, gotoNext);
     
 
     document.addEventListener('keydown', function (event) {

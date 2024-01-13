@@ -19,7 +19,7 @@
 <div class="flex flex-col h-screen">
 
   <a href="/artwork/doodles/outdoors/">
-    <div class="flex justify-between items-center p-2 hover:bg-stone-100">
+    <div class="flex justify-between items-center p-2 hover:bg-stone-100 hover:brightness-95">
       <!-- Empty space, same width as "X" -->
       <svg width="48" height="48"></svg>
 
@@ -35,22 +35,22 @@
   </a>
 
   <div class="flex mx-auto gap-2">
-    <a href="../DesertMountainTree/">
+    <a href="../../outdoors/DesertMountainTree/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         First
       </button>
     </a>
-    <a href="../PalmAtBeach/">
+    <a href="../../outdoors/PalmAtBeach/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Prev
       </button>
     </a>
-    <a href="../CoconutTreeOnBeach/">
+    <a href="../../outdoors/CoconutTreeOnBeach/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Next
       </button>
     </a>
-    <a href="../DolphinJumpingInSun/">
+    <a href="../../outdoors/DolphinJumpingInSun/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Last
       </button>
@@ -61,10 +61,12 @@
     Beach Scene Boat On Horizon
   </div>
 
-  <div id="swipeable">
-    <a href="/artwork/images/doodles/categories/outdoors/BeachSceneBoatOnHorizon.jpg">
-      <img class="p-1 sm:p-2 lg:p-4 mx-auto
-                  max-h-fit_in_viewport_single sm:max-h-fit_in_viewport_single_sm" src="/artwork/images/doodles/categories/outdoors/BeachSceneBoatOnHorizon.jpg">
+  <div class="overflow-hidden">
+    <a href="/artwork/images/doodles/outdoors/BeachSceneBoatOnHorizon.jpg">
+      <img class="p-1 sm:p-2 lg:p-4
+                  max-h-fit_in_viewport_single
+                  sm:max-h-fit_in_viewport_single_sm
+                  mx-auto" src="/artwork/images/doodles/outdoors/BeachSceneBoatOnHorizon.jpg">
     </a>
   </div>
 
@@ -73,17 +75,17 @@
 <script type="text/javascript">
   function gotoPrev() {
     
-      window.location.href = '../PalmAtBeach/'
+      window.location.href = '../../outdoors/PalmAtBeach/'
     
   }
 
   function gotoNext() {
     
-      window.location.href = '../CoconutTreeOnBeach/'
+      window.location.href = '../../outdoors/CoconutTreeOnBeach/'
     
   }
 
-  swipeLeftRight('swipeable', gotoPrev, gotoNext);
+  swipeLeftRight(gotoPrev, gotoNext);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {

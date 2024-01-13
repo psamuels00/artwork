@@ -15,10 +15,10 @@
     <div class="main_content">
       
         
-<div class="flex flex-col h-screen" style="background-color: ">
+<div class="flex flex-col h-screen bg-onion-300">
 
   <a href="/artwork/portfolio/the-onion/">
-    <div class="flex justify-between items-center p-2 hover:bg-stone-100">
+    <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50">
       <!-- Empty space, same width as "X" -->
       <svg width="48" height="48"></svg>
 
@@ -44,7 +44,7 @@
         Prev
       </button>
     </a>
-    <a href="/artwork/portfolio/the-onion/01-RedOnion/">
+    <a href="/artwork/portfolio/starry-night/StarryStarryNight/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Next
       </button>
@@ -60,10 +60,9 @@
     Red Onion Close Up
   </div>
 
-  <div id="swipeable">
+  <div class="overflow-hidden">
     <a href="/artwork/images/portfolio/TheOnion/02-RedOnionCloseUp.jpg">
-      <img class="p-1 sm:p-2 lg:p-4 mx-auto
-                  max-h-fit_in_viewport_single_sm" src="/artwork/images/portfolio/TheOnion/02-RedOnionCloseUp.jpg">
+      <img class="p-1 sm:p-2 lg:p-4 max-h-full mx-auto" src="/artwork/images/portfolio/TheOnion/02-RedOnionCloseUp.jpg">
     </a>
   </div>
 
@@ -78,11 +77,11 @@
 
   function gotoNext() {
     
-      window.location.href = '/artwork/portfolio/the-onion/01-RedOnion/';
+      window.location.href = '/artwork/portfolio/starry-night/StarryStarryNight/';
     
   }
 
-  swipeLeftRight('swipeable', gotoPrev, gotoNext);
+  swipeLeftRight(gotoPrev, gotoNext);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' || event.key === 'ArrowUp') {
@@ -98,8 +97,6 @@
       gotoNext();
     }
   });
-
-  document.body.classList.add('bg-onion-300');
 </script>
 
       

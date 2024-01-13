@@ -1,5 +1,5 @@
-function swipeLeftRight(elemId, leftFunc, rightFunc) {
-  elem = document.getElementById(elemId);
+function swipeLeftRight(leftFunc, rightFunc) {
+  elem = document.body;
   const manager = new Hammer.Manager(elem);
 
   const swipe = new Hammer.Swipe({
