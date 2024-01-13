@@ -19,17 +19,7 @@ To build the pages and serve them up during development, run the following comma
 
     npm run develop
 
-Then access the site at http://localhost:8080.
-
-
-## Data-driven Colors for Project Pages
-
-Each portfolio project has an associated color, namely for the page background.
-These are not recognized by Tailwind.  As a workaround, a bogus file named
-project_colors.html is maintained with a reference to each color that is
-referenced in _data/projects.js.
-
-There must be a better way to handle colors referenced only in a data file.
+Then access the site at http://localhost:8080/artwork/.
 
 
 ## Generated Doodle Image Pages
@@ -74,8 +64,6 @@ _None_
 - rewrite the home page to make it more DRY
 - update the doodles main page to simplify the markup and improve spacing for mobile
 - eliminate the "totalHack" in portfolio.html
-- Eliminate the need for project_colors.html.
-  But how?... Maybe using @apply in a custom style sheet??
 
 **Restructure Files**
 - eliminate the categories directory in /images/doodles/categories/*

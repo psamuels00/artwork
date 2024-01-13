@@ -10,7 +10,6 @@ const projects = [
     medium: 'Acrylic on copy paper, coated with gesso',
     size: '11 x 8½ inches',
     bg_color_page:'bg-amber-50',
-    bg_color_button: 'bg-stone-200 hover:bg-stone-300',
     images: [
       'EmmaSittingRelaxedAttentive-12-final-framed.jpg',
       'EmmaSittingRelaxedAttentive-02-photo.jpg',
@@ -38,7 +37,6 @@ const projects = [
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     size: '34 x 24½ inches',
     bg_color_page:'bg-zinc-100',
-    bg_color_button: 'bg-stone-200 hover:bg-stone-300',
     images: [
       '02-PaintingFull.jpg',
       '01-OriginalPhoto.jpg',
@@ -68,7 +66,6 @@ const projects = [
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     size: '16 x 12 inches',
     bg_color_page:'bg-sky-300',
-    bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
       '02-TheDolphin.png',
       '01-TheArtistAndTheDolphin.jpg',
@@ -85,7 +82,6 @@ const projects = [
     medium: 'Acrylic paint on cheap, glossy product paper',
     size: '16 x 12 inches',
     bg_color_page:'bg-backyard-200',
-    bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
       'Backyard-09-finished-cropped.jpg',
       'Backyard-05-ref-photo.jpg',
@@ -106,7 +102,6 @@ const projects = [
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     size: '70 x 46 inches',
     bg_color_page:'bg-onion-300',
-    bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
       '01-RedOnion.png',
       '03-TheArtistAndRedOnion.jpg',
@@ -125,7 +120,6 @@ const projects = [
     medium: 'Acrylic black on untreated copy paper.',
     size: '11 x 8½ inches',
     bg_color_page:'bg-yellow-500',
-    bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
       'StarryStarryNight.jpg',
     ],
@@ -140,7 +134,6 @@ const projects = [
     medium: 'Pencil on baking parchment paper',
     size: '24 x 16 inches',
     bg_color_page:'bg-sand-400',
-    bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
       'BeachBoardwalkSketch-02-bench.jpg',
       'BeachBoardwalkSketch-03-barge.jpg',
@@ -160,7 +153,6 @@ const projects = [
     medium: 'Acrylic on copy paper, coated with gesso',
     size: '11 x 8½ inches',
     bg_color_page:'bg-desert_brush-300',
-    bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
       'ColorWheelDesertFlower-01-final.jpg',
     ],

@@ -7,7 +7,7 @@ pagination:
 permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 ---
 
-<div class="flex flex-col h-screen" style="background-color: {{item.background}}">
+<div class="flex flex-col h-screen {{item.bg_color_page}}">
 
   <a href="/portfolio/{{item.name | slug}}/">
     <div class="flex justify-between items-center p-2 hover:bg-stone-100">
@@ -91,6 +91,4 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
       gotoNext();
     }
   });
-
-  document.body.classList.add('{{item.bg_color_page}}');
 </script>
