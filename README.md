@@ -80,7 +80,6 @@ _None_
 **Restructure Files**
 - move PerrinLogo.png to src/images/meta and remove src/images/home
 - eliminate the categories directory in /images/doodles/categories/*
-- try moving project.html, project_image.html, and project_colors.html to portfolio/
 
 **UI design**
 - add support for dark backgrounds, esp to use black for The Demo
