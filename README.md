@@ -58,9 +58,6 @@ _None_
 
 ### Medium priority
 - get some better pics of the Beach Boardwalk
-- Next/Prev should wraparound
-- eliminate cursor-not-allowed on doodles image page since disabled next/prev
-  are not right, and it doesn't work at all for mobile
 
 ### Low priority
 
