@@ -19,7 +19,7 @@ To build the pages and serve them up during development, run the following comma
 
     npm run develop
 
-Then access the site at http://localhost:8080/artwork/.
+Then access the site at http://0.0.0.0:8080/artwork/.
 
 
 ## Generated Doodle Image Pages
