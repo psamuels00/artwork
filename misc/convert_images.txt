@@ -29,7 +29,7 @@ cp ../perrins-art/02-Portfolio/05-BeachBoardwalk/*.jpg src/images/portfolio/Beac
 
 # portfolio - DesertFlower
 mkdir src/images/portfolio/DesertFlower
-shave_sides 60 140 25 70 ../perrins-art/02-Portfolio/04-DesertFlower/ColorWheelDesertFlower-01-final.heic src/images/portfolio/DesertFlower/ColorWheelDesertFlower-01-final.jpg '-quality 20'
+shave_sides 80 180 50 100 ../perrins-art/02-Portfolio/04-DesertFlower/ColorWheelDesertFlower-01-final.heic src/images/portfolio/DesertFlower/ColorWheelDesertFlower-01-final.jpg '-quality 20'
 
 # portfolio - TheDemo
 mkdir src/images/portfolio/TheDemo
