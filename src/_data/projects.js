@@ -174,23 +174,45 @@ function flattened(projects) {
   // flatten projects wrt images, and embellish each item with first/last/prev/next
   let project_images = [];
 
-  for (const project of projects) {
+  let last_project = projects[projects.length - 1];
+  let image_prev = last_project.images[last_project.images.length - 1];
+  let name_prev = last_project.name;
+
+  for (let p = 0; p < projects.length; p++) {
+    project = projects[p];
     image_first = project.images[0];
     image_last = project.images[project.images.length - 1];
 
     for (let i = 0; i < project.images.length; i++) {
-      image_prev = project.images[(i === 0) ? project.images.length - 1 : i - 1];
-      image_next = project.images[(i === project.images.length - 1) ? 0 : i + 1];
+      image = project.images[i];
+
+      if (i == project.images.length - 1) {
+        if (p == projects.length - 1) {
+          name_next = projects[0].name;
+          image_next = projects[0].images[0];
+        } else {
+          name_next = projects[p + 1].name;
+          image_next = projects[p + 1].images[0];
+        }
+      } else {
+        name_next = projects[p].name;
+        image_next = project.images[i + 1];
+      }
 
       item = {
-        image: project.images[i],
+        image,
         image_first,
         image_last,
+        name_prev,
         image_prev,
+        name_next,
         image_next,
         ...project,
       }
       delete item.images;
+
+      name_prev = project.name;
+      image_prev = image;
 
       project_images.push(item);
     }

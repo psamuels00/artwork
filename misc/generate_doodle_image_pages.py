@@ -67,33 +67,71 @@ def build_image_page_content(category, name, first, last, prev, next):
     return content
 
 
-def generate_image_pages(category):
+def generate_image_page(image):
+    category = image['category']
+    name = image['name']
+    first = image['first']
+    last = image['last']
+    prev = image['prev']
+    next = image['next']
+
+    content = build_image_page_content(category, name, first, last, prev, next)
+
+    out_file = os.path.join(categories_pages_path, category, name) + ".html"
+    write_file(out_file, content)
+
+
+def generate_image_pages(categories, image_map):
+    images = []
+
+    for category in categories:
+        names = image_map[category]
+        for name in names:
+            images.append(dict(
+                name=name,
+                category=category,
+                path=f"../../{category}/{name}/",
+                first=f"../../{category}/{names[0]}/",
+                last=f"../../{category}/{names[-1]}/",
+            ))
+
+    for offset, image in enumerate(images):
+        if offset == 0:
+            image['prev'] = images[-1]['path']
+            image['next'] = images[offset + 1]['path']
+        elif offset == len(images) - 1:
+            image['prev'] = images[offset - 1]['path']
+            image['next'] = images[0]['path']
+        else:
+            image['prev'] = images[offset - 1]['path']
+            image['next'] = images[offset + 1]['path']
+
+    for image in images:
+        generate_image_page(image)
+
+
+def read_category_file(category):
     file = os.path.join(categories_pages_path, category) + ".html"
     lines = read_file(file)
 
-    names = parse_category_page(lines, category)
-    first = "../" + names[0] + '/'
-    last = "../" + names[-1] + '/'
+    return parse_category_page(lines, category)
 
-    offset = 0
-    while offset < len(names):
-        name = names[offset]
-        prev = "../" + names[len(names) - 1 if offset == 0 else offset - 1] + "/"
-        next = "../" + names[0 if offset == len(names) - 1 else offset + 1] + "/"
-        content = build_image_page_content(category, name, first, last, prev, next)
 
-        out_file = os.path.join(categories_pages_path, category, name) + ".html"
-        write_file(out_file, content)
-        offset += 1
+def read_category_files():
+    image_map = dict()
+    categories = [
+        f[:-5] for f in sorted(os.listdir(categories_pages_path))
+        if f.endswith(".html")
+    ]
+    for category in categories:
+        image_map[category] = read_category_file(category)
+
+    return categories, image_map
 
 
 def main():
-    categories = [
-        f[:-5] for f in os.listdir(categories_pages_path)
-        if f.endswith(".html")
-    ]
-    for category in sorted(categories):
-        generate_image_pages(category)
+    categories, image_map = read_category_files()
+    generate_image_pages(categories, image_map)
 
 
 main()

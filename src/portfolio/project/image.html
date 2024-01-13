@@ -31,12 +31,12 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
         First
       </button>
     </a>
-    <a href="/portfolio/{{item.name | slug}}/{{(item.image_prev or item.image)| rmFileExt}}/">
+    <a href="/portfolio/{{item.name_prev | slug}}/{{(item.image_prev)| rmFileExt}}/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Prev
       </button>
     </a>
-    <a href="/portfolio/{{item.name | slug}}/{{(item.image_next or item.image) | rmFileExt}}/">
+    <a href="/portfolio/{{item.name_next | slug}}/{{(item.image_next) | rmFileExt}}/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Next
       </button>
@@ -65,13 +65,13 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 <script type="text/javascript">
   function gotoPrev() {
     {% if item.image_prev %}
-      window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_prev | rmFileExt}}/';
+      window.location.href = '{{'/portfolio/' | url}}{{item.name_prev | slug}}/{{item.image_prev | rmFileExt}}/';
     {% endif %}
   }
 
   function gotoNext() {
     {% if item.image_next %}
-      window.location.href = '{{'/portfolio/' | url}}{{item.name | slug}}/{{item.image_next | rmFileExt}}/';
+      window.location.href = '{{'/portfolio/' | url}}{{item.name_next | slug}}/{{item.image_next | rmFileExt}}/';
     {% endif %}
   }
 
