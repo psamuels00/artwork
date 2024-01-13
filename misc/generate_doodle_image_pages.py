@@ -53,7 +53,7 @@ def build_image_page_content(category, name, first, last, prev, next):
     record = [
         "---",
         f"title:    {title}",
-        f"layout:   layouts/image.html",
+        f"layout:   pages/doodles/image.html",
         f"category: {category}",
         f"first:    {first}",
         f"prev:     {prev}",
