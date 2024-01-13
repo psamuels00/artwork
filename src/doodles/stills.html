@@ -8,14 +8,14 @@ escape: '/doodles/'
 enter: '/doodles/stills/AppleStillShotSimple/'
 ---
 
+{% import "snippets/doodle_figure.html" as macros %}
+
 <div id="swipeable" class="sm:grid grid-cols-2 gap-8">
   {% set image_names = [
     'AppleStillShotSimple',
     'MiniVersionOfTheOnion'
   ] %}
   {% for name in image_names %}
-    <a href="/doodles/stills/{{name}}/">
-      <img class="sm:my-0 my-8 hover:brightness-90" src="/images/doodles/categories/stills/{{name}}.jpg"/>
-    </a>
+    {{ macros.doodleFigure(name, category) }}
   {% endfor %}
 </div>
