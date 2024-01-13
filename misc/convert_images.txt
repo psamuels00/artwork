@@ -22,7 +22,7 @@ rm src/images/portfolio/BackyardHills/Backyard-03-quick-drawing.jpg
 # portfolio - Emma
 mkdir src/images/portfolio/Emma
 cp ../perrins-art/02-Portfolio/06-Emma/*.jpg src/images/portfolio/Emma
-for x in `(cd ../perrins-art/02-Portfolio/06-Emma; ls *.heic)`; do echo ${x%.heic}; convert -quality 40 ../perrins-art/02-Portfolio/06-Emma/$x src/images/portfolio/Emma/${x%.heic}.jpg; done
+for x in `(cd ../perrins-art/02-Portfolio/06-Emma; ls *.heic)`; do echo ${x%.heic}; convert -quality 50 ../perrins-art/02-Portfolio/06-Emma/$x src/images/portfolio/Emma/${x%.heic}.jpg; done
 
 # portfolio - BeachBoardwalk
 mkdir src/images/portfolio/BeachBoardwalk
