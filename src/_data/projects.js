@@ -8,7 +8,7 @@ const projects = [
     date: 'Dec, 2023',
     location: 'Concord, CA',
     medium: 'Acrylic on copy paper, coated with gesso',
-    dimensions: '11 x 8½ inches',
+    size: '11 x 8½ inches',
     bg_color_page:'bg-amber-50',
     bg_color_button: 'bg-stone-200 hover:bg-stone-300',
     images: [
@@ -36,7 +36,7 @@ const projects = [
     date: '2020',
     location: 'Mission District, San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
-    dimensions: '34 x 24½ inches',
+    size: '34 x 24½ inches',
     bg_color_page:'bg-zinc-100',
     bg_color_button: 'bg-stone-200 hover:bg-stone-300',
     images: [
@@ -66,7 +66,7 @@ const projects = [
     date: '2020',
     location: 'San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
-    dimensions: '16 x 12 inches',
+    size: '16 x 12 inches',
     bg_color_page:'bg-sky-300',
     bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
@@ -83,7 +83,7 @@ const projects = [
     date: 'Dec, 2023',
     location: 'Concord, CA',
     medium: 'Acrylic paint on cheap, glossy product paper',
-    dimensions: '16 x 12 inches',
+    size: '16 x 12 inches',
     bg_color_page:'bg-backyard-200',
     bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
@@ -104,7 +104,7 @@ const projects = [
     date: '2020',
     location: 'San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
-    dimensions: '70 x 46 inches',
+    size: '70 x 46 inches',
     bg_color_page:'bg-onion-300',
     bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
@@ -123,7 +123,7 @@ const projects = [
     date: '2013',
     location: 'San Francisco, CA',
     medium: 'Acrylic black on untreated copy paper.',
-    dimensions: '11 x 8½ inches',
+    size: '11 x 8½ inches',
     bg_color_page:'bg-yellow-500',
     bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
@@ -138,7 +138,7 @@ const projects = [
     date: 'Oct, 2023',
     location: 'Concord, CA',
     medium: 'Pencil on baking parchment paper',
-    dimensions: '24 x 16 inches',
+    size: '24 x 16 inches',
     bg_color_page:'bg-sand-400',
     bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
@@ -158,7 +158,7 @@ const projects = [
     date: 'Nov, 2023',
     location: 'Concord, CA',
     medium: 'Acrylic on copy paper, coated with gesso',
-    dimensions: '11 x 8½ inches',
+    size: '11 x 8½ inches',
     bg_color_page:'bg-desert_brush-300',
     bg_color_button: 'bg-stone-100 hover:bg-stone-200',
     images: [
