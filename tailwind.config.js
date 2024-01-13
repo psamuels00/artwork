@@ -20,8 +20,9 @@ module.exports = {
       maxHeight: {
         // 142px and 205px are the combined height of the navigation headers
         // 10px is an arbitrary margin
-        fit_in_viewport: 'calc(100vh - 142px - 10px)',
-        fit_in_viewport_lg: 'calc(100vh - 205px - 10px)',
+        // 210px and 105px allow room for the Title and first line of Description to be seen
+        fit_in_viewport: 'calc(100vh - 142px - 10px - 210px)',
+        fit_in_viewport_lg: 'calc(100vh - 205px - 10px - 105px)',
 
         // and similarly for single image pages, except no margin needed bc images have padding
         // ...although  there is a mystery 110px additional adjustment needed for iPhone!?
