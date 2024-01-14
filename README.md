@@ -1,11 +1,11 @@
 # Perrin's Artwork
 
-[Web site](https://psamuels00.github.io/artwork/)
+[perrin-art.com](https://perrin-art.com/)
 to show my artwork and to learn some new tools for front-end Web development.
 
 - 11ty - Static Site builder
 - Nunjucks - Javascript templating
-- Tailwind CSS - Styling framework
+- Tailwind CSS - Utility-based styling framework
 
 
 ## Development Environment
