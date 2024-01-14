@@ -48,7 +48,7 @@ module.exports = {
           image_next = item.images[image_offset + 1];
         }
 
-        item = {
+        embellished_item = {
           image,
           image_first,
           image_last,
@@ -58,12 +58,12 @@ module.exports = {
           image_next,
           ...item,
         }
-        delete item.images;
+        delete embellished_item.images;
 
         name_prev = item.name;
         image_prev = image;
 
-        all_images.push(item);
+        all_images.push(embellished_item);
       }
     }
     return all_images;
