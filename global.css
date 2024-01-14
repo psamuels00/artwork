@@ -1065,10 +1065,6 @@ video {
   font-weight: 500;
 }
 
-.capitalize {
-  text-transform: capitalize;
-}
-
 .italic {
   font-style: italic;
 }

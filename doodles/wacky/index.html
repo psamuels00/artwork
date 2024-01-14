@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Perrin&#39;s Wacky Doodles</title>
+    <title></title>
     <link rel="shortcut icon" type="image/png" href="/images/meta/emma_face.png"/>
     <link rel="stylesheet" href="/global.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"
@@ -176,110 +176,144 @@
       
 
 
-<div class="sm:grid grid-cols-3 gap-8">
-  
-  
+
+  <div class="sm:grid grid-cols-4 gap-8">
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/TheHumanMachine/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/TheHumanMachine.jpg"/>
       </a>
-      <figcaption>The Human Machine</figcaption>
+      <figcaption>The Human Machine.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/EarthDance/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/EarthDance.jpg"/>
       </a>
-      <figcaption>Earth Dance</figcaption>
+      <figcaption>Earth Dance.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/Egghead/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/Egghead.jpg"/>
       </a>
-      <figcaption>Egghead</figcaption>
+      <figcaption>Egghead.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/WackyStarryNightMobile/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/WackyStarryNightMobile.jpg"/>
       </a>
-      <figcaption>Wacky Starry Night Mobile</figcaption>
+      <figcaption>Wacky Starry Night Mobile.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/RainbowAmoeba/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/RainbowAmoeba.jpg"/>
       </a>
-      <figcaption>Rainbow Amoeba</figcaption>
+      <figcaption>Rainbow Amoeba.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/AlienShowdownOnTheRoad/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/AlienShowdownOnTheRoad.jpg"/>
       </a>
-      <figcaption>Alien Showdown On The Road</figcaption>
+      <figcaption>Alien Showdown On The Road.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/PersonFacingAngryGodhead/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/PersonFacingAngryGodhead.jpg"/>
       </a>
-      <figcaption>Person Facing Angry Godhead</figcaption>
+      <figcaption>Person Facing Angry Godhead.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/CreatureThing/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/CreatureThing.jpg"/>
       </a>
-      <figcaption>Creature Thing</figcaption>
+      <figcaption>Creature Thing.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/PinkAlien/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/PinkAlien.jpg"/>
       </a>
-      <figcaption>Pink Alien</figcaption>
+      <figcaption>Pink Alien.jpg</figcaption>
   </figure>
 
-  
     
+      
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/wacky/RescueBaloonBlower/">
           <img class="hover:brightness-90"
                src="/images/doodles/wacky/RescueBaloonBlower.jpg"/>
       </a>
-      <figcaption>Rescue Baloon Blower</figcaption>
+      <figcaption>Rescue Baloon Blower.jpg</figcaption>
   </figure>
 
-  
-</div>
+    
+  </div>
+
+
+<script type="text/javascript">
+  function gotoPrev() {
+    window.location.href = '/doodles/textures/'
+  }
+
+  function gotoNext() {
+    window.location.href = '/doodles/abstract/'
+  }
+
+  swipeLeftRight(gotoPrev, gotoNext);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      window.location.href = '/doodles/'
+    }
+
+    if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      window.location.href = '/doodles/wacky/TheHumanMachine/'
+    }
+
+    if (event.key === 'ArrowLeft') {
+      gotoPrev();
+    }
+
+    if (event.key === 'ArrowRight') {
+      gotoNext();
+    }
+  });
+
+</script>
 
     
   </div>
@@ -299,48 +333,6 @@
   </div>
 </footer>
 
-
-  <script type="text/javascript">
-    function gotoPrev() {
-      
-        window.location.href = '/doodles/textures/'
-      
-    }
-
-    function gotoNext() {
-      
-        window.location.href = '/doodles/abstract/'
-      
-    }
-
-    
-      swipeLeftRight(gotoPrev, gotoNext);
-    
-
-    document.addEventListener('keydown', function (event) {
-      
-        if (event.key === 'Escape' || event.key === 'ArrowUp') {
-          event.preventDefault();
-          window.location.href = '/doodles/'
-        }
-      
-
-      
-        if (event.key === 'Enter' || event.key === 'ArrowDown') {
-          event.preventDefault();
-          window.location.href = '/doodles/wacky/TheHumanMachine/'
-        }
-      
-
-      if (event.key === 'ArrowLeft') {
-        gotoPrev();
-      }
-
-      if (event.key === 'ArrowRight') {
-        gotoNext();
-      }
-    });
-  </script>
 
 
       
