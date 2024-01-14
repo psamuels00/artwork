@@ -2,6 +2,8 @@
 layout: 'layouts/base.html'
 ---
 
+{% import "snippets/svg.html" as macros %}
+
 <!-- mobile-first, responsive navigation -->
 <nav>
   <div class="lg:hidden">
@@ -23,9 +25,7 @@ layout: 'layouts/base.html'
         {% endif %}
 
         <button class="mobile-menu-button hover:bg-stone-100 p-2 flex gap-2">
-          <svg class="h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
+          {{ macros.svgPath("h-6", 24, 24, 2, "M4 6h16M4 12h16M4 18h16") }}
         </button>
       </div>
     </div>

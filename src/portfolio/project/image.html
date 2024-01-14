@@ -7,6 +7,8 @@ pagination:
 permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
 ---
 
+{% import "snippets/svg.html" as macros %}
+
 <div class="flex flex-col h-screen {{item.bg_color_page}}">
 
   <a href="/portfolio/{{item.name | slug}}/">
@@ -19,9 +21,7 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
       </div>
 
       <!-- An "X" -->
-      <svg class="text-stone-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" width="48" height="48" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M6 6L42 42M6 42L42 6"/>
-      </svg>
+      {{ macros.svgPath("text-stone-400", 48, 48, 4, "M6 6L42 42M6 42L42 6") }}
     </div>
   </a>
 

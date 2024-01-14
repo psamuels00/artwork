@@ -1,0 +1,9 @@
+{% macro svgPath(class, width, height, stroke_width, d) %}
+  <svg class="{{class}}"
+       xmlns="http://www.w3.org/2000/svg"
+       fill="none" stroke="currentColor"
+       viewBox="0 0 {{width}} {{height}}" width="{{width}}" height="{{height}}">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="{{stroke_width}}"
+            d="{{d}}" />
+  </svg>
+{% endmacro %}
