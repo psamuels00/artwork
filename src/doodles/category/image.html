@@ -53,12 +53,12 @@ permalink: "doodles/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
   </div>
 
   <div class="overflow-hidden">
-    <a href="/images/doodles/{{item.name.replace(' ', '')}}/{{item.image}}">
+    <a href="/images/doodles/{{item.name | slug}}/{{item.image}}">
       <img class="p-1 sm:p-2 lg:p-4
                   max-h-fit_in_viewport_single
                   sm:max-h-fit_in_viewport_single_sm
                   mx-auto"
-           src="/images/doodles/{{item.name.replace(' ', '')}}/{{item.image}}" />
+           src="/images/doodles/{{item.name | slug}}/{{item.image}}" />
     </a>
   </div>
 
