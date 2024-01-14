@@ -4,7 +4,7 @@ const sizeOf = require('image-size');
 
 module.exports = config => {
   // logging
-  config.setQuietMode(false);
+  config.setQuietMode(true);
 
   // copy files
   config.addPassthroughCopy('src/images/');
@@ -32,6 +32,12 @@ module.exports = config => {
     const fullPath = path.join(__dirname, 'src', imagePath);
     const dimensions = sizeOf(imagePath);
     return dimensions.width > dimensions.height;
+  });
+
+  // copyright year
+  config.addFilter("yearSince", value => {
+    year = new Date().getFullYear();
+    return (year === value) ? year : ` ${value}-${year}`;
   });
 
   return {

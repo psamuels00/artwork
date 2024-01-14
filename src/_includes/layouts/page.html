@@ -95,7 +95,7 @@ layout: 'layouts/base.html'
       gmail.com
       #}
     </div>
-    <p>&copy;2024 Perrin Inc.</p>
+    <p>&copy;{{ 2024 | yearSince }} · Perrin</p>
     {% if page.url === '/about/' %}
       <p>Made with ❤️ in Concord.</p>
     {% endif %}
