@@ -44,7 +44,6 @@ _None_
 
 ### Medium priority
 - get some better pics of the Beach Boardwalk
-- get it working on perrin-art.com
 
 ### Low priority
 
