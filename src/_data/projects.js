@@ -159,68 +159,9 @@ const projects = [
   },
 ]
 
-function navigable(projects) {
-  // embellish each project with prev/next and project_number/max_project_number
-  return projects.map((object, offset) => ({
-    ...object,
-    prev: (offset == 0 ? projects[projects.length - 1].name : projects[offset - 1].name),
-    next: (offset == (projects.length - 1) ? projects[0].name : projects[offset + 1].name),
-    project_number: offset + 1,
-    max_project_number: projects.length,
-  }))
-}
-
-function flattened(projects) {
-  // flatten projects wrt images, and embellish each item with first/last/prev/next
-  let project_images = [];
-
-  let last_project = projects[projects.length - 1];
-  let image_prev = last_project.images[last_project.images.length - 1];
-  let name_prev = last_project.name;
-
-  for (let p = 0; p < projects.length; p++) {
-    project = projects[p];
-    image_first = project.images[0];
-    image_last = project.images[project.images.length - 1];
-
-    for (let i = 0; i < project.images.length; i++) {
-      image = project.images[i];
-
-      if (i == project.images.length - 1) {
-        if (p == projects.length - 1) {
-          name_next = projects[0].name;
-          image_next = projects[0].images[0];
-        } else {
-          name_next = projects[p + 1].name;
-          image_next = projects[p + 1].images[0];
-        }
-      } else {
-        name_next = projects[p].name;
-        image_next = project.images[i + 1];
-      }
-
-      item = {
-        image,
-        image_first,
-        image_last,
-        name_prev,
-        image_prev,
-        name_next,
-        image_next,
-        ...project,
-      }
-      delete item.images;
-
-      name_prev = project.name;
-      image_prev = image;
-
-      project_images.push(item);
-    }
-  }
-  return project_images;
-}
+const common = require('./common');
 
 module.exports = {
-    structured: navigable(projects),
-    flat: flattened(projects),
+    structured: common.navigable(projects),
+    flat: common.flattened(projects),
 };

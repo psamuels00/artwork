@@ -60,13 +60,13 @@ permalink: "portfolio/{{ project.name | slug }}/"
 <div class="flex">
   <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
     {% for name in project.images %}
-    {% if not loop.first %}
-    <a href="/portfolio/{{project.name | slug}}/{{name | rmFileExt}}/">
-      <img class="hover:brightness-90"
-           src="/images/portfolio/{{project.name.replace(' ', '')}}/{{name}}"/>
-    </a>
-    {% endif -%}
-    {% endfor -%}
+      {% if not loop.first %}
+        <a href="/portfolio/{{project.name | slug}}/{{name | rmFileExt}}/">
+          <img class="hover:brightness-90"
+               src="/images/portfolio/{{project.name.replace(' ', '')}}/{{name}}"/>
+        </a>
+      {% endif %}
+    {% endfor %}
   </div>
 </div>
 

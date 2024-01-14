@@ -1,8 +1,8 @@
 {% macro doodleFigure(name, category) %}
   <figure class="sm:my-0 my-8 text-sm font-extralight">
-      <a href="/doodles/{{category | lower}}/{{name}}/">
+      <a href="/doodles/{{category | lower}}/{{name | rmFileExt }}/">
           <img class="hover:brightness-90"
-               src="/images/doodles/{{category | lower}}/{{name}}.jpg"/>
+               src="/images/doodles/{{category | lower}}/{{name}}"/>
       </a>
       <figcaption>{{name | sepWords}}</figcaption>
   </figure>

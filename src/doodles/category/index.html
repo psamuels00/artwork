@@ -1,0 +1,69 @@
+---
+layout: layouts/doodles.html
+pagination:
+  data: doodles.structured
+  size: 1
+  alias: category
+permalink: "doodles/{{ category.name | slug }}/"
+---
+
+{% import "snippets/doodle_figure.html" as macros %}
+
+{% if 'top_images' in category %}
+  <div class="sm:grid grid-cols-3 gap-8">
+    {% for image_name in category.top_images %}
+      {{ macros.doodleFigure(image_name, category.name) }}
+    {% endfor %}
+  </div>
+  <div class="sm:flex flex-row gap-8 mt-8">
+    <div class="sm:grid grid-cols-2 gap-8">
+      {% for image_name in category.left_images %}
+        {{ macros.doodleFigure(image_name, category.name) }}
+      {% endfor %}
+    </div>
+    <div class="sm:grid grid-cols-1 gap-8">
+      {% for image_name in category.right_images %}
+        {{ macros.doodleFigure(image_name, category.name) }}
+      {% endfor %}
+    </div>
+  </div>
+{% else %}
+  <div class="sm:grid grid-cols-4 gap-8">
+    {% for image_name in category.images %}
+      {{ macros.doodleFigure(image_name, category.name) }}
+    {% endfor %}
+  </div>
+{% endif %}
+
+<script type="text/javascript">
+  function gotoPrev() {
+    window.location.href = '{{'/' | url}}doodles/{{category.prev | slug}}/'
+  }
+
+  function gotoNext() {
+    window.location.href = '{{'/' | url}}doodles/{{category.next | slug}}/'
+  }
+
+  swipeLeftRight(gotoPrev, gotoNext);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      window.location.href = '{{'/doodles/' | url}}'
+    }
+
+    if (event.key === 'Enter' || event.key === 'ArrowDown') {
+      event.preventDefault();
+      window.location.href = '{{'/' | url}}doodles/{{category.name | slug}}/{{category.images[0] | rmFileExt}}/'
+    }
+
+    if (event.key === 'ArrowLeft') {
+      gotoPrev();
+    }
+
+    if (event.key === 'ArrowRight') {
+      gotoNext();
+    }
+  });
+
+</script>
