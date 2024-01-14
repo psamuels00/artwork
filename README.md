@@ -12,8 +12,8 @@ to show my artwork and to learn some new tools for front-end Web development.
 
 To build the pages and serve them up during development, run the following commands in separate windows:
 
-    npm run css - Tailwind transformations
-    npm start - Build pages and run 11ty server
+    npm run css   # Tailwind transformations
+    npm start     # Build pages and run 11ty server
 
 ...or start both in the same terminal:
 
@@ -48,14 +48,6 @@ _None_
 
 ### Low priority
 
-**New feature**
-- add descriptions for each project image
-- when user clicks on image on single image page, show a high-res version of the image,
-  or at least for key images; maybe add "high-res" link on project page in info box.
-
-**Performance improvement**
-- shrink more images for faster page loads (maybe)
-
 **Rewrite to improve code and fully embrace Eleventy**
 - use 11ty features to replace generate_doodle_image_pages.py
 - product_image.html should use layouts/image.html for more DRYness
@@ -73,7 +65,7 @@ _None_
 - maybe list the doodles in alphabetical order so they match the menus, at least on mobile
 - maybe display N/M (project #N of M projects) with project title in mobile menu
 
-**UI tweaks**
+**UI tweak**
 - clean up image names and be consistent with slugs vs TitleCase in dir/file names and URLs
 - overall more consistency with the break points across pages: sm, md, lg
 - add support for dark backgrounds, esp to use black for The Demo
@@ -82,6 +74,12 @@ _None_
 - maybe add Next/Prev buttons to bottom of project pages
 - maybe transition page loads more smoothly
 
-**UI fixes**
+**UI fix**
 - pic at top of project page not showing at all on iPhone in landscape orientation
 - add margin below secondary doodles menu on mobile, there is none in landscape orientation
+
+**New feature**
+- maybe add descriptions for each project image
+
+**Performance improvement**
+- maybe shrink more images for faster page loads
