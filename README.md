@@ -83,4 +83,3 @@ _None_
 
 **Performance improvement**
 - maybe shrink more images for faster page loads
-
