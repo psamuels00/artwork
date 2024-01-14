@@ -1,6 +1,6 @@
 # Perrin's Artwork
 
-[perrin-art.com](https://perrin-art.com/)
+[perrins-art.com](https://perrins-art.com/)
 to show my artwork and to learn some new tools for front-end Web development.
 
 - 11ty - Static Site builder
