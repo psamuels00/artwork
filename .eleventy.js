@@ -23,6 +23,9 @@ module.exports = config => {
   config.addFilter('cleanupHack', value => {
     return value.replace(/^(.+-)?\d\d-/, '');
   });
+  config.addFilter('sepWords', value => {
+    return value.replace(/([a-z])([A-Z])/g, "$1 $2");
+  });
 
   // image orientation
   config.addFilter('isLandscape', imagePath => {

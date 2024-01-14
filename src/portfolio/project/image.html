@@ -49,7 +49,7 @@ permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
   </div>
 
   <div class="flex justify-center text-lg font-extralight pt-3">
-    {{ item.image | cleanupHack | rmFileExt | replace(r/([a-z])([A-Z])/g, "$1 $2")}}
+    {{ item.image | cleanupHack | rmFileExt | sepWords }}
   </div>
 
   <div class="overflow-hidden">

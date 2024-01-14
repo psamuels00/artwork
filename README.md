@@ -64,20 +64,24 @@ _None_
 **Rewrite to improve code and fully embrace Tailwind**
 - rewrite the home page to make it more DRY
 - update the doodles main page to simplify the markup and improve spacing for mobile
-- eliminate the "totalHack" in portfolio.html
 
 **UI design**
-- add support for dark backgrounds, esp to use black for The Demo
-- display N/M (project #N of M projects) with project title in mobile menu
-- overall more consistency with the break points across pages: sm, md, lg
+- redesign image page navigation so fingers do not cover image to reach controls,
+  maybe eliminate first/last, allow tap on left/right side of image to go to
+  prev/next, and have separate link for "hi-res"
 - the "X" to leave image page always takes the user to top of previous page
-- add floating button to quickly jump to top of any long page
-- transition page loads more smoothly (maybe)
-- remove redundancy from image names and take full advantage of slugs
-- create a filter for replace(r/([a-z])([A-Z])/g, "$1 $2") if not replaced by slugs
-- redesign image page navigation so fingers do not cover image to reach controls
-- add Next/Prev buttons to bottom of project pages
-- maybe show two categories/pics per row on doodles main page on mobile
 - maybe list the doodles in alphabetical order so they match the menus, at least on mobile
+- maybe display N/M (project #N of M projects) with project title in mobile menu
+
+**UI tweaks**
+- clean up image names and be consistent with slugs vs TitleCase in dir/file names and URLs
+- overall more consistency with the break points across pages: sm, md, lg
+- add support for dark backgrounds, esp to use black for The Demo
+- maybe show two categories/pics per row on doodles main page on mobile
+- maybe add floating button to quickly jump to top of any long page
+- maybe add Next/Prev buttons to bottom of project pages
+- maybe transition page loads more smoothly
+
+**UI fixes**
 - pic at top of project page not showing at all on iPhone in landscape orientation
 - add margin below secondary doodles menu on mobile, there is none in landscape orientation
