@@ -149,8 +149,6 @@ const categories = [
 
 const common = require('./common');
 
-common.combineImages(categories);
-
 module.exports = {
     structured: common.navigable(categories),
     flat: common.flattened(categories),

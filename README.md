@@ -32,13 +32,10 @@ _None_
 
 ### Low priority
 
-**Rewrite to improve code and fully embrace Eleventy**
-- project/image.html and doodles/image.html are very similar and can be factored
-- build portfolio menu from data in projects.js, maybe including new ordering options
-
-**Rewrite to improve code and fully embrace Tailwind**
-- rewrite the home page to make it more DRY
-- update the doodles main page to simplify the markup and improve spacing for mobile
+**UI bug fixes**
+- properly fix the mobile viewport problem instead of using my max-h-fit_in_viewport* hack
+- pic at top of project page not showing at all on iPhone in landscape orientation
+- add margin below secondary doodles menu on mobile, there is none in landscape orientation
 
 **UI design**
 - redesign image page navigation so fingers do not cover image to reach controls,
@@ -50,7 +47,7 @@ _None_
 
 **UI tweaks**
 - maybe show two categories/pics per row on doodles main page on mobile
-- clean up image names and be consistent with slugs vs TitleCase in dir/file names and URLs
+- clean up image names
 - overall more consistency with the break points across pages: sm, md, lg
 - add support for dark backgrounds, esp to use black for The Demo
 - add alt tag to all images
@@ -58,10 +55,12 @@ _None_
 - maybe add Next/Prev buttons to bottom of project pages
 - maybe transition page loads more smoothly
 
-**UI bug fixes**
-- properly fix the mobile viewport problem instead of using my max-h-fit_in_viewport* hack
-- pic at top of project page not showing at all on iPhone in landscape orientation
-- add margin below secondary doodles menu on mobile, there is none in landscape orientation
+**Rewrite to improve code and fully embrace Eleventy**
+- build portfolio menu from data in projects.js, maybe including new ordering options
+
+**Rewrite to improve code and fully embrace Tailwind**
+- rewrite the home page to make it more DRY
+- update the doodles main page to simplify the markup and improve spacing for mobile
 
 **New features**
 - maybe add descriptions for each project image

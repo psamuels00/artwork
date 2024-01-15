@@ -1,0 +1,102 @@
+---
+layout: 'layouts/base.html'
+---
+
+{% import "snippets/svg.html" as macros %}
+
+<div class="flex flex-col h-screen {{item.bg_color_page}}">
+
+  <a href="/{{top_page_name}}/{{item.name | slug}}/">
+    <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50">
+      <!-- Empty space, same width as "X" -->
+      <svg width="48" height="48" />
+
+      {% if item.title %}
+        <div class="mx-auto text-2xl font-medium">
+          {{ item.title }}
+        </div>
+      {% else %}
+        <div class="mx-auto text-3xl font-light">
+          {{ item.name }}
+        </div>
+      {% endif %}
+
+      <!-- An "X" -->
+      {{ macros.svgPath("text-stone-400", 48, 48, 4, "M6 6L42 42M6 42L42 6") }}
+    </div>
+  </a>
+
+  <div class="flex mx-auto gap-2">
+    <a href="/{{top_page_name}}/{{item.first.name | slug}}/{{item.first.image | rmFileExt}}/">
+      <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+        First
+      </button>
+    </a>
+    <a href="/{{top_page_name}}/{{item.prev.name | slug}}/{{(item.prev.image)| rmFileExt}}/">
+      <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+        Prev
+      </button>
+    </a>
+    <a href="/{{top_page_name}}/{{item.next.name | slug}}/{{(item.next.image) | rmFileExt}}/">
+      <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+        Next
+      </button>
+    </a>
+    <a href="/{{top_page_name}}/{{item.last.name | slug}}/{{item.last.image | rmFileExt}}/">
+      <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+        Last
+      </button>
+    </a>
+  </div>
+
+  <div class="flex justify-center text-lg font-extralight pt-3">
+    {{ item.image | cleanupHack | rmFileExt | sepWords }}
+  </div>
+
+  <div class="overflow-hidden">
+    <a href="/images/{{top_page_name}}/{{item.name | slug}}/{{item.image}}">
+
+      {% set imagePath = '/images/' + top_page_name + '/' + item.name.replace(' ', '') + '/' + item.image %}
+      {% set isLandscape = ('src' + imagePath) | isLandscape %}
+
+      <img class="p-1 sm:p-2 lg:p-4
+                  {% if isLandscape %}
+                    max-h-full
+                  {% else %}
+                    max-h-fit_in_viewport_single
+                    sm:max-h-fit_in_viewport_single_sm
+                  {% endif %}
+                  mx-auto"
+           src="{{imagePath}}" />
+
+    </a>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  function gotoPrev() {
+    window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.prev.name | slug}}/{{item.prev.image | rmFileExt}}/';
+  }
+
+  function gotoNext() {
+    window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.next.name | slug}}/{{item.next.image | rmFileExt}}/';
+  }
+
+  swipeLeftRight(gotoPrev, gotoNext);
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      window.location.href = '../'
+    }
+
+    if (event.key === 'ArrowLeft') {
+      gotoPrev();
+    }
+
+    if (event.key === 'ArrowRight') {
+      gotoNext();
+    }
+  });
+</script>
