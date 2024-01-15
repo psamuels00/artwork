@@ -19,16 +19,18 @@
         
 
 
-<div class="flex flex-col h-screen">
+<div class="flex flex-col h-screen ">
 
   <a href="/doodles/textures/">
-    <div class="flex justify-between items-center p-2 hover:bg-stone-100 hover:brightness-95">
+    <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50">
       <!-- Empty space, same width as "X" -->
       <svg width="48" height="48" />
 
-      <div class="mx-auto text-3xl font-light">
-        Textures
-      </div>
+      
+        <div class="mx-auto text-3xl font-light">
+          Textures
+        </div>
+      
 
       <!-- An "X" -->
       
@@ -72,11 +74,18 @@
 
   <div class="overflow-hidden">
     <a href="/images/doodles/textures/BlueOnGreenTexture.jpg">
+
+      
+      
+
       <img class="p-1 sm:p-2 lg:p-4
-                  max-h-fit_in_viewport_single
-                  sm:max-h-fit_in_viewport_single_sm
+                  
+                    max-h-fit_in_viewport_single
+                    sm:max-h-fit_in_viewport_single_sm
+                  
                   mx-auto"
-           src="/images/doodles/textures/BlueOnGreenTexture.jpg" />
+           src="/images/doodles/Textures/BlueOnGreenTexture.jpg" />
+
     </a>
   </div>
 
@@ -84,15 +93,11 @@
 
 <script type="text/javascript">
   function gotoPrev() {
-    
-      window.location.href = '/doodles/textures/SwabTipTexture/';
-    
+    window.location.href = '/doodles/textures/SwabTipTexture/';
   }
 
   function gotoNext() {
-    
-      window.location.href = '/doodles/textures/BristlyThingTexture/';
-    
+    window.location.href = '/doodles/textures/BristlyThingTexture/';
   }
 
   swipeLeftRight(gotoPrev, gotoNext);
