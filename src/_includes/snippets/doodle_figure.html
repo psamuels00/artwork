@@ -2,8 +2,8 @@
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/{{name | lower}}/{{image | rmFileExt }}/">
           <img class="hover:brightness-90"
-               src="/images/doodles/{{name | lower}}/{{image}}"/>
+               src="/images/doodles/{{name | replace(' ', '')}}/{{image}}"/>
       </a>
-      <figcaption>{{name | sepWords}}</figcaption>
+      <figcaption>{{image | rmFileExt | sepWords}}</figcaption>
   </figure>
 {% endmacro %}
