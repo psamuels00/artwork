@@ -42,11 +42,9 @@ _None_
   maybe eliminate first/last, allow tap on left/right side of image to go to
   prev/next, and have separate link for "hi-res"
 - the "X" or Escape to leave image page always takes the user to top of previous page
-- maybe list the doodles in alphabetical order so they match the menus, at least on mobile
 - maybe display N/M (project #N of M projects) with project title in mobile menu
 
 **UI tweaks**
-- simplify markup on doodles main page, improve wrapping, improve spacing on mobile
 - clean up image names
 - overall more consistency with the break points across pages: sm, md, lg
 - add support for dark backgrounds, esp to use black for The Demo
