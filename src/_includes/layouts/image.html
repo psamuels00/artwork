@@ -27,22 +27,22 @@ layout: 'layouts/base.html'
   </a>
 
   <div class="flex mx-auto gap-2">
-    <a href="/{{top_page_name}}/{{item.first.name | slug}}/{{item.first.image | rmFileExt}}/">
+    <a href="/{{top_page_name}}/{{item.first.name | slug}}/{{item.first.image | cleanupHack | rmFileExt | sepWords | slug}}/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         First
       </button>
     </a>
-    <a href="/{{top_page_name}}/{{item.prev.name | slug}}/{{(item.prev.image)| rmFileExt}}/">
+    <a href="/{{top_page_name}}/{{item.prev.name | slug}}/{{item.prev.image| cleanupHack | rmFileExt | sepWords | slug}}/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Prev
       </button>
     </a>
-    <a href="/{{top_page_name}}/{{item.next.name | slug}}/{{(item.next.image) | rmFileExt}}/">
+    <a href="/{{top_page_name}}/{{item.next.name | slug}}/{{item.next.image | cleanupHack | rmFileExt | sepWords | slug}}/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Next
       </button>
     </a>
-    <a href="/{{top_page_name}}/{{item.last.name | slug}}/{{item.last.image | rmFileExt}}/">
+    <a href="/{{top_page_name}}/{{item.last.name | slug}}/{{item.last.image | cleanupHack | rmFileExt | sepWords | slug}}/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Last
       </button>
@@ -50,7 +50,7 @@ layout: 'layouts/base.html'
   </div>
 
   <div class="flex justify-center text-lg font-extralight pt-3">
-    {{ item.image | cleanupHack | rmFileExt | sepWords }}
+    {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords }}
   </div>
 
   <div class="overflow-hidden">
@@ -76,11 +76,11 @@ layout: 'layouts/base.html'
 
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.prev.name | slug}}/{{item.prev.image | rmFileExt}}/';
+    window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.prev.name | slug}}/{{item.prev.image | cleanupHack | rmFileExt | sepWords | slug}}/';
   }
 
   function gotoNext() {
-    window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.next.name | slug}}/{{item.next.image | rmFileExt}}/';
+    window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.next.name | slug}}/{{item.next.image | cleanupHack | rmFileExt | sepWords | slug}}/';
   }
 
   swipeLeftRight(gotoPrev, gotoNext);

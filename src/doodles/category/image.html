@@ -4,6 +4,6 @@ pagination:
   data: doodles.flat
   size: 1
   alias: item
-permalink: "doodles/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
+permalink: "doodles/{{ item.name | slug }}/{{ item.image | cleanupHack | rmFileExt | sepWords | slug }}/"
 top_page_name: 'doodles'
 ---

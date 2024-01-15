@@ -4,6 +4,6 @@ pagination:
   data: projects.flat
   size: 1
   alias: item
-permalink: "portfolio/{{ item.name | slug }}/{{ item.image | rmFileExt }}/"
+permalink: "portfolio/{{ item.name | slug }}/{{ item.image | cleanupHack | rmFileExt | sepWords | slug }}/"
 top_page_name: 'portfolio'
 ---

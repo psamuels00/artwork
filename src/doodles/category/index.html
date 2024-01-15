@@ -54,7 +54,7 @@ permalink: "doodles/{{ category.name | slug }}/"
 
     if (event.key === 'Enter' || event.key === 'ArrowDown') {
       event.preventDefault();
-      window.location.href = '{{'/' | url}}doodles/{{category.name | slug}}/{{category.images[0] | rmFileExt}}/'
+      window.location.href = '{{'/' | url}}doodles/{{category.name | slug}}/{{category.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/'
     }
 
     if (event.key === 'ArrowLeft') {

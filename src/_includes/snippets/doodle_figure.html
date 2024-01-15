@@ -1,9 +1,9 @@
 {% macro doodleFigure(name, image) %}
   <figure class="sm:my-0 my-8 text-sm font-extralight">
-      <a href="/doodles/{{name | lower}}/{{image | rmFileExt }}/">
+      <a href="/doodles/{{name | lower}}/{{image | cleanupHack | rmFileExt | sepWords | slug}}/">
           <img class="hover:brightness-90"
                src="/images/doodles/{{name | replace(' ', '')}}/{{image}}"/>
       </a>
-      <figcaption>{{image | rmFileExt | sepWords}}</figcaption>
+      <figcaption>{{image | cleanupHack | rmFileExt | sepWords}}</figcaption>
   </figure>
 {% endmacro %}

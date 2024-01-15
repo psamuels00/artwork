@@ -54,7 +54,7 @@ _None_
 - maybe transition page loads more smoothly
 
 **Refactor code**
-- build portfolio menu from data in projects.js, maybe including new ordering options
+- maybe build portfolio menu from data in projects.js, including new ordering options
 
 **New features**
 - maybe add descriptions for each project image
