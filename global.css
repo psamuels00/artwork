@@ -562,11 +562,6 @@ video {
   margin-right: 0.5rem;
 }
 
-.mx-4 {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -660,10 +655,6 @@ video {
 
 .table {
   display: table;
-}
-
-.grid {
-  display: grid;
 }
 
 .hidden {
@@ -1156,10 +1147,6 @@ video {
     max-height: calc(100vh - 144px);
   }
 
-  .sm\:w-full {
-    width: 100%;
-  }
-
   .sm\:p-2 {
     padding: 0.5rem;
   }
@@ -1252,10 +1239,6 @@ video {
 
   .lg\:max-w-4xl {
     max-width: 56rem;
-  }
-
-  .lg\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .lg\:p-4 {
