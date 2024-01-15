@@ -19,16 +19,16 @@
         
 
 
-<div class="flex flex-col h-screen bg-zinc-100">
+<div class="flex flex-col h-screen ">
 
-  <a href="/portfolio/the-demo/">
+  <a href="/doodles/animals/">
     <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50">
       <!-- Empty space, same width as "X" -->
       <svg width="48" height="48" />
 
       
-        <div class="mx-auto text-2xl font-medium">
-          The Demo
+        <div class="mx-auto text-3xl font-light">
+          Animals
         </div>
       
 
@@ -46,22 +46,22 @@
   </a>
 
   <div class="flex mx-auto gap-2">
-    <a href="/portfolio/the-demo/painting-full/">
+    <a href="/doodles/animals/jellyfish/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         First
       </button>
     </a>
-    <a href="/portfolio/the-demo/dummy/">
+    <a href="/doodles/animals/irinio-dove/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Prev
       </button>
     </a>
-    <a href="/portfolio/the-demo/surfer/">
+    <a href="/doodles/animals/rainbow-bird-with-heart/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Next
       </button>
     </a>
-    <a href="/portfolio/the-demo/signature/">
+    <a href="/doodles/animals/rainbow-bird-with-heart/">
       <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Last
       </button>
@@ -69,21 +69,22 @@
   </div>
 
   <div class="flex justify-center text-lg font-extralight pt-3">
-    Dummy2
+    S Snake
   </div>
 
   <div class="overflow-hidden">
-    <a href="/images/portfolio/TheDemo/07-Dummy2.jpg">
+    <a href="/images/doodles/Animals/SSnake.jpg">
 
       
       
 
       <img class="p-1 sm:p-2 lg:p-4
                   
-                    max-h-full
+                    max-h-fit_in_viewport_single
+                    sm:max-h-fit_in_viewport_single_sm
                   
                   mx-auto"
-           src="/images/portfolio/TheDemo/07-Dummy2.jpg" />
+           src="/images/doodles/Animals/SSnake.jpg" />
 
     </a>
   </div>
@@ -92,11 +93,11 @@
 
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '/portfolio/the-demo/dummy/';
+    window.location.href = '/doodles/animals/irinio-dove/';
   }
 
   function gotoNext() {
-    window.location.href = '/portfolio/the-demo/surfer/';
+    window.location.href = '/doodles/animals/rainbow-bird-with-heart/';
   }
 
   swipeLeftRight(gotoPrev, gotoNext);
