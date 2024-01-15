@@ -4,6 +4,6 @@
           <img class="hover:brightness-90"
                src="/images/doodles/{{name | replace(' ', '')}}/{{image}}"/>
       </a>
-      <figcaption>{{image | cleanupHack | rmFileExt | sepWords}}</figcaption>
+      <figcaption>{{image | cleanupHack | rmFileExt | sepWords | capWords}}</figcaption>
   </figure>
 {% endmacro %}

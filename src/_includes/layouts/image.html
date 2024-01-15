@@ -50,7 +50,7 @@ layout: 'layouts/base.html'
   </div>
 
   <div class="flex justify-center text-lg font-extralight pt-3">
-    {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords }}
+    {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords | capWords }}
   </div>
 
   <div class="overflow-hidden">
