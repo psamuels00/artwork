@@ -54,7 +54,7 @@ layout: 'layouts/base.html'
   </div>
 
   <div class="overflow-hidden">
-    <a href="/images/{{top_page_name}}/{{item.name | slug}}/{{item.image}}">
+    <a href="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}">
 
       {% set imagePath = '/images/' + top_page_name + '/' + item.name.replace(' ', '') + '/' + item.image %}
       {% set isLandscape = ('src' + imagePath) | isLandscape %}
