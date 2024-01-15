@@ -55,7 +55,6 @@ _None_
 
 **Refactor code**
 - build portfolio menu from data in projects.js, maybe including new ordering options
-- rewrite the home page to not duplicate links
 
 **New features**
 - maybe add descriptions for each project image
