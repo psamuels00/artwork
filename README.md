@@ -46,7 +46,7 @@ _None_
 - maybe display N/M (project #N of M projects) with project title in mobile menu
 
 **UI tweaks**
-- maybe show two categories/pics per row on doodles main page on mobile
+- simplify markup on doodles main page, improve wrapping, improve spacing on mobile
 - clean up image names
 - overall more consistency with the break points across pages: sm, md, lg
 - add support for dark backgrounds, esp to use black for The Demo
@@ -55,12 +55,9 @@ _None_
 - maybe add Next/Prev buttons to bottom of project pages
 - maybe transition page loads more smoothly
 
-**Rewrite to improve code and fully embrace Eleventy**
+**Refactor code**
 - build portfolio menu from data in projects.js, maybe including new ordering options
-
-**Rewrite to improve code and fully embrace Tailwind**
-- rewrite the home page to make it more DRY
-- update the doodles main page to simplify the markup and improve spacing for mobile
+- rewrite the home page to not duplicate links
 
 **New features**
 - maybe add descriptions for each project image
