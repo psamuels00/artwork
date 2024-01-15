@@ -12,25 +12,25 @@ permalink: "doodles/{{ category.name | slug }}/"
 {% if 'top_images' in category %}
   <div class="sm:grid grid-cols-3 gap-8">
     {% for image_name in category.top_images %}
-      {{ macros.doodleFigure(image_name, category.name) }}
+      {{ macros.doodleFigure(category.name, image_name) }}
     {% endfor %}
   </div>
   <div class="sm:flex flex-row gap-8 mt-8">
     <div class="sm:grid grid-cols-2 gap-8">
       {% for image_name in category.left_images %}
-        {{ macros.doodleFigure(image_name, category.name) }}
+        {{ macros.doodleFigure(category.name, image_name) }}
       {% endfor %}
     </div>
     <div class="sm:grid grid-cols-1 gap-8">
       {% for image_name in category.right_images %}
-        {{ macros.doodleFigure(image_name, category.name) }}
+        {{ macros.doodleFigure(category.name, image_name) }}
       {% endfor %}
     </div>
   </div>
 {% else %}
   <div class="sm:grid grid-cols-4 gap-8">
     {% for image_name in category.images %}
-      {{ macros.doodleFigure(image_name, category.name) }}
+      {{ macros.doodleFigure(category.name, image_name) }}
     {% endfor %}
   </div>
 {% endif %}
