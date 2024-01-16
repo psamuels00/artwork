@@ -12,6 +12,7 @@ permalink: "portfolio/{{ project.name | slug }}/"
     <img class="hover:brightness-90
                 max-h-fit_in_viewport
                 lg:max-h-fit_in_viewport_lg"
+         alt="Portfolio item {{project.name | sepWords}} image {{project.images[0] | cleanupHack | rmFileExt | sepWords}}"
          src="/images/portfolio/{{project.name.replace(' ', '')}}/{{project.images[0]}}" />
   </a>
 </div>
@@ -63,6 +64,7 @@ permalink: "portfolio/{{ project.name | slug }}/"
       {% if not loop.first %}
         <a href="/portfolio/{{project.name | slug}}/{{name | cleanupHack | rmFileExt | sepWords | slug}}/">
           <img class="hover:brightness-90"
+               alt="Portfolio item {{project.name | sepWords}} image {{name | cleanupHack | rmFileExt | sepWords}}"
                src="/images/portfolio/{{project.name.replace(' ', '')}}/{{name}}"/>
         </a>
       {% endif %}

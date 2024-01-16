@@ -47,10 +47,10 @@ _None_
 **UI tweaks**
 - overall more consistency with the break points across pages: sm, md, lg
 - add support for dark backgrounds, esp to use black for The Demo
-- add alt tag to all images
 - maybe add floating button to quickly jump to top of any long page
 - maybe add Next/Prev buttons to bottom of project pages
 - maybe transition page loads more smoothly
+- don't serve the .png as final click-through, use the jpg
 
 **Refactor code**
 - maybe build portfolio menu from data in projects.js, including new ordering options
