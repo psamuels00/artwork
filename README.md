@@ -45,7 +45,6 @@ _None_
 - maybe display N/M (project #N of M projects) with project title in mobile menu
 
 **UI tweaks**
-- clean up image names
 - overall more consistency with the break points across pages: sm, md, lg
 - add support for dark backgrounds, esp to use black for The Demo
 - add alt tag to all images
