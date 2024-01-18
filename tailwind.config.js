@@ -17,6 +17,9 @@ module.exports = {
           400: '#c2b280',
         },
       },
+      fontFamily: {
+        redhat: ['Red Hat Display', 'sans-serif'],
+      },
       maxHeight: {
         // For top image on Portfolio project pages
         //   o  142px and 205px are the combined height of the navigation headers
