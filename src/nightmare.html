@@ -5,21 +5,55 @@ prev: '/resume/'
 next: '/'
 ---
 
-<div class="flex flex-col">
-  <div class="my-2 sm:mt-16 sm:mb-8 overflow-hidden">
-    <img class="max-h-full mx-auto"
-         alt="Trump Grump Gramp Graip Grail Frail Fraid Fraud"
-         src="/images/nightmare/TrumpIsAFraud.jpg" />
-  </div>
+{% import "snippets/svg.html" as macros %}
 
-  <div class="flex justify-center mt-8">
-    <div class="text-center font-light thin">
-      <div>
-        See <a class="text-blue-500" href="https://github.com/psamuels00/trump-is-a-fraud">trump-is-a-fraud</a>.
-      </div>
-      <div>
-        &copy;{{ 2016 | yearSince }} Perrin
-      </div>
+{% set colors = {
+  bw: ['text-black', 'text-stone-600', 'text-stone-400', 'text-stone-200',
+       'text-stone-200', 'text-stone-400', 'text-stone-600', 'text-black'],
+  rb: ['text-blue-950', 'text-blue-600', 'text-blue-400', 'text-blue-200',
+       'text-red-200', 'text-red-400', 'text-red-600', 'text-red-950']
+} %}
+
+{% set c = colors.rb %}
+
+{% macro morph(word, color, description) %}
+<div class="m-4">
+  <div class="flex justify-between {{color}} font-rubik text-[46pt] leading-none">
+    {% for letter in word %}
+    <div>{{letter}}</div>
+    {% endfor %}
+  </div>
+  <div class="font-light text-sm sm:text-base">
+    {{description}}
+  </div>
+</div>
+{% endmacro %}
+
+<div class="flex flex-col items-center">
+  <div class="flex my-4 max-w-[600px] w-full">
+    <div class="text-center mt-4 w-full">
+      {{ morph('TRUMP', c[0], 'In card games, an unsuited wild card that can win a trick.') }}
+      {{ morph('GRUMP', c[1], 'A cranky, ill-tempered, uncooperative, complaining person.') }}
+      {{ morph('GRAMP', c[2], 'Grandfather. Exempt from new law or regulation.') }}
+      {{ morph('GRAIP', c[3], 'Dialect Scot. A 3-tined garden fork for digging dung.') }}
+      {{ morph('GRAIL', c[4], 'Medieval. Christian purity. Wine to blood.') }}
+      {{ morph('FRAIL', c[5], 'Physically weak. Weakness of character. Insubstantial.') }}
+      {{ morph('FRAID', c[6], 'Fraidycat: timid or easily frightened, as a child.') }}
+      {{ morph('FRAUD', c[7], 'Imposter. One who criminally deceives for personal gain.') }}
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-col items-center bg-stone-100 mb-[-20px]">
+  <div class="flex flex-col sm:flex-row items-center my-2 mx-8 gap-x-2">
+    <div>
+      See <a class="text-blue-500" href="https://github.com/psamuels00/trump-is-a-fraud">trump-is-a-fraud</a>.
+    </div>
+    <div class="hidden sm:inline">
+      {{ macros.svgPath("text-stone-400", 1, 30, 1, "M1 0v30") }}
+    </div>
+    <div>
+      &copy;{{ 2016 | yearSince }} Perrin
     </div>
   </div>
 </div>

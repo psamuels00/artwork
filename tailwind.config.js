@@ -18,7 +18,7 @@ module.exports = {
         },
       },
       fontFamily: {
-        redhat: ['Red Hat Display', 'sans-serif'],
+        rubik: ['Rubik Mono One', 'monospace'],
       },
       maxHeight: {
         // For top image on Portfolio project pages

@@ -14,6 +14,9 @@ module.exports = config => {
   config.addPassthroughCopy({
     'src/_includes/js/': 'js/',
   });
+  config.addPassthroughCopy({
+    'src/_includes/fonts/': 'fonts/',
+  });
 
   // manage URLs
   config.addPlugin(EleventyHtmlBasePlugin);
