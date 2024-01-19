@@ -101,7 +101,13 @@ layout: 'layouts/base.html'
     </div>
     <p>&copy;{{ 2024 | yearSince }} · Perrin</p>
     {% if page.url === '/about/' %}
-      <p>Made with ❤️ in Concord.</p>
+      <div class="mt-2">
+        <p>Made with <span class="text-sm">❤️</span> in Concord.</p>
+        <p>
+          See the source code
+          <a href="https://github.com/psamuels00/artwork"><span class="text-blue-500 hover:underline">here</span></a>.
+        </p>
+      </div>
     {% endif %}
   </div>
 </footer>
