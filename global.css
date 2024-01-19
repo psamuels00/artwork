@@ -1187,6 +1187,10 @@ video {
   background-color: rgb(231 229 228 / var(--tw-bg-opacity));
 }
 
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+
 .hover\:opacity-50:hover {
   opacity: 0.5;
 }
