@@ -321,13 +321,21 @@
   <script type="text/javascript">
     function gotoPrev() {
       
-        window.location.href = '/resume/'
+        if (isOfficial() && window.location.pathname == '/') {
+          window.location.href = '/resume/'
+        } else {
+          window.location.href = '/resume/'
+        }
       
     }
 
     function gotoNext() {
       
-        window.location.href = '/'
+        if (isOfficial() && window.location.pathname == '/resume/') {
+          window.location.href = '/'
+        } else {
+          window.location.href = '/'
+        }
       
     }
 
@@ -351,6 +359,18 @@
   </script>
 
 
+<script type="text/javascript">
+  function isOfficial() {
+    return window.location.protocol == 'https:';
+  }
+
+  if (isOfficial()) {
+    elements = document.getElementsByClassName('nightmare');
+    for (let elem of elements) {
+      elem.classList.toggle('hidden');
+    }
+  }
+</script>
       
     </div>
 

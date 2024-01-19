@@ -402,6 +402,18 @@
 
 
 
+<script type="text/javascript">
+  function isOfficial() {
+    return window.location.protocol == 'https:';
+  }
+
+  if (isOfficial()) {
+    elements = document.getElementsByClassName('nightmare');
+    for (let elem of elements) {
+      elem.classList.toggle('hidden');
+    }
+  }
+</script>
       
     </div>
 

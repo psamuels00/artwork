@@ -238,13 +238,21 @@
   <script type="text/javascript">
     function gotoPrev() {
       
-        window.location.href = '/about/'
+        if (isOfficial() && window.location.pathname == '/') {
+          window.location.href = '/resume/'
+        } else {
+          window.location.href = '/about/'
+        }
       
     }
 
     function gotoNext() {
       
-        window.location.href = '/nightmare/'
+        if (isOfficial() && window.location.pathname == '/resume/') {
+          window.location.href = '/'
+        } else {
+          window.location.href = '/nightmare/'
+        }
       
     }
 
@@ -268,6 +276,18 @@
   </script>
 
 
+<script type="text/javascript">
+  function isOfficial() {
+    return window.location.protocol == 'https:';
+  }
+
+  if (isOfficial()) {
+    elements = document.getElementsByClassName('nightmare');
+    for (let elem of elements) {
+      elem.classList.toggle('hidden');
+    }
+  }
+</script>
       
     </div>
 
