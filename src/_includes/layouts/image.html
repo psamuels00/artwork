@@ -8,8 +8,7 @@ layout: 'layouts/base.html'
 
   <a href="/{{top_page_name}}/{{item.name | slug}}/">
     <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50">
-      <!-- Empty space, same width as "X" -->
-      <svg width="48" height="48" />
+      {{ macros.svgPath("", 48, 48, 0, "") }} <!-- Empty space, same size as "X" -->
 
       {% if item.title %}
         <div class="mx-auto text-2xl font-medium">
@@ -21,8 +20,7 @@ layout: 'layouts/base.html'
         </div>
       {% endif %}
 
-      <!-- An "X" -->
-      {{ macros.svgPath("text-stone-400", 48, 48, 4, "M6 6L42 42M6 42L42 6") }}
+      {{ macros.svgPath("text-stone-400", 48, 48, 4, "M6 6L42 42M6 42L42 6") }} <!-- "X" -->
     </div>
   </a>
 

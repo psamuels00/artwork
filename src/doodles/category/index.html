@@ -35,6 +35,13 @@ permalink: "doodles/{{ category.name | slug }}/"
   </div>
 {% endif %}
 
+{% import "snippets/scroll_to_top.html" as macros %}
+{% if category.images.length > 8 %}
+  {{ macros.scrollToTop("") }}
+{% elif category.images.length > 1 %}
+  {{ macros.scrollToTop("md:hidden") }}
+{% endif %}
+
 <script type="text/javascript">
   function gotoPrev() {
     window.location.href = '{{'/' | url}}doodles/{{category.prev | slug}}/'

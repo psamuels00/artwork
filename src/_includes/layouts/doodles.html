@@ -4,16 +4,23 @@ layout: 'layouts/page.html'
 
 {% import "snippets/svg.html" as macros %}
 
-<div class="max-w-4xl mx-auto text-center px-8 lg:mt-4">
+<div class="max-w-4xl mx-auto text-center px-2 md:px-4 lx:px-8 lg:mt-4">
 
   <!-- mobile-first, responsive navigation -->
   <nav>
     <div class="lg:hidden">
       <!-- 🍔 menu button -->
       <div class="flex justify-end items-center">
-        <div class="p-2">{{ category.name }}</div>
+        <div class="p-2">
+          {% if category.name %}
+            {{ category.name }}
+          {% else %}
+            <!-- Scroll down or select a category &rarr; -->
+          {% endif %}
+        </div>
+
         <button class="mobile-doodles-menu-button flex p-2 gap-4 hover:bg-stone-100">
-          {{ macros.svgPath("w-6", 24, 24, 2, "M4 6h16M4 12h16M4 18h16") }}
+          {{ macros.svgPath("w-6", 24, 24, 2, "M4 6h16M4 12h16M4 18h16") }} <!-- 🍔 -->
         </button>
       </div>
 

@@ -1,0 +1,19 @@
+{% import "snippets/svg.html" as macros %}
+
+{% macro scrollToTop(class) %}
+  <button id="scroll-to-top"
+          class="{{class}} mobile-doodles-menu-button
+                 flex mt-4 p-2 gap-2 ml-auto hover:bg-stone-100">
+      Scroll to the top
+      {{ macros.svgPath("w-6", 24, 24, 2, "M5 10l7-7m0 0l7 7m-7-7v18") }} <!-- "^" -->
+  </button>
+
+  <script type="text/javascript">
+    document.getElementById('scroll-to-top').addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+{% endmacro %}
