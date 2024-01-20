@@ -35,6 +35,11 @@ module.exports = config => {
       .replace(/([a-zA-Z_])(\d+)/g, '$1 $2')
   });
 
+  // page title
+  config.addFilter('genTitle', (title, pagination) => {
+    return title || pagination.items[0].page_title;
+  });
+
   // image title
   config.addFilter('capWords', value => {
     return value.replace(/\b\w/g, function(match) {

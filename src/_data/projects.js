@@ -1,4 +1,4 @@
-const projects = [
+let projects = [
   {
     name: 'Emma',
     title: 'Emma',
@@ -158,6 +158,14 @@ const projects = [
     ],
   },
 ]
+
+// add page title
+projects = projects.map(project => {
+  return {
+    page_title: "Perrin's \"" + project.name + "\" Painting",
+    ...project
+  };
+});
 
 const common = require('./common');
 

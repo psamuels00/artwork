@@ -1,4 +1,4 @@
-const categories = [
+let categories = [
   {
     name: 'Abstract',
     images: [
@@ -146,6 +146,14 @@ const categories = [
     ],
   },
 ]
+
+// add page title
+categories = categories.map(category => {
+  return {
+    page_title: "Perrin's " + category.name + " Doodle",
+    ...category
+  };
+});
 
 const common = require('./common');
 
