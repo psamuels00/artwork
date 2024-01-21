@@ -29,7 +29,6 @@ _None_
 
 ### Medium priority
 - get some better pics of the Beach Boardwalk
-- add resume as pdf or jpg
 
 ### Low priority
 
