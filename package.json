@@ -10,7 +10,7 @@
     "debug": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"DEBUG=Eleventy* npx @11ty/eleventy --serve\"",
     "prod": "concurrently \"npx @11ty/eleventy\" \"tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify\"",
     "start": "npx @11ty/eleventy --serve",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "concurrently \"npx http-server -p 8080 ./dist\" \"npx linkinator http://localhost:8080 --skip https://www.linkedin.com/in/PerrinSamuels/ --recurse\""
   },
   "keywords": [],
   "author": "",

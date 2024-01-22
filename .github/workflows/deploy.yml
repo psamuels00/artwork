@@ -19,14 +19,8 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Start HTTP Server
-        run: npx http-server -p 8080 ./dist &
-
       - name: Check for Broken Links
-        run: npx linkinator http://127.0.0.1:8080 --recurse
-
-      - name: Stop HTTP Server
-        run: pkill -f 'npx http-server -p 8080'
+        run: npm test
 
   deploy:
     runs-on: ubuntu-latest
