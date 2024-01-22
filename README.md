@@ -39,7 +39,7 @@ _None_
 - the "X" or Escape to leave image page always takes the user to top of previous page
 - maybe display N/M (project #N of M projects) with project title in mobile menu
 - somehow the site navigation options need to be presented, including keyboard
-  arrow keys, swipe left/right, and prev/next/first/last on image pages
+  arrow keys, swipe left/right, and prev/next/first/last buttons on image pages
 
 **UI tweaks**
 - overall more consistency with the break points across pages: sm, md, lg

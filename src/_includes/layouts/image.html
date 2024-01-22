@@ -26,40 +26,39 @@ goto: ['prev', 'next']
     </div>
   </a>
 
-  <div class="flex mx-auto gap-2">
+  <div class="flex justify-center text-lg font-extralight">
+    {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords | capWords }}
+  </div>
+
+  <!-- 148px is the combined height of elements above and below the image -->
+  <div class="swipeable flex items-center h-[calc(100svh-148px)]">
+    <a class="mx-auto" href="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}">
+      <img class="max-h-[calc(100svh-148px)] min-h-32 max-w-full object-scale-down"
+           alt="{{top_page_name}} item {{item.name}} image {{item.image | rmFileExt | sepWords}}"
+           src="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}" />
+    </a>
+  </div>
+
+  <div class="flex mx-auto gap-2 py-2">
     <a href="/{{top_page_name}}/{{item.first.name | slug}}/{{item.first.image | cleanupHack | rmFileExt | sepWords | slug}}/">
-      <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         First
       </button>
     </a>
     <a href="/{{top_page_name}}/{{item.prev.name | slug}}/{{item.prev.image| cleanupHack | rmFileExt | sepWords | slug}}/">
-      <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Prev
       </button>
     </a>
     <a href="/{{top_page_name}}/{{item.next.name | slug}}/{{item.next.image | cleanupHack | rmFileExt | sepWords | slug}}/">
-      <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Next
       </button>
     </a>
     <a href="/{{top_page_name}}/{{item.last.name | slug}}/{{item.last.image | cleanupHack | rmFileExt | sepWords | slug}}/">
-      <button class="bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
         Last
       </button>
-    </a>
-  </div>
-
-  <div class="flex justify-center text-lg font-extralight pt-3">
-    {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords | capWords }}
-  </div>
-
-  <!-- 144px is the combined height of elements above the image -->
-  <div class="swipeable flex items-start h-[calc(100svh-144px)]">
-    <a class="mx-auto" href="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}">
-      <img class="p-1 sm:p-2 lg:p-4
-                  max-h-[calc(100svh-144px)] min-h-32 max-w-full object-scale-down"
-           alt="{{top_page_name}} item {{item.name}} image {{item.image | rmFileExt | sepWords}}"
-           src="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}" />
     </a>
   </div>
 
