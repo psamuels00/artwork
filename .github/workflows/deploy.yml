@@ -25,7 +25,7 @@ jobs:
       - name: Check for Broken Links
         uses: JustinBeckwith/linkinator-action@v1
         with:
-          paths: http://localhost:8080
+          paths: http://127.0.0.1:8080
           recurse: true
 
       - name: Stop HTTP Server
