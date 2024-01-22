@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "tailwindcss -i ./src/_includes/css/global.css -o global.out.css && npx @11ty/eleventy",
-    "develop": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"npx @11ty/eleventy --serve\"",
     "css": "tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch",
     "debug": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"DEBUG=Eleventy* npx @11ty/eleventy --serve\"",
+    "develop": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"npx @11ty/eleventy --serve\"",
     "prod": "concurrently \"npx @11ty/eleventy\" \"tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify\"",
+    "push": "npm test && git push",
     "start": "npx @11ty/eleventy --serve",
-    "test": "concurrently \"npx http-server -p 8080 ./dist\" \"npx linkinator http://localhost:8080 --skip https://www.linkedin.com/in/PerrinSamuels/ --recurse\""
+    "test": "concurrently \"npx http-server -p 8080 ./dist\" \"npx linkinator http://0.0.0.0:8080 --skip https://www.linkedin.com/in/PerrinSamuels/ --recurse\""
   },
   "keywords": [],
   "author": "",
