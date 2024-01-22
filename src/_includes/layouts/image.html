@@ -51,23 +51,13 @@ layout: 'layouts/base.html'
     {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords | capWords }}
   </div>
 
-  <div class="overflow-hidden">
-    <a href="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}">
-
-      {% set imagePath = '/images/' + top_page_name + '/' + item.name.replace(' ', '') + '/' + item.image %}
-      {% set isLandscape = ('src' + imagePath) | isLandscape %}
-
+  <!-- 144px is the combined height of elements above the image -->
+  <div class="flex items-start h-[calc(100svh-144px)]">
+    <a class="mx-auto" href="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}">
       <img class="p-1 sm:p-2 lg:p-4
-                  {% if isLandscape %}
-                    max-h-full
-                  {% else %}
-                    max-h-fit_in_viewport_single
-                    sm:max-h-fit_in_viewport_single_sm
-                  {% endif %}
-                  mx-auto"
+                  max-h-[calc(100svh-144px)] min-h-32 max-w-full object-scale-down"
            alt="{{top_page_name}} item {{item.name}} image {{item.image | rmFileExt | sepWords}}"
-           src="{{imagePath}}" />
-
+           src="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}" />
     </a>
   </div>
 

@@ -29,12 +29,11 @@ _None_
 
 ### Medium priority
 - get some better pics of the Beach Boardwalk
+- add some basic testing
 
 ### Low priority
 
 **UI bug fixes**
-- properly fix the mobile viewport problem instead of using my max-h-fit_in_viewport* hack
-- pic at top of project page not showing at all on iPhone in landscape orientation
 - swipe left/right on body works well for swipe, but you cannot select any text on a page
 - swipe left/right works on my Mac browser, with the track pad/mouse, which is annoying
 
@@ -55,6 +54,7 @@ _None_
 - add support for dark backgrounds, esp to use black for The Demo
 - maybe add Next/Prev buttons to bottom of project pages
 - maybe transition page loads more smoothly
+- make sure the footer is always at the bottom of the page, eg, see About in full window mode
 
 **Refactor code**
 - maybe build portfolio menu from data in projects.js, including new ordering options

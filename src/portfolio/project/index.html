@@ -9,13 +9,18 @@ permalink: "portfolio/{{ project.name | slug }}/"
 
 {% import "snippets/svg.html" as macros %}
 
-<div class="flex justify-center my-4">
-  <a href="/portfolio/{{project.name | slug}}/{{project.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
+<!-- 144px/205px is the combined height of elements above the image -->
+<!-- 10px is an arbitrary margin -->
+<!-- 210px/105px allows room for the Title and first line of Description to be seen -->
+<div class="flex items-start my-4
+            h-[calc(100svh-142px-10px-210px)]
+            lg:h-[calc(100svh-205px-10px-105px)]
+            min-h-32">
+  <a class="h-full mx-auto" href="/portfolio/{{project.name | slug}}/{{project.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
     <img class="hover:brightness-90
-                max-h-fit_in_viewport
-                lg:max-h-fit_in_viewport_lg"
+                max-h-full max-w-full object-scale-down"
          alt="Portfolio item {{project.name | sepWords}} image {{project.images[0] | cleanupHack | rmFileExt | sepWords}}"
-         src="/images/portfolio/{{project.name.replace(' ', '')}}/{{project.images[0]}}" />
+         src="/images/portfolio/{{project.name | replace(' ', '')}}/{{project.images[0]}}" />
   </a>
 </div>
 
