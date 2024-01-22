@@ -29,7 +29,6 @@ _None_
 
 ### Medium priority
 - get some better pics of the Beach Boardwalk
-- run linkinator in CI/CD to check for broken links
 
 ### Low priority
 
