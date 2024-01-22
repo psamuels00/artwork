@@ -27,10 +27,9 @@ jobs:
       - name: Run Linkinator
         run: |
           npx http-server --silent -p 8080 ./dist &
-          npx linkinator http://127.0.0.1:8080/ --recurse \
-            --skip https://www.linkedin.com/ --retry-errors --verbosity error
+          npx linkinator http://127.0.0.1:8080/ --recurse --verbosity error \
+            --skip https://www.linkedin.com/
           rc=$?
-          echo "@@@ rc = [$rc]"
           kill -9 `lsof -i:8080 -t` || true
           exit $rc
 
@@ -45,7 +44,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '21'
 
     - name: Install Dependencies
       run: npm install
