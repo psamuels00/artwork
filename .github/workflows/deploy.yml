@@ -26,11 +26,11 @@ jobs:
 
       - name: Run Linkinator
         run: |
-          npx http-server --silent -p 8080 ./dist &
-          npx linkinator http://127.0.0.1:8080/ --recurse --verbosity error \
+          npx http-server --silent -p 8081 ./dist &
+          npx linkinator http://127.0.0.1:8081/ --recurse --verbosity error \
             --skip https://www.linkedin.com/
           rc=$?
-          kill -9 `lsof -i:8080 -t` || true
+          kill -9 `lsof -i:8081 -t` || true
           exit $rc
 
   deploy:
