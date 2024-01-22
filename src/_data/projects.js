@@ -145,7 +145,7 @@ let projects = [
   },
   {
     name: 'Desert Flower',
-    title: 'Color Wheel Desert Flower',
+    title: 'Desert Flower',
     description: 'After making a color wheel, the leftover paint expressed itself as a landscape.',
     category: 'Landscape painting',
     date: 'Nov, 2023',
