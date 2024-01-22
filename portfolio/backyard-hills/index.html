@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="bg-backyard-200">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -196,7 +199,7 @@
             lg:h-[calc(100svh-205px-10px-105px)]
             min-h-32">
   <a class="h-full mx-auto" href="/portfolio/backyard-hills/full-painting/">
-    <img class="hover:brightness-90
+    <img class="swipeable hover:brightness-90
                 max-h-full max-w-full object-scale-down"
          alt="Portfolio item Backyard Hills image Full Painting"
          src="/images/portfolio/BackyardHills/FullPainting.jpg" />
@@ -308,6 +311,24 @@
   </div>
 </div>
 
+<script type="text/javascript">
+  (function() {
+    const hideShowBtns = document.getElementsByClassName('hide-show-info');
+    const infoBox = document.getElementById('info-box');
+
+    function toggleInfoBox() {
+      for (let elem of hideShowBtns) {
+        elem.classList.toggle('hidden');
+      }
+      infoBox.classList.toggle('hidden');
+    }
+
+    for (let elem of hideShowBtns) {
+      elem.addEventListener('click', toggleInfoBox);
+    }
+  })()
+</script>
+
 <div class="flex">
   <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
     
@@ -315,7 +336,7 @@
     
       
         <a href="/portfolio/backyard-hills/reference-photo/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Backyard Hills image Reference Photo"
                src="/images/portfolio/BackyardHills/ReferencePhoto.jpg"/>
         </a>
@@ -323,7 +344,7 @@
     
       
         <a href="/portfolio/backyard-hills/first-drawing/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Backyard Hills image First Drawing"
                src="/images/portfolio/BackyardHills/FirstDrawing.jpg"/>
         </a>
@@ -331,7 +352,7 @@
     
       
         <a href="/portfolio/backyard-hills/in-progress-1/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Backyard Hills image In Progress 1"
                src="/images/portfolio/BackyardHills/InProgress1.jpg"/>
         </a>
@@ -339,7 +360,7 @@
     
       
         <a href="/portfolio/backyard-hills/in-progress-2/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Backyard Hills image In Progress 2"
                src="/images/portfolio/BackyardHills/InProgress2.jpg"/>
         </a>
@@ -347,7 +368,7 @@
     
       
         <a href="/portfolio/backyard-hills/final-painting/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Backyard Hills image Final Painting"
                src="/images/portfolio/BackyardHills/FinalPainting.jpg"/>
         </a>
@@ -355,7 +376,7 @@
     
       
         <a href="/portfolio/backyard-hills/first-and-second-drawing/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Backyard Hills image First And Second Drawing"
                src="/images/portfolio/BackyardHills/FirstAndSecondDrawing.jpg"/>
         </a>
@@ -394,24 +415,6 @@
 
 
 <script type="text/javascript">
-  (function() {
-    const hideShowBtns = document.getElementsByClassName('hide-show-info');
-    const infoBox = document.getElementById('info-box');
-
-    function toggleInfoBox() {
-      for (let elem of hideShowBtns) {
-        elem.classList.toggle('hidden');
-      }
-      infoBox.classList.toggle('hidden');
-    }
-
-    for (let elem of hideShowBtns) {
-      elem.addEventListener('click', toggleInfoBox);
-    }
-  })()
-</script>
-
-<script type="text/javascript">
   function gotoPrev() {
     window.location.href = '/portfolio/dolphin/'
   }
@@ -420,29 +423,15 @@
     window.location.href = '/portfolio/the-onion/'
   }
 
-  swipeLeftRight(gotoPrev, gotoNext);
+  function gotoEscape() {
+    event.preventDefault();
+    window.location.href = '/portfolio/'
+  }
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '/portfolio/'
-    }
-
-    if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
-      window.location.href = '/portfolio/backyard-hills/full-painting/'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
-
-  document.body.classList.add('bg-backyard-200');
+  function gotoEnter() {
+    event.preventDefault();
+    window.location.href = '/portfolio/backyard-hills/full-painting/'
+  }
 </script>
 
     
@@ -462,7 +451,64 @@
     
   </div>
 </footer>
+      
+    </div>
 
+  </body>
+</html>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+      swipeLeftRight(gotoPrev, gotoNext);
+    
+
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
+
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
+
+        
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        
+
+        
+          if (event.key === 'Escape' || event.key === 'ArrowUp') {
+            gotoEscape();
+          }
+        
+      });
+    
+  </script>
 
 
 <script type="text/javascript">
@@ -477,8 +523,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

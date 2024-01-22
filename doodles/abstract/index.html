@@ -8,7 +8,7 @@
     <meta name="description" content="Discover Perrin's art: acrylic paintings and iPhone doodles.">
     <meta name="keywords" content="Perrin, Artwork, Paintings, Doodles, Drawings, San Francisco, Concord">
 
-    <title>Perrin&#39;s Abstract Doodle</title>
+    <title>Perrin&#39;s Abstract Doodles</title>
 
     <link rel="shortcut icon" type="image/png" href="/images/meta/EmmasFace.png"/>
     <link rel="stylesheet" href="/global.css"/>
@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -197,7 +200,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/abstract/desert-sculpture-outskirts-of-town/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Abstract image Desert Sculpture Outskirts Of Town"
                src="/images/doodles/Abstract/DesertSculptureOutskirtsOfTown.jpg"/>
       </a>
@@ -208,7 +211,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/abstract/vortex/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Abstract image Vortex"
                src="/images/doodles/Abstract/Vortex.jpg"/>
       </a>
@@ -219,7 +222,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/abstract/alien-confrontation/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Abstract image Alien Confrontation"
                src="/images/doodles/Abstract/AlienConfrontation.jpg"/>
       </a>
@@ -230,7 +233,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/abstract/dizzying-swirl/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Abstract image Dizzying Swirl"
                src="/images/doodles/Abstract/DizzyingSwirl.jpg"/>
       </a>
@@ -241,7 +244,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/abstract/abstract-dots-and-lines/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Abstract image Abstract Dots And Lines"
                src="/images/doodles/Abstract/AbstractDotsAndLines.jpg"/>
       </a>
@@ -252,7 +255,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/abstract/colorful-abstract-shapes/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Abstract image Colorful Abstract Shapes"
                src="/images/doodles/Abstract/ColorfulAbstractShapes.jpg"/>
       </a>
@@ -263,7 +266,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/abstract/colorful-abstract-shapes-title/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Abstract image Colorful Abstract Shapes Title"
                src="/images/doodles/Abstract/ColorfulAbstractShapesTitle.jpg"/>
       </a>
@@ -274,7 +277,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/abstract/signed-cave-drawing/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Abstract image Signed Cave Drawing"
                src="/images/doodles/Abstract/SignedCaveDrawing.jpg"/>
       </a>
@@ -323,28 +326,15 @@
     window.location.href = '/doodles/animals/'
   }
 
-  swipeLeftRight(gotoPrev, gotoNext);
+  function gotoEscape() {
+    event.preventDefault();
+    window.location.href = '/doodles/'
+  }
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '/doodles/'
-    }
-
-    if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
-      window.location.href = '/doodles/abstract/desert-sculpture-outskirts-of-town/'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
-
+  function gotoEnter() {
+    event.preventDefault();
+    window.location.href = '/doodles/abstract/desert-sculpture-outskirts-of-town/'
+  }
 </script>
 
     
@@ -364,7 +354,64 @@
     
   </div>
 </footer>
+      
+    </div>
 
+  </body>
+</html>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+      swipeLeftRight(gotoPrev, gotoNext);
+    
+
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
+
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
+
+        
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        
+
+        
+          if (event.key === 'Escape' || event.key === 'ArrowUp') {
+            gotoEscape();
+          }
+        
+      });
+    
+  </script>
 
 
 <script type="text/javascript">
@@ -379,8 +426,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

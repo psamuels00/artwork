@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -117,7 +120,7 @@
   </div>
 
   <div class="bg-blue-950 text-white text-sm">
-    <div class="py-8">
+    <div class="swipeable py-8">
       <img class="mx-auto rounded-full w-[200px]"
            alt="Perrin wearing bicycle helmet"
            src="/images/resume/PerrinWithSwirlingBackground.jpg" />
@@ -237,46 +240,71 @@
     
   </div>
 </footer>
+      
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
 
 
   <script type="text/javascript">
-    function gotoPrev() {
-      
+    
+      function gotoPrev() {
         if (isOfficial() && window.location.pathname == '/') {
           window.location.href = '/resume/'
         } else {
           window.location.href = '/about/'
         }
-      
-    }
+      }
+    
 
-    function gotoNext() {
-      
+    
+      function gotoNext() {
         if (isOfficial() && window.location.pathname == '/resume/') {
           window.location.href = '/'
         } else {
           window.location.href = '/nightmare/'
         }
-      
-    }
+      }
+    
+
+    
+
+    
+
+    
+    
+    
+    
 
     
       swipeLeftRight(gotoPrev, gotoNext);
     
 
-    document.addEventListener('keydown', function (event) {
-      
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
 
-      
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
 
-      if (event.key === 'ArrowLeft') {
-        gotoPrev();
-      }
+        
 
-      if (event.key === 'ArrowRight') {
-        gotoNext();
-      }
-    });
+        
+      });
+    
   </script>
 
 
@@ -292,8 +320,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="bg-zinc-100">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -196,7 +199,7 @@
             lg:h-[calc(100svh-205px-10px-105px)]
             min-h-32">
   <a class="h-full mx-auto" href="/portfolio/the-demo/full-painting-reduced/">
-    <img class="hover:brightness-90
+    <img class="swipeable hover:brightness-90
                 max-h-full max-w-full object-scale-down"
          alt="Portfolio item The Demo image Full Painting Reduced"
          src="/images/portfolio/TheDemo/FullPaintingReduced.jpg" />
@@ -308,6 +311,24 @@
   </div>
 </div>
 
+<script type="text/javascript">
+  (function() {
+    const hideShowBtns = document.getElementsByClassName('hide-show-info');
+    const infoBox = document.getElementById('info-box');
+
+    function toggleInfoBox() {
+      for (let elem of hideShowBtns) {
+        elem.classList.toggle('hidden');
+      }
+      infoBox.classList.toggle('hidden');
+    }
+
+    for (let elem of hideShowBtns) {
+      elem.addEventListener('click', toggleInfoBox);
+    }
+  })()
+</script>
+
 <div class="flex">
   <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
     
@@ -315,7 +336,7 @@
     
       
         <a href="/portfolio/the-demo/reference-photo/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Reference Photo"
                src="/images/portfolio/TheDemo/ReferencePhoto.jpg"/>
         </a>
@@ -323,7 +344,7 @@
     
       
         <a href="/portfolio/the-demo/fence-closeup/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Fence Closeup"
                src="/images/portfolio/TheDemo/FenceCloseup.jpg"/>
         </a>
@@ -331,7 +352,7 @@
     
       
         <a href="/portfolio/the-demo/wall-dummy-face/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Wall Dummy Face"
                src="/images/portfolio/TheDemo/WallDummyFace.jpg"/>
         </a>
@@ -339,7 +360,7 @@
     
       
         <a href="/portfolio/the-demo/human-dummy-face/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Human Dummy Face"
                src="/images/portfolio/TheDemo/HumanDummyFace.jpg"/>
         </a>
@@ -347,7 +368,7 @@
     
       
         <a href="/portfolio/the-demo/surfer-girl-face/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Surfer Girl Face"
                src="/images/portfolio/TheDemo/SurferGirlFace.jpg"/>
         </a>
@@ -355,7 +376,7 @@
     
       
         <a href="/portfolio/the-demo/human-dummy-left-hand/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Human Dummy Left Hand"
                src="/images/portfolio/TheDemo/HumanDummyLeftHand.jpg"/>
         </a>
@@ -363,7 +384,7 @@
     
       
         <a href="/portfolio/the-demo/human-dummy-right-hand/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Human Dummy Right Hand"
                src="/images/portfolio/TheDemo/HumanDummyRightHand.jpg"/>
         </a>
@@ -371,7 +392,7 @@
     
       
         <a href="/portfolio/the-demo/wall-dummy-left-hand/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Wall Dummy Left Hand"
                src="/images/portfolio/TheDemo/WallDummyLeftHand.jpg"/>
         </a>
@@ -379,7 +400,7 @@
     
       
         <a href="/portfolio/the-demo/wall-dummy-right-hand/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Wall Dummy Right Hand"
                src="/images/portfolio/TheDemo/WallDummyRightHand.jpg"/>
         </a>
@@ -387,7 +408,7 @@
     
       
         <a href="/portfolio/the-demo/both-dummies-right-hand/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Both Dummies Right Hand"
                src="/images/portfolio/TheDemo/BothDummiesRightHand.jpg"/>
         </a>
@@ -395,7 +416,7 @@
     
       
         <a href="/portfolio/the-demo/dummy-and-dummy/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Dummy And Dummy"
                src="/images/portfolio/TheDemo/DummyAndDummy.jpg"/>
         </a>
@@ -403,7 +424,7 @@
     
       
         <a href="/portfolio/the-demo/human-dummy-face-closeup/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Human Dummy Face Closeup"
                src="/images/portfolio/TheDemo/HumanDummyFaceCloseup.jpg"/>
         </a>
@@ -411,7 +432,7 @@
     
       
         <a href="/portfolio/the-demo/human-dummy-eyes-closeup/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Human Dummy Eyes Closeup"
                src="/images/portfolio/TheDemo/HumanDummyEyesCloseup.jpg"/>
         </a>
@@ -419,7 +440,7 @@
     
       
         <a href="/portfolio/the-demo/human-dummy-mouth-closeup/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Human Dummy Mouth Closeup"
                src="/images/portfolio/TheDemo/HumanDummyMouthCloseup.jpg"/>
         </a>
@@ -427,7 +448,7 @@
     
       
         <a href="/portfolio/the-demo/artist-signature/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item The Demo image Artist Signature"
                src="/images/portfolio/TheDemo/ArtistSignature.jpg"/>
         </a>
@@ -466,24 +487,6 @@
 
 
 <script type="text/javascript">
-  (function() {
-    const hideShowBtns = document.getElementsByClassName('hide-show-info');
-    const infoBox = document.getElementById('info-box');
-
-    function toggleInfoBox() {
-      for (let elem of hideShowBtns) {
-        elem.classList.toggle('hidden');
-      }
-      infoBox.classList.toggle('hidden');
-    }
-
-    for (let elem of hideShowBtns) {
-      elem.addEventListener('click', toggleInfoBox);
-    }
-  })()
-</script>
-
-<script type="text/javascript">
   function gotoPrev() {
     window.location.href = '/portfolio/emma/'
   }
@@ -492,29 +495,15 @@
     window.location.href = '/portfolio/dolphin/'
   }
 
-  swipeLeftRight(gotoPrev, gotoNext);
+  function gotoEscape() {
+    event.preventDefault();
+    window.location.href = '/portfolio/'
+  }
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '/portfolio/'
-    }
-
-    if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
-      window.location.href = '/portfolio/the-demo/full-painting-reduced/'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
-
-  document.body.classList.add('bg-zinc-100');
+  function gotoEnter() {
+    event.preventDefault();
+    window.location.href = '/portfolio/the-demo/full-painting-reduced/'
+  }
 </script>
 
     
@@ -534,7 +523,64 @@
     
   </div>
 </footer>
+      
+    </div>
 
+  </body>
+</html>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+      swipeLeftRight(gotoPrev, gotoNext);
+    
+
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
+
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
+
+        
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        
+
+        
+          if (event.key === 'Escape' || event.key === 'ArrowUp') {
+            gotoEscape();
+          }
+        
+      });
+    
+  </script>
 
 
 <script type="text/javascript">
@@ -549,8 +595,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

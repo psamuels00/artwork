@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -124,7 +127,7 @@
 
 <figure class="mt-4 md:mt-16 mx-2 sm:mx-4 md:mx-8 lg:mx-16">
   <a href="/portfolio/the-onion/">
-    <img class="hover:brightness-90 mx-auto"
+    <img class="swipeable hover:brightness-90 mx-auto"
          alt="Big painting of a red onion"
          src="/images/portfolio/TheOnion/FullPaintingSharpOutlineFullSize.png"/>
   </a>
@@ -144,46 +147,71 @@
     
   </div>
 </footer>
+      
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
 
 
   <script type="text/javascript">
-    function gotoPrev() {
-      
+    
+      function gotoPrev() {
         if (isOfficial() && window.location.pathname == '/') {
           window.location.href = '/resume/'
         } else {
           window.location.href = '/nightmare/'
         }
-      
-    }
+      }
+    
 
-    function gotoNext() {
-      
+    
+      function gotoNext() {
         if (isOfficial() && window.location.pathname == '/resume/') {
           window.location.href = '/'
         } else {
           window.location.href = '/portfolio/'
         }
-      
-    }
+      }
+    
+
+    
+
+    
+
+    
+    
+    
+    
 
     
       swipeLeftRight(gotoPrev, gotoNext);
     
 
-    document.addEventListener('keydown', function (event) {
-      
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
 
-      
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
 
-      if (event.key === 'ArrowLeft') {
-        gotoPrev();
-      }
+        
 
-      if (event.key === 'ArrowRight') {
-        gotoNext();
-      }
-    });
+        
+      });
+    
   </script>
 
 
@@ -199,8 +227,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

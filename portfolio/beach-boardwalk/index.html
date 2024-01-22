@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="bg-sand-400">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -196,7 +199,7 @@
             lg:h-[calc(100svh-205px-10px-105px)]
             min-h-32">
   <a class="h-full mx-auto" href="/portfolio/beach-boardwalk/the-bench/">
-    <img class="hover:brightness-90
+    <img class="swipeable hover:brightness-90
                 max-h-full max-w-full object-scale-down"
          alt="Portfolio item Beach Boardwalk image The Bench"
          src="/images/portfolio/BeachBoardwalk/TheBench.jpg" />
@@ -308,6 +311,24 @@
   </div>
 </div>
 
+<script type="text/javascript">
+  (function() {
+    const hideShowBtns = document.getElementsByClassName('hide-show-info');
+    const infoBox = document.getElementById('info-box');
+
+    function toggleInfoBox() {
+      for (let elem of hideShowBtns) {
+        elem.classList.toggle('hidden');
+      }
+      infoBox.classList.toggle('hidden');
+    }
+
+    for (let elem of hideShowBtns) {
+      elem.addEventListener('click', toggleInfoBox);
+    }
+  })()
+</script>
+
 <div class="flex">
   <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
     
@@ -315,7 +336,7 @@
     
       
         <a href="/portfolio/beach-boardwalk/the-barge/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Beach Boardwalk image The Barge"
                src="/images/portfolio/BeachBoardwalk/TheBarge.jpg"/>
         </a>
@@ -323,7 +344,7 @@
     
       
         <a href="/portfolio/beach-boardwalk/the-lifeguard/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Beach Boardwalk image The Lifeguard"
                src="/images/portfolio/BeachBoardwalk/TheLifeguard.jpg"/>
         </a>
@@ -331,7 +352,7 @@
     
       
         <a href="/portfolio/beach-boardwalk/the-kite/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Beach Boardwalk image The Kite"
                src="/images/portfolio/BeachBoardwalk/TheKite.jpg"/>
         </a>
@@ -339,7 +360,7 @@
     
       
         <a href="/portfolio/beach-boardwalk/the-surfers/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Beach Boardwalk image The Surfers"
                src="/images/portfolio/BeachBoardwalk/TheSurfers.jpg"/>
         </a>
@@ -347,7 +368,7 @@
     
       
         <a href="/portfolio/beach-boardwalk/full-painting/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item Beach Boardwalk image Full Painting"
                src="/images/portfolio/BeachBoardwalk/FullPainting.jpg"/>
         </a>
@@ -386,24 +407,6 @@
 
 
 <script type="text/javascript">
-  (function() {
-    const hideShowBtns = document.getElementsByClassName('hide-show-info');
-    const infoBox = document.getElementById('info-box');
-
-    function toggleInfoBox() {
-      for (let elem of hideShowBtns) {
-        elem.classList.toggle('hidden');
-      }
-      infoBox.classList.toggle('hidden');
-    }
-
-    for (let elem of hideShowBtns) {
-      elem.addEventListener('click', toggleInfoBox);
-    }
-  })()
-</script>
-
-<script type="text/javascript">
   function gotoPrev() {
     window.location.href = '/portfolio/starry-night/'
   }
@@ -412,29 +415,15 @@
     window.location.href = '/portfolio/desert-flower/'
   }
 
-  swipeLeftRight(gotoPrev, gotoNext);
+  function gotoEscape() {
+    event.preventDefault();
+    window.location.href = '/portfolio/'
+  }
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '/portfolio/'
-    }
-
-    if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
-      window.location.href = '/portfolio/beach-boardwalk/the-bench/'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
-
-  document.body.classList.add('bg-sand-400');
+  function gotoEnter() {
+    event.preventDefault();
+    window.location.href = '/portfolio/beach-boardwalk/the-bench/'
+  }
 </script>
 
     
@@ -454,7 +443,64 @@
     
   </div>
 </footer>
+      
+    </div>
 
+  </body>
+</html>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+      swipeLeftRight(gotoPrev, gotoNext);
+    
+
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
+
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
+
+        
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        
+
+        
+          if (event.key === 'Escape' || event.key === 'ArrowUp') {
+            gotoEscape();
+          }
+        
+      });
+    
+  </script>
 
 
 <script type="text/javascript">
@@ -469,8 +515,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

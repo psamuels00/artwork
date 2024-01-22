@@ -8,7 +8,7 @@
     <meta name="description" content="Discover Perrin's art: acrylic paintings and iPhone doodles.">
     <meta name="keywords" content="Perrin, Artwork, Paintings, Doodles, Drawings, San Francisco, Concord">
 
-    <title>Perrin&#39;s Animals Doodle</title>
+    <title>Perrin&#39;s Animals Doodles</title>
 
     <link rel="shortcut icon" type="image/png" href="/images/meta/EmmasFace.png"/>
     <link rel="stylesheet" href="/global.css"/>
@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -197,7 +200,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/animals/jellyfish/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Animals image Jellyfish"
                src="/images/doodles/Animals/Jellyfish.jpg"/>
       </a>
@@ -208,7 +211,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/animals/emma-sitting/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Animals image Emma Sitting"
                src="/images/doodles/Animals/EmmaSitting.jpg"/>
       </a>
@@ -219,7 +222,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/animals/turkey-with-inflamed-comb/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Animals image Turkey With Inflamed Comb"
                src="/images/doodles/Animals/TurkeyWithInflamedComb.jpg"/>
       </a>
@@ -230,7 +233,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/animals/emma-slight-worried-look/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Animals image Emma Slight Worried Look"
                src="/images/doodles/Animals/EmmaSlightWorriedLook.jpg"/>
       </a>
@@ -241,7 +244,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/animals/irinio-dove/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Animals image Irinio Dove"
                src="/images/doodles/Animals/IrinioDove.jpg"/>
       </a>
@@ -252,7 +255,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/animals/s-snake/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Animals image S Snake"
                src="/images/doodles/Animals/SSnake.jpg"/>
       </a>
@@ -263,7 +266,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/animals/rainbow-bird-with-heart/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Animals image Rainbow Bird With Heart"
                src="/images/doodles/Animals/RainbowBirdWithHeart.jpg"/>
       </a>
@@ -312,28 +315,15 @@
     window.location.href = '/doodles/faces/'
   }
 
-  swipeLeftRight(gotoPrev, gotoNext);
+  function gotoEscape() {
+    event.preventDefault();
+    window.location.href = '/doodles/'
+  }
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '/doodles/'
-    }
-
-    if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
-      window.location.href = '/doodles/animals/jellyfish/'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
-
+  function gotoEnter() {
+    event.preventDefault();
+    window.location.href = '/doodles/animals/jellyfish/'
+  }
 </script>
 
     
@@ -353,7 +343,64 @@
     
   </div>
 </footer>
+      
+    </div>
 
+  </body>
+</html>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+      swipeLeftRight(gotoPrev, gotoNext);
+    
+
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
+
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
+
+        
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        
+
+        
+          if (event.key === 'Escape' || event.key === 'ArrowUp') {
+            gotoEscape();
+          }
+        
+      });
+    
+  </script>
 
 
 <script type="text/javascript">
@@ -368,8 +415,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

@@ -8,7 +8,7 @@
     <meta name="description" content="Discover Perrin's art: acrylic paintings and iPhone doodles.">
     <meta name="keywords" content="Perrin, Artwork, Paintings, Doodles, Drawings, San Francisco, Concord">
 
-    <title>Perrin&#39;s Flowers Doodle</title>
+    <title>Perrin&#39;s Flowers Doodles</title>
 
     <link rel="shortcut icon" type="image/png" href="/images/meta/EmmasFace.png"/>
     <link rel="stylesheet" href="/global.css"/>
@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -197,7 +200,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/bold-red-flower/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Bold Red Flower"
                src="/images/doodles/Flowers/BoldRedFlower.jpg"/>
       </a>
@@ -208,7 +211,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/two-flowers-with-stem/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Two Flowers With Stem"
                src="/images/doodles/Flowers/TwoFlowersWithStem.jpg"/>
       </a>
@@ -219,7 +222,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/hearts-and-flowers/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Hearts And Flowers"
                src="/images/doodles/Flowers/HeartsAndFlowers.jpg"/>
       </a>
@@ -230,7 +233,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/rainbow-daisy/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Rainbow Daisy"
                src="/images/doodles/Flowers/RainbowDaisy.jpg"/>
       </a>
@@ -241,7 +244,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/flower-doodle-dune-dude/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Flower Doodle Dune Dude"
                src="/images/doodles/Flowers/FlowerDoodleDuneDude.jpg"/>
       </a>
@@ -252,7 +255,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/flower-doodle-with-butterfly/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Flower Doodle With Butterfly"
                src="/images/doodles/Flowers/FlowerDoodleWithButterfly.jpg"/>
       </a>
@@ -263,7 +266,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/flower-doodle-with-grass/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Flower Doodle With Grass"
                src="/images/doodles/Flowers/FlowerDoodleWithGrass.jpg"/>
       </a>
@@ -274,7 +277,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/inside-out-flower-with-pot/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Inside Out Flower With Pot"
                src="/images/doodles/Flowers/InsideOutFlowerWithPot.jpg"/>
       </a>
@@ -285,7 +288,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/red-flower/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Red Flower"
                src="/images/doodles/Flowers/RedFlower.jpg"/>
       </a>
@@ -296,7 +299,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/sunflower-in-pot/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Sunflower In Pot"
                src="/images/doodles/Flowers/SunflowerInPot.jpg"/>
       </a>
@@ -307,7 +310,7 @@
       
   <figure class="sm:my-0 my-8 text-sm font-extralight">
       <a href="/doodles/flowers/wireframe-flowers-in-clay-pot/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodle item Flowers image Wireframe Flowers In Clay Pot"
                src="/images/doodles/Flowers/WireframeFlowersInClayPot.jpg"/>
       </a>
@@ -356,28 +359,15 @@
     window.location.href = '/doodles/outdoors/'
   }
 
-  swipeLeftRight(gotoPrev, gotoNext);
+  function gotoEscape() {
+    event.preventDefault();
+    window.location.href = '/doodles/'
+  }
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '/doodles/'
-    }
-
-    if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
-      window.location.href = '/doodles/flowers/bold-red-flower/'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
-
+  function gotoEnter() {
+    event.preventDefault();
+    window.location.href = '/doodles/flowers/bold-red-flower/'
+  }
 </script>
 
     
@@ -397,7 +387,64 @@
     
   </div>
 </footer>
+      
+    </div>
 
+  </body>
+</html>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+      swipeLeftRight(gotoPrev, gotoNext);
+    
+
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
+
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
+
+        
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        
+
+        
+          if (event.key === 'Escape' || event.key === 'ArrowUp') {
+            gotoEscape();
+          }
+        
+      });
+    
+  </script>
 
 
 <script type="text/javascript">
@@ -412,8 +459,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

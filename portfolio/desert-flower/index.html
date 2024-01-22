@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="bg-desert_brush-300">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -196,7 +199,7 @@
             lg:h-[calc(100svh-205px-10px-105px)]
             min-h-32">
   <a class="h-full mx-auto" href="/portfolio/desert-flower/full-painting/">
-    <img class="hover:brightness-90
+    <img class="swipeable hover:brightness-90
                 max-h-full max-w-full object-scale-down"
          alt="Portfolio item Desert Flower image Full Painting"
          src="/images/portfolio/DesertFlower/FullPainting.jpg" />
@@ -308,17 +311,6 @@
   </div>
 </div>
 
-<div class="flex">
-  <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
-    
-      
-    
-  </div>
-</div>
-
-
-
-
 <script type="text/javascript">
   (function() {
     const hideShowBtns = document.getElementsByClassName('hide-show-info');
@@ -337,6 +329,17 @@
   })()
 </script>
 
+<div class="flex">
+  <div class="flex flex-col gap-8 mt-4 md:grid md:grid-cols-2">
+    
+      
+    
+  </div>
+</div>
+
+
+
+
 <script type="text/javascript">
   function gotoPrev() {
     window.location.href = '/portfolio/beach-boardwalk/'
@@ -346,29 +349,15 @@
     window.location.href = '/portfolio/emma/'
   }
 
-  swipeLeftRight(gotoPrev, gotoNext);
+  function gotoEscape() {
+    event.preventDefault();
+    window.location.href = '/portfolio/'
+  }
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '/portfolio/'
-    }
-
-    if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
-      window.location.href = '/portfolio/desert-flower/full-painting/'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
-
-  document.body.classList.add('bg-desert_brush-300');
+  function gotoEnter() {
+    event.preventDefault();
+    window.location.href = '/portfolio/desert-flower/full-painting/'
+  }
 </script>
 
     
@@ -388,7 +377,64 @@
     
   </div>
 </footer>
+      
+    </div>
 
+  </body>
+</html>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+    
+
+    
+      swipeLeftRight(gotoPrev, gotoNext);
+    
+
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
+
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
+
+        
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        
+
+        
+          if (event.key === 'Escape' || event.key === 'ArrowUp') {
+            gotoEscape();
+          }
+        
+      });
+    
+  </script>
 
 
 <script type="text/javascript">
@@ -403,8 +449,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>

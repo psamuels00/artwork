@@ -1,5 +1,11 @@
 function swipeLeftRight(leftFunc, rightFunc) {
-  elem = document.body;
+  elements = document.getElementsByClassName('swipeable');
+  for (let elem of elements) {
+      swipeLeftRightElem(elem, leftFunc, rightFunc);
+  }
+}
+
+function swipeLeftRightElem(elem, leftFunc, rightFunc) {
   const manager = new Hammer.Manager(elem);
 
   const swipe = new Hammer.Swipe({

@@ -18,11 +18,14 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body>
+  <body class="">
 
     <div class="main_content">
       
         
+
+
+
 
 
 <!-- mobile-first, responsive navigation -->
@@ -191,7 +194,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/abstract/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item Abstract image Desert Sculpture Outskirts Of Town"
                src="/images/doodles/Abstract/DesertSculptureOutskirtsOfTown.jpg"/>
         </a>
@@ -202,7 +205,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/animals/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item Animals image Jellyfish"
                src="/images/doodles/Animals/Jellyfish.jpg"/>
         </a>
@@ -213,7 +216,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/faces/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item Faces image Serene Caveman"
                src="/images/doodles/Faces/SereneCaveman.jpg"/>
         </a>
@@ -224,7 +227,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/flowers/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item Flowers image Bold Red Flower"
                src="/images/doodles/Flowers/BoldRedFlower.jpg"/>
         </a>
@@ -235,7 +238,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/outdoors/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item Outdoors image Desert Mountain Tree"
                src="/images/doodles/Outdoors/DesertMountainTree.jpg"/>
         </a>
@@ -246,7 +249,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/people/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item People image George Mini The Demo Sharp Outline"
                src="/images/doodles/People/GeorgeMiniTheDemoSharpOutline.jpg"/>
         </a>
@@ -257,7 +260,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/stills/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item Stills image Apple Still Shot Simple"
                src="/images/doodles/Stills/AppleStillShotSimple.jpg"/>
         </a>
@@ -268,7 +271,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/textures/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item Textures image Protozoan Texture"
                src="/images/doodles/Textures/ProtozoanTexture.jpg"/>
         </a>
@@ -279,7 +282,7 @@
 
       <figure class="mx-auto">
         <a href="/doodles/wacky/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item Wacky image The Human Machine"
                src="/images/doodles/Wacky/TheHumanMachine.jpg"/>
         </a>
@@ -320,6 +323,7 @@
     });
   </script>
 
+
     
   </div>
 
@@ -337,51 +341,80 @@
     
   </div>
 </footer>
+      
+    </div>
+
+  </body>
+</html>
+
+
+
+
+
 
 
   <script type="text/javascript">
-    function gotoPrev() {
-      
+    
+      function gotoPrev() {
         if (isOfficial() && window.location.pathname == '/') {
           window.location.href = '/resume/'
         } else {
           window.location.href = '/portfolio/'
         }
-      
-    }
+      }
+    
 
-    function gotoNext() {
-      
+    
+      function gotoNext() {
         if (isOfficial() && window.location.pathname == '/resume/') {
           window.location.href = '/'
         } else {
           window.location.href = '/about/'
         }
-      
-    }
+      }
+    
+
+    
+      function gotoEnter() {
+        event.preventDefault();
+        window.location.href = '/doodles/abstract/'
+      }
+    
+
+    
+
+    
+    
+    
+    
 
     
       swipeLeftRight(gotoPrev, gotoNext);
     
 
-    document.addEventListener('keydown', function (event) {
-      
+    
+      document.addEventListener('keydown', function (event) {
+        
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        
 
-      
-        if (event.key === 'Enter' || event.key === 'ArrowDown') {
-          event.preventDefault();
-          window.location.href = '/doodles/abstract/'
-        }
-      
+        
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        
 
-      if (event.key === 'ArrowLeft') {
-        gotoPrev();
-      }
+        
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        
 
-      if (event.key === 'ArrowRight') {
-        gotoNext();
-      }
-    });
+        
+      });
+    
   </script>
 
 
@@ -397,8 +430,3 @@
     }
   }
 </script>
-      
-    </div>
-
-  </body>
-</html>
