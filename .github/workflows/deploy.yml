@@ -23,10 +23,7 @@ jobs:
         run: npx http-server -p 8080 ./dist &
 
       - name: Check for Broken Links
-        uses: JustinBeckwith/linkinator-action@v1
-        with:
-          paths: http://127.0.0.1:8080
-          recurse: true
+        run: npx linkinator http://127.0.0.1:8080 --recurse
 
       - name: Stop HTTP Server
         run: pkill -f 'npx http-server -p 8080'
