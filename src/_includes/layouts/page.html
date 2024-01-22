@@ -2,6 +2,9 @@
 layout: 'layouts/base.html'
 ---
 
+{% set prev = prev or pagination.items[0].prev %}
+{% set next = next or pagination.items[0].next %}
+
 {% import "snippets/svg.html" as macros %}
 
 <!-- mobile-first, responsive navigation -->
