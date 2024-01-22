@@ -6,6 +6,31 @@ on:
       - main
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Site
+        run: npm run build
+
+      - name: Run Linkinator
+        run: |
+          npx http-server -p 8080 ./dist &
+          sleep 2
+          npx linkinator http://localhost:8080/ --skip https://www.linkedin.com/in/PerrinSamuels --recurse
+          kill -9 `lsof -i:8080 -t`
+
   deploy:
     runs-on: ubuntu-latest
 
