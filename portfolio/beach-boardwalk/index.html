@@ -188,11 +188,16 @@
       
 
 
-<div class="flex justify-center my-4">
-  <a href="/portfolio/beach-boardwalk/the-bench/">
+<!-- 144px/205px is the combined height of elements above the image -->
+<!-- 10px is an arbitrary margin -->
+<!-- 210px/105px allows room for the Title and first line of Description to be seen -->
+<div class="flex items-start my-4
+            h-[calc(100svh-142px-10px-210px)]
+            lg:h-[calc(100svh-205px-10px-105px)]
+            min-h-32">
+  <a class="h-full mx-auto" href="/portfolio/beach-boardwalk/the-bench/">
     <img class="hover:brightness-90
-                max-h-fit_in_viewport
-                lg:max-h-fit_in_viewport_lg"
+                max-h-full max-w-full object-scale-down"
          alt="Portfolio item Beach Boardwalk image The Bench"
          src="/images/portfolio/BeachBoardwalk/TheBench.jpg" />
   </a>
