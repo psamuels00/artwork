@@ -24,16 +24,9 @@ jobs:
       - name: Build Site
         run: npm run build
 
-      - name: show resume files orig
-        run: ls -l src/images/resume/Resume.*
-
-      - name: show resume files dist
-        run: ls -l dist/images/resume/Resume.*
-
       - name: Run Linkinator
         run: |
           npx http-server --silent -p 8080 ./dist &
-          sleep 2
           npx linkinator http://127.0.0.1:8080/ --recurse \
             --skip https://www.linkedin.com/ --retry-errors --verbosity error
           rc=$?

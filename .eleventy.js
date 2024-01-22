@@ -8,7 +8,6 @@ module.exports = config => {
 
   // copy files
   config.addPassthroughCopy('src/images/');
-  config.addPassthroughCopy('src/images/**/*.pdf');
   config.addPassthroughCopy({
     'global.out.css': 'global.css',
   });
