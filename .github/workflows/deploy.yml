@@ -6,14 +6,6 @@ on:
       - main
 
 jobs:
-  linkinator:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: JustinBeckwith/linkinator-action@v1
-        with:
-          paths: README.md
-
   deploy:
     runs-on: ubuntu-latest
 
@@ -32,7 +24,7 @@ jobs:
     - name: Build Site
       run: npm run build
 
-    - name: Configure custom domain
+    - name: Configure Custom Domain
       run: echo perrins-art.com > ./dist/CNAME
 
     - name: Deploy to GitHub Pages
@@ -40,3 +32,16 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
+
+  linkinator:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+      - uses: actions/checkout@v3
+
+      - name: Check for Broken Links
+      - uses: JustinBeckwith/linkinator-action@v1
+        with:
+          paths: README.md
+          linksToSkip: "http://0.0.0.0:8080/"
