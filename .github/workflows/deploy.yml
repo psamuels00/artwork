@@ -28,8 +28,11 @@ jobs:
         run: |
           npx http-server -p 8080 ./dist &
           sleep 2
-          npx linkinator http://localhost:8080/ --skip https://www.linkedin.com/in/PerrinSamuels --recurse
-          kill -9 `lsof -i:8080 -t`
+          npx linkinator http://127.0.0.1:8080/ --recurse \
+            --skip https://www.linkedin.com/
+          rc=$?
+          kill -9 `lsof -i:8080 -t` || true
+          exit $rc
 
   deploy:
     runs-on: ubuntu-latest
