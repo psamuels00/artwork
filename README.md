@@ -29,13 +29,9 @@ _None_
 
 ### Medium priority
 - get some better pics of the Beach Boardwalk
-- add some basic testing
+- add some basic testing: no broken links
 
 ### Low priority
-
-**UI bug fixes**
-- swipe left/right on body works well for swipe, but you cannot select any text on a page
-- swipe left/right works on my Mac browser, with the track pad/mouse, which is annoying
 
 **UI design**
 - redesign image page navigation so fingers do not cover image to reach controls,

@@ -5,6 +5,7 @@ pagination:
   size: 1
   alias: category
 permalink: "doodles/{{ category.name | slug }}/"
+goto: ['next', 'prev', 'enter', 'escape']
 ---
 
 {% import "snippets/doodle_figure.html" as macros %}
@@ -51,26 +52,13 @@ permalink: "doodles/{{ category.name | slug }}/"
     window.location.href = '{{'/' | url}}doodles/{{category.next | slug}}/'
   }
 
-  swipeLeftRight(gotoPrev, gotoNext);
+  function gotoEscape() {
+    event.preventDefault();
+    window.location.href = '{{'/doodles/' | url}}'
+  }
 
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '{{'/doodles/' | url}}'
-    }
-
-    if (event.key === 'Enter' || event.key === 'ArrowDown') {
-      event.preventDefault();
-      window.location.href = '{{'/' | url}}doodles/{{category.name | slug}}/{{category.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
-
+  function gotoEnter() {
+    event.preventDefault();
+    window.location.href = '{{'/' | url}}doodles/{{category.name | slug}}/{{category.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/'
+  }
 </script>

@@ -17,16 +17,16 @@ next: '/'
 {% set c = colors.rb %}
 
 {% macro morph(word, color, description) %}
-<div class="m-4">
-  <div class="flex justify-between {{color}} font-rubik text-[46pt] leading-none">
-    {% for letter in word %}
-    <div>{{letter}}</div>
-    {% endfor %}
+  <div class="m-4">
+    <div class="swipeable flex justify-between {{color}} font-rubik text-[46pt] leading-none">
+      {% for letter in word %}
+        <div>{{letter}}</div>
+      {% endfor %}
+    </div>
+    <div class="font-light text-sm sm:text-base">
+      {{description}}
+    </div>
   </div>
-  <div class="font-light text-sm sm:text-base">
-    {{description}}
-  </div>
-</div>
 {% endmacro %}
 
 <div class="flex flex-col items-center">

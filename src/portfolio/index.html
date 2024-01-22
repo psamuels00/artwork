@@ -15,7 +15,7 @@ enter: '/portfolio/emma/'
 
       <figure class="mx-auto {% if not isLandscape %} w-2/3 {% endif %}">
         <a href="/portfolio/{{project.name | slug}}/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Portfolio item {{project.name | sepWords}} image {{project.images[0] | rmFileExt | sepWords}}"
                src="{{ imagePath }}"/>
         </a>

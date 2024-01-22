@@ -7,7 +7,7 @@ next: '/resume/'
 
 {% macro figure(image, alt, title) %}
   <figure class="mt-8 sm:mt-0 mx-16 sm:mx-8 md:mx-20">
-    <img alt="{{alt}}" src="{{image}}" />
+    <img class="swipeable" alt="{{alt}}" src="{{image}}" />
     <figcaption class="mt-2 mb-16 sm:mb-8">{{title}}</figcaption>
   </figure>
 {% endmacro %}
@@ -42,58 +42,4 @@ next: '/resume/'
                 "Fiction, Other") }}
     </div>
   </div>
-</div>
-
-
-<div class="hidden bg-blue-950 text-white text-sm my-6 py-10">
-
-  <div class="flex flex-col lg:max-w-4xl lg:min-w-[1024px] mx-auto text-center gap-y-8">
-
-    <div class="flex mx-auto text-lg md:text-base font-extralight">
-      A little more about me...  Here are<br/>
-      some books I've read recently.
-    </div>
-
-    <div class="lg:flex flex-row gap-8 mt-8">
-      <div class="w-2/3 mx-auto lg:w-5/12 flex flex-col gap-y-8">
-        <figure>
-          <img alt="Politics and philosophy books"
-               src="/images/about/PoliticsAndPhilosophyBooks.png"/>
-          <figcaption class="m-2">Politics</figcaption>
-        </figure>
-
-        <figure class="mx-12 mb-8">
-          <img alt="Language and algorithm computer books"
-               src="/images/about/LanguageAndAlgorithmComputerBooks.png"/>
-          <figcaption class="m-2">Software - Lang, Algorithms</figcaption>
-        </figure>
-      </div>
-
-      <div class="lg:w-7/12 flex flex-col gap-y-8">
-        <figure class="w-2/3 mx-auto">
-          <img alt="New technology computer books"
-               src="/images/about/NewTechComputerBooks.png"/>
-          <figcaption class="m-2">Software - AI, Quantum</figcaption>
-        </figure>
-
-        <figure class="w-9/12 mx-auto">
-          <img alt="Art books"
-               src="/images/about/ArtBooks.png"/>
-          <figcaption class="m-2">Painting and Art</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <div class="lg:flex flex-row mt-2">
-      <div class="w-full mx-auto flex flex-col">
-        <figure class="w-1/2 mx-auto">
-          <img alt="Other books"
-               src="/images/about/OtherBooks.png"/>
-          <figcaption class="m-2">Fiction, Other</figcaption>
-        </figure>
-      </div>
-    </div>
-
-  </div>
-
 </div>

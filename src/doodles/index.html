@@ -12,7 +12,7 @@ enter: '/doodles/abstract/'
 
       <figure class="mx-auto">
         <a href="/doodles/{{category.name | slug}}/">
-          <img class="hover:brightness-90"
+          <img class="swipeable hover:brightness-90"
                alt="Doodles item {{category.name | sepWords}} image {{category.images[0] | rmFileExt | sepWords}}"
                src="/images/doodles/{{category.name | replace(' ', '')}}/{{category.images[0]}}"/>
         </a>

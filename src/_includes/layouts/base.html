@@ -28,3 +28,110 @@
 
   </body>
 </html>
+
+{#
+|-----------------------------------------------------------------------------------------
+| Handle keyboard keys and swipe left/right on any image for navigation.
+|
+| For any page using this as a layout, prev and next will be extracted from pagination
+| data, if available.  Any page may define literal values for prev, next, enter, or
+| escape in the front matter (which would override pagination data if both are present).
+| In all these cases, goto* functions are automatically created and used to respond
+| to keyboard keys and swipe left/right.
+|
+| When the value of prev, next, enter, or escape is not a literal, the goto* function
+| is defined directly in the pagination template and indicated using 'goto' in the
+| front matter, eg: goto: ['prev', 'next'] to mean gotoPrev() and gotoNext() are defined.
+|----------------------------------------------------------------------------------------
+#}
+
+{% set prev = prev or pagination.items[0].prev %}
+{% set next = next or pagination.items[0].next %}
+
+{% if prev or next or enter or escape or goto %}
+  <script type="text/javascript">
+    {% if prev and not (goto and 'prev' in goto) %}
+      function gotoPrev() {
+        if (isOfficial() && window.location.pathname == '/') {
+          window.location.href = '{{'/resume/' | url}}'
+        } else {
+          window.location.href = '{{prev | url}}'
+        }
+      }
+    {% endif %}
+
+    {% if next and not (goto and 'next' in goto) %}
+      function gotoNext() {
+        if (isOfficial() && window.location.pathname == '/resume/') {
+          window.location.href = '{{'/' | url}}'
+        } else {
+          window.location.href = '{{next | url}}'
+        }
+      }
+    {% endif %}
+
+    {% if enter and not (goto and 'enter' in goto) %}
+      function gotoEnter() {
+        event.preventDefault();
+        window.location.href = '{{enter | url}}'
+      }
+    {% endif %}
+
+    {% if escape and not (goto and 'escape' in goto) %}
+      function gotoEscape() {
+        event.preventDefault();
+        window.location.href = '{{escape | url}}'
+      }
+    {% endif %}
+
+    {% set prevEvent = prev or (goto and 'prev' in goto) %}
+    {% set nextEvent = next or (goto and 'next' in goto) %}
+    {% set enterEvent = enter or (goto and 'enter' in goto) %}
+    {% set escapeEvent = escape or (goto and 'escape' in goto) %}
+
+    {% if prevEvent or nextEvent %}
+      swipeLeftRight(gotoPrev, gotoNext);
+    {% endif %}
+
+    {% if prevEvent or nextEvent or enterEvent or escapeEvent %}
+      document.addEventListener('keydown', function (event) {
+        {% if prevEvent %}
+          if (event.key === 'ArrowLeft') {
+            gotoPrev();
+          }
+        {% endif %}
+
+        {% if nextEvent %}
+          if (event.key === 'ArrowRight') {
+            gotoNext();
+          }
+        {% endif %}
+
+        {% if enterEvent %}
+          if (event.key === 'Enter' || event.key === 'ArrowDown') {
+            gotoEnter();
+          }
+        {% endif %}
+
+        {% if escapeEvent %}
+          if (event.key === 'Escape' || event.key === 'ArrowUp') {
+            gotoEscape();
+          }
+        {% endif %}
+      });
+    {% endif %}
+  </script>
+{% endif %}
+
+<script type="text/javascript">
+  function isOfficial() {
+    return window.location.protocol == 'https:';
+  }
+
+  if (isOfficial()) {
+    elements = document.getElementsByClassName('nightmare');
+    for (let elem of elements) {
+      elem.classList.toggle('hidden');
+    }
+  }
+</script>

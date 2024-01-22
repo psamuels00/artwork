@@ -1,5 +1,7 @@
 ---
 layout: 'layouts/base.html'
+escape: '../'
+goto: ['prev', 'next']
 ---
 
 {% import "snippets/svg.html" as macros %}
@@ -52,7 +54,7 @@ layout: 'layouts/base.html'
   </div>
 
   <!-- 144px is the combined height of elements above the image -->
-  <div class="flex items-start h-[calc(100svh-144px)]">
+  <div class="swipeable flex items-start h-[calc(100svh-144px)]">
     <a class="mx-auto" href="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}">
       <img class="p-1 sm:p-2 lg:p-4
                   max-h-[calc(100svh-144px)] min-h-32 max-w-full object-scale-down"
@@ -71,21 +73,4 @@ layout: 'layouts/base.html'
   function gotoNext() {
     window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.next.name | slug}}/{{item.next.image | cleanupHack | rmFileExt | sepWords | slug}}/';
   }
-
-  swipeLeftRight(gotoPrev, gotoNext);
-
-  document.addEventListener('keydown', function (event) {
-    if (event.key === 'Escape' || event.key === 'ArrowUp') {
-      event.preventDefault();
-      window.location.href = '../'
-    }
-
-    if (event.key === 'ArrowLeft') {
-      gotoPrev();
-    }
-
-    if (event.key === 'ArrowRight') {
-      gotoNext();
-    }
-  });
 </script>
