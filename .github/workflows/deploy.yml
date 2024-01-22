@@ -24,7 +24,10 @@ jobs:
       - name: Build Site
         run: npm run build
 
-      - name: show resume files
+      - name: show resume files orig
+        run: ls -l src/images/resume/Resume.*
+
+      - name: show resume files dist
         run: ls -l dist/images/resume/Resume.*
 
       - name: Run Linkinator
