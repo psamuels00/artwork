@@ -23,7 +23,7 @@ module.exports = {
   },
 
   flattened: (items) => {
-    // flatten items wrt images, and embellish each item with first/last/prev/next
+    // flatten items wrt images, and embellish each item with prev_prev/prev/next/next_next
     // assumes items like [ { name: name, images: [image,...], ... }, ... ]
     let all_images = [];
 
@@ -37,13 +37,25 @@ module.exports = {
 
     for (let item_offset = 0; item_offset < items.length; item_offset++) {
       item = items[item_offset];
-      first = {
-        name: item.name,
-        image: item.images[0],
+
+      if (item_offset == 0) {
+        first_offset = items.length - 1;
+      } else {
+        first_offset = item_offset - 1;
+      }
+      prev_prev = {
+        name: items[first_offset].name,
+        image: items[first_offset].images[0],
       };
-      last = {
-        name: item.name,
-        image: item.images[item.images.length - 1],
+
+      if (item_offset == items.length - 1) {
+        last_offset = 0;
+      } else {
+        last_offset = item_offset + 1;
+      }
+      next_next = {
+        name: items[last_offset].name,
+        image: items[last_offset].images[0],
       };
 
       for (let image_offset = 0; image_offset < item.images.length; image_offset++) {
@@ -70,10 +82,10 @@ module.exports = {
 
         embellished_item = {
           image,
-          first,
-          last,
+          prev_prev,
           prev,
           next,
+          next_next,
           ...item,
         }
         delete embellished_item.images;
