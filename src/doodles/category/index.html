@@ -6,6 +6,8 @@ pagination:
   alias: category
 permalink: "doodles/{{ category.name | slug }}/"
 goto: ['next', 'prev', 'enter', 'escape']
+sitemap:
+  priority: 0.7
 ---
 
 {% import "snippets/doodle_figure.html" as macros %}

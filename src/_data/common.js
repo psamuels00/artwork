@@ -1,3 +1,6 @@
+const filters = require('./filters');
+
+
 function combineImages(items) {
   // combine *_images into a single list: images
   for (let item of items) {
@@ -80,13 +83,16 @@ module.exports = {
           };
         }
 
+        page_title = item.page_title + ': ' + filters.sepWords(filters.rmFileExt(image));
+
         embellished_item = {
+          ...item,
+          page_title,
           image,
           prev_prev,
           prev,
           next,
           next_next,
-          ...item,
         }
         delete embellished_item.images;
 

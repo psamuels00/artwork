@@ -1,6 +1,9 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
 const path = require('path');
+const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const sizeOf = require('image-size');
+const filters = require('./src/_data/filters');
+
 
 module.exports = config => {
   // logging
@@ -8,6 +11,9 @@ module.exports = config => {
 
   // copy files
   config.addPassthroughCopy('src/images/');
+  config.addPassthroughCopy({
+    'src/_meta/robots.txt': '/robots.txt',
+  });
   config.addPassthroughCopy({
     'global.out.css': 'global.css',
   });
@@ -20,20 +26,9 @@ module.exports = config => {
 
   // manage URLs
   config.addPlugin(EleventyHtmlBasePlugin);
-  config.addFilter('rmFileExt', value => {
-    return value.replace(/\..+$/, '');
-  });
-  config.addFilter('cleanupHack', value => {
-    return value.replace(/^(.+-)?\d\d-/, '');
-  });
-  config.addFilter('sepWords', value => {
-    return value
-      .replace(/-/g, ' ')
-      .replace(/([a-z])([A-Z])/g, '$1 $2')
-      .replace(/([A-Z])([A-Z])/g, '$1 $2')
-      .replace(/(\d+)([a-zA-Z_])/g, '$1 $2')
-      .replace(/([a-zA-Z_])(\d+)/g, '$1 $2')
-  });
+  config.addFilter('rmFileExt', filters.rmFileExt);
+  config.addFilter('cleanupHack', filters.cleanupHack);
+  config.addFilter('sepWords', filters.sepWords);
 
   // image title
   config.addFilter('capWords', value => {
@@ -53,6 +48,13 @@ module.exports = config => {
   config.addFilter('yearSince', value => {
     year = new Date().getFullYear();
     return (year === value) ? year : ` ${value}-${year}`;
+  });
+
+  // sitemap
+  config.addPlugin(sitemap, {
+    sitemap: {
+      hostname: 'https://perrins-art.com',
+    },
   });
 
   return {
