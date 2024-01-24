@@ -8,6 +8,11 @@ permalink: "portfolio/{{ project.name | slug }}/"
 goto: ['next', 'prev', 'enter', 'escape']
 sitemap:
   priority: 0.8
+eleventyComputed:
+  title: '{{ project.page_title | safe }}'
+  prev_link: '{{ project.prev }}'
+  next_link: '{{ project.next }}'
+  bg_color_page: '{{ project.bg_color_page }}'
 ---
 
 {% import "snippets/svg.html" as macros %}

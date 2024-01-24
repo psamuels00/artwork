@@ -8,7 +8,7 @@
     <meta name="description" content="Discover Perrin's art: acrylic paintings and iPhone doodles.">
     <meta name="keywords" content="Perrin, Artwork, Paintings, Doodles, Drawings, San Francisco, Concord">
 
-    <title>{{ title or pagination.items[0].page_title }}</title>
+    <title>{{ title }}</title>
 
     <link rel="canonical" href="https://perrins-art.com{{ page.url }}" />
     <link rel="shortcut icon" type="image/png" href="/images/meta/EmmasFace.png"/>
@@ -19,7 +19,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body class="{{ pagination.items[0].bg_color_page }}">
+  <body class="{{ bg_color_page }}">
 
     <div class="main_content">
       {% block content %}
@@ -47,8 +47,8 @@
 |----------------------------------------------------------------------------------------
 #}
 
-{% set prev = prev or pagination.items[0].prev %}
-{% set next = next or pagination.items[0].next %}
+{% set prev = prev or prev_link %}
+{% set next = next or next_link %}
 
 {% if prev or next or enter or escape or goto %}
   <script type="text/javascript">

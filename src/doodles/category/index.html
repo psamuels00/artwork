@@ -8,6 +8,10 @@ permalink: "doodles/{{ category.name | slug }}/"
 goto: ['next', 'prev', 'enter', 'escape']
 sitemap:
   priority: 0.7
+eleventyComputed:
+  title: '{{ category.page_title | safe }}'
+  prev_link: '{{ category.prev }}'
+  next_link: '{{ category.next }}'
 ---
 
 {% import "snippets/doodle_figure.html" as macros %}

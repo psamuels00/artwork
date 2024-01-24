@@ -9,7 +9,7 @@ let projects = [
     location: 'Concord, CA',
     medium: 'Acrylic on copy paper, coated with gesso',
     size: '11 x 8½ inches',
-    bg_color_page:'bg-amber-50',
+    bg_color_page: 'bg-amber-50',
     images: [
       'FullPainting.jpg',
       'ReferencePhoto.jpg',
@@ -36,7 +36,7 @@ let projects = [
     location: 'Mission District, San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     size: '34 x 24½ inches',
-    bg_color_page:'bg-zinc-100',
+    bg_color_page: 'bg-zinc-100',
     images: [
       'FullPaintingReduced.jpg',
       'ReferencePhoto.jpg',
@@ -65,7 +65,7 @@ let projects = [
     location: 'San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     size: '16 x 12 inches',
-    bg_color_page:'bg-sky-300',
+    bg_color_page: 'bg-sky-300',
     images: [
       'FullPainting.png',
       'TheArtistAndTheDolphin.jpg',
@@ -81,7 +81,7 @@ let projects = [
     location: 'Concord, CA',
     medium: 'Acrylic paint on cheap, glossy product paper',
     size: '16 x 12 inches',
-    bg_color_page:'bg-backyard-200',
+    bg_color_page: 'bg-backyard-200',
     images: [
       'FullPainting.jpg',
       'ReferencePhoto.jpg',
@@ -101,7 +101,7 @@ let projects = [
     location: 'San Francisco, CA',
     medium: 'Acrylic paint on thin, roll paper, covered with gesso.',
     size: '70 x 46 inches',
-    bg_color_page:'bg-onion-300',
+    bg_color_page: 'bg-onion-300',
     images: [
       'FullPainting.png',
       'TheArtistAndTheOnion.jpg',
@@ -119,7 +119,8 @@ let projects = [
     location: 'San Francisco, CA',
     medium: 'Acrylic black on untreated copy paper.',
     size: '11 x 8½ inches',
-    bg_color_page:'bg-yellow-500',
+    bg_color_page: 'bg-yellow-500',
+
     images: [
       'FullPainting.jpg',
     ],
@@ -133,7 +134,7 @@ let projects = [
     location: 'Concord, CA',
     medium: 'Pencil on baking parchment paper',
     size: '24 x 16 inches',
-    bg_color_page:'bg-sand-400',
+    bg_color_page: 'bg-sand-400',
     images: [
       'TheBench.jpg',
       'TheBarge.jpg',
@@ -152,7 +153,7 @@ let projects = [
     location: 'Concord, CA',
     medium: 'Acrylic on copy paper, coated with gesso',
     size: '11 x 8½ inches',
-    bg_color_page:'bg-desert_brush-300',
+    bg_color_page: 'bg-desert_brush-300',
     images: [
       'FullPainting.jpg',
     ],

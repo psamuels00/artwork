@@ -6,4 +6,9 @@ pagination:
   alias: item
 permalink: "portfolio/{{ item.name | slug }}/{{ item.image | cleanupHack | rmFileExt | sepWords | slug }}/"
 top_page_name: 'portfolio'
+eleventyComputed:
+  title: '{{ item.page_title | safe }}'
+  prev_link: '{{ item.prev }}'
+  next_link: '{{ item.next }}'
+  bg_color_page: '{{ item.bg_color_page }}'
 ---

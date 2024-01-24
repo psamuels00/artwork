@@ -2,8 +2,8 @@
 layout: 'layouts/base.html'
 ---
 
-{% set prev = prev or pagination.items[0].prev %}
-{% set next = next or pagination.items[0].next %}
+{% set prev = prev or prev_link %}
+{% set next = next or next_link %}
 
 {% import "snippets/svg.html" as macros %}
 
