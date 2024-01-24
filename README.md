@@ -56,8 +56,6 @@ _None_
 
 **UI design**
 - The "X" or Escape to leave image page always takes the user to top of previous page
-- Somehow the site navigation options need to be presented, including keyboard
-  arrow keys, swipe left/right, and <<</prev/next/>>> buttons on image pages
 - _Maybe_ display N/M (project #N of M projects) with project title in mobile menu
 
 **UI tweaks**

@@ -2,9 +2,6 @@
 layout: 'layouts/base.html'
 ---
 
-{% set prev = prev or prev_link %}
-{% set next = next or next_link %}
-
 {% import "snippets/svg.html" as macros %}
 
 <!-- mobile-first, responsive navigation -->
@@ -103,14 +100,5 @@ layout: 'layouts/base.html'
       #}
     </div>
     <p>&copy;{{ 2024 | yearSince }} · Perrin</p>
-    {% if page.url === '/about/' %}
-      <div class="mt-2">
-        <p>Made with <span class="text-sm">❤️</span> in Concord.</p>
-        <p>
-          See the source code
-          <a href="https://github.com/psamuels00/artwork"><span class="text-blue-500 hover:underline">here</span></a>.
-        </p>
-      </div>
-    {% endif %}
   </div>
 </footer>
