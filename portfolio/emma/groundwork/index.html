@@ -28,9 +28,9 @@
 
 <div class="flex flex-col h-screen">
 
-  <a href="/portfolio/emma/">
-    <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50">
-      
+  <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50"
+       onclick="goBack()">
+    
   <svg class=""
        xmlns="http://www.w3.org/2000/svg"
        fill="none" stroke="currentColor"
@@ -40,13 +40,14 @@
   </svg>
  <!-- Empty space, same size as "X" -->
 
-      
-        <div class="mx-auto text-2xl font-medium">
-          Emma
-        </div>
-      
+    
+      <div class="mx-auto text-xl font-medium flex items-center">
+        Emma
+        <span class="opacity-30 text-base mx-2 w-[35px]">7/13</span>
+      </div>
+    
 
-      
+    
   <svg class="text-stone-400"
        xmlns="http://www.w3.org/2000/svg"
        fill="none" stroke="currentColor"
@@ -55,17 +56,16 @@
             d="M6 6L42 42M6 42L42 6" />
   </svg>
  <!-- "X" -->
-    </div>
-  </a>
+  </div>
 
   <div class="flex justify-center text-lg font-extralight">
     Groundwork
   </div>
 
-  <!-- 148px is the combined height of elements above and below the image -->
-  <div class="swipeable flex items-center h-[calc(100svh-148px)]">
+  <!-- 150px is the combined height of elements above and below the image -->
+  <div class="swipeable flex items-start h-[calc(100svh-150px)] px-2">
     <a class="mx-auto" href="/images/portfolio/Emma/Groundwork.jpg">
-      <img class="max-h-[calc(100svh-148px)] min-h-32 max-w-full object-scale-down"
+      <img class="max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down"
            alt="portfolio item Emma image Groundwork"
            src="/images/portfolio/Emma/Groundwork.jpg" />
     </a>
@@ -97,6 +97,27 @@
 </div>
 
 <script type="text/javascript">
+  function goBack() {
+
+    // If the user reaches this page from the index page directly, we
+    // try to take them back to the same scroll position they were at.
+    // Once they navigate around though, all bets are off!
+    const indexUrl = '/portfolio/emma/';
+
+    if (document.referrer.endsWith(indexUrl)) {
+      //const scrollPosition = sessionStorage.getItem('scrollPosition');
+      //window.scrollTo(0, scrollPosition || 0);
+      window.history.back();
+    } else {
+      window.location.href = indexUrl;
+    }
+  }
+
+  function gotoEscape() {
+    event.preventDefault();
+    goBack();
+  }
+
   function gotoPrev() {
     window.location.href = '/portfolio/emma/face-zoom/';
   }
@@ -126,11 +147,6 @@
 
     
 
-    
-      function gotoEscape() {
-        event.preventDefault();
-        window.location.href = '../'
-      }
     
 
     
