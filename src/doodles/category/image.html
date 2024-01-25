@@ -10,4 +10,6 @@ eleventyComputed:
   title: '{{ item.page_title | safe }}'
   prev_link: '{{ item.prev }}'
   next_link: '{{ item.next }}'
+  x_in_x_of_y: '{{item.image_offset + 1}}'
+  y_in_x_of_y: '{{item.num_images}}'
 ---

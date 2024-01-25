@@ -93,6 +93,8 @@ module.exports = {
           prev,
           next,
           next_next,
+          image_offset,
+          num_images: item.images.length,
         }
         delete embellished_item.images;
 

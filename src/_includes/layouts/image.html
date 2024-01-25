@@ -12,12 +12,14 @@ goto: ['prev', 'next', 'escape']
     {{ macros.svgPath("", 48, 48, 0, "") }} <!-- Empty space, same size as "X" -->
 
     {% if item.title %}
-      <div class="mx-auto text-2xl font-medium">
+      <div class="mx-auto text-xl font-medium flex items-center">
         {{ item.title }}
+        <span class="opacity-30 text-base mx-2 w-[35px]">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
       </div>
     {% else %}
-      <div class="mx-auto text-3xl font-light">
+      <div class="mx-auto text-3xl font-light align-middle flex items-center">
         {{ item.name }}
+        <span class="opacity-30 text-base mx-2 w-[35px]">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
       </div>
     {% endif %}
 
@@ -28,10 +30,10 @@ goto: ['prev', 'next', 'escape']
     {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords | capWords }}
   </div>
 
-  <!-- 148px is the combined height of elements above and below the image -->
-  <div class="swipeable flex items-center h-[calc(100svh-148px)]">
+  <!-- 150px is the combined height of elements above and below the image -->
+  <div class="swipeable flex items-start h-[calc(100svh-150px)] px-2">
     <a class="mx-auto" href="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}">
-      <img class="max-h-[calc(100svh-148px)] min-h-32 max-w-full object-scale-down"
+      <img class="max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down"
            alt="{{top_page_name}} item {{item.name}} image {{item.image | rmFileExt | sepWords}}"
            src="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}" />
     </a>

@@ -55,20 +55,19 @@ _None_
 ### Low priority
 
 **UI design**
-- _Maybe_ display N/M (project #N of M projects) with project title in mobile menu
+- Add support for dark backgrounds, esp to use black for The Demo
 
 **UI tweaks**
 - Overall more consistency with the break points across pages: sm, md, lg
 - Add margin below secondary doodles menu on mobile, there is none in landscape orientation
 - Improve alignment of secondary hamburger menu; improve consistency of margin around
   secondary hamburger menu on general or specific doodle/portfolio page
-- Add support for dark backgrounds, esp to use black for The Demo
 - Make sure the footer is always at the bottom of the page, eg, see About in full window mode
 - _Maybe_ add Next/Prev buttons to bottom of project pages
 - _Maybe_ transition page loads more smoothly
 
 **Refactor code**
-- Use prev/next/first/last page/href provided by 11ty, if possible instead of my own
+- _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
 - _Maybe_ build portfolio menu from data in projects.js, including new ordering options
 
 **New features**
