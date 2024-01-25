@@ -1,30 +1,28 @@
 ---
 layout: 'layouts/base.html'
-escape: '../'
-goto: ['prev', 'next']
+goto: ['prev', 'next', 'escape']
 ---
 
 {% import "snippets/svg.html" as macros %}
 
 <div class="flex flex-col h-screen">
 
-  <a href="/{{top_page_name}}/{{item.name | slug}}/">
-    <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50">
-      {{ macros.svgPath("", 48, 48, 0, "") }} <!-- Empty space, same size as "X" -->
+  <div class="flex justify-between items-center p-2 hover:bg-stone-200 hover:opacity-50"
+       onclick="goBack()">
+    {{ macros.svgPath("", 48, 48, 0, "") }} <!-- Empty space, same size as "X" -->
 
-      {% if item.title %}
-        <div class="mx-auto text-2xl font-medium">
-          {{ item.title }}
-        </div>
-      {% else %}
-        <div class="mx-auto text-3xl font-light">
-          {{ item.name }}
-        </div>
-      {% endif %}
+    {% if item.title %}
+      <div class="mx-auto text-2xl font-medium">
+        {{ item.title }}
+      </div>
+    {% else %}
+      <div class="mx-auto text-3xl font-light">
+        {{ item.name }}
+      </div>
+    {% endif %}
 
-      {{ macros.svgPath("text-stone-400", 48, 48, 4, "M6 6L42 42M6 42L42 6") }} <!-- "X" -->
-    </div>
-  </a>
+    {{ macros.svgPath("text-stone-400", 48, 48, 4, "M6 6L42 42M6 42L42 6") }} <!-- "X" -->
+  </div>
 
   <div class="flex justify-center text-lg font-extralight">
     {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords | capWords }}
@@ -65,6 +63,27 @@ goto: ['prev', 'next']
 </div>
 
 <script type="text/javascript">
+  function goBack() {
+
+    // If the user reaches this page from the index page directly, we
+    // try to take them back to the same scroll position they were at.
+    // Once they navigate around though, all bets are off!
+    const indexUrl = '{{('/' + top_page_name + '/') | url}}{{item.name | slug}}/';
+
+    if (document.referrer.endsWith(indexUrl)) {
+      //const scrollPosition = sessionStorage.getItem('scrollPosition');
+      //window.scrollTo(0, scrollPosition || 0);
+      window.history.back();
+    } else {
+      window.location.href = indexUrl;
+    }
+  }
+
+  function gotoEscape() {
+    event.preventDefault();
+    goBack();
+  }
+
   function gotoPrev() {
     window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.prev.name | slug}}/{{item.prev.image | cleanupHack | rmFileExt | sepWords | slug}}/';
   }

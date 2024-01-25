@@ -55,7 +55,6 @@ _None_
 ### Low priority
 
 **UI design**
-- The "X" or Escape to leave image page always takes the user to top of previous page
 - _Maybe_ display N/M (project #N of M projects) with project title in mobile menu
 
 **UI tweaks**
