@@ -1,5 +1,10 @@
+const fs = require('fs');
 const Image = require('@11ty/eleventy-img');
 const outdent = require('outdent');
+const path = require('path');
+
+
+const outputDir = 'dist/assets/images';
 
 
 const stringifyAttributes = (attributeMap) => {
@@ -9,6 +14,24 @@ const stringifyAttributes = (attributeMap) => {
       return `${attribute}="${value}"`;
     })
     .join(' ');
+};
+
+
+const pathnameFormat = (hash, src, width, format, options) => {
+  const m = src.match(/src\/images\/(.*)\/(.*?)\.\w+$/);
+  if (!m) {
+    return `${hash}-${width}.${format}`;
+  }
+
+  try {
+    dirPath = outputDir + '/' + m[1];
+    fs.mkdirSync(dirPath, { recursive: true });
+  } catch (error) {
+    console.error('Error creating directory:', error.message);
+    return `${hash}-${width}.${format}`;
+  }
+
+  return `${m[1]}/${m[2]}-${width}.${format}`;
 };
 
 
@@ -23,8 +46,9 @@ const shortcode = async (
   const imageMetadata = await Image(`src${src}`, {
     widths: [...widths, null],
     formats: [...formats, null],
-    outputDir: 'dist/assets/images',
+    outputDir,
     urlPath: '/assets/images',
+    filenameFormat: pathnameFormat,
   });
 
   const sourceHtmlString = Object.values(imageMetadata)
