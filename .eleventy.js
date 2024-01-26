@@ -7,12 +7,12 @@ const path = require('path');
 const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const sizeOf = require('image-size');
 
+
 module.exports = config => {
   // logging
   config.setQuietMode(true);
 
   // copy files
-  config.addPassthroughCopy('src/images/');
   config.addPassthroughCopy({
     'src/_meta/robots.txt': '/robots.txt',
   });
