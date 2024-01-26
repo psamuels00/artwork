@@ -10,7 +10,7 @@
     "develop": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"npx @11ty/eleventy --serve\"",
     "prod": "concurrently \"npx @11ty/eleventy\" \"tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify\"",
     "start": "npx @11ty/eleventy --serve",
-    "test": "concurrently \"npx http-server -p 8081 ./dist\" \"npx linkinator http://0.0.0.0:8081 --skip https://www.linkedin.com/ --recurse && exit 0 || exit 1\""
+    "test": "concurrently \"npx http-server -p 8081 ./dist\" \"npx linkinator http://0.0.0.0:8081 --skip https://www.linkedin.com/ --recurse; rc=$?; kill -2 \\`lsof -i:8081 -t\\` || true; exit $rc\""
   },
   "keywords": [],
   "author": "",
