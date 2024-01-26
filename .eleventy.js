@@ -1,9 +1,11 @@
+const doodleFigureShortcode = require('./src/_eleventy/doodle-figure');
 const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
+const filters = require('./src/_eleventy/filters');
+const figureShortcode = require('./src/_eleventy/figure');
+const imageShortcode = require('./src/_eleventy/image');
 const path = require('path');
 const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const sizeOf = require('image-size');
-const filters = require('./src/_data/filters');
-
 
 module.exports = config => {
   // logging
@@ -26,9 +28,15 @@ module.exports = config => {
 
   // manage URLs
   config.addPlugin(EleventyHtmlBasePlugin);
-  config.addFilter('rmFileExt', filters.rmFileExt);
   config.addFilter('cleanupHack', filters.cleanupHack);
+  config.addFilter('rmFileExt', filters.rmFileExt);
+  config.addFilter('rmSpaces', filters.rmSpaces);
   config.addFilter('sepWords', filters.sepWords);
+
+  // images
+  config.addNunjucksAsyncShortcode('doodleFigure', doodleFigureShortcode);
+  config.addNunjucksAsyncShortcode('figure', figureShortcode);
+  config.addNunjucksAsyncShortcode('image', imageShortcode);
 
   // image title
   config.addFilter('capWords', value => {

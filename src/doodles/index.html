@@ -14,9 +14,10 @@ sitemap:
 
       <figure class="mx-auto">
         <a href="/doodles/{{category.name | slug}}/">
-          <img class="swipeable hover:brightness-90"
-               alt="Doodles item {{category.name | sepWords}} image {{category.images[0] | rmFileExt | sepWords}}"
-               src="/images/doodles/{{category.name | replace(' ', '')}}/{{category.images[0]}}"/>
+          {% set imagePath = '/images/doodles/' + category.name | rmSpaces + '/' + category.images[0] %}
+          {% set imageAlt = 'Doodles item ' + (category.name | sepWords) + ' image ' + (category.images[0] | rmFileExt | sepWords) %}
+          {% set imageClass = 'swipeable hover:brightness-90' %}
+          {% image imagePath, imageAlt, imageClass %}
         </a>
         <figcaption class="text-center mt-2">{{category.name}}</figcaption>
       </figure>

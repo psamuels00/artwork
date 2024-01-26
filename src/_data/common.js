@@ -1,4 +1,4 @@
-const filters = require('./filters');
+const filters = require('../_eleventy/filters');
 
 
 function combineImages(items) {

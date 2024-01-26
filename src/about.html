@@ -5,13 +5,6 @@ prev: '/doodles/'
 next: '/resume/'
 ---
 
-{% macro figure(image, alt, title) %}
-  <figure class="mt-8 sm:mt-0 mx-16 sm:mx-8 md:mx-20">
-    <img class="swipeable" alt="{{alt}}" src="{{image}}" />
-    <figcaption class="mt-2 mb-16 sm:mb-8">{{title}}</figcaption>
-  </figure>
-{% endmacro %}
-
 <div class="bg-blue-950 text-stone-100 text-center lg:mt-4 pt-1 px-8 pb-4">
   <div class="sm:flex flex-col items-center max-w-[1024px] mx-auto">
     <div class="font-extralight m-8">
@@ -20,26 +13,26 @@ next: '/resume/'
     </div>
     <div class="sm:flex flex-row items-center gap-8">
       <div class="sm:flex flex-col gap-8">
-        {{ figure("/images/about/PoliticsAndPhilosophyBooks.png",
-                  "Politics and philosophy books",
-                  "Politics") }}
-        {{ figure("/images/about/LanguageAndAlgorithmComputerBooks.png",
-                  "Language and algorithm computer books",
-                  "Software - Lang, Algorithms") }}
+        {% figure '/images/about/PoliticsAndPhilosophyBooks.png',
+                  'Politics and philosophy books',
+                  'Politics' %}
+        {% figure '/images/about/LanguageAndAlgorithmComputerBooks.png',
+                  'Language and algorithm computer books',
+                  'Software - Lang, Algorithms' %}
       </div>
       <div class="sm:flex flex-col gap-8">
-        {{ figure("/images/about/NewTechComputerBooks.png",
-                  "New technology computer books",
-                  "Software - AI, Quantum") }}
-        {{ figure("/images/about/ArtBooks.png",
-                  "Painting and Art books",
-                  "Painting and Art") }}
+        {% figure '/images/about/NewTechComputerBooks.png',
+                  'New technology computer books',
+                  'Software - AI, Quantum' %}
+        {% figure '/images/about/ArtBooks.png',
+                  'Painting and Art books',
+                  'Painting and Art' %}
       </div>
     </div>
     <div class="sm:w-1/2 mt-8">
-      {{ figure("/images/about/OtherBooks.png",
-                "Other books",
-                "Fiction, Other") }}
+      {% figure '/images/about/OtherBooks.png',
+                'Other books',
+                'Fiction, Other' %}
     </div>
   </div>
 </div>

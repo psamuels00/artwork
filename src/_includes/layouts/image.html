@@ -32,10 +32,11 @@ goto: ['prev', 'next', 'escape']
 
   <!-- 150px is the combined height of elements above and below the image -->
   <div class="swipeable flex items-start h-[calc(100svh-150px)] px-2">
-    <a class="mx-auto" href="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}">
-      <img class="max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down"
-           alt="{{top_page_name}} item {{item.name}} image {{item.image | rmFileExt | sepWords}}"
-           src="/images/{{top_page_name}}/{{item.name | replace(' ', '')}}/{{item.image}}" />
+    {% set imagePath = '/images/' + top_page_name + '/' + item.name | rmSpaces + '/' + item.image %}
+    <a class="mx-auto" href="{{imagePath}}">
+      {% set imageAlt = top_page_name + ' item ' + item.name + ' image ' + (item.image | rmFileExt | sepWords) %}
+      {% set imageClass = 'max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down' %}
+      {% image imagePath, imageAlt, imageClass %}
     </a>
   </div>
 

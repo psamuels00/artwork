@@ -73,6 +73,3 @@ _None_
 **New features**
 - Serve the highest quality file on click-through, which is not a png generated from a jpg
 - _Maybe_ add descriptions for each project image
-
-**Performance improvements**
-- _Maybe_  shrink more images for faster page loads

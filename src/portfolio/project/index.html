@@ -27,10 +27,10 @@ eleventyComputed:
             lg:h-[calc(100svh-205px-10px-105px)]
             min-h-32">
   <a class="h-full mx-auto" href="/portfolio/{{project.name | slug}}/{{project.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
-    <img class="swipeable hover:brightness-90
-                max-h-full max-w-full object-scale-down"
-         alt="Portfolio item {{project.name | sepWords}} image {{project.images[0] | cleanupHack | rmFileExt | sepWords}}"
-         src="/images/portfolio/{{project.name | replace(' ', '')}}/{{project.images[0]}}" />
+    {% set imagePath = '/images/portfolio/' + project.name | rmSpaces + '/' + project.images[0] %}
+    {% set imageAlt = 'Portfolio item ' + (project.name | sepWords) + ' image ' + (project.images[0] | cleanupHack | rmFileExt | sepWords) %}
+    {% set imageClass = 'swipeable hover:brightness-90 max-h-full max-w-full object-scale-down' %}
+    {% image imagePath, imageAlt, imageClass %}
   </a>
 </div>
 
@@ -94,9 +94,10 @@ eleventyComputed:
     {% for name in project.images %}
       {% if not loop.first %}
         <a href="/portfolio/{{project.name | slug}}/{{name | cleanupHack | rmFileExt | sepWords | slug}}/">
-          <img class="swipeable hover:brightness-90"
-               alt="Portfolio item {{project.name | sepWords}} image {{name | cleanupHack | rmFileExt | sepWords}}"
-               src="/images/portfolio/{{project.name.replace(' ', '')}}/{{name}}"/>
+          {% set imagePath = '/images/portfolio/' + project.name | rmSpaces + '/' + name %}
+          {% set imageAlt = 'Portfolio item ' + (project.name | sepWords) + ' image ' + (name | cleanupHack | rmFileExt | sepWords) %}
+          {% set imageClass = 'swipeable hover:brightness-90' %}
+          {% image imagePath, imageAlt, imageClass %}
         </a>
       {% endif %}
     {% endfor %}

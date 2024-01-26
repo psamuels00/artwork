@@ -14,9 +14,10 @@ next: '/nightmare/'
 
   <div class="bg-blue-950 text-white text-sm">
     <div class="swipeable py-8">
-      <img class="mx-auto rounded-full w-[200px]"
-           alt="Perrin wearing bicycle helmet"
-           src="/images/resume/PerrinWithSwirlingBackground.jpg" />
+      {% set imagePath = '/images/resume/PerrinWithSwirlingBackground.jpg' %}
+      {% set imageAlt = 'Perrin wearing bicycle helmet' %}
+      {% set imageClass = 'mx-auto rounded-full w-[200px]' %}
+      {% image imagePath, imageAlt, imageClass %}
     </div>
 
     <div class="max-w-4xl mx-auto leading-relaxed">

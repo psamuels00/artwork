@@ -1,10 +1,21 @@
 module.exports = {
-  rmFileExt: value => {
-    return value.replace(/\..+$/, '');
+  capWords: value => {
+    return value
+      .split(' ')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
   },
 
   cleanupHack: value => {
     return value.replace(/^(.+-)?\d\d-/, '');
+  },
+
+  rmFileExt: value => {
+    return value.replace(/\..+$/, '');
+  },
+
+  rmSpaces: value => {
+    return value.replace(/ /g, '');
   },
 
   sepWords: value => {

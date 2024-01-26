@@ -12,14 +12,14 @@ sitemap:
   <div class="flex flex-col gap-8 md:grid md:grid-cols-3">
     {% for project in projects.structured %}
 
-      {% set imagePath = '/images/portfolio/' + project.name.replace(' ', '') + '/' + project.images[0] %}
+      {% set imagePath = '/images/portfolio/' + project.name | rmSpaces + '/' + project.images[0] %}
       {% set isLandscape = ('src' + imagePath) | isLandscape %}
 
       <figure class="mx-auto {% if not isLandscape %} w-2/3 {% endif %}">
         <a href="/portfolio/{{project.name | slug}}/">
-          <img class="swipeable hover:brightness-90"
-               alt="Portfolio item {{project.name | sepWords}} image {{project.images[0] | rmFileExt | sepWords}}"
-               src="{{ imagePath }}"/>
+          {% set imageAlt = 'Portfolio item ' + (project.name | sepWords) + ' image ' + (project.images[0] | rmFileExt | sepWords) %}
+          {% set imageClass = 'swipeable hover:brightness-90' %}
+          {% image imagePath, imageAlt, imageClass %}
         </a>
         <figcaption class="text-center mt-2">{{project.name}}</figcaption>
       </figure>

@@ -22,9 +22,10 @@ sitemap:
 
 <figure class="mt-4 md:mt-16 mx-2 sm:mx-4 md:mx-8 lg:mx-16">
   <a href="/portfolio/the-onion/">
-    <img class="swipeable hover:brightness-90 mx-auto"
-         alt="Big painting of a red onion"
-         src="/images/portfolio/TheOnion/FullPaintingSharpOutlineFullSize.png"/>
+    {% set imagePath = '/images/portfolio/TheOnion/FullPaintingSharpOutlineFullSize.png' %}
+    {% set imageAlt = 'Big painting of a red onion' %}
+    {% set imageClass = 'swipeable hover:brightness-90 mx-auto' %}
+    {% image imagePath, imageAlt, imageClass %}
   </a>
   <figcaption class="text-center font-bold">The Onion</figcaption>
 </figure>
