@@ -72,3 +72,6 @@ _None_
 
 **New features**
 - _Maybe_ add descriptions for each project image
+
+**Other**
+- _Maybe_ use favicons instead of eleventy-plugin-gen-favicons, or fork the latter for my use

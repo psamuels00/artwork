@@ -52,10 +52,9 @@ about/books-art.png ArtBooks
 about/books-other.png OtherBooks
 about/books-politics.png PoliticsAndPhilosophyBooks
 
-meta/favicon.ico favicon
-meta/emma_face.png EmmasFace
-meta/emma_face.xcf EmmasFace
-meta/PerrinLogo.png PerrinLogo
+meta/favicon/emma_face.png EmmasFace
+meta/favicon/emma_face.xcf EmmasFace
+meta/logo/PerrinLogo.png PerrinLogo
 nightmare/trump-fraud.jpg TrumpIsAFraud
 
 portfolio/BackyardHills/Backyard-09-finished-cropped.jpg FullPainting
