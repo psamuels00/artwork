@@ -64,10 +64,15 @@
 
   <!-- 150px is the combined height of elements above and below the image -->
   <div class="swipeable flex items-start h-[calc(100svh-150px)] px-2">
+    
     <a class="mx-auto" href="/images/doodles/Faces/ColorPatchFace.jpg">
-      <img class="max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down"
-           alt="doodles item Faces image Color Patch Face"
-           src="/images/doodles/Faces/ColorPatchFace.jpg" />
+      
+      
+      <picture>
+    <source type="image/webp" srcset="/assets/images/Ls58aib_jb-400.webp 400w, /assets/images/Ls58aib_jb-800.webp 800w, /assets/images/Ls58aib_jb-1280.webp 1280w, /assets/images/Ls58aib_jb-1401.webp 1401w" sizes="100vw">
+<source type="image/jpeg" srcset="/assets/images/Ls58aib_jb-400.jpeg 400w, /assets/images/Ls58aib_jb-800.jpeg 800w, /assets/images/Ls58aib_jb-1280.jpeg 1280w, /assets/images/Ls58aib_jb-1401.jpeg 1401w" sizes="100vw">
+    <img class="max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down" src="/assets/images/Ls58aib_jb-1401.webp" width="1401" height="1745" alt="doodles item Faces image Color Patch Face" loading="lazy" decoding="async">
+  </picture>
     </a>
   </div>
 

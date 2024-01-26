@@ -64,10 +64,15 @@
 
   <!-- 150px is the combined height of elements above and below the image -->
   <div class="swipeable flex items-start h-[calc(100svh-150px)] px-2">
+    
     <a class="mx-auto" href="/images/portfolio/StarryNight/FullPainting.jpg">
-      <img class="max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down"
-           alt="portfolio item Starry Night image Full Painting"
-           src="/images/portfolio/StarryNight/FullPainting.jpg" />
+      
+      
+      <picture>
+    <source type="image/webp" srcset="/assets/images/ebbALww1t9-400.webp 400w, /assets/images/ebbALww1t9-800.webp 800w, /assets/images/ebbALww1t9-1280.webp 1280w, /assets/images/ebbALww1t9-3687.webp 3687w" sizes="100vw">
+<source type="image/jpeg" srcset="/assets/images/ebbALww1t9-400.jpeg 400w, /assets/images/ebbALww1t9-800.jpeg 800w, /assets/images/ebbALww1t9-1280.jpeg 1280w, /assets/images/ebbALww1t9-3687.jpeg 3687w" sizes="100vw">
+    <img class="max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down" src="/assets/images/ebbALww1t9-3687.webp" width="3687" height="2854" alt="portfolio item Starry Night image Full Painting" loading="lazy" decoding="async">
+  </picture>
     </a>
   </div>
 
