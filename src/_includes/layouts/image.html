@@ -42,22 +42,26 @@ goto: ['prev', 'next', 'escape']
 
   <div class="flex mx-auto gap-2 py-2">
     <a href="/{{top_page_name}}/{{item.prev_prev.name | slug}}/{{item.prev_prev.image | cleanupHack | rmFileExt | sepWords | slug}}/">
-      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
+              aria-label="Next painting or doodle category">
         <<<
       </button>
     </a>
     <a href="/{{top_page_name}}/{{item.prev.name | slug}}/{{item.prev.image| cleanupHack | rmFileExt | sepWords | slug}}/">
-      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
+              aria-label="Previous image">
         Prev
       </button>
     </a>
     <a href="/{{top_page_name}}/{{item.next.name | slug}}/{{item.next.image | cleanupHack | rmFileExt | sepWords | slug}}/">
-      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
+              aria-label="Next image">
         Next
       </button>
     </a>
     <a href="/{{top_page_name}}/{{item.next_next.name | slug}}/{{item.next_next.image | cleanupHack | rmFileExt | sepWords | slug}}/">
-      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3">
+      <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
+              aria-label="Next painting or doodle category">
         >>>
       </button>
     </a>
