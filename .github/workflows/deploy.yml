@@ -6,8 +6,9 @@ on:
       - main
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
+    needs: test
 
     steps:
       - name: Checkout Repository 🪣
@@ -22,31 +23,14 @@ jobs:
       - name: Build Site 🏗️
         run: npm run build
 
-      - name: Run Linkinator 🔗
+      - name: Run Tests 🔗
         run: npm test
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: test
+      - name: Configure Custom Domain
+        run: echo perrins-art.com > ./dist/CNAME
 
-    steps:
-    - name: Checkout Repository 🪣
-      uses: actions/checkout@v4
-
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-
-    - name: Install Dependencies 👨‍👨‍👧‍👦
-      run: npm install
-
-    - name: Build Site 🏗️
-      run: npm run build
-
-    - name: Configure Custom Domain
-      run: echo perrins-art.com > ./dist/CNAME
-
-    - name: Deploy to GitHub Pages 📄
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+      - name: Deploy to GitHub Pages 📄
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
