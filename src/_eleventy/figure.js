@@ -7,7 +7,9 @@ const shortcode = async (src, alt, title) => {
   const image = await imageShortcode(src, alt, imageClass)
 
   const figure = `<figure class="mt-8 sm:mt-0 mx-16 sm:mx-8 md:mx-20">
-      ${image}
+      <a href="${src}">
+        ${image}
+      </a>
       <figcaption class="mt-2 mb-16 sm:mb-8">${title}</figcaption>
   </figure>`;
 

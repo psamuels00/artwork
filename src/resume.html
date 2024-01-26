@@ -13,12 +13,14 @@ next: '/nightmare/'
   </div>
 
   <div class="bg-blue-950 text-white text-sm">
-    <div class="swipeable py-8">
-      {% set imagePath = '/images/resume/PerrinWithSwirlingBackground.jpg' %}
-      {% set imageAlt = 'Perrin wearing bicycle helmet' %}
-      {% set imageClass = 'mx-auto rounded-full w-[200px]' %}
-      {% image imagePath, imageAlt, imageClass %}
-    </div>
+    {% set imagePath = '/images/resume/PerrinWithSwirlingBackground.jpg' %}
+    <a href="{{imagePath}}">
+      <div class="swipeable py-8">
+        {% set imageAlt = 'Perrin wearing bicycle helmet' %}
+        {% set imageClass = 'mx-auto rounded-full w-[200px]' %}
+        {% image imagePath, imageAlt, imageClass %}
+      </div>
+    </a>
 
     <div class="max-w-4xl mx-auto leading-relaxed">
       <table>
