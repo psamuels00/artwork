@@ -39,10 +39,15 @@ const shortcode = async (
   src,
   alt,
   className = undefined,
-  widths = [400, 800, 1280],
-  formats = ['webp', 'jpeg'],
-  sizes = '100vw'
+  options = {}
 ) => {
+  const {
+    formats = ['webp', 'jpeg'],
+    linkable = false,
+    sizes = '100vw',
+    widths = [400, 800, 1280]
+  } = options;
+
   const imageMetadata = await Image(`src${src}`, {
     widths: [...widths, null],
     formats: [...formats, null],
@@ -88,12 +93,21 @@ const shortcode = async (
   });
   const imgHtmlString = `<img ${imgAttributes}>`;
 
-  const picture = `<picture>
+  let html = `<picture>
     ${sourceHtmlString}
     ${imgHtmlString}
   </picture>`;
 
-  return outdent`${picture}`;
+  if (linkable) {
+    const aAttributes = stringifyAttributes({
+      href: largestUnoptimizedImg.url,
+    });
+    html = `<a ${aAttributes}>
+      ${html}
+    </a>`
+  }
+
+  return outdent`${html}`;
 };
 
 module.exports = shortcode;

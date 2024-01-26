@@ -71,5 +71,4 @@ _None_
 - _Maybe_ build portfolio menu from data in projects.js, including new ordering options
 
 **New features**
-- Serve the highest quality file on click-through, which is not a png generated from a jpg
 - _Maybe_ add descriptions for each project image

@@ -32,12 +32,12 @@ goto: ['prev', 'next', 'escape']
 
   <!-- 150px is the combined height of elements above and below the image -->
   <div class="swipeable flex items-start h-[calc(100svh-150px)] px-2">
-    {% set imagePath = '/images/' + top_page_name + '/' + item.name | rmSpaces + '/' + item.image %}
-    <a class="mx-auto" href="{{imagePath}}">
+    <div class="mx-auto">
+      {% set imagePath = '/images/' + top_page_name + '/' + item.name | rmSpaces + '/' + item.image %}
       {% set imageAlt = top_page_name + ' item ' + item.name + ' image ' + (item.image | rmFileExt | sepWords) %}
       {% set imageClass = 'max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down' %}
-      {% image imagePath, imageAlt, imageClass %}
-    </a>
+      {% image imagePath, imageAlt, imageClass, { linkable: true } %}
+    </div>
   </div>
 
   <div class="flex mx-auto gap-2 py-2">
