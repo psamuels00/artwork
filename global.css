@@ -1151,9 +1151,9 @@ video {
   color: rgb(69 10 10 / var(--tw-text-opacity));
 }
 
-.text-sky-700 {
+.text-sky-800 {
   --tw-text-opacity: 1;
-  color: rgb(3 105 161 / var(--tw-text-opacity));
+  color: rgb(7 89 133 / var(--tw-text-opacity));
 }
 
 .text-stone-100 {
