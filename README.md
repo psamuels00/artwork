@@ -72,11 +72,12 @@ _None_
 - Make sure the footer is always at the bottom of the page, eg, see About in full window mode
 
 **Performance**
-- Consider the recommendations provided by, esp a cacheing policy
+- Reduce size of images on portfolio page for desktop
+- Reduce size of images on doodles page for mobile
+- Implement a cacheing policy for many files resources
+- Study reports from the following for more recommendations:
   - Google's PageSpeed Insights
   - Catchpoint's Webpage Test
-- Run PageSpeed Insights on every page.
-  - Need to serve smaller images on portfolio page for desktop
 
 **Refactor code**
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
