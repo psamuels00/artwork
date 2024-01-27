@@ -103,7 +103,7 @@ let projects = [
     size: '70 x 46 inches',
     bg_color_page: 'bg-onion-300',
     images: [
-      'FullPainting.png',
+      'FullPaintingSharpOutlineFullSize.png',
       'TheArtistAndTheOnion.jpg',
       'FullCanvas.jpg',
       'Closeup.jpg',
