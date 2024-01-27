@@ -89,7 +89,12 @@ const shortcode = async (
 
   const getLargeImage = (format, largest) => {
     const images = imageMetadata[format];
-    const offset = images.length - 1 - ((maxWidth && !largest) ? 1 : 0);
+    let offset = images.length - 1;
+    if (!largest && maxWidth) {
+      while (offset > 0 && images[offset].width > maxWidth) {
+        offset -= 1;
+      }
+    }
     return images[offset];
   }
 

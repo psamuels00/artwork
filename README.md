@@ -71,10 +71,7 @@ _None_
   secondary hamburger menu on general or specific doodle/portfolio page
 - Make sure the footer is always at the bottom of the page, eg, see About in full window mode
 
-**Performance**
-- Reduce size of images on portfolio page for desktop
-- Reduce size of images on doodles page for mobile
-- Implement a cacheing policy for many files resources
+**Performance/Accessibility**
 - Study reports from the following for more recommendations:
   - Google's PageSpeed Insights
   - Catchpoint's Webpage Test

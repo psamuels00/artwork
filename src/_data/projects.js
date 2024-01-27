@@ -67,7 +67,7 @@ let projects = [
     size: '16 x 12 inches',
     bg_color_page: 'bg-sky-300',
     images: [
-      'FullPainting.png',
+      'FullPainting.webp',
       'TheArtistAndTheDolphin.jpg',
       'TheDolphinCropped.jpg',
     ],
@@ -103,7 +103,7 @@ let projects = [
     size: '70 x 46 inches',
     bg_color_page: 'bg-onion-300',
     images: [
-      'FullPaintingSharpOutlineFullSize.png',
+      'FullPainting.webp',
       'TheArtistAndTheOnion.jpg',
       'FullCanvas.jpg',
       'Closeup.jpg',
