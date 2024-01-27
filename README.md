@@ -76,6 +76,7 @@ _None_
   - Google's PageSpeed Insights
   - Catchpoint's Webpage Test
 - Run PageSpeed Insights on every page.
+  - Need to serve smaller images on portfolio page for desktop
 
 **Refactor code**
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
