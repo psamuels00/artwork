@@ -79,4 +79,6 @@ _None_
 - _Maybe_ add descriptions for each project image
 
 **Performance**
-- Implement a cache policy for many file types.
+- Consider the recommendations provided by, esp a cacheing policy
+  - Google's PageSpeed Insights
+  - Catchpoint's Webpage Test
