@@ -71,14 +71,14 @@ _None_
   secondary hamburger menu on general or specific doodle/portfolio page
 - Make sure the footer is always at the bottom of the page, eg, see About in full window mode
 
+**Performance**
+- Consider the recommendations provided by, esp a cacheing policy
+  - Google's PageSpeed Insights
+  - Catchpoint's Webpage Test
+
 **Refactor code**
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
 - _Maybe_ build portfolio menu from data in projects.js, including new ordering options
 
 **New features**
 - _Maybe_ add descriptions for each project image
-
-**Performance**
-- Consider the recommendations provided by, esp a cacheing policy
-  - Google's PageSpeed Insights
-  - Catchpoint's Webpage Test
