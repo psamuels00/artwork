@@ -19,7 +19,7 @@ sitemap:
         <a href="/portfolio/{{project.name | slug}}/">
           {% set imageAlt = 'Portfolio item ' + (project.name | sepWords) + ' image ' + (project.images[0] | rmFileExt | sepWords) %}
           {% set imageClass = 'swipeable hover:brightness-90' %}
-          {% image imagePath, imageAlt, imageClass, { loading: 'eager' } %}
+          {% image imagePath, imageAlt, imageClass, { maxWidth: 770 } %}
         </a>
         <figcaption class="text-center mt-2">{{project.name}}</figcaption>
       </figure>

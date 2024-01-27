@@ -17,7 +17,7 @@ sitemap:
           {% set imagePath = '/images/doodles/' + category.name | rmSpaces + '/' + category.images[0] %}
           {% set imageAlt = 'Doodles item ' + (category.name | sepWords) + ' image ' + (category.images[0] | rmFileExt | sepWords) %}
           {% set imageClass = 'swipeable hover:brightness-90' %}
-          {% image imagePath, imageAlt, imageClass, { loading: 'eager' } %}
+          {% image imagePath, imageAlt, imageClass, { maxWidth: 640 } %}
         </a>
         <figcaption class="text-center mt-2">{{category.name}}</figcaption>
       </figure>

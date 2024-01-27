@@ -10,6 +10,7 @@ generate_favicons({
   hrefPath: '/assets/favicons/',
 });
 
+
 async function generate_favicons(options = {}) {
   const {
     source = undefined,

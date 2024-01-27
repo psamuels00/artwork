@@ -42,52 +42,64 @@ const shortcode = async (
   options = {}
 ) => {
   const {
-    formats = ['webp', 'jpeg'],
+    formats = ['webp', 'jpeg', null],
     linkable = false,
     loading = 'lazy',
+    maxWidth = undefined,
     sizes = '100vw',
-    widths = [400, 800, 1280, 1920],
   } = options;
 
+  let {
+    widths = [400, 800, 1280, 1920, null],
+  } = options;
+
+  if (maxWidth) {
+    widths = widths.filter(n => n && n < maxWidth);
+    widths.push(maxWidth, null);
+  }
+
   const imageMetadata = await Image(`src${src}`, {
-    widths: [...widths, null],
-    formats: [...formats, null],
+    widths,
+    formats,
     outputDir,
     urlPath: '/assets/images',
     filenameFormat: pathnameFormat,
   });
 
   const sourceHtmlString = Object.values(imageMetadata)
-    // Map each format to the source HTML markup
     .map((images) => {
-      // The first entry is representative of all the others
-      // since they each have the same shape
+      // The first entry is representative of all the
+      // others since they each have the same shape.
       const { sourceType } = images[0];
 
-      // Use our util from earlier to make our lives easier
+      if (maxWidth) {
+        images = Array.from(images);
+        images.pop();
+      }
+
       const sourceAttributes = stringifyAttributes({
         type: sourceType,
-        // srcset needs to be a comma-separated attribute
         srcset: images.map((image) => image.srcset).join(', '),
         sizes,
       });
 
-      // Return one <source> per format
       return `<source ${sourceAttributes}>`;
     })
     .join('\n');
 
-  const getLargestImage = (format) => {
+  const getLargeImage = (format, largest) => {
     const images = imageMetadata[format];
-    return images[images.length - 1];
+    const offset = images.length - 1 - ((maxWidth && !largest) ? 1 : 0);
+    return images[offset];
   }
 
-  const largestUnoptimizedImg = getLargestImage(formats[0]);
+  const selectImage = getLargeImage(formats[0], false);
+
   const imgAttributes = stringifyAttributes({
     class: className,
-    src: largestUnoptimizedImg.url,
-    width: largestUnoptimizedImg.width,
-    height: largestUnoptimizedImg.height,
+    src: selectImage.url,
+    width: selectImage.width,
+    height: selectImage.height,
     alt,
     loading,
     decoding: 'async',
@@ -100,8 +112,9 @@ const shortcode = async (
   </picture>`;
 
   if (linkable) {
+    const largestImage = getLargeImage(formats[0], true);
     const aAttributes = stringifyAttributes({
-      href: largestUnoptimizedImg.url,
+      href: largestImage.url,
     });
     html = `<a ${aAttributes}>
       ${html}

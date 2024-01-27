@@ -17,7 +17,7 @@ next: '/nightmare/'
       {% set imagePath = '/images/resume/PerrinWithSwirlingBackground.jpg' %}
       {% set imageAlt = 'Perrin wearing bicycle helmet' %}
       {% set imageClass = 'mx-auto rounded-full w-[200px]' %}
-      {% image imagePath, imageAlt, imageClass, { linkable: true, loading: 'eager' } %}
+      {% image imagePath, imageAlt, imageClass, { maxWidth: 200, linkable: true } %}
     </div>
 
     <div class="max-w-4xl mx-auto leading-relaxed">

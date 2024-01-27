@@ -4,7 +4,7 @@ const outdent = require('outdent');
 
 const shortcode = async (src, alt, title) => {
   imageClass = 'swipeable';
-  const image = await imageShortcode(src, alt, imageClass, {linkable: true, loading: 'eager'})
+  const image = await imageShortcode(src, alt, imageClass, {linkable: true})
 
   const figure = `<figure class="mt-8 sm:mt-0 mx-16 sm:mx-8 md:mx-20">
       ${image}
