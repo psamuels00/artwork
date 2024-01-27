@@ -15,16 +15,19 @@ module.exports = config => {
 
   // copy files
   config.addPassthroughCopy({
-    'src/_meta/robots.txt': '/robots.txt',
+    'global.out.css': 'global.css',
   });
   config.addPassthroughCopy({
-    'global.out.css': 'global.css',
+    'src/_docs/': 'assets/docs/',
+  });
+  config.addPassthroughCopy({
+    'src/_includes/fonts/': 'fonts/',
   });
   config.addPassthroughCopy({
     'src/_includes/js/': 'js/',
   });
   config.addPassthroughCopy({
-    'src/_includes/fonts/': 'fonts/',
+    'src/_meta/robots.txt': '/robots.txt',
   });
 
   // manage URLs
