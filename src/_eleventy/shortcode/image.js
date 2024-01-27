@@ -46,7 +46,7 @@ const shortcode = async (
     linkable = false,
     loading = 'lazy',
     sizes = '100vw',
-    widths = [400, 800, 1280],
+    widths = [400, 800, 1280, 1920],
   } = options;
 
   const imageMetadata = await Image(`src${src}`, {
