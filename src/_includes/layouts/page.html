@@ -13,7 +13,7 @@ layout: 'layouts/base.html'
         {% set imagePath = '/images/meta/logo/PerrinLogo.png' %}
         {% set imageAlt = 'Perrin logo' %}
         {% set imageClass = 'w-[80px]' %}
-        {% image imagePath, imageAlt, imageClass, { maxWidth: 80 } %}
+        {% image imagePath, imageAlt, imageClass %}
       </a>
       <div class="flex">
         {% set is_top_level_page = page.url.split('/').length < 4 %}
@@ -52,7 +52,7 @@ layout: 'layouts/base.html'
           {% set imagePath = '/images/meta/logo/PerrinLogo.png' %}
           {% set imageAlt = 'Perrin logo' %}
           {% set imageClass = 'w-[100px]' %}
-          {% image imagePath, imageAlt, imageClass, { maxWidth: 80 } %}
+          {% image imagePath, imageAlt, imageClass %}
         </a>
       </div>
       <div class="max-w-4xl mx-auto border-b border-gray-900 my-2"></div>
