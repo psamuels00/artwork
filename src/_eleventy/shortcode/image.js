@@ -44,7 +44,7 @@ const shortcode = async (
   const {
     formats = ['webp', 'jpeg', null],
     linkable = false,
-    loading = 'lazy',
+    loading = 'eager',
     maxWidth = undefined,
     sizes = '100vw',
   } = options;
