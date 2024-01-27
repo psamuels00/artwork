@@ -1,6 +1,6 @@
 # Perrin's Art
 
-This is a personal, static Web site built to show my artwork and to learn 11ty.
+Personal Web site to show my artwork and learn 11ty.
 
 See [perrins-art.com](https://perrins-art.com/).
 
@@ -26,6 +26,14 @@ To build the pages and serve them up during development, run the following comma
     npm run develop
 
 Then access the site at http://0.0.0.0:8080/
+
+
+## Favicons
+
+If any change is made to the image used for favicons, then the favicons need to be
+regenerated as follows:
+
+    npm run favicons
 
 
 ## Test
@@ -74,4 +82,4 @@ _None_
 - _Maybe_ add descriptions for each project image
 
 **Other**
-- _Maybe_ use favicons instead of eleventy-plugin-gen-favicons, or fork the latter for my use
+- move site map into meta

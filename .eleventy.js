@@ -1,6 +1,5 @@
 const doodleFigureShortcode = require('./src/_eleventy/shortcode/doodle-figure');
 const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
-const faviconsPlugin = require('eleventy-plugin-gen-favicons');
 const figureShortcode = require('./src/_eleventy/shortcode/figure');
 const filters = require('./src/_eleventy/filters');
 const imageShortcode = require('./src/_eleventy/shortcode/image');
@@ -21,6 +20,9 @@ module.exports = config => {
     'src/_docs/': 'assets/docs/',
   });
   config.addPassthroughCopy({
+    'src/_includes/favicons/': 'assets/favicons/',
+  });
+  config.addPassthroughCopy({
     'src/_includes/fonts/': 'fonts/',
   });
   config.addPassthroughCopy({
@@ -36,12 +38,6 @@ module.exports = config => {
   config.addFilter('rmFileExt', filters.rmFileExt);
   config.addFilter('rmSpaces', filters.rmSpaces);
   config.addFilter('sepWords', filters.sepWords);
-
-  // favicon
-  config.addPlugin(faviconsPlugin, {
-    outputDir: 'dist',  // eleventy-plugin-gen-favicons cannot handle a subdir :(
-    manifestData: { name: "Perrin's Artwork" },
-  });
 
   // images
   config.addNunjucksAsyncShortcode('doodleFigure', doodleFigureShortcode);

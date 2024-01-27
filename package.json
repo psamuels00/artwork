@@ -8,6 +8,7 @@
     "css": "tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch",
     "debug": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"DEBUG=Eleventy* npx @11ty/eleventy --serve\"",
     "develop": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"npx @11ty/eleventy --serve\"",
+    "favicons": "node src/_eleventy/gen-favicons.js",
     "prod": "concurrently \"npx @11ty/eleventy\" \"tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify\"",
     "start": "npx @11ty/eleventy --serve",
     "test": "concurrently \"npx http-server -p 8081 ./dist\" \"npx linkinator http://0.0.0.0:8081 --skip https://www.linkedin.com/ --recurse; rc=$?; kill -2 \\`lsof -i:8081 -t\\` || true; exit $rc\""
@@ -23,7 +24,7 @@
   "dependencies": {
     "@11ty/eleventy-img": "^3.1.8",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
-    "eleventy-plugin-gen-favicons": "^1.1.2",
+    "favicons": "^7.1.5",
     "hammerjs": "^2.0.8",
     "http-server": "^14.1.1",
     "image-size": "^1.1.1",
