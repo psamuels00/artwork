@@ -65,15 +65,14 @@ let categories = [
   },
   {
     name: 'Outdoors',
-    top_images: [
+    images: [
       'DesertMountainTree.jpg',
       'BigCrescentMoonNightScene.jpg',
       'PeaField.jpg',
       'TreeFrame.jpg',
       'BarnFieldsMountains.jpg',
       'TreeAndTunnel.jpg',
-    ],
-    left_images: [
+
       'SkyViewThroughTreesAbove.jpg',
       'TreeWithActiveLeaves.jpg',
       'OceanHorizonCloudsBirds.jpg',
@@ -84,8 +83,7 @@ let categories = [
       'MinimalistBeachSceneHorizonClouds.jpg',
       'MinimalistBeachScene.jpg',
       'BackYardSketch.jpg',
-    ],
-    right_images: [
+
       'VeryTallPalmTreeAtBeach.jpg',
       'CreatureInHotAirBalloon.jpg',
       'DolphinJumpingInSun.jpg',

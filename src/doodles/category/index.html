@@ -16,31 +16,11 @@ eleventyComputed:
   y_in_x_of_y: '{{pagination.pages.length}}'
 ---
 
-{% if 'top_images' in category %}
-  <div class="sm:grid grid-cols-3 gap-8">
-    {% for image_name in category.top_images %}
-      {% doodleFigure category.name, image_name %}
-    {% endfor %}
-  </div>
-  <div class="sm:flex flex-row gap-8 mt-8">
-    <div class="sm:grid grid-cols-2 gap-8">
-      {% for image_name in category.left_images %}
-        {% doodleFigure category.name, image_name %}
-      {% endfor %}
-    </div>
-    <div class="sm:grid grid-cols-1 gap-8">
-      {% for image_name in category.right_images %}
-        {% doodleFigure category.name, image_name %}
-      {% endfor %}
-    </div>
-  </div>
-{% else %}
-  <div class="sm:grid grid-cols-4 gap-8">
-    {% for image_name in category.images %}
-      {% doodleFigure category.name, image_name %}
-    {% endfor %}
-  </div>
-{% endif %}
+<div class="sm:grid grid-cols-6 gap-8 justify-center">
+  {% for image_name in category.images %}
+    {% doodleFigure category.name, image_name %}
+  {% endfor %}
+</div>
 
 {% import "snippets/scroll_to_top.html" as macros %}
 {% if category.images.length > 8 %}

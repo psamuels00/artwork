@@ -1,20 +1,9 @@
 const filters = require('../_eleventy/filters');
 
 
-function combineImages(items) {
-  // combine *_images into a single list: images
-  for (let item of items) {
-    if ('top_images' in item) {
-      item.images = [...item.top_images, ...item.left_images, ...item.right_images];
-    }
-  }
-}
-
-
 module.exports = {
   navigable: (items) => {
     // embellish each item with prev/next and item_number/max_item_number
-    combineImages(items);
 
     return items.map((object, offset) => ({
       ...object,
@@ -29,8 +18,6 @@ module.exports = {
     // flatten items wrt images, and embellish each item with prev_prev/prev/next/next_next
     // assumes items like [ { name: name, images: [image,...], ... }, ... ]
     let all_images = [];
-
-    combineImages(items);
 
     let last_item = items[items.length - 1];
     let prev = {
