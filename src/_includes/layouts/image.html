@@ -14,12 +14,12 @@ goto: ['prev', 'next', 'escape']
     {% if item.title %}
       <div class="mx-auto text-xl font-medium flex items-center">
         {{ item.title }}
-        <span class="opacity-30 text-base mx-2 w-[35px]">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
+        <span class="opacity-50 text-base mx-2 w-[35px]">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
       </div>
     {% else %}
       <div class="mx-auto text-3xl font-light align-middle flex items-center">
         {{ item.name }}
-        <span class="opacity-30 text-base mx-2 w-[35px]">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
+        <span class="opacity-50 text-base mx-2 w-[35px]">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
       </div>
     {% endif %}
 
