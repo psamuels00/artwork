@@ -44,8 +44,9 @@ const shortcode = async (
   const {
     formats = ['webp', 'jpeg'],
     linkable = false,
+    loading = 'lazy',
     sizes = '100vw',
-    widths = [400, 800, 1280]
+    widths = [400, 800, 1280],
   } = options;
 
   const imageMetadata = await Image(`src${src}`, {
@@ -88,7 +89,7 @@ const shortcode = async (
     width: largestUnoptimizedImg.width,
     height: largestUnoptimizedImg.height,
     alt,
-    loading: 'lazy',
+    loading,
     decoding: 'async',
   });
   const imgHtmlString = `<img ${imgAttributes}>`;

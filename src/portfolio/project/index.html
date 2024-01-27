@@ -30,7 +30,7 @@ eleventyComputed:
     {% set imagePath = '/images/portfolio/' + project.name | rmSpaces + '/' + project.images[0] %}
     {% set imageAlt = 'Portfolio item ' + (project.name | sepWords) + ' image ' + (project.images[0] | cleanupHack | rmFileExt | sepWords) %}
     {% set imageClass = 'swipeable hover:brightness-90 max-h-full max-w-full object-scale-down' %}
-    {% image imagePath, imageAlt, imageClass %}
+    {% image imagePath, imageAlt, imageClass, { loading: 'eager' } %}
   </a>
 </div>
 

@@ -77,3 +77,6 @@ _None_
 
 **New features**
 - _Maybe_ add descriptions for each project image
+
+**Performance**
+- Implement a cache policy for many file types.

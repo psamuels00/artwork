@@ -36,7 +36,7 @@ goto: ['prev', 'next', 'escape']
       {% set imagePath = '/images/' + top_page_name + '/' + item.name | rmSpaces + '/' + item.image %}
       {% set imageAlt = top_page_name + ' item ' + item.name + ' image ' + (item.image | rmFileExt | sepWords) %}
       {% set imageClass = 'max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down' %}
-      {% image imagePath, imageAlt, imageClass, { linkable: true } %}
+      {% image imagePath, imageAlt, imageClass, { linkable: true, loading: 'eager' } %}
     </div>
   </div>
 

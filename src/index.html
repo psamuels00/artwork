@@ -24,7 +24,7 @@ sitemap:
     {% set imagePath = '/images/portfolio/TheOnion/FullPaintingSharpOutlineFullSize.png' %}
     {% set imageAlt = 'Big painting of a red onion' %}
     {% set imageClass = 'swipeable hover:brightness-90 mx-auto' %}
-    {% image imagePath, imageAlt, imageClass %}
+    {% image imagePath, imageAlt, imageClass, { loading: 'eager' } %}
   </a>
   <figcaption class="text-center font-bold">The Onion</figcaption>
 </figure>
