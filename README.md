@@ -1,7 +1,6 @@
 # Perrin's Art
 
 Personal Web site to show my artwork and learn 11ty.
-
 See [perrins-art.com](https://perrins-art.com/).
 
 
@@ -28,7 +27,7 @@ To build the pages and serve them up during development, run the following comma
 Then access the site at http://0.0.0.0:8080/
 
 
-## Favicons
+## Update Favicons
 
 If any change is made to the image used for favicons, then the favicons need to be
 regenerated as follows:
@@ -71,8 +70,6 @@ _None_
 - Improve alignment of secondary hamburger menu; improve consistency of margin around
   secondary hamburger menu on general or specific doodle/portfolio page
 - Make sure the footer is always at the bottom of the page, eg, see About in full window mode
-- _Maybe_ add Next/Prev buttons to bottom of project pages
-- _Maybe_ transition page loads more smoothly
 
 **Refactor code**
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
@@ -80,6 +77,3 @@ _None_
 
 **New features**
 - _Maybe_ add descriptions for each project image
-
-**Other**
-- move site map into meta
