@@ -75,6 +75,7 @@ _None_
 - Consider the recommendations provided by, esp a cacheing policy
   - Google's PageSpeed Insights
   - Catchpoint's Webpage Test
+- Run PageSpeed Insights on every page.
 
 **Refactor code**
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
