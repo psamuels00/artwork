@@ -72,7 +72,7 @@ const shortcode = async (
       // others since they each have the same shape.
       const { sourceType } = images[0];
 
-      if (maxWidth) {
+      if (maxWidth && images[images.length - 1].width > maxWidth) {
         images = Array.from(images);
         images.pop();
       }
@@ -90,14 +90,11 @@ const shortcode = async (
   const getLargeImage = (format, largest) => {
     const images = imageMetadata[format];
     let offset = images.length - 1;
-    if (!largest && maxWidth) {
-      while (offset > 0 && images[offset].width > maxWidth) {
-        offset -= 1;
-      }
+    if (!largest && maxWidth && images[images.length - 1].width > maxWidth) {
+      offset -= 1;
     }
     return images[offset];
   }
-
   const selectImage = getLargeImage(formats[0], false);
 
   const imgAttributes = stringifyAttributes({
@@ -111,19 +108,21 @@ const shortcode = async (
   });
   const imgHtmlString = `<img ${imgAttributes}>`;
 
-  let html = `<picture>
+  const pictureHtmlString = `<picture>
     ${sourceHtmlString}
     ${imgHtmlString}
   </picture>`;
 
+  let html = pictureHtmlString;
   if (linkable) {
     const largestImage = getLargeImage(formats[0], true);
     const aAttributes = stringifyAttributes({
       href: largestImage.url,
     });
-    html = `<a ${aAttributes}>
-      ${html}
+    aHtmlString = `<a ${aAttributes}>
+      ${pictureHtmlString}
     </a>`
+    html = aHtmlString;
   }
 
   return outdent`${html}`;
