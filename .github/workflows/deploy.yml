@@ -1,4 +1,4 @@
-name: Deploy Perrin's Artwork to GitHub Pages 🎨
+name: 🎨 Deploy Perrin's Artwork to GitHub Pages
 
 on:
   push:
@@ -10,25 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository 🪣
+      - name: 🪣  Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: ⚙️  Setup Node.js
         uses: actions/setup-node@v4
 
-      - name: Install Dependencies 👨‍👨‍👧‍👦
+      - name: 👨‍👨‍👧‍👦 Install Dependencies
         run: npm install
 
-      - name: Build Site 🏗️
+      - name: 🏗  Build Site️
         run: npm run build
 
-      - name: Run Tests 🔗
+      - name: 🔗 Run Tests
         run: npm test
 
-      - name: Configure Custom Domain
+      - name: 📄 Configure Custom Domain
         run: echo perrins-art.com > ./dist/CNAME
 
-      - name: Deploy to GitHub Pages 📄
+      - name: 📄 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
