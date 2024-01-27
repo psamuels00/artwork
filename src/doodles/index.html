@@ -9,10 +9,10 @@ sitemap:
 ---
 
 <div class="flex w-full">
-  <div class="flex flex-col gap-8 md:grid md:grid-cols-3">
+  <div class="flex flex-col gap-8 md:grid md:grid-cols-5 mx-auto">
     {% for category in doodles.structured %}
 
-      <figure class="mx-auto">
+      <figure>
         <a href="/doodles/{{category.name | slug}}/">
           {% set imagePath = '/images/doodles/' + category.name | rmSpaces + '/' + category.images[0] %}
           {% set imageAlt = 'Doodles item ' + (category.name | sepWords) + ' image ' + (category.images[0] | rmFileExt | sepWords) %}
