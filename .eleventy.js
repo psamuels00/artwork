@@ -1,9 +1,9 @@
-const doodleFigureShortcode = require('./src/_eleventy/doodle-figure');
+const doodleFigureShortcode = require('./src/_eleventy/shortcode/doodle-figure');
 const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
 const faviconsPlugin = require('eleventy-plugin-gen-favicons');
-const figureShortcode = require('./src/_eleventy/figure');
+const figureShortcode = require('./src/_eleventy/shortcode/figure');
 const filters = require('./src/_eleventy/filters');
-const imageShortcode = require('./src/_eleventy/image');
+const imageShortcode = require('./src/_eleventy/shortcode/image');
 const path = require('path');
 const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const sizeOf = require('image-size');
