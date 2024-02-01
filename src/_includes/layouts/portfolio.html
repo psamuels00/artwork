@@ -6,7 +6,18 @@ prev: ''
 
 {% import "snippets/svg.html" as macros %}
 
-<div class="text-center px-2 md:px-4 lg:px-8 lg:mt-4">
+{% set menu_items = [
+  { name: 'Emma' },
+  { name: 'The Demo' },
+  { name: 'Dolphin' },
+  { name: 'Backyard Hills', short: 'Hills' },
+  { name: 'The Onion', short: 'Onion' },
+  { name: 'Starry Night', short: 'Starry' },
+  { name: 'Beach Boardwalk', short: 'Boardwalk' },
+  { name: 'Desert Flower', short: 'Desert' }
+] %}
+
+<div class="text-center px-2">
 
   <!-- mobile-first, responsive navigation -->
   <nav>
@@ -28,30 +39,45 @@ prev: ''
 
       <!-- mobile menu -->
       <div class="mobile-portfolio-menu hidden text-center">
-        <a href="/portfolio/emma/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-y border-gray-200 {% if '/portfolio/emma/' in page.url %}bg-stone-300{% endif %}">Emma</a>
-        <a href="/portfolio/the-demo/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/the-demo/' in page.url %}bg-stone-300{% endif %}">The Demo</a>
-        <a href="/portfolio/dolphin/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/dolphin/' in page.url %}bg-stone-300{% endif %}">Dolphin</a>
-        <a href="/portfolio/backyard-hills/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/backyard-hills/' in page.url %}bg-stone-300{% endif %}">Backyard Hills</a>
-        <a href="/portfolio/the-onion/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/the-onion/' in page.url %}bg-stone-300{% endif %}">The Onion</a>
-        <a href="/portfolio/starry-night/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/starry-night/' in page.url %}bg-stone-300{% endif %}">Starry Night</a>
-        <a href="/portfolio/beach-boardwalk/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/beach-boardwalk/' in page.url %}bg-stone-300{% endif %}">Beach Boardwalk</a>
-        <a href="/portfolio/desert-flower/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 border-b border-gray-200 {% if '/portfolio/desert-flower/' in page.url %}bg-stone-300{% endif %}">Desert Flower</a>
+        {% for item in menu_items %}
+          {% set name = item.name %}
+          {% set path = '/portfolio/' + name.toLowerCase().replaceAll(' ', '-') + '/' %}
+          <a href="{{path}}"
+            class="
+              {% if path in page.url %}
+                bg-stone-300
+              {% endif %}
+              block py-3 px-4 text-sm
+              bg-stone-100 hover:bg-stone-200
+              border-y border-gray-200
+            "
+          >{{name}}</a>
+        {% endfor %}
       </div>
     </div>
 
-    <div class="hidden lg:block mb-6">
+    <div class="hidden lg:block mb-6 px-8 mt-4">
       <!-- primary menu -->
       <div class="min-w-fit mx-auto">
         <div class="flex justify-center">
-          <div class="flex text-sm font-extralight"><!--
-        --><a href="/portfolio/emma/" class="py-3 px-4 {% if '/portfolio/emma/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Emma</a><!--
-        --><a href="/portfolio/the-demo/" class="py-3 px-4 {% if '/portfolio/the-demo/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">The Demo</a><!--
-        --><a href="/portfolio/dolphin/" class="py-3 px-4 {% if '/portfolio/dolphin/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Dolphin</a><!--
-        --><a href="/portfolio/backyard-hills/" class="py-3 px-4 {% if '/portfolio/backyard-hills/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Hills</a><!--
-        --><a href="/portfolio/the-onion/" class="py-3 px-4 {% if '/portfolio/the-onion/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Onion</a><!--
-        --><a href="/portfolio/starry-night/" class="py-3 px-4 {% if '/portfolio/starry-night/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Starry</a><!--
-        --><a href="/portfolio/beach-boardwalk/" class="py-3 px-4 {% if '/portfolio/beach-boardwalk/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Boardwalk</a><!--
-        --><a href="/portfolio/desert-flower/" class="py-3 px-4 {% if '/portfolio/desert-flower/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Desert</a>
+          <div class="flex text-sm font-extralight">
+            {% for item in menu_items %}
+              {% set name = item.name %}
+              {% set path = '/portfolio/' + name.toLowerCase().replaceAll(' ', '-') + '/' %}
+              {% if 'short' in item %}
+                {% set name = item.short %}
+              {% endif %}
+              <a href="{{path}}"
+                class="
+                  {% if path in page.url %}
+                    bg-stone-300
+                  {% endif %}
+                  py-3 px-4
+                  transition-colors duration-300
+                  hover:bg-stone-200
+                "
+              >{{name}}</a>
+            {% endfor %}
           </div>
         </div>
       </div>
