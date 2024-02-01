@@ -9,7 +9,8 @@ sitemap:
 ---
 
 <div class="flex w-full">
-  <div class="flex flex-col gap-8 md:grid md:grid-cols-3">
+  <div class="flex flex-col gap-8 mx-auto sm:px-4 md:px-6
+              sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
     {% for project in projects.structured %}
 
       {% set imagePath = '/images/portfolio/' + project.name | rmSpaces + '/' + project.images[0] %}

@@ -65,7 +65,6 @@ _None_
 - Add support for dark backgrounds, esp to use black for The Demo
 
 **UI tweaks**
-- Overall more consistency with the break points across pages: sm, md, lg
 - Add margin below secondary doodles menu on mobile, there is none in landscape orientation
 - Improve alignment of secondary hamburger menu; improve consistency of margin around
   secondary hamburger menu on general or specific doodle/portfolio page
