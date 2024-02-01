@@ -77,7 +77,6 @@ _None_
 
 **Refactor code**
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
-- _Maybe_ build portfolio menu from data in projects.js, including new ordering options
 
 **New features**
 - _Maybe_ add descriptions for each project image
