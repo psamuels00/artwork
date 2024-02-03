@@ -44,11 +44,11 @@ prev: ''
           {% set path = '/portfolio/' + name.toLowerCase().replaceAll(' ', '-') + '/' %}
           <a href="{{path}}"
             class="
-              {% if path in page.url %}
-                bg-stone-300
+              {% if page.url.startsWith(path) %}
+                {{project.color.menu.current | default('bg-stone-300')}}
               {% endif %}
               block py-3 px-4 text-sm
-              bg-stone-100 hover:bg-stone-200
+              {{project.color.menu.hover | default('hover:bg-stone-200')}}
               border-y border-gray-200
             "
           >{{name}}</a>
@@ -69,12 +69,12 @@ prev: ''
               {% endif %}
               <a href="{{path}}"
                 class="
-                  {% if path in page.url %}
-                    bg-stone-300
+                  {% if page.url.startsWith(path) %}
+                    {{project.color.menu.current | default('bg-stone-300')}}
                   {% endif %}
                   py-3 px-4
                   transition-colors duration-300
-                  hover:bg-stone-200
+                  {{project.color.menu.hover | default('hover:bg-stone-200')}}
                 "
               >{{name}}</a>
             {% endfor %}

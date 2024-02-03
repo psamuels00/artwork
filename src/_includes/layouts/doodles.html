@@ -42,7 +42,8 @@ layout: 'layouts/page.html'
         {% for name in menu_items %}
           <a href="/doodles/{{name}}/"
             class="
-              {% if ('/doodles/' + name + '/') in page.url %}
+              {% set target = '/doodles/' + name + '/' %}
+              {% if page.url.startsWith(target) %}
                 bg-stone-300
               {% endif %}
               py-3 px-4
@@ -63,7 +64,8 @@ layout: 'layouts/page.html'
           {% for name in menu_items %}
             <a href="/doodles/{{name}}/"
               class="
-                {% if ('/doodles/' + name + '/') in page.url %}
+                {% set target = '/doodles/' + name + '/' %}
+                {% if page.url.startsWith(target) %}
                   bg-stone-300
                 {% endif %}
                 py-3 px-4

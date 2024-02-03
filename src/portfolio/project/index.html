@@ -14,7 +14,6 @@ eleventyComputed:
   next_link: '{{ project.next }}'
   x_in_x_of_y: '{{pagination.pageNumber + 1}}'
   y_in_x_of_y: '{{pagination.pages.length}}'
-  bg_color_page: '{{ project.bg_color_page }}'
 ---
 
 {% import "snippets/svg.html" as macros %}
@@ -107,7 +106,7 @@ eleventyComputed:
 
 {% import "snippets/scroll_to_top.html" as macros %}
 {% if project.images.length > 1 %}
-  {{ macros.scrollToTop("") }}
+  {{ macros.scrollToTop(project.color.menu.hover | default('hover:bg-stone-200')) }}
 {% endif %}
 
 <script type="text/javascript">

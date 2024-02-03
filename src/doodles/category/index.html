@@ -25,9 +25,9 @@ eleventyComputed:
 
 {% import "snippets/scroll_to_top.html" as macros %}
 {% if category.images.length > 8 %}
-  {{ macros.scrollToTop("") }}
+  {{ macros.scrollToTop("hover:bg-stone-100") }}
 {% elif category.images.length > 1 %}
-  {{ macros.scrollToTop("md:hidden") }}
+  {{ macros.scrollToTop("md:hidden hover:bg-stone-100") }}
 {% endif %}
 
 <script type="text/javascript">
