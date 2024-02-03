@@ -14,7 +14,7 @@ module.exports = config => {
 
   // copy files
   config.addPassthroughCopy({
-    'global.out.css': 'global.css',
+    'build/': '/',
   });
   config.addPassthroughCopy({
     'src/_docs/': 'assets/docs/',

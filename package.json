@@ -4,12 +4,11 @@
   "description": "Perrin's Artwork",
   "main": "index.js",
   "scripts": {
-    "build": "tailwindcss -i ./src/_includes/css/global.css -o global.out.css && npx @11ty/eleventy",
-    "css": "tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch",
-    "debug": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"DEBUG=Eleventy* npx @11ty/eleventy --serve\"",
-    "develop": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o global.out.css --watch\" \"npx @11ty/eleventy --serve\"",
+    "build": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify && npx @11ty/eleventy",
+    "css": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify --watch",
+    "debug": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify --watch\" \"DEBUG=Eleventy* npx @11ty/eleventy --serve\"",
+    "develop": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify --watch\" \"npx @11ty/eleventy --serve\"",
     "favicons": "node src/_eleventy/gen-favicons.js",
-    "prod": "concurrently \"npx @11ty/eleventy\" \"tailwindcss -i ./src/_includes/css/global.css -o ./_site/global.css --minify\"",
     "start": "npx @11ty/eleventy --serve",
     "test": "concurrently \"npx http-server -p 8081 ./dist\" \"npx linkinator http://0.0.0.0:8081 --skip '^https://(www.linkedin.com|perrins-art.com)/' --recurse; rc=$?; kill -2 \\`lsof -i:8081 -t\\` || true; exit $rc\""
   },
