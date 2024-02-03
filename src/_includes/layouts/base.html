@@ -18,7 +18,7 @@
     <script src="/js/hammer.min.js"></script>
     <script src="/js/swipe.js"></script>
   </head>
-  <body class="{{ project.color.body.defaults | default(item.color.body.defaults)}}">
+  <body class="{{item.color.body.defaults}}">
 
     <div class="main_content">
       {% block content %}

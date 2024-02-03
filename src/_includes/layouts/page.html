@@ -19,7 +19,7 @@ layout: 'layouts/base.html'
     <!-- logo and 🍔 menu button -->
     <div class="flex justify-between items-center m-4">
       <a href="/">
-        {% if (project.color.logo.use_original | default(item.color.logo.use_original)) == 'true' %}
+        {% if item.color.logo.use_original == 'true' %}
           {% set imagePath = '/images/meta/logo/PerrinLogo-Original.png' %}
         {% else %}
           {% set imagePath = '/images/meta/logo/PerrinLogo-Inverted.png' %}
@@ -59,15 +59,15 @@ layout: 'layouts/base.html'
           class="
             {% if item.href %}
               {% if href == page.url %}
-                {{project.color.menu.current | default(item.color.menu.current) | default('bg-stone-300')}}
+                {{item.color.menu.current | default('bg-stone-300')}}
               {% endif %}
             {% else %}
               {% if page.url.startsWith(href) %}
-                {{project.color.menu.current | default(item.color.menu.current) | default('bg-stone-300')}}
+                {{item.color.menu.current | default('bg-stone-300')}}
               {% endif %}
             {% endif %}
             block py-3 px-4 text-sm
-            {{project.color.menu.homver | default(item.color.menu.homver) | default('hover:bg-stone-200')}}
+            {{item.color.menu.homver | default('hover:bg-stone-200')}}
             border-y border-gray-200
           "
         >{{name}}</a>
@@ -80,7 +80,7 @@ layout: 'layouts/base.html'
     <div class="min-w-fit mx-auto mt-2">
       <div class="flex justify-center">
         <a href="/">
-          {% if (project.color.logo.use_original | default(item.color.logo.use_original)) == 'true' %}
+          {% if item.color.logo.use_original == 'true' %}
             {% set imagePath = '/images/meta/logo/PerrinLogo-Original.png' %}
           {% else %}
             {% set imagePath = '/images/meta/logo/PerrinLogo-Inverted.png' %}
@@ -91,7 +91,7 @@ layout: 'layouts/base.html'
         </a>
       </div>
       <div class="max-w-4xl mx-auto my-2 border-b
-                  {{project.color.logo.divider | default(item.color.logo.divider) | default('border-gray-900')}}"></div>
+                  {{item.color.logo.divider | default('border-gray-900')}}"></div>
     </div>
 
     <!-- primary menu -->
@@ -109,16 +109,16 @@ layout: 'layouts/base.html'
               class="
                 {% if item.href %}
                   {% if href == page.url %}
-                    {{project.color.menu.current | default(item.color.menu.current) | default('bg-stone-300')}}
+                    {{item.color.menu.current | default('bg-stone-300')}}
                   {% endif %}
                 {% else %}
                   {% if page.url.startsWith(href) %}
-                    {{project.color.menu.current | default(item.color.menu.current) | default('bg-stone-300')}}
+                    {{item.color.menu.current | default('bg-stone-300')}}
                   {% endif %}
                 {% endif %}
                 py-1 px-4
                 transition-colors duration-300
-                {{project.color.menu.hover | default(item.color.menu.hover) | default('hover:bg-stone-200')}}
+                {{item.color.menu.hover | default('hover:bg-stone-200')}}
               "
             >{{name}}</a>
           {% endfor %}

@@ -3,15 +3,15 @@ layout: layouts/portfolio.html
 pagination:
   data: projects.structured
   size: 1
-  alias: project
-permalink: "portfolio/{{ project.name | slug }}/"
+  alias: item
+permalink: "portfolio/{{ item.name | slug }}/"
 goto: ['next', 'prev', 'enter', 'escape']
 sitemap:
   priority: 0.8
 eleventyComputed:
-  title: '{{ project.page_title | safe }}'
-  prev_link: '{{ project.prev }}'
-  next_link: '{{ project.next }}'
+  title: '{{ item.page_title | safe }}'
+  prev_link: '{{ item.prev }}'
+  next_link: '{{ item.next }}'
   x_in_x_of_y: '{{pagination.pageNumber + 1}}'
   y_in_x_of_y: '{{pagination.pages.length}}'
 ---
@@ -25,9 +25,9 @@ eleventyComputed:
             h-[calc(100svh-142px-10px-210px)]
             lg:h-[calc(100svh-205px-10px-105px)]
             min-h-32">
-  <a class="h-full mx-auto" href="/portfolio/{{project.name | slug}}/{{project.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
-    {% set imagePath = '/images/portfolio/' + project.name | rmSpaces + '/' + project.images[0] %}
-    {% set imageAlt = 'Portfolio item ' + (project.name | sepWords) + ' image ' + (project.images[0] | cleanupHack | rmFileExt | sepWords) %}
+  <a class="h-full mx-auto" href="/portfolio/{{item.name | slug}}/{{item.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
+    {% set imagePath = '/images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
+    {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (item.images[0] | cleanupHack | rmFileExt | sepWords) %}
     {% set imageClass = 'swipeable hover:brightness-90 max-h-full max-w-full object-scale-down' %}
     {% image imagePath, imageAlt, imageClass, { maxWidth: 2560 } %}
   </a>
@@ -91,11 +91,11 @@ eleventyComputed:
 <div class="flex">
   <div class="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 X2xl:grid-cols-6
               gap-8 mt-4 sm:px-4 md:px-6 justify-center">
-    {% for name in project.images %}
+    {% for name in item.images %}
       {% if not loop.first %}
-        <a href="/portfolio/{{project.name | slug}}/{{name | cleanupHack | rmFileExt | sepWords | slug}}/">
-          {% set imagePath = '/images/portfolio/' + project.name | rmSpaces + '/' + name %}
-          {% set imageAlt = 'Portfolio item ' + (project.name | sepWords) + ' image ' + (name | cleanupHack | rmFileExt | sepWords) %}
+        <a href="/portfolio/{{item.name | slug}}/{{name | cleanupHack | rmFileExt | sepWords | slug}}/">
+          {% set imagePath = '/images/portfolio/' + item.name | rmSpaces + '/' + name %}
+          {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (name | cleanupHack | rmFileExt | sepWords) %}
           {% set imageClass = 'swipeable hover:brightness-90' %}
           {% image imagePath, imageAlt, imageClass, { maxWidth: 1280, loading: 'lazy' } %}
         </a>
@@ -105,17 +105,17 @@ eleventyComputed:
 </div>
 
 {% import "snippets/scroll_to_top.html" as macros %}
-{% if project.images.length > 1 %}
-  {{ macros.scrollToTop(project.color.menu.hover | default('hover:bg-stone-200')) }}
+{% if item.images.length > 1 %}
+  {{ macros.scrollToTop(item.color.menu.hover | default('hover:bg-stone-200')) }}
 {% endif %}
 
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{'/' | url}}portfolio/{{project.prev | slug}}/'
+    window.location.href = '{{'/' | url}}portfolio/{{item.prev | slug}}/'
   }
 
   function gotoNext() {
-    window.location.href = '{{'/' | url}}portfolio/{{project.next | slug}}/'
+    window.location.href = '{{'/' | url}}portfolio/{{item.next | slug}}/'
   }
 
   function gotoEscape() {
@@ -125,6 +125,6 @@ eleventyComputed:
 
   function gotoEnter() {
     event.preventDefault();
-    window.location.href = '{{'/' | url}}portfolio/{{project.name | slug}}/{{project.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/'
+    window.location.href = '{{'/' | url}}portfolio/{{item.name | slug}}/{{item.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/'
   }
 </script>

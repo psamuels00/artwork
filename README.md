@@ -74,7 +74,3 @@ _None_
 
 **Refactor code**
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
-- use aliase "item" instead of "project", then simplify expressions involving both in layout templates
-
-**New features**
-- _Maybe_ add descriptions for each project image

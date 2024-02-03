@@ -25,9 +25,9 @@ prev: ''
       <!-- 🍔 menu button -->
       <div class="flex justify-end items-center">
         <div class="p-2">
-          {% if project.name %}
+          {% if item.name %}
             <span class="mx-2">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
-            {{ project.name }}
+            {{ item.name }}
           {% else %}
             <!-- Scroll down or select a project &rarr; -->
           {% endif %}
@@ -45,10 +45,10 @@ prev: ''
           <a href="{{path}}"
             class="
               {% if page.url.startsWith(path) %}
-                {{project.color.menu.current | default('bg-stone-300')}}
+                {{item.color.menu.current | default('bg-stone-300')}}
               {% endif %}
               block py-3 px-4 text-sm
-              {{project.color.menu.hover | default('hover:bg-stone-200')}}
+              {{item.color.menu.hover | default('hover:bg-stone-200')}}
               border-y border-gray-200
             "
           >{{name}}</a>
@@ -70,11 +70,11 @@ prev: ''
               <a href="{{path}}"
                 class="
                   {% if page.url.startsWith(path) %}
-                    {{project.color.menu.current | default('bg-stone-300')}}
+                    {{item.color.menu.current | default('bg-stone-300')}}
                   {% endif %}
                   py-3 px-4
                   transition-colors duration-300
-                  {{project.color.menu.hover | default('hover:bg-stone-200')}}
+                  {{item.color.menu.hover | default('hover:bg-stone-200')}}
                 "
               >{{name}}</a>
             {% endfor %}
