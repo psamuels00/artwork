@@ -25,6 +25,7 @@
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "favicons": "^7.1.5",
     "hammerjs": "^2.0.8",
+    "html-minifier-terser": "^7.2.0",
     "http-server": "^14.1.1",
     "image-size": "^1.1.1",
     "linkinator": "^6.0.4",

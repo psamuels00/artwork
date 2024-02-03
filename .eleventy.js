@@ -3,6 +3,7 @@ const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
 const figureShortcode = require('./src/_eleventy/shortcode/figure');
 const filters = require('./src/_eleventy/filters');
 const imageShortcode = require('./src/_eleventy/shortcode/image');
+const minifyHtml = require('./src/_eleventy/minify-html');
 const path = require('path');
 const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const sizeOf = require('image-size');
@@ -70,6 +71,9 @@ module.exports = config => {
       hostname: 'https://perrins-art.com',
     },
   });
+
+  // minify HTML
+  config.addTransform("html-minify", minifyHtml);
 
   return {
     dir: {
