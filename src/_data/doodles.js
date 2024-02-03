@@ -84,9 +84,9 @@ let categories = [
       'MinimalistBeachScene.jpg',
       'BackYardSketch.jpg',
 
-      'VeryTallPalmTreeAtBeach.jpg',
       'CreatureInHotAirBalloon.jpg',
       'DolphinJumpingInSun.jpg',
+      'VeryTallPalmTreeAtBeach.jpg',
     ],
   },
   {
