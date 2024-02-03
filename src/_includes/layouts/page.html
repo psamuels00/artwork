@@ -4,6 +4,15 @@ layout: 'layouts/base.html'
 
 {% import "snippets/svg.html" as macros %}
 
+{% set menu_items = [
+  { name: 'Home', href: '/' },
+  { name: 'Portfolio' },
+  { name: 'Doodles' },
+  { name: 'About' },
+  { name: 'Resume' },
+  { name: 'Nightmare' }
+] %}
+
 <!-- mobile-first, responsive navigation -->
 <nav>
   <div class="lg:hidden">
@@ -35,12 +44,30 @@ layout: 'layouts/base.html'
 
     <!-- mobile menu -->
     <div class="mobile-menu hidden text-center">
-      <a href="/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/' == page.url %}bg-stone-300{% endif %} border-y border-gray-200">Home</a>
-      <a href="/portfolio/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/portfolio/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Portfolio</a>
-      <a href="/doodles/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/doodles/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Doodles</a>
-      <a href="/about/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/about/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">About</a>
-      <a href="/resume/" class="block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/resume/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Resume</a>
-      <a href="/nightmare/" class="nightmare block py-3 px-4 text-sm hover:bg-stone-200 bg-stone-100 {% if '/nightmare/' in page.url %}bg-stone-300{% endif %} border-b border-gray-200">Nightmare</a>
+      {% for item in menu_items %}
+        {% set name = item.name %}
+        {% if item.href %}
+          {% set href = item.href %}
+        {% else %}
+          {% set href = '/' + item.name | lower + '/' %}
+        {% endif %}
+        <a href="{{href}}"
+          class="
+            {% if item.href %}
+              {% if href == page.url %}
+                bg-stone-300
+              {% endif %}
+            {% else %}
+              {% if href in page.url %}
+                bg-stone-300
+              {% endif %}
+            {% endif %}
+            block py-3 px-4 text-sm
+            hover:bg-stone-200
+            border-y border-gray-200
+          "
+        >{{name}}</a>
+      {% endfor %}
     </div>
   </div>
 
@@ -61,13 +88,31 @@ layout: 'layouts/base.html'
     <!-- primary menu -->
     <div class="min-w-fit mx-auto">
       <div class="flex justify-center">
-        <div class="flex text-sm font-extralight"><!--
-          --><a href="/" class="py-1 px-4 {% if '/' == page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Home</a><!--
-          --><a href="/portfolio/" class="py-1 px-4 {% if '/portfolio/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Portfolio</a><!--
-          --><a href="/doodles/" class="py-1 px-4 {% if '/doodles/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Doodles</a><!--
-          --><a href="/about/" class="py-1 px-4 {% if '/about/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">About</a><!--
-          --><a href="/resume/" class="py-1 px-4 {% if '/resume/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Resume</a><!--
-          --><a href="/nightmare/" class="nightmare py-1 px-4 {% if '/nightmare/' in page.url %}bg-stone-300{% endif %} transition-colors duration-300 hover:bg-stone-200">Nightmare</a>
+        <div class="flex text-sm font-extralight">
+          {% for item in menu_items %}
+            {% set name = item.name %}
+            {% if item.href %}
+              {% set href = item.href %}
+            {% else %}
+              {% set href = '/' + item.name | lower + '/' %}
+            {% endif %}
+            <a href="{{href}}"
+              class="
+                {% if item.href %}
+                  {% if href == page.url %}
+                    bg-stone-300
+                  {% endif %}
+                {% else %}
+                  {% if href in page.url %}
+                    bg-stone-300
+                  {% endif %}
+                {% endif %}
+                py-1 px-4
+                transition-colors duration-300
+                hover:bg-stone-200
+              "
+            >{{name}}</a>
+          {% endfor %}
         </div>
       </div>
     </div>
