@@ -1,0 +1,20 @@
+---
+permalink: /404.html
+layout: 'layouts/page.html'
+---
+
+<div class="sm:w-1/2 lg:w-1/3 mx-auto mt-4">
+  {% set imagePath = '/images/meta/404/PerrinShrugging.webp' %}
+  {% set imageAlt = 'Perrin shrugging, looking somewhat apologetic' %}
+  {% set imageClass = '' %}
+  {% image imagePath, imageAlt, imageClass %}
+
+  <div class="bg-stone-100 text-center mt-4 py-4">
+    <div class="mb-2">
+      Oops, something was profoundly not found.<br/>
+    </div>
+    Sorry for the inconvenience, but get over it.<br/>
+    Take a look at <a class="text-sky-700 hover:underline" href="/portfolio/emma/">Emma</a>
+    ...see how calm she is.
+  </div>
+</div>
