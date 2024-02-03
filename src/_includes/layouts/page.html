@@ -50,23 +50,21 @@ layout: 'layouts/base.html'
 
     <!-- mobile menu -->
     <div class="mobile-menu hidden text-center">
-      {% for item in menu_items %}
-        {% set name = item.name %}
-        {% if item.href %}
-          {% set href = item.href %}
+      {% for menu_item in menu_items %}
+        {% set name = menu_item.name %}
+        {% if menu_item.href %}
+          {% set href = menu_item.href %}
         {% else %}
-          {% set href = '/' + item.name | lower + '/' %}
+          {% set href = '/' + menu_item.name | lower + '/' %}
         {% endif %}
         <a href="{{href}}"
           class="
-            {% if item.href %}
+            {% if menu_item.href %}
               {% if href == page.url %}
                 {{item.color.menu.current | default('bg-stone-300')}}
               {% endif %}
-            {% else %}
-              {% if page.url.startsWith(href) %}
-                {{item.color.menu.current | default('bg-stone-300')}}
-              {% endif %}
+            {% elif page.url.startsWith(href) %}
+              {{item.color.menu.current | default('bg-stone-300')}}
             {% endif %}
             block py-3 px-4 text-sm
             {{item.color.menu.homver | default('hover:bg-stone-200')}}
@@ -100,23 +98,21 @@ layout: 'layouts/base.html'
     <div class="min-w-fit mx-auto">
       <div class="flex justify-center">
         <div class="flex text-sm font-extralight">
-          {% for item in menu_items %}
-            {% set name = item.name %}
-            {% if item.href %}
-              {% set href = item.href %}
+          {% for menu_item in menu_items %}
+            {% set name = menu_item.name %}
+            {% if menu_item.href %}
+              {% set href = menu_item.href %}
             {% else %}
-              {% set href = '/' + item.name | lower + '/' %}
+              {% set href = '/' + menu_item.name | lower + '/' %}
             {% endif %}
             <a href="{{href}}"
               class="
-                {% if item.href %}
+                {% if menu_item.href %}
                   {% if href == page.url %}
                     {{item.color.menu.current | default('bg-stone-300')}}
                   {% endif %}
-                {% else %}
-                  {% if page.url.startsWith(href) %}
-                    {{item.color.menu.current | default('bg-stone-300')}}
-                  {% endif %}
+                {% elif page.url.startsWith(href) %}
+                  {{item.color.menu.current | default('bg-stone-300')}}
                 {% endif %}
                 py-1 px-4
                 transition-colors duration-300
