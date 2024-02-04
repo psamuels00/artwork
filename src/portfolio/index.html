@@ -11,18 +11,18 @@ sitemap:
 <div class="flex w-full">
   <div class="flex flex-col gap-8 mx-auto sm:px-4 md:px-6
               sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-    {% for project in projects.structured %}
+    {% for item in projects.structured %}
 
-      {% set imagePath = '/images/portfolio/' + project.name | rmSpaces + '/' + project.images[0] %}
+      {% set imagePath = '/images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
       {% set isLandscape = ('src' + imagePath) | isLandscape %}
 
       <figure class="mx-auto {% if not isLandscape %} w-2/3 {% endif %}">
-        <a href="/portfolio/{{project.name | slug}}/">
-          {% set imageAlt = 'Portfolio item ' + (project.name | sepWords) + ' image ' + (project.images[0] | rmFileExt | sepWords) %}
+        <a href="/portfolio/{{item.name | slug}}/">
+          {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (item.images[0] | rmFileExt | sepWords) %}
           {% set imageClass = 'swipeable hover:brightness-90' %}
           {% image imagePath, imageAlt, imageClass, { maxWidth: 770 } %}
         </a>
-        <figcaption class="text-center mt-2">{{project.name}}</figcaption>
+        <figcaption class="text-center mt-2">{{item.name}}</figcaption>
       </figure>
 
     {% endfor %}
