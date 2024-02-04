@@ -8,7 +8,7 @@ module.exports = async (source, outputPath) => {
 
   const result = await minify(source, {
     collapseBooleanAttributes: true,
-    collapseWhitespace: false,
+    collapseWhitespace: true,
     collapseInlineTagWhitespace: true,
     continueOnParseError: true,
     decodeEntities: true,
@@ -16,7 +16,7 @@ module.exports = async (source, outputPath) => {
     minifyCSS: true,
     quoteCharacter: `"`,
     removeComments: true,
-    removeAttributeQuotes: false,
+    removeAttributeQuotes: true,
     removeRedundantAttributes: true,
     removeScriptTypeAttributes: true,
     removeStyleLinkTypeAttributes: true,
