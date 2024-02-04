@@ -10,9 +10,12 @@ layout: 'layouts/base.html'
   { name: 'Portfolio' },
   { name: 'Doodles' },
   { name: 'About' },
-  { name: 'Resume' },
-  { name: 'Nightmare' }
+  { name: 'Resume' }
 ] %}
+
+{% if includeNightmare %}
+  {% set menu_items = menu_items.concat([{ name: 'Nightmare' }]) %}
+{% endif %}
 
 
 {% macro menu(extraClass) %}
