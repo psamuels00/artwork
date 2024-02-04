@@ -22,10 +22,7 @@ prev: ''
 {% macro menu(extraClass) %}
   {% for menu_item in menu_items %}
     {# name #}
-    {% set name = menu_item.name %}
-    {% if 'short' in menu_item %}
-      {% set name = menu_item.short %}
-    {% endif %}
+    {% set name = menu_item.short | default(menu_item.name) %}
 
     {# href #}
     {% set href = '/portfolio/' + menu_item.name.toLowerCase().replaceAll(' ', '-') + '/' %}
