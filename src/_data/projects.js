@@ -52,8 +52,8 @@ let projects = [
         divider: 'border-stone-100'
       },
       menu: {
-        current: 'bg-stone-400',
-        hover: 'hover:bg-stone-600'
+        current: 'bg-stone-600',
+        hover: 'hover:bg-stone-700'
       }
     },
     images: [
