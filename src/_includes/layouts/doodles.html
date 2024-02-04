@@ -4,6 +4,7 @@ layout: 'layouts/page.html'
 
 {% import "snippets/svg.html" as macros %}
 
+
 {% set menu_items = [
   'abstract',
   'animals',
@@ -15,6 +16,23 @@ layout: 'layouts/page.html'
   'textures',
   'wacky'
 ] %}
+
+
+{% macro menu(extraClass) %}
+  {% for name in menu_items %}
+    {# href #}
+    {% set href = '/doodles/' + name + '/' %}
+
+    {# class #}
+    {% set class = extraClass + ' ' + (item.color.menu.hover | default('hover:bg-stone-200')) %}
+    {% if page.url.startsWith(href) %}
+      {% set class = class + ' ' + (item.color.menu.current | default('bg-stone-300')) %}
+    {% endif %}
+
+    <a href="{{href}}" class="{{class}}">{{name | capitalize}}</a>
+  {% endfor %}
+{% endmacro %}
+
 
 <div class="text-center px-2">
 
@@ -38,21 +56,8 @@ layout: 'layouts/page.html'
       </div>
 
       <!-- mobile menu -->
-      <div class="mobile-doodles-menu hidden text-center">
-        {% for name in menu_items %}
-          <a href="/doodles/{{name}}/"
-            class="
-              {% set target = '/doodles/' + name + '/' %}
-              {% if page.url.startsWith(target) %}
-                bg-stone-300
-              {% endif %}
-              py-3 px-4
-              block text-sm
-              bg-stone-100 hover:bg-stone-200
-              border-y border-gray-200
-            "
-          >{{name | capitalize}}</a>
-        {% endfor %}
+      <div class="mobile-doodles-menu hidden flex flex-col text-center">
+        {{ menu('py-3 px-4 border-y border-gray-200') }}
       </div>
     </div>
 
@@ -61,19 +66,7 @@ layout: 'layouts/page.html'
       <div class="min-w-fit mx-auto">
         <div class="flex justify-center">
           <div class="flex text-sm font-extralight">
-          {% for name in menu_items %}
-            <a href="/doodles/{{name}}/"
-              class="
-                {% set target = '/doodles/' + name + '/' %}
-                {% if page.url.startsWith(target) %}
-                  bg-stone-300
-                {% endif %}
-                py-3 px-4
-                transition-colors duration-300
-                hover:bg-stone-200
-              "
-            >{{name | capitalize}}</a>
-          {% endfor %}
+            {{ menu('py-3 px-4 transition-colors duration-300') }}
           </div>
         </div>
       </div>

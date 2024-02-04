@@ -6,6 +6,7 @@ prev: ''
 
 {% import "snippets/svg.html" as macros %}
 
+
 {% set menu_items = [
   { name: 'Emma' },
   { name: 'The Demo' },
@@ -16,6 +17,29 @@ prev: ''
   { name: 'Beach Boardwalk', short: 'Boardwalk' },
   { name: 'Desert Flower', short: 'Desert' }
 ] %}
+
+
+{% macro menu(extraClass) %}
+  {% for menu_item in menu_items %}
+    {# name #}
+    {% set name = menu_item.name %}
+    {% if 'short' in menu_item %}
+      {% set name = menu_item.short %}
+    {% endif %}
+
+    {# href #}
+    {% set href = '/portfolio/' + menu_item.name.toLowerCase().replaceAll(' ', '-') + '/' %}
+
+    {# class #}
+    {% set class = extraClass + ' ' + (item.color.menu.hover | default('hover:bg-stone-200')) %}
+    {% if page.url.startsWith(href) %}
+      {% set class = class + ' ' + (item.color.menu.current | default('bg-stone-300')) %}
+    {% endif %}
+
+    <a href="{{href}}" class="{{class}}">{{name}}</a>
+  {% endfor %}
+{% endmacro %}
+
 
 <div class="text-center px-2">
 
@@ -38,21 +62,8 @@ prev: ''
       </div>
 
       <!-- mobile menu -->
-      <div class="mobile-portfolio-menu hidden text-center">
-        {% for menu_item in menu_items %}
-          {% set name = menu_item.name %}
-          {% set path = '/portfolio/' + name.toLowerCase().replaceAll(' ', '-') + '/' %}
-          <a href="{{path}}"
-            class="
-              {% if page.url.startsWith(path) %}
-                {{item.color.menu.current | default('bg-stone-300')}}
-              {% endif %}
-              block py-3 px-4 text-sm
-              {{item.color.menu.hover | default('hover:bg-stone-200')}}
-              border-y border-gray-200
-            "
-          >{{name}}</a>
-        {% endfor %}
+      <div class="mobile-portfolio-menu hidden flex flex-col text-center">
+        {{ menu('py-3 px-4 text-sm border-y border-gray-200') }}
       </div>
     </div>
 
@@ -61,23 +72,7 @@ prev: ''
       <div class="min-w-fit mx-auto">
         <div class="flex justify-center">
           <div class="flex text-sm font-extralight">
-            {% for menu_item in menu_items %}
-              {% set name = menu_item.name %}
-              {% set path = '/portfolio/' + name.toLowerCase().replaceAll(' ', '-') + '/' %}
-              {% if 'short' in menu_item %}
-                {% set name = menu_item.short %}
-              {% endif %}
-              <a href="{{path}}"
-                class="
-                  {% if page.url.startsWith(path) %}
-                    {{item.color.menu.current | default('bg-stone-300')}}
-                  {% endif %}
-                  py-3 px-4
-                  transition-colors duration-300
-                  {{item.color.menu.hover | default('hover:bg-stone-200')}}
-                "
-              >{{name}}</a>
-            {% endfor %}
+            {{ menu('py-3 px-4 transition-colors duration-300') }}
           </div>
         </div>
       </div>
