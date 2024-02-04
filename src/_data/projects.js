@@ -52,7 +52,7 @@ let projects = [
         divider: 'border-stone-100'
       },
       menu: {
-        current: 'bg-stone-500',
+        current: 'bg-stone-500 text-black',
         hover: 'hover:bg-stone-600'
       }
     },
