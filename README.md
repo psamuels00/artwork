@@ -62,7 +62,6 @@ _None_
 ### Low priority
 
 **UI tweaks**
-- Add margin below secondary doodles menu on mobile, there is none in landscape orientation
 - Improve alignment of secondary hamburger menu; improve consistency of margin around
   secondary hamburger menu on general or specific doodle/portfolio page
 - Make sure the footer is always at the bottom of the page, eg, see About in full window mode
