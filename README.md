@@ -73,13 +73,11 @@ _None_
 ### Low priority
 
 **UI tweaks**
-- Improve alignment of secondary hamburger menu; improve consistency of margin around
-  secondary hamburger menu on general or specific doodle/portfolio page
 - In attempt to make the first image on a project page stand out, it's height takes up most of the
   window height.  However, when the window is made narrow on a desktop, the image shrinks and a lot
   of awkward, empty space is left below the image.  Instead,  the project info should move up to
   fill the space.
-- Make sure the footer is always at the bottom of the page, eg, see About in full window mode
+- Make sure the footer is always at the bottom of the page, eg, see /doodles/stills
 
 **Performance/Accessibility**
 - Study reports from the following for more recommendations:
