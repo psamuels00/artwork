@@ -46,28 +46,21 @@
 |-----------------------------------------------------------------------------------------
 #}
 
-{% set prev = prev or prev_link %}
-{% set next = next or next_link %}
+{% set prev = prev or pages.lookup[page.url].prev %}
+{% set next = next or pages.lookup[page.url].next %}
+{% set enter = pages.lookup[page.url].enter %}
 
 {% if prev or next or enter or escape or goto %}
   <script type="text/javascript">
     {% if prev and not (goto and 'prev' in goto) %}
       function gotoPrev() {
-        if (isOfficial() && window.location.pathname == '/') {
-          window.location.href = '{{'/resume/' | url}}'
-        } else {
-          window.location.href = '{{prev | url}}'
-        }
+        window.location.href = '{{prev | url}}'
       }
     {% endif %}
 
     {% if next and not (goto and 'next' in goto) %}
       function gotoNext() {
-        if (isOfficial() && window.location.pathname == '/resume/') {
-          window.location.href = '{{'/' | url}}'
-        } else {
-          window.location.href = '{{next | url}}'
-        }
+        window.location.href = '{{next | url}}'
       }
     {% endif %}
 
@@ -75,13 +68,6 @@
       function gotoEnter() {
         event.preventDefault();
         window.location.href = '{{enter | url}}'
-      }
-    {% endif %}
-
-    {% if escape and not (goto and 'escape' in goto) %}
-      function gotoEscape() {
-        event.preventDefault();
-        window.location.href = '{{escape | url}}'
       }
     {% endif %}
 

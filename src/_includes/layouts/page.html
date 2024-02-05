@@ -5,32 +5,11 @@ layout: 'layouts/base.html'
 {% import "snippets/svg.html" as macros %}
 
 
-{% set menu_items = [
-  { name: 'Home', href: '/' },
-  { name: 'Portfolio' },
-  { name: 'Doodles' },
-  { name: 'About' },
-  { name: 'Resume' }
-] %}
-
-{% if includeNightmare %}
-  {% set menu_items = menu_items.concat([{ name: 'Nightmare' }]) %}
-{% endif %}
-
-
 {% macro menu(extraClass) %}
-  {% for menu_item in menu_items %}
-    {# name #}
+  {% for menu_item in pages.pages %}
     {% set name = menu_item.name %}
+    {% set href = menu_item.href %}
 
-    {# href #}
-    {% if menu_item.href %}
-      {% set href = menu_item.href %}
-    {% else %}
-      {% set href = '/' + menu_item.name | lower + '/' %}
-    {% endif %}
-
-    {# class #}
     {% set class = extraClass + ' ' + (item.color.menu.hover | default('hover:bg-stone-200')) %}
     {% if menu_item.href and href == page.url or not menu_item.href and page.url.startsWith(href) %}
       {% set class = class + ' ' + (item.color.menu.current | default('bg-stone-300')) %}
@@ -134,9 +113,9 @@ layout: 'layouts/base.html'
     <div>
       perrin@perrins-art.com
       {#
-      perrin.samuels
-      <span>@</span>
-      gmail.com
+        perrin.samuels
+        <span>@</span>
+        gmail.com
       #}
     </div>
     <p>&copy;{{ 2024 | yearSince }} · Perrin</p>

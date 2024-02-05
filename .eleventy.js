@@ -13,9 +13,6 @@ module.exports = config => {
   // logging
   config.setQuietMode(true);
 
-  // nightmare
-  config.addGlobalData('includeNightmare', false);
-
   // copy files
   config.addPassthroughCopy({
     'build/': '/',

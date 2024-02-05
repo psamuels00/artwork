@@ -10,8 +10,6 @@ sitemap:
   priority: 0.8
 eleventyComputed:
   title: '{{ item.page_title | safe }}'
-  prev_link: '{{ item.prev }}'
-  next_link: '{{ item.next }}'
   x_in_x_of_y: '{{pagination.pageNumber + 1}}'
   y_in_x_of_y: '{{pagination.pages.length}}'
 ---
