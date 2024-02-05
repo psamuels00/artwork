@@ -12,7 +12,7 @@ const shortcode = async function(categoryName, imageFile) {
   const imageClass = 'swipeable hover:brightness-90';
   const image = await imageShortcode(imagePath, imageAlt, imageClass, {outputPath})
 
-  const href = ('/doodles/' + categoryName + '/' + title.replace(/ /g, '-')).toLowerCase();
+  const href = ('/doodles/' + categoryName + '/' + title.replace(/ /g, '-')).toLowerCase() + '/';
   const caption = capWords(title);
 
   const figure = `<figure class="sm:my-0 my-8 text-sm font-extralight">
