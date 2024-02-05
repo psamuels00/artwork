@@ -210,6 +210,9 @@ projects = projects.map(project => {
   };
 });
 
+// disable colors
+projects = projects.map(({color, ...rest}) => rest);
+
 const common = require('./common');
 
 module.exports = {
