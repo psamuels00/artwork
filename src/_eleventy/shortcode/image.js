@@ -1,10 +1,11 @@
 const fs = require('fs');
+const { getConfig } = require('@11ty/eleventy');
 const Image = require('@11ty/eleventy-img');
 const outdent = require('outdent');
 const path = require('path');
 
 
-const outputDir = 'dist/assets/images';
+const outputSubdir = 'assets/images';
 
 
 const stringifyAttributes = (attributeMap) => {
@@ -17,7 +18,7 @@ const stringifyAttributes = (attributeMap) => {
 };
 
 
-const pathnameFormat = (hash, src, width, format, options) => {
+const pathnameFormat = (hash, src, width, format, options, outputDir) => {
   const m = src.match(/src\/images\/(.*)\/(.*?)\.\w+$/);
   if (!m) {
     return `${hash}-${width}.${format}`;
@@ -35,18 +36,19 @@ const pathnameFormat = (hash, src, width, format, options) => {
 };
 
 
-const shortcode = async (
+const shortcode = async function(
   src,
   alt,
   className = undefined,
   options = {}
-) => {
+) {
   const {
     formats = ['webp', 'jpeg', null],
     linkable = false,
     loading = 'eager',
     maxWidth = undefined,
     sizes = '100vw',
+    outputPath = this.page.outputPath,
   } = options;
 
   let {
@@ -58,12 +60,17 @@ const shortcode = async (
     widths.push(maxWidth, null);
   }
 
+  const outputRootDir = outputPath.split('/')[0];
+  const outputDir = outputRootDir + '/' + outputSubdir;
+
   const imageMetadata = await Image(`src${src}`, {
     widths,
     formats,
     outputDir,
-    urlPath: '/assets/images',
-    filenameFormat: pathnameFormat,
+    urlPath: '/' + outputSubdir,
+    filenameFormat: (hash, src, width, format, options) => {
+      return pathnameFormat(hash, src, width, format, options, outputDir);
+    },
   });
 
   const sourceHtmlString = Object.values(imageMetadata)
