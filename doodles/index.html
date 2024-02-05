@@ -18,21 +18,13 @@
         behavior: 'smooth'
       });
     });</script></div></div></div><footer class="flex justify-center my-12"><div class="text-center text-sm font-light thin"><div>perrin@perrins-art.com</div><p>©2024 · Perrin</p></div></footer></div></body></html><script>function gotoPrev() {
-        if (isOfficial() && window.location.pathname == '/') {
-          window.location.href = '/resume/'
-        } else {
-          window.location.href = '/portfolio/'
-        }
+        window.location.href = '/portfolio/'
       }
     
 
     
       function gotoNext() {
-        if (isOfficial() && window.location.pathname == '/resume/') {
-          window.location.href = '/'
-        } else {
-          window.location.href = '/about/'
-        }
+        window.location.href = '/about/'
       }
     
 
@@ -41,8 +33,6 @@
         event.preventDefault();
         window.location.href = '/doodles/abstract/'
       }
-    
-
     
 
     
