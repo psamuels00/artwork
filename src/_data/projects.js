@@ -11,8 +11,8 @@ let projects = [
     size: '11 x 8½ inches',
     color: {
       body: {
-        defaults: 'bg-amber-50'
-      }
+        defaults: 'bg-amber-50',
+      },
     },
     images: [
       'FullPainting.jpg',
@@ -42,19 +42,19 @@ let projects = [
     size: '34 x 24½ inches',
     color: {
       body: {
-        defaults: 'bg-zinc-950 text-stone-100'
+        defaults: 'bg-zinc-950 text-stone-100',
       },
       closeX: {
-        hover: 'hover:bg-stone-800'
+        hover: 'hover:bg-stone-800',
       },
       logo: {
         use_original: 'true',
-        divider: 'border-stone-100'
+        divider: 'border-stone-100',
       },
       menu: {
         current: 'bg-stone-600',
-        hover: 'hover:bg-stone-700'
-      }
+        hover: 'hover:bg-stone-700',
+      },
     },
     images: [
       'FullPaintingReduced.jpg',
@@ -86,8 +86,8 @@ let projects = [
     size: '16 x 12 inches',
     color: {
       body: {
-        defaults: 'bg-sky-300'
-      }
+        defaults: 'bg-sky-300',
+      },
     },
     images: [
       'FullPainting.webp',
@@ -106,8 +106,8 @@ let projects = [
     size: '16 x 12 inches',
     color: {
       body: {
-        defaults: 'bg-backyard-200'
-      }
+        defaults: 'bg-backyard-200',
+      },
     },
     images: [
       'FullPainting.jpg',
@@ -130,8 +130,8 @@ let projects = [
     size: '70 x 46 inches',
     color: {
       body: {
-        defaults: 'bg-onion-300'
-      }
+        defaults: 'bg-onion-300',
+      },
     },
     images: [
       'FullPainting.webp',
@@ -152,8 +152,8 @@ let projects = [
     size: '11 x 8½ inches',
     color: {
       body: {
-        defaults: 'bg-yellow-500'
-      }
+        defaults: 'bg-yellow-500',
+      },
     },
     images: [
       'FullPainting.jpg',
@@ -170,8 +170,8 @@ let projects = [
     size: '24 x 16 inches',
     color: {
       body: {
-        defaults: 'bg-sand-400'
-      }
+        defaults: 'bg-sand-400',
+      },
     },
     images: [
       'TheBench.jpg',
@@ -193,8 +193,8 @@ let projects = [
     size: '11 x 8½ inches',
     color: {
       body: {
-        defaults: 'bg-desert_brush-300'
-      }
+        defaults: 'bg-desert_brush-300',
+      },
     },
     images: [
       'FullPainting.jpg',

@@ -11,7 +11,7 @@ layout: 'layouts/base.html'
     {% set href = menu_item.href %}
 
     {% set class = extraClass + ' ' + (item.color.menu.hover | default('hover:bg-stone-200')) %}
-    {% if menu_item.href and href == page.url or not menu_item.href and page.url.startsWith(href) %}
+    {% if menu_item.href == '/' and page.url == '/' or menu_item.href != '/' and page.url.startsWith(href) %}
       {% set class = class + ' ' + (item.color.menu.current | default('bg-stone-300')) %}
     {% endif %}
 
