@@ -46,7 +46,8 @@ layout: 'layouts/page.html'
             <span class="mx-2">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
             {{ category.name }}
           {% else %}
-            <!-- Scroll down or select a category &rarr; -->
+            Select a category below or here
+            {{ macros.svgPath("ml-2 inline", 36, 24, 1, "M2 12L34 12M24 6L34 12L24 18") }} <!-- right arrow -->
           {% endif %}
         </div>
 

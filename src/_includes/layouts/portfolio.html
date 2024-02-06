@@ -50,7 +50,8 @@ prev: ''
             <span class="mx-2">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
             {{ item.name }}
           {% else %}
-            <!-- Scroll down or select a project &rarr; -->
+            Select a painting below or here
+            {{ macros.svgPath("ml-2 inline", 36, 24, 1, "M2 12L34 12M24 6L34 12L24 18") }} <!-- right arrow -->
           {% endif %}
         </div>
         {% set hoverClass = item.color.menu.hover | default('hover:bg-stone-100') %}
