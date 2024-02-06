@@ -74,7 +74,7 @@ module.exports = async (config) => {
   });
 
   // minify HTML
-  config.addTransform("html-minify", minifyHtml);
+  config.addTransform('html-minify', minifyHtml);
 
   return {
     dir: {
