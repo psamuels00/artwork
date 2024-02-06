@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { getConfig } = require('@11ty/eleventy');
 const Image = require('@11ty/eleventy-img');
 const outdent = require('outdent');
 const path = require('path');
