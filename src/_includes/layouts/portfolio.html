@@ -19,10 +19,10 @@ prev: ''
 ] %}
 
 
-{% macro menu(extraClass) %}
+{% macro menu(useShortName, extraClass) %}
   {% for menu_item in menu_items %}
     {# name #}
-    {% set name = menu_item.short | default(menu_item.name) %}
+    {% set name = (menu_item.short if useShortName else undefined) | default(menu_item.name) %}
 
     {# href #}
     {% set href = '/portfolio/' + menu_item.name.toLowerCase().replaceAll(' ', '-') + '/' %}
@@ -61,7 +61,7 @@ prev: ''
 
       <!-- mobile menu -->
       <div class="mobile-portfolio-menu hidden flex flex-col text-center border-t border-gray-200">
-        {{ menu('py-3 px-4 text-sm border-b border-gray-200') }}
+        {{ menu(false, 'py-3 px-4 text-sm border-b border-gray-200') }}
       </div>
     </div>
 
@@ -70,7 +70,7 @@ prev: ''
       <div class="min-w-fit mx-auto">
         <div class="flex justify-center">
           <div class="flex text-sm font-extralight">
-            {{ menu('py-3 px-4 transition-colors duration-300') }}
+            {{ menu(true, 'py-3 px-4 transition-colors duration-300') }}
           </div>
         </div>
       </div>
