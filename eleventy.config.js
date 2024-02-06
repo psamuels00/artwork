@@ -1,5 +1,4 @@
 const doodleFigureShortcode = require('./src/_eleventy/shortcode/doodle-figure');
-const { EleventyHtmlBasePlugin } = require('@11ty/eleventy');
 const figureShortcode = require('./src/_eleventy/shortcode/figure');
 const filters = require('./src/_eleventy/filters');
 const imageShortcode = require('./src/_eleventy/shortcode/image');
@@ -9,7 +8,9 @@ const sitemap = require('@quasibit/eleventy-plugin-sitemap');
 const sizeOf = require('image-size');
 
 
-module.exports = config => {
+module.exports = async (config) => {
+  const { EleventyHtmlBasePlugin } = await import('@11ty/eleventy');
+
   // logging
   config.setQuietMode(true);
 
