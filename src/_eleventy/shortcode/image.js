@@ -17,14 +17,14 @@ const stringifyAttributes = (attributeMap) => {
 };
 
 
-const pathnameFormat = (hash, src, width, format, options, outputDir) => {
+const pathnameFormat = (hash, src, width, format, options, outputPath) => {
   const m = src.match(/src\/images\/(.*)\/(.*?)\.\w+$/);
   if (!m) {
     return `${hash}-${width}.${format}`;
   }
 
   try {
-    dirPath = outputDir + '/' + m[1];
+    dirPath = outputPath + '/' + m[1];
     fs.mkdirSync(dirPath, { recursive: true });
   } catch (error) {
     console.error('Error creating directory:', error.message);
@@ -47,7 +47,7 @@ const shortcode = async function(
     loading = 'eager',
     maxWidth = undefined,
     sizes = '100vw',
-    outputPath = this.page.outputPath,
+    outputDir = this.eleventy.directories.output,
   } = options;
 
   let {
@@ -59,16 +59,15 @@ const shortcode = async function(
     widths.push(maxWidth, null);
   }
 
-  const outputRootDir = outputPath.split('/')[0];
-  const outputDir = outputRootDir + '/' + outputSubdir;
+  const outputPath = outputDir + '/' + outputSubdir;
 
   const imageMetadata = await Image(`src${src}`, {
     widths,
     formats,
-    outputDir,
+    outputDir: outputPath,
     urlPath: '/' + outputSubdir,
     filenameFormat: (hash, src, width, format, options) => {
-      return pathnameFormat(hash, src, width, format, options, outputDir);
+      return pathnameFormat(hash, src, width, format, options, outputPath);
     },
   });
 

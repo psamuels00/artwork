@@ -6,11 +6,11 @@ const outdent = require('outdent');
 const shortcode = async function(categoryName, imageFile) {
   const title = sepWords(rmFileExt(cleanupHack(imageFile)));
 
-  const outputPath = this.page.outputPath;
+  const outputDir = this.eleventy.directories.output;
   const imagePath = '/images/doodles/' + categoryName.replace(/ /g, '') + '/' + imageFile;
   const imageAlt = 'Doodle item ' + categoryName + ' image ' + title;
   const imageClass = 'swipeable hover:brightness-90';
-  const image = await imageShortcode(imagePath, imageAlt, imageClass, {outputPath})
+  const image = await imageShortcode(imagePath, imageAlt, imageClass, {outputDir})
 
   const href = ('/doodles/' + categoryName + '/' + title.replace(/ /g, '-')).toLowerCase() + '/';
   const caption = capWords(title);
