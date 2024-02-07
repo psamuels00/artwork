@@ -1,9 +1,9 @@
-const imageShortcode = require('./image.cjs');
-const outdent = require('outdent');
+import imageShortcode from './image.js';
+import outdent from 'outdent';
 
 
-const shortcode = async function(src, alt, title) {
-  imageClass = 'swipeable';
+export default async function(src, alt, title) {
+  const imageClass = 'swipeable';
 
   const outputDir = this.eleventy.directories.output;
   const image = await imageShortcode(src, alt, imageClass, {linkable: true, outputDir})
@@ -15,6 +15,3 @@ const shortcode = async function(src, alt, title) {
 
   return outdent`${figure}`;
 };
-
-
-module.exports = shortcode;

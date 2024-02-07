@@ -70,9 +70,6 @@ const indexByHref = (pages) => {
 };
 
 
-let pages = addPrev(addNext(normalize(config)));
-let lookup = indexByHref(pages);
+export let pages = addPrev(addNext(normalize(config)));
+export let lookup = indexByHref(pages);
 pages = pages.filter(page => page.include);
-
-
-module.exports = { pages, lookup };

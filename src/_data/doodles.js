@@ -1,3 +1,6 @@
+import { flattened, navigable } from './common.js';
+
+
 let categories = [
   {
     name: 'Abstract',
@@ -153,9 +156,8 @@ categories = categories.map(category => {
   };
 });
 
-const common = require('./common.cjs');
 
-module.exports = {
-    structured: common.navigable(categories),
-    flat: common.flattened(categories),
+export default {
+    structured: navigable(categories),
+    flat: flattened(categories),
 };

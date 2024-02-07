@@ -86,3 +86,6 @@ _None_
 
 **Refactor code**
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
+
+**New Feature**
+- Add search capability.  Get smart with automatically generated tags for all images.

@@ -1,16 +1,16 @@
-const doodleFigureShortcode = require('./src/_eleventy/shortcode/doodle-figure.cjs');
-const figureShortcode = require('./src/_eleventy/shortcode/figure.cjs');
-const filters = require('./src/_eleventy/filters.cjs');
-const imageShortcode = require('./src/_eleventy/shortcode/image.cjs');
-const minifyHtml = require('./src/_eleventy/minify-html.cjs');
-const path = require('path');
-const sitemap = require('@quasibit/eleventy-plugin-sitemap');
-const sizeOf = require('image-size');
+import { EleventyHtmlBasePlugin } from '@11ty/eleventy';
+import path from 'path';
+import sitemap from '@quasibit/eleventy-plugin-sitemap';
+import sizeOf from 'image-size';
+
+import doodleFigureShortcode from './src/_eleventy/shortcode/doodle-figure.js';
+import figureShortcode from './src/_eleventy/shortcode/figure.js';
+import { cleanupHack, rmFileExt, rmSpaces, sepWords } from './src/_eleventy/filters.js';
+import imageShortcode from './src/_eleventy/shortcode/image.js';
+import minifyHtml from './src/_eleventy/minify-html.js';
 
 
-module.exports = async (config) => {
-  const { EleventyHtmlBasePlugin } = await import('@11ty/eleventy');
-
+export default (config) => {
   // logging
   config.setQuietMode(true);
 
@@ -36,10 +36,10 @@ module.exports = async (config) => {
 
   // manage URLs
   config.addPlugin(EleventyHtmlBasePlugin);
-  config.addFilter('cleanupHack', filters.cleanupHack);
-  config.addFilter('rmFileExt', filters.rmFileExt);
-  config.addFilter('rmSpaces', filters.rmSpaces);
-  config.addFilter('sepWords', filters.sepWords);
+  config.addFilter('cleanupHack', cleanupHack);
+  config.addFilter('rmFileExt', rmFileExt);
+  config.addFilter('rmSpaces', rmSpaces);
+  config.addFilter('sepWords', sepWords);
 
   // images
   config.addNunjucksAsyncShortcode('doodleFigure', doodleFigureShortcode);
@@ -55,14 +55,13 @@ module.exports = async (config) => {
 
   // image orientation
   config.addFilter('isLandscape', imagePath => {
-    const fullPath = path.join(__dirname, 'src', imagePath);
     const dimensions = sizeOf(imagePath);
     return dimensions.width > dimensions.height;
   });
 
   // copyright year
   config.addFilter('yearSince', value => {
-    year = new Date().getFullYear();
+    const year = new Date().getFullYear();
     return (year === value) ? year : ` ${value}-${year}`;
   });
 

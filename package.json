@@ -2,8 +2,6 @@
   "name": "artwork",
   "version": "1.0.0",
   "description": "Perrin's Artwork",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
     "build-color": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify && COLOR_PORTFOLIO=1 npx @11ty/eleventy --output=dist/color --pathprefix=color/ && (cd dist/color/assets/; ln -fs ../../assets/images)",
     "build": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify && npx @11ty/eleventy",
@@ -17,20 +15,19 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@11ty/eleventy": "^3.0.0-alpha.4",
-    "concurrently": "^8.2.2",
-    "tailwindcss": "^3.4.0"
-  },
+  "type": "module",
   "dependencies": {
+    "@11ty/eleventy": "3.0.0-alpha.4",
     "@11ty/eleventy-img": "^3.1.8",
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
+    "concurrently": "^8.2.2",
     "favicons": "^7.1.5",
     "hammerjs": "^2.0.8",
     "html-minifier-terser": "^7.2.0",
     "http-server": "^14.1.1",
     "image-size": "^1.1.1",
     "linkinator": "^6.0.4",
-    "outdent": "^0.8.0"
+    "outdent": "^0.8.0",
+    "tailwindcss": "^3.4.1"
   }
 }

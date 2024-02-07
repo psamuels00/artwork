@@ -1,7 +1,7 @@
-const { minify } = require('html-minifier-terser');
+import { minify } from 'html-minifier-terser';
 
 
-module.exports = async (source, outputPath) => {
+export default async (source, outputPath) => {
   if (!outputPath.endsWith('.html')) {
     return source;
   }
@@ -25,8 +25,8 @@ module.exports = async (source, outputPath) => {
     useShortDoctype: true
   });
 
-//  const reduction = `(${((1 - (result.length / source.length)) * 100).toFixed(2)}% reduction)`;
-//  console.log(`MINIFY ${outputPath}`, source.length, `→`, result.length, reduction);
+  // const reduction = `(${((1 - (result.length / source.length)) * 100).toFixed(2)}% reduction)`;
+  // console.log(`MINIFY ${outputPath}`, source.length, `→`, result.length, reduction);
 
   return result;
 };

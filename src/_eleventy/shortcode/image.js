@@ -1,7 +1,7 @@
-const fs = require('fs');
-const Image = require('@11ty/eleventy-img');
-const outdent = require('outdent');
-const path = require('path');
+import fs from 'fs';
+import Image from '@11ty/eleventy-img';
+import outdent from 'outdent';
+import path from 'path';
 
 
 const outputSubdir = 'assets/images';
@@ -24,7 +24,7 @@ const pathnameFormat = (hash, src, width, format, options, outputPath) => {
   }
 
   try {
-    dirPath = outputPath + '/' + m[1];
+    const dirPath = outputPath + '/' + m[1];
     fs.mkdirSync(dirPath, { recursive: true });
   } catch (error) {
     console.error('Error creating directory:', error.message);
@@ -35,7 +35,7 @@ const pathnameFormat = (hash, src, width, format, options, outputPath) => {
 };
 
 
-const shortcode = async function(
+export default async function(
   src,
   alt,
   className = undefined,
@@ -124,7 +124,7 @@ const shortcode = async function(
     const aAttributes = stringifyAttributes({
       href: largestImage.url,
     });
-    aHtmlString = `<a ${aAttributes}>
+    const aHtmlString = `<a ${aAttributes}>
       ${pictureHtmlString}
     </a>`
     html = aHtmlString;
@@ -132,5 +132,3 @@ const shortcode = async function(
 
   return outdent`${html}`;
 };
-
-module.exports = shortcode;

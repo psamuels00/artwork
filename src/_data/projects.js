@@ -1,3 +1,6 @@
+import { flattened, navigable } from './common.js';
+
+
 let projects = [
   {
     name: 'Emma',
@@ -215,9 +218,8 @@ if (!process.env.COLOR_PORTFOLIO) {
   projects = projects.map(({color, ...rest}) => rest);
 }
 
-const common = require('./common.cjs');
 
-module.exports = {
-    structured: common.navigable(projects),
-    flat: common.flattened(projects),
+export default {
+    structured: navigable(projects),
+    flat: flattened(projects),
 };

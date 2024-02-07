@@ -1,6 +1,6 @@
-const { favicons } = require('favicons');
-const fs = require('fs/promises');
-const path = require('path');
+import { favicons } from 'favicons';
+import fs from 'fs/promises';
+import path from 'path';
 
 
 generate_favicons({

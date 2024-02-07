@@ -1,9 +1,9 @@
-const { capWords, cleanupHack, rmFileExt, sepWords } = require('../filters.cjs');
-const imageShortcode = require('./image.cjs');
-const outdent = require('outdent');
+import { capWords, cleanupHack, rmFileExt, sepWords } from '../filters.js';
+import imageShortcode from './image.js';
+import outdent from 'outdent';
 
 
-const shortcode = async function(categoryName, imageFile) {
+export default async function(categoryName, imageFile) {
   const title = sepWords(rmFileExt(cleanupHack(imageFile)));
 
   const outputDir = this.eleventy.directories.output;
@@ -24,6 +24,3 @@ const shortcode = async function(categoryName, imageFile) {
 
   return outdent`${figure}`;
 };
-
-
-module.exports = shortcode;
