@@ -1,13 +1,17 @@
 import { EleventyHtmlBasePlugin } from '@11ty/eleventy';
-import path from 'path';
 import sitemap from '@quasibit/eleventy-plugin-sitemap';
-import sizeOf from 'image-size';
 
-import doodleFigureShortcode from './src/_eleventy/shortcode/doodle-figure.js';
-import figureShortcode from './src/_eleventy/shortcode/figure.js';
-import { cleanupHack, rmFileExt, rmSpaces, sepWords } from './src/_eleventy/filters.js';
-import imageShortcode from './src/_eleventy/shortcode/image.js';
-import minifyHtml from './src/_eleventy/minify-html.js';
+import filterCapWords from './src/_eleventy/filter/cap-words.js';
+import filterCleanupHack from './src/_eleventy/filter/cleanup-hack.js';
+import filterIsLandscape from './src/_eleventy/filter/is-landscape.js';
+import filterRmFileExt from './src/_eleventy/filter/rm-file-ext.js';
+import filterRmSpaces from './src/_eleventy/filter/rm-spaces.js';
+import filterSepWords from './src/_eleventy/filter/sep-words.js';
+import filterYearSince from './src/_eleventy/filter/year-since.js';
+import shortcodeDoodleFigure from './src/_eleventy/shortcode/doodle-figure.js';
+import shortcodeFigure from './src/_eleventy/shortcode/figure.js';
+import shortcodeImage from './src/_eleventy/shortcode/image.js';
+import transformMinifyHtml from './src/_eleventy/transform/minify-html.js';
 
 
 export default (config) => {
@@ -36,34 +40,24 @@ export default (config) => {
 
   // manage URLs
   config.addPlugin(EleventyHtmlBasePlugin);
-  config.addFilter('cleanupHack', cleanupHack);
-  config.addFilter('rmFileExt', rmFileExt);
-  config.addFilter('rmSpaces', rmSpaces);
-  config.addFilter('sepWords', sepWords);
+  config.addFilter('cleanupHack', filterCleanupHack);
+  config.addFilter('rmFileExt', filterRmFileExt);
+  config.addFilter('rmSpaces', filterRmSpaces);
+  config.addFilter('sepWords', filterSepWords);
 
   // images
-  config.addNunjucksAsyncShortcode('doodleFigure', doodleFigureShortcode);
-  config.addNunjucksAsyncShortcode('figure', figureShortcode);
-  config.addNunjucksAsyncShortcode('image', imageShortcode);
-
-  // image title
-  config.addFilter('capWords', value => {
-    return value.replace(/\b\w/g, function(match) {
-        return match.toUpperCase();
-    });
-  });
+  config.addNunjucksAsyncShortcode('doodleFigure', shortcodeDoodleFigure);
+  config.addNunjucksAsyncShortcode('figure', shortcodeFigure);
+  config.addNunjucksAsyncShortcode('image', shortcodeImage);
 
   // image orientation
-  config.addFilter('isLandscape', imagePath => {
-    const dimensions = sizeOf(imagePath);
-    return dimensions.width > dimensions.height;
-  });
+  config.addFilter('isLandscape', filterIsLandscape);
+
+  // image title
+  config.addFilter('capWords', filterCapWords);
 
   // copyright year
-  config.addFilter('yearSince', value => {
-    const year = new Date().getFullYear();
-    return (year === value) ? year : ` ${value}-${year}`;
-  });
+  config.addFilter('yearSince', filterYearSince);
 
   // sitemap
   config.addPlugin(sitemap, {
@@ -73,7 +67,7 @@ export default (config) => {
   });
 
   // minify HTML
-  config.addTransform('html-minify', minifyHtml);
+  config.addTransform('html-minify', transformMinifyHtml);
 
   return {
     dir: {

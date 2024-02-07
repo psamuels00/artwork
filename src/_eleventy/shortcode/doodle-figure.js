@@ -1,6 +1,10 @@
-import { capWords, cleanupHack, rmFileExt, sepWords } from '../filters.js';
-import imageShortcode from './image.js';
 import outdent from 'outdent';
+
+import capWords from '../filter/cap-words.js';
+import cleanupHack from '../filter/cleanup-hack.js';
+import rmFileExt from '../filter/rm-file-ext.js';
+import sepWords from '../filter/sep-words.js';
+import shortcodeImage from './image.js';
 
 
 export default async function(categoryName, imageFile) {
@@ -10,7 +14,7 @@ export default async function(categoryName, imageFile) {
   const imagePath = '/images/doodles/' + categoryName.replace(/ /g, '') + '/' + imageFile;
   const imageAlt = 'Doodle item ' + categoryName + ' image ' + title;
   const imageClass = 'swipeable hover:brightness-90';
-  const image = await imageShortcode(imagePath, imageAlt, imageClass, {outputDir})
+  const image = await shortcodeImage(imagePath, imageAlt, imageClass, {outputDir})
 
   const href = ('/doodles/' + categoryName + '/' + title.replace(/ /g, '-')).toLowerCase() + '/';
   const caption = capWords(title);

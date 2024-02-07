@@ -85,7 +85,12 @@ _None_
   - Catchpoint's Webpage Test
 
 **Refactor code**
+- Use _data/pages.js instead of defining new menu_items in layouts/doodles.html and layouts/portfolio.html
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
 
 **New Feature**
 - Add search capability.  Get smart with automatically generated tags for all images.
+
+**Source management**
+- Generated favicons should not be stored in git, in src/_includes/favicons.  Instead,
+  "npm run favicons" should be run as part of deployment.

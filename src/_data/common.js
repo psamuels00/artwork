@@ -1,4 +1,5 @@
-import { rmFileExt, sepWords } from '../_eleventy/filters.js';
+import sepWords from '../_eleventy/filter/sep-words.js';
+import rmFileExt from '../_eleventy/filter/rm-file-ext.js';
 
 
 export const navigable = (items) => {
