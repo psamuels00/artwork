@@ -153,7 +153,7 @@ categories = categories.map(category => {
   };
 });
 
-const common = require('./common');
+const common = require('./common.cjs');
 
 module.exports = {
     structured: common.navigable(categories),

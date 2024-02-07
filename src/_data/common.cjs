@@ -1,4 +1,4 @@
-const filters = require('../_eleventy/filters');
+const filters = require('../_eleventy/filters.cjs');
 
 
 module.exports = {

@@ -1,4 +1,4 @@
-const imageShortcode = require('./image');
+const imageShortcode = require('./image.cjs');
 const outdent = require('outdent');
 
 

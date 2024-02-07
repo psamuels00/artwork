@@ -1,5 +1,5 @@
-const { capWords, cleanupHack, rmFileExt, sepWords } = require('../filters');
-const imageShortcode = require('./image');
+const { capWords, cleanupHack, rmFileExt, sepWords } = require('../filters.cjs');
+const imageShortcode = require('./image.cjs');
 const outdent = require('outdent');
 
 

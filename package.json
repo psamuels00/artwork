@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Perrin's Artwork",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build-color": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify && COLOR_PORTFOLIO=1 npx @11ty/eleventy --output=dist/color --pathprefix=color/ && (cd dist/color/assets/; ln -fs ../../assets/images)",
     "build": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify && npx @11ty/eleventy",

@@ -215,7 +215,7 @@ if (!process.env.COLOR_PORTFOLIO) {
   projects = projects.map(({color, ...rest}) => rest);
 }
 
-const common = require('./common');
+const common = require('./common.cjs');
 
 module.exports = {
     structured: common.navigable(projects),
