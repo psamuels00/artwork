@@ -19,6 +19,9 @@ jobs:
       - name: 👨‍👨‍👧‍👦 Install Dependencies
         run: npm install
 
+      - name: ❤️  Make favicons
+        run: npm run make-favicons
+
       - name: 🏗  Build Site️
         run: npm run build
 

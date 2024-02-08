@@ -8,7 +8,7 @@
     "css": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify --watch",
     "debug": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify --watch\" \"DEBUG=Eleventy* npx @11ty/eleventy --serve\"",
     "develop": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify --watch\" \"npx @11ty/eleventy --serve\"",
-    "favicons": "node src/_eleventy/make-favicons.js",
+    "make-favicons": "node src/_eleventy/make-favicons.js",
     "start": "npx @11ty/eleventy --serve",
     "test": "concurrently \"npx http-server -p 8081 ./dist\" \"npx linkinator http://0.0.0.0:8081 --skip '^https://(www.linkedin.com|perrins-art.com)/' --recurse; rc=$?; kill -2 \\`lsof -i:8081 -t\\` || true; exit $rc\""
   },
