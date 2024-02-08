@@ -22,8 +22,8 @@ jobs:
       - name: 🏗  Build Site️
         run: npm run build
 
-      - name: 🏗  Build Color Site at /color
-        run: npm run build-color
+      # - name: 🌈  Build Color Site at /color
+      #   run: npm run build-color
 
       - name: 🔗 Run Tests
         run: npm test
