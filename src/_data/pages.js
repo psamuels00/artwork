@@ -1,4 +1,4 @@
-const config = [
+const configuration = [
   { name: 'Home', href: '/' },
   { name: 'Portfolio', enter: '/portfolio/emma/' },
   { name: 'Doodles', enter: '/doodles/abstract/' },
@@ -8,69 +8,75 @@ const config = [
 ];
 
 
-const href = (name) => {
-  return '/' + name.toLowerCase() + '/';
-};
-
-
-const normalize = (pages) => {
-  for (let page of pages) {
-    page.href = page.href || href(page.name);
-    page.enter = page.enter || '';
-    page.include = page.include ??= true;
+class Config {
+  constructor(pages) {
+    pages = this.normalize(pages);
+    pages = this.addPrev(pages);
+    pages = this.addNext(pages);
+    this.lookup = this.indexByHref(pages)
+    this.pages = pages.filter(page => page.include);
   }
 
-  return pages;
-};
-
-
-const addPrev = (pages) => {
-  let offset = pages.length - 1;
-  while (!pages[offset].include) {
-    offset -= 1;
+  href(name) {
+    return '/' + name.toLowerCase() + '/';
   }
 
-  for (let i = 0; i < pages.length; i++) {
-    let page = pages[i];
-    page.prev = pages[offset].href;
-    if (page.include) {
-      offset = i;
+  normalize(pages) {
+    for (let page of pages) {
+      page.href = page.href || this.href(page.name);
+      page.enter = page.enter || '';
+      page.include = page.include ??= true;
     }
+
+    return pages;
   }
 
-  return pages;
-};
-
-
-const addNext = (pages) => {
-  let offset = 0;
-  while (!pages[offset].include) {
-    offset += 1;
-  }
-
-  for (let i = pages.length - 1; i >= 0; i--) {
-    let page = pages[i];
-    page.next = pages[offset].href;
-    if (page.include) {
-      offset = i;
+  addPrev(pages) {
+    let offset = pages.length - 1;
+    while (!pages[offset].include) {
+      offset -= 1;
     }
+
+    for (let i = 0; i < pages.length; i++) {
+      let page = pages[i];
+      page.prev = pages[offset].href;
+      if (page.include) {
+        offset = i;
+      }
+    }
+
+    return pages;
   }
 
-  return pages;
-};
+  addNext(pages) {
+    let offset = 0;
+    while (!pages[offset].include) {
+      offset += 1;
+    }
 
+    for (let i = pages.length - 1; i >= 0; i--) {
+      let page = pages[i];
+      page.next = pages[offset].href;
+      if (page.include) {
+        offset = i;
+      }
+    }
 
-const indexByHref = (pages) => {
-  const lookup = {};
-  for (let page of pages) {
-    lookup[page.href] = page;
+    return pages;
   }
 
-  return lookup;
-};
+  indexByHref(pages) {
+    const lookup = {};
+    for (let page of pages) {
+      lookup[page.href] = page;
+    }
+
+    return lookup;
+  }
+}
 
 
-export let pages = addPrev(addNext(normalize(config)));
-export const lookup = indexByHref(pages);
+const config = new Config(configuration);
 
-pages = pages.filter(page => page.include);
+export const pages = config.pages;
+export const lookup = config.lookup;
