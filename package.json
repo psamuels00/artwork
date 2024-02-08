@@ -4,7 +4,7 @@
   "description": "Perrin's Artwork",
   "scripts": {
     "build-color": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify && COLOR_PORTFOLIO=1 npx @11ty/eleventy --output=dist/color --pathprefix=color/",
-    "build": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify && npx @11ty/eleventy",
+    "build": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify && NODE_ENV=production npx @11ty/eleventy",
     "css": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify --watch",
     "debug": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify --watch\" \"DEBUG=Eleventy* npx @11ty/eleventy --serve\"",
     "develop": "concurrently \"tailwindcss -i ./src/_includes/css/global.css -o build/global.css --watch\" \"npx @11ty/eleventy --serve\"",

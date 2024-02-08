@@ -67,7 +67,9 @@ export default (config) => {
   });
 
   // minify HTML
-  config.addTransform('html-minify', transformMinifyHtml);
+  if (process.env.NODE_ENV === 'production') {
+    config.addTransform('html-minify', transformMinifyHtml);
+  }
 
   return {
     dir: {
