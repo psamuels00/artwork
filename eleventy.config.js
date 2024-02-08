@@ -15,7 +15,7 @@ import shortcodeImage from './src/_eleventy/shortcode/image.js';
 import transformMinifyHtml from './src/_eleventy/transform/minify-html.js';
 
 
-await makeFavicons({
+makeFavicons({
   source: 'src/images/meta/favicon/EmmasFace.png',
   destDir: 'build/assets/favicons/',
   htmlFile: 'favicons.html',
