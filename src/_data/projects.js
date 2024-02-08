@@ -101,6 +101,7 @@ let projects = [
   {
     name: 'Backyard Hills',
     title: 'Outpost Backyard Hills',
+    shortName: 'Hills',
     description: 'View of the hills from the back yard of The Outpost.',
     category: 'Landscape painting',
     date: 'Dec, 2023',
@@ -125,6 +126,7 @@ let projects = [
   {
     name: 'The Onion',
     title: 'The Onion',
+    shortName: 'Onion',
     description: 'My first painting, a product of Covid lockdown and the need to express myself.',
     category: 'Still life painting',
     date: '2020',
@@ -146,6 +148,7 @@ let projects = [
   {
     name: 'Starry Night',
     title: 'Starry Night',
+    shortName: 'Starry',
     description: 'A one-off, early painting that happened one day while phoning in to a boring meeting at work, ' +
                  'holding a paintbrush with black paint, and staring at my wallpaper image of the famous Cypresses.',
     category: 'Landscape painting',
@@ -165,6 +168,7 @@ let projects = [
   {
     name: 'Beach Boardwalk',
     title: 'Beach Boardwalk',
+    shortName: 'Boardwalk',
     description: 'A sketch I made from pure thin air for a painting, not yet painted.',
     category: 'Landscape drawing',
     date: 'Oct, 2023',
@@ -188,6 +192,7 @@ let projects = [
   {
     name: 'Desert Flower',
     title: 'Desert Flower',
+    shortName: 'Desert',
     description: 'After making a color wheel, the leftover paint expressed itself as a landscape.',
     category: 'Landscape painting',
     date: 'Nov, 2023',

@@ -7,25 +7,13 @@ prev: ''
 {% import "snippets/svg.html" as macros %}
 
 
-{% set menu_items = [
-  { name: 'Emma' },
-  { name: 'The Demo' },
-  { name: 'Dolphin' },
-  { name: 'Backyard Hills', short: 'Hills' },
-  { name: 'The Onion', short: 'Onion' },
-  { name: 'Starry Night', short: 'Starry' },
-  { name: 'Beach Boardwalk', short: 'Boardwalk' },
-  { name: 'Desert Flower', short: 'Desert' }
-] %}
-
-
 {% macro menu(useShortName, extraClass) %}
-  {% for menu_item in menu_items %}
+  {% for menuItem in projects.structured %}
     {# name #}
-    {% set name = (menu_item.short if useShortName else undefined) | default(menu_item.name) %}
+    {% set name = (menuItem.shortName if useShortName else undefined) | default(menuItem.name) %}
 
     {# href #}
-    {% set href = '/portfolio/' + menu_item.name.toLowerCase().replaceAll(' ', '-') + '/' %}
+    {% set href = '/portfolio/' + menuItem.name.toLowerCase().replaceAll(' ', '-') + '/' %}
 
     {# class #}
     {% set class = extraClass + ' ' + (item.color.menu.hover | default('hover:bg-stone-200')) %}

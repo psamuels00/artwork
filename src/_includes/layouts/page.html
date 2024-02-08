@@ -6,12 +6,12 @@ layout: 'layouts/base.html'
 
 
 {% macro menu(extraClass) %}
-  {% for menu_item in pages.pages %}
-    {% set name = menu_item.name %}
-    {% set href = menu_item.href %}
+  {% for menuItem in pages.pages %}
+    {% set name = menuItem.name %}
+    {% set href = menuItem.href %}
 
     {% set class = extraClass + ' ' + (item.color.menu.hover | default('hover:bg-stone-200')) %}
-    {% if menu_item.href == '/' and page.url == '/' or menu_item.href != '/' and page.url.startsWith(href) %}
+    {% if menuItem.href == '/' and page.url == '/' or menuItem.href != '/' and page.url.startsWith(href) %}
       {% set class = class + ' ' + (item.color.menu.current | default('bg-stone-300')) %}
     {% endif %}
 

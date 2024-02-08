@@ -71,5 +71,6 @@ const indexByHref = (pages) => {
 
 
 export let pages = addPrev(addNext(normalize(config)));
-export let lookup = indexByHref(pages);
+export const lookup = indexByHref(pages);
+
 pages = pages.filter(page => page.include);

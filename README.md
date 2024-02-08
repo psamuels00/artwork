@@ -85,7 +85,6 @@ _None_
   - Catchpoint's Webpage Test
 
 **Refactor code**
-- Use _data/pages.js instead of defining new menu_items in layouts/doodles.html and layouts/portfolio.html
 - _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
 
 **New Feature**

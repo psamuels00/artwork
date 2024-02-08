@@ -5,23 +5,10 @@ layout: 'layouts/page.html'
 {% import "snippets/svg.html" as macros %}
 
 
-{% set menu_items = [
-  'abstract',
-  'animals',
-  'faces',
-  'flowers',
-  'outdoors',
-  'people',
-  'stills',
-  'textures',
-  'wacky'
-] %}
-
-
 {% macro menu(extraClass) %}
-  {% for name in menu_items %}
+  {% for menuItem in doodles.structured %}
     {# href #}
-    {% set href = '/doodles/' + name + '/' %}
+    {% set href = '/doodles/' + menuItem.name | lower + '/' %}
 
     {# class #}
     {% set class = extraClass + ' ' + (item.color.menu.hover | default('hover:bg-stone-200')) %}
@@ -29,7 +16,7 @@ layout: 'layouts/page.html'
       {% set class = class + ' ' + (item.color.menu.current | default('bg-stone-300')) %}
     {% endif %}
 
-    <a href="{{href}}" class="{{class}}">{{name | capitalize}}</a>
+    <a href="{{href}}" class="{{class}}">{{menuItem.name}}</a>
   {% endfor %}
 {% endmacro %}
 
