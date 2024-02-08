@@ -15,15 +15,18 @@ import shortcodeImage from './src/_eleventy/shortcode/image.js';
 import transformMinifyHtml from './src/_eleventy/transform/minify-html.js';
 
 
+console.log('@@@ before makeFavicons()')
 await makeFavicons({
   source: 'src/images/meta/favicon/EmmasFace.png',
   destDir: 'build/assets/favicons/',
   htmlFile: 'favicons.html',
   hrefPath: '/assets/favicons/',
 });
+console.log('@@@ after makeFavicons()')
 
 
 export default (config) => {
+  console.log('@@@ begin exported function')
   // logging
   config.setQuietMode(true);
 
@@ -75,6 +78,7 @@ export default (config) => {
   // minify HTML
   config.addTransform('html-minify', transformMinifyHtml);
 
+  console.log('@@@ end exported function')
   return {
     dir: {
       input: 'src',
