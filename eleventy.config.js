@@ -67,7 +67,7 @@ export default (config) => {
   });
 
   // minify HTML
-  config.addTransform('html-minify', transformMinifyHtml);
+  //config.addTransform('html-minify', transformMinifyHtml);
 
   return {
     dir: {

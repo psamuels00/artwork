@@ -8,6 +8,7 @@ See [perrins-art.com](https://perrins-art.com/).
 
 - 11ty - Static Site builder
 - Nunjucks - Javascript templating
+- Alpine.js - Lightweight framework, replaces jQuery
 - Tailwind CSS - Utility-based styling framework
 - Github Pages - Hosting
 - Github Actions - Deployment
@@ -26,7 +27,11 @@ Extra functionality:
 
 ## Develop
 
-To build the pages and serve them up during development, run the following commands in separate windows:
+To build the pages and serve them up during development, first generate the favicons files:
+
+    npm run make-favicons
+
+Next run the following commands in separate windows:
 
     npm run css   # Tailwind transformations
     npm start     # Build pages and run 11ty server
@@ -36,14 +41,6 @@ To build the pages and serve them up during development, run the following comma
     npm run develop
 
 Then access the site at http://0.0.0.0:8080/
-
-
-## Update Favicons
-
-If any change is made to the image used for favicons, then the favicons need to be
-regenerated as follows:
-
-    npm run favicons
 
 
 ## Test
@@ -89,3 +86,4 @@ _None_
 
 **New Feature**
 - Add search capability.  Get smart with automatically generated tags for all images.
+- Minify HTML only for production

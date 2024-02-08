@@ -30,7 +30,7 @@ prev: ''
 
   <!-- mobile-first, responsive navigation -->
   <nav>
-    <div class="lg:hidden mb-4">
+    <div class="lg:hidden mb-4" x-data="{ open: false }">
       <!-- 🍔 menu button -->
       <div class="flex justify-end items-center mr-2">
         <div class="p-2">
@@ -43,13 +43,14 @@ prev: ''
           {% endif %}
         </div>
         {% set hoverClass = item.color.menu.hover | default('hover:bg-stone-100') %}
-        <button class="mobile-portfolio-menu-button flex p-2 gap-4 {{hoverClass}}" aria-label="Portfolio menu">
+        <button class="mobile-portfolio-menu-button flex p-2 gap-4 {{hoverClass}}"
+                aria-label="Portfolio menu" @click="open = !open">
           {{ macros.svgPath("w-6", 24, 24, 2, "M4 6h16M4 12h16M4 18h16") }} <!-- 🍔 -->
         </button>
       </div>
 
       <!-- mobile menu -->
-      <div class="mobile-portfolio-menu hidden flex flex-col text-center border-t border-gray-200">
+      <div class="mobile-portfolio-menu flex flex-col text-center border-t border-gray-200" x-show="open">
         {{ menu(false, 'py-3 px-4 text-sm border-b border-gray-200') }}
       </div>
     </div>
@@ -65,17 +66,6 @@ prev: ''
       </div>
     </div>
   </nav>
-
-  <script type="text/javascript">
-    (function() {
-      const btn = document.querySelector("button.mobile-portfolio-menu-button");
-      const menu = document.querySelector(".mobile-portfolio-menu");
-
-      btn.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    })()
-  </script>
 
   <div class="main_content">
     {% block content %}
