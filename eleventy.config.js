@@ -8,10 +8,19 @@ import filterRmFileExt from './src/_eleventy/filter/rm-file-ext.js';
 import filterRmSpaces from './src/_eleventy/filter/rm-spaces.js';
 import filterSepWords from './src/_eleventy/filter/sep-words.js';
 import filterYearSince from './src/_eleventy/filter/year-since.js';
+import makeFavicons from './src/_eleventy/make-favicons.js';
 import shortcodeDoodleFigure from './src/_eleventy/shortcode/doodle-figure.js';
 import shortcodeFigure from './src/_eleventy/shortcode/figure.js';
 import shortcodeImage from './src/_eleventy/shortcode/image.js';
 import transformMinifyHtml from './src/_eleventy/transform/minify-html.js';
+
+
+makeFavicons({
+  source: 'src/images/meta/favicon/EmmasFace.png',
+  destDir: 'build/assets/favicons/',
+  htmlFile: 'favicons.html',
+  hrefPath: '/assets/favicons/',
+});
 
 
 export default (config) => {
@@ -24,9 +33,6 @@ export default (config) => {
   });
   config.addPassthroughCopy({
     'src/_docs/': 'assets/docs/',
-  });
-  config.addPassthroughCopy({
-    'src/_includes/favicons/': 'assets/favicons/',
   });
   config.addPassthroughCopy({
     'src/_includes/fonts/': 'fonts/',
