@@ -24,9 +24,7 @@ export default async (options = {}) => {
 
   let response = undefined;
   try {
-    console.log('@ make-favicons before favicons()')
     response = await favicons(source, configuration);
-    console.log('@ make-favicons after favicons()')
   } catch (error) {
     console.log('***** Error generating favicons: %s', error.message);
     return;
@@ -34,10 +32,6 @@ export default async (options = {}) => {
 
   await fs.mkdir(destDir, { recursive: true });
 
-  console.log('@ make-favicons 1')
-  await fs.writeFile(path.join(destDir, htmlFile), response.html.join("\n"));
-
-  console.log('@ make-favicons 2')
   await Promise.all(
     response.images.map(
       async (image) =>
@@ -45,12 +39,12 @@ export default async (options = {}) => {
     ),
   );
 
-  console.log('@ make-favicons 3')
   await Promise.all(
     response.files.map(
       async (file) =>
         await fs.writeFile(path.join(destDir, file.name), file.contents),
     ),
   );
-  console.log('@ make-favicons 4')
+
+  await fs.writeFile(path.join(destDir, htmlFile), response.html.join("\n"));
 }
