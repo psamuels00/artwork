@@ -38,6 +38,14 @@ To build the pages and serve them up during development, run the following comma
 Then access the site at http://0.0.0.0:8080/
 
 
+## Update Favicons
+
+If any change is made to the image used for favicons, then the favicons need to be
+regenerated as follows:
+
+    npm run favicons
+
+
 ## Test
 
 The following command will check for broken links.
@@ -82,3 +90,7 @@ _None_
 
 **New Feature**
 - Add search capability.  Get smart with automatically generated tags for all images.
+
+**Source management**
+- Generated favicons should not be stored in git, in src/_includes/favicons.  Instead,
+  "npm run favicons" should be run as part of deployment.

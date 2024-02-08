@@ -3,7 +3,15 @@ import fs from 'fs/promises';
 import path from 'path';
 
 
-export default async (options = {}) => {
+generate_favicons({
+  source: 'src/images/meta/favicon/EmmasFace.png',
+  destDir: 'src/_includes/favicons/',
+  htmlFile: 'favicons.html',
+  hrefPath: '/assets/favicons/',
+});
+
+
+async function generate_favicons(options = {}) {
   const {
     source = undefined,
     destDir = undefined,
