@@ -90,7 +90,3 @@ _None_
 
 **New Feature**
 - Add search capability.  Get smart with automatically generated tags for all images.
-
-**Source management**
-- Generated favicons should not be stored in git, in src/_includes/favicons.  Instead,
-  "npm run favicons" should be run as part of deployment.
