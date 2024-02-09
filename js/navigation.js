@@ -46,6 +46,7 @@
 
     {% if prevEvent or nextEvent %}
       document.addEventListener('DOMContentLoaded', () => {
+        // Register swipe functions now that deferred Hammer JS loading has completed.
         swipeLeftRight(gotoPrev, gotoNext);
       });
 
