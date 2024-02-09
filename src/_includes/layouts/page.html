@@ -58,7 +58,7 @@ layout: 'layouts/base.html'
     </div>
 
     <!-- mobile menu -->
-    <div class="flex flex-col text-center text-sm border-t border-gray-200" x-show="open">
+    <div class="flex flex-col text-center text-sm border-t border-gray-200" x-cloak x-show="open">
       {{ menu('py-3 px-4 border-b border-gray-200') }}
     </div>
   </div>

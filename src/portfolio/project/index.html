@@ -40,7 +40,7 @@ eleventyComputed:
     <span x-show="open">
       {{ macros.svgPath("", 24, 24, 2, "M18 15l-6-6-6 6") }} <!-- "^" -->
     </span>
-    <span x-show="!open">
+    <span x-cloak x-show="!open">
       {{ macros.svgPath("", 24, 24, 2, "M6 9l6 6 6-6") }} <!-- "v" -->
     </span>
   </div>
