@@ -1,17 +1,9 @@
 import { EleventyHtmlBasePlugin } from '@11ty/eleventy';
 import sitemap from '@quasibit/eleventy-plugin-sitemap';
 
-import filterCapWords from './src/_eleventy/filter/cap-words.js';
-import filterCleanupHack from './src/_eleventy/filter/cleanup-hack.js';
-import filterIsLandscape from './src/_eleventy/filter/is-landscape.js';
-import filterRmFileExt from './src/_eleventy/filter/rm-file-ext.js';
-import filterRmSpaces from './src/_eleventy/filter/rm-spaces.js';
-import filterSepWords from './src/_eleventy/filter/sep-words.js';
-import filterYearSince from './src/_eleventy/filter/year-since.js';
-import shortcodeDoodleFigure from './src/_eleventy/shortcode/doodle-figure.js';
-import shortcodeFigure from './src/_eleventy/shortcode/figure.js';
-import shortcodeImage from './src/_eleventy/shortcode/image.js';
-import transformMinifyHtml from './src/_eleventy/transform/minify-html.js';
+import filters from './src/_eleventy/filter/_all.js';
+import shortcodes from './src/_eleventy/shortcode/_all.js';
+import transforms from './src/_eleventy/transform/_all.js';
 
 
 export default (config) => {
@@ -40,24 +32,24 @@ export default (config) => {
 
   // manage URLs
   config.addPlugin(EleventyHtmlBasePlugin);
-  config.addFilter('cleanupHack', filterCleanupHack);
-  config.addFilter('rmFileExt', filterRmFileExt);
-  config.addFilter('rmSpaces', filterRmSpaces);
-  config.addFilter('sepWords', filterSepWords);
+  config.addFilter('cleanupHack', filters.cleanupHack);
+  config.addFilter('rmFileExt', filters.rmFileExt);
+  config.addFilter('rmSpaces', filters.rmSpaces);
+  config.addFilter('sepWords', filters.sepWords);
 
   // images
-  config.addNunjucksAsyncShortcode('doodleFigure', shortcodeDoodleFigure);
-  config.addNunjucksAsyncShortcode('figure', shortcodeFigure);
-  config.addNunjucksAsyncShortcode('image', shortcodeImage);
+  config.addNunjucksAsyncShortcode('doodleFigure', shortcodes.doodleFigure);
+  config.addNunjucksAsyncShortcode('figure', shortcodes.figure);
+  config.addNunjucksAsyncShortcode('image', shortcodes.image);
 
   // image orientation
-  config.addFilter('isLandscape', filterIsLandscape);
+  config.addFilter('isLandscape', filters.isLandscape);
 
   // image title
-  config.addFilter('capWords', filterCapWords);
+  config.addFilter('capWords', filters.capWords);
 
   // copyright year
-  config.addFilter('yearSince', filterYearSince);
+  config.addFilter('yearSince', filters.yearSince);
 
   // sitemap
   config.addPlugin(sitemap, {
@@ -68,7 +60,7 @@ export default (config) => {
 
   // minify HTML
   if (process.env.NODE_ENV === 'production') {
-    config.addTransform('html-minify', transformMinifyHtml);
+    config.addTransform('html-minify', transforms.minifyHtml);
   }
 
   return {
