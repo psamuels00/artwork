@@ -5,7 +5,6 @@ pagination:
   size: 1
   alias: category
 permalink: "doodles/{{ category.name | slug }}/"
-goto: ['next', 'prev', 'enter', 'escape']
 sitemap:
   priority: 0.7
 eleventyComputed:
@@ -28,22 +27,22 @@ eleventyComputed:
   {{ macros.scrollToTop("md:hidden hover:bg-stone-100") }}
 {% endif %}
 
+
+{% set enterUrl = ('/doodles/' | url) + (category.name | slug) + '/' + (category.images[0] | cleanupHack | rmFileExt | sepWords | slug) + '/' %}
+<div x-data @keydown.window.prevent.enter="window.location.href = '{{ enterUrl }}'"></div>
+<div x-data @keydown.window.prevent.down="window.location.href = '{{ enterUrl }}'"></div>
+<div x-data @keydown.window.prevent.left="gotoPrev()"></div>
+<div x-data @keydown.window.prevent.right="gotoNext()"></div>
+<div x-data @keydown.window.prevent.escape="window.location.href = '{{'/doodles/' | url}}'"></div>
+<div x-data @keydown.window.prevent.up="window.location.href = '{{'/doodles/' | url}}'"></div>
+
+
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{'/' | url}}doodles/{{category.prev | slug}}/'
+    window.location.href = '{{'/' | url}}doodles/{{category.prev | slug}}/';
   }
 
   function gotoNext() {
-    window.location.href = '{{'/' | url}}doodles/{{category.next | slug}}/'
-  }
-
-  function gotoEscape() {
-    event.preventDefault();
-    window.location.href = '{{'/doodles/' | url}}'
-  }
-
-  function gotoEnter() {
-    event.preventDefault();
-    window.location.href = '{{'/' | url}}doodles/{{category.name | slug}}/{{category.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/'
+    window.location.href = '{{'/' | url}}doodles/{{category.next | slug}}/';
   }
 </script>

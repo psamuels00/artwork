@@ -112,3 +112,19 @@ layout: 'layouts/base.html'
     <p>&copy;{{ 2024 | yearSince }} · Perrin</p>
   </div>
 </footer>
+
+
+{% if page.url in pages.lookup %}
+  <div x-data @keydown.window.prevent.left="gotoPrev()"></div>
+  <div x-data @keydown.window.prevent.right="gotoNext()"></div>
+
+  <script type="text/javascript">
+    function gotoPrev() {
+      window.location .href = '{{pages.lookup[page.url].prev | url}}';
+    }
+
+    function gotoNext() {
+      window.location .href = '{{pages.lookup[page.url].next | url}}';
+    }
+  </script>
+{% endif %}

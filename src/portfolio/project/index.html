@@ -5,7 +5,6 @@ pagination:
   size: 1
   alias: item
 permalink: "portfolio/{{ item.name | slug }}/"
-goto: ['next', 'prev', 'enter', 'escape']
 sitemap:
   priority: 0.8
 eleventyComputed:
@@ -91,22 +90,22 @@ eleventyComputed:
   {{ macros.scrollToTop(item.color.menu.hover | default('hover:bg-stone-200')) }}
 {% endif %}
 
+
+{% set enterUrl = ('/portfolio/' | url) + (item.name | slug) + '/' + (item.images[0] | cleanupHack | rmFileExt | sepWords | slug) + '/' %}
+<div x-data @keydown.window.prevent.enter="window.location.href = '{{ enterUrl }}'"></div>
+<div x-data @keydown.window.prevent.down="window.location.href = '{{ enterUrl }}'"></div>
+<div x-data @keydown.window.prevent.left="gotoPrev()"></div>
+<div x-data @keydown.window.prevent.right="gotoNext()"></div>
+<div x-data @keydown.window.prevent.escape="window.location.href = '{{'/portfolio/' | url}}'"></div>
+<div x-data @keydown.window.prevent.up="window.location.href = '{{'/portfolio/' | url}}'"></div>
+
+
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{'/' | url}}portfolio/{{item.prev | slug}}/'
+    window.location.href = '{{'/' | url}}portfolio/{{item.prev | slug}}/';
   }
 
   function gotoNext() {
-    window.location.href = '{{'/' | url}}portfolio/{{item.next | slug}}/'
-  }
-
-  function gotoEscape() {
-    event.preventDefault();
-    window.location.href = '{{'/portfolio/' | url}}'
-  }
-
-  function gotoEnter() {
-    event.preventDefault();
-    window.location.href = '{{'/' | url}}portfolio/{{item.name | slug}}/{{item.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/'
+    window.location.href = '{{'/' | url}}portfolio/{{item.next | slug}}/';
   }
 </script>

@@ -1,7 +1,7 @@
 const configuration = [
   { name: 'Home', href: '/' },
-  { name: 'Portfolio', enter: '/portfolio/emma/' },
-  { name: 'Doodles', enter: '/doodles/abstract/' },
+  { name: 'Portfolio' },
+  { name: 'Doodles' },
   { name: 'About' },
   { name: 'Resume' },
   { name: 'Nightmare', include: false },

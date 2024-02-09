@@ -28,3 +28,7 @@ sitemap:
 
 {% import "snippets/scroll_to_top.html" as macros %}
 {{ macros.scrollToTop("md:hidden hover:bg-stone-100") }}
+
+
+<div x-data @keydown.window.prevent.enter="window.location.href = '{{'/portfolio/emma/' | url}}'"></div>
+<div x-data @keydown.window.prevent.down="window.location.href = '{{'/portfolio/emma/' | url}}'"></div>

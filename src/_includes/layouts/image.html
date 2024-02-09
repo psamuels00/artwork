@@ -1,6 +1,5 @@
 ---
 layout: 'layouts/base.html'
-goto: ['prev', 'next', 'escape']
 ---
 
 {% import "snippets/svg.html" as macros %}
@@ -70,9 +69,25 @@ goto: ['prev', 'next', 'escape']
 
 </div>
 
-<script type="text/javascript">
-  function goBack() {
 
+<div x-data @keydown.window.prevent.left="gotoPrev()"></div>
+<div x-data @keydown.window.prevent.right="gotoNext()"></div>
+<div x-data @keydown.window.prevent.escape="goBack()"></div>
+<div x-data @keydown.window.prevent.up="goBack()"></div>
+
+
+<script type="text/javascript">
+  function gotoPrev() {
+    {% set url = ('/' | url ) + top_page_name + '/' + (item.prev.name | slug) + '/' + (item.prev.image | cleanupHack | rmFileExt | sepWords | slug) + '/' %}
+    window.location .href = '{{ url }}';
+  }
+
+  function gotoNext() {
+    {% set url = ('/' | url ) + top_page_name + '/' + (item.next.name | slug) + '/' + (item.next.image | cleanupHack | rmFileExt | sepWords | slug) + '/' %}
+    window.location .href = '{{ url }}';
+  }
+
+  function goBack() {
     // If the user reaches this page from the index page directly, we
     // try to take them back to the same scroll position they were at.
     // Once they navigate around though, all bets are off!
@@ -85,18 +100,5 @@ goto: ['prev', 'next', 'escape']
     } else {
       window.location.href = indexUrl;
     }
-  }
-
-  function gotoEscape() {
-    event.preventDefault();
-    goBack();
-  }
-
-  function gotoPrev() {
-    window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.prev.name | slug}}/{{item.prev.image | cleanupHack | rmFileExt | sepWords | slug}}/';
-  }
-
-  function gotoNext() {
-    window.location.href = '{{('/' + top_page_name + '/') | url}}{{item.next.name | slug}}/{{item.next.image | cleanupHack | rmFileExt | sepWords | slug}}/';
   }
 </script>
