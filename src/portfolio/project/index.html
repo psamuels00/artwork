@@ -25,7 +25,7 @@ eleventyComputed:
   <a class="h-full mx-auto" href="/portfolio/{{item.name | slug}}/{{item.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
     {% set imagePath = '/images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
     {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (item.images[0] | cleanupHack | rmFileExt | sepWords) %}
-    {% set imageClass = 'swipeable hover:brightness-90 max-h-full max-w-full object-scale-down' %}
+    {% set imageClass = 'swipeable hover:brightness-90 max-h-full w-full object-contain' %}
     {% image imagePath, imageAlt, imageClass, { maxWidth: 2560 } %}
   </a>
 </div>

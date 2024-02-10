@@ -35,7 +35,7 @@ layout: 'layouts/base.html'
     <div class="mx-auto">
       {% set imagePath = '/images/' + top_page_name + '/' + item.name | rmSpaces + '/' + item.image %}
       {% set imageAlt = top_page_name + ' item ' + item.name + ' image ' + (item.image | rmFileExt | sepWords) %}
-      {% set imageClass = 'max-h-[calc(100svh-150px)] min-h-32 max-w-full object-scale-down' %}
+      {% set imageClass = 'max-h-[calc(100svh-150px)] min-h-32 w-full object-contain' %}
       {% image imagePath, imageAlt, imageClass, { maxWidth: 2560, linkable: true } %}
     </div>
   </div>

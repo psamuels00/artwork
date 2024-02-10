@@ -33,8 +33,8 @@ To build the pages and serve them up during development, first generate the favi
 
 Next run the following commands in separate windows:
 
-    npm run css   # Tailwind transformations
-    npm start     # Build pages and run 11ty server
+    npm run develop-css       # Tailwind transformations
+    npm run develop-eleventy  # Build pages and run 11ty server
 
 ...or start both in the same terminal:
 
@@ -45,9 +45,9 @@ Then access the site at http://0.0.0.0:8080/
 
 ## Test
 
-The following command will check for broken links.
+The following command will check for empty generated files and broken links.
 
-    npm test   # Run Linkinator
+    npm test
 
 
 ## Deploy
