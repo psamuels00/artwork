@@ -3,20 +3,18 @@ import rmFileExt from '../_eleventy/filter/rm-file-ext.js';
 
 
 export const navigable = (items) => {
-  // embellish each item with prev/next and item_number/max_item_number
+  // embellish each item with circular prev/next
 
   return items.map((object, offset) => ({
     ...object,
     prev: (offset == 0 ? items[items.length - 1].name : items[offset - 1].name),
     next: (offset == (items.length - 1) ? items[0].name : items[offset + 1].name),
-    item_number: offset + 1,
-    max_item_number: items.length,
   }))
 };
 
 
 export const flattened = (items) => {
-  // flatten items wrt images, and embellish each item with prev_prev/prev/next/next_next
+  // flatten items wrt images, and embellish each item with circular prev_prev/prev/next/next_next
   // assumes items like [ { name: name, images: [image,...], ... }, ... ]
 
   let all_images = [];

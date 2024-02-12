@@ -61,28 +61,22 @@ Before the site is published to GitHub pages, the Linkinator test must pass.
 
 ## TODO
 
-### High priority
-_None_
-
 ### Medium priority
 - Get some better pics of the Beach Boardwalk
 
 ### Low priority
 
 **UI tweaks**
+- Maybe make sure the footer is always at the bottom of the page, eg, see /doodles/stills
 - In attempt to make the first image on a project page stand out, it's height takes up most of the
   window height.  However, when the window is made narrow on a desktop, the image shrinks and a lot
   of awkward, empty space is left below the image.  Instead,  the project info should move up to
   fill the space.
-- Make sure the footer is always at the bottom of the page, eg, see /doodles/stills
+
+**New Features**
+- Add search capability.  Get smart with automatically generated tags for all images.
 
 **Performance/Accessibility**
 - Study reports from the following for more recommendations:
   - Google's PageSpeed Insights
   - Catchpoint's Webpage Test
-
-**Refactor code**
-- _Maybe_ use prev/next/first/last page/href provided by 11ty, where possible instead of my own
-
-**New Feature**
-- Add search capability.  Get smart with automatically generated tags for all images.
