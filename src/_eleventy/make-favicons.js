@@ -4,7 +4,7 @@ import path from 'path';
 
 
 generate_favicons({
-  source: 'src/images/meta/favicon/EmmasFace.png',
+  source: 'src/_images/meta/favicon/EmmasFace.png',
   destDir: 'build/assets/favicons/',
   htmlFile: 'favicons.html',
   hrefPath: '/assets/favicons/',

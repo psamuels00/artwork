@@ -12,7 +12,7 @@ sitemap:
 
       <figure>
         <a href="/doodles/{{category.name | slug}}/">
-          {% set imagePath = '/images/doodles/' + category.name | rmSpaces + '/' + category.images[0] %}
+          {% set imagePath = '/_images/doodles/' + category.name | rmSpaces + '/' + category.images[0] %}
           {% set imageAlt = 'Doodles item ' + (category.name | sepWords) + ' image ' + (category.images[0] | rmFileExt | sepWords) %}
           {% set imageClass = 'swipeable hover:brightness-90' %}
           {% image imagePath, imageAlt, imageClass, { maxWidth: 640 } %}

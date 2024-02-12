@@ -18,7 +18,7 @@ const stringifyAttributes = (attributeMap) => {
 
 
 const pathnameFormat = (hash, src, width, format, options, outputPath) => {
-  const m = src.match(/src\/images\/(.*)\/(.*?)\.\w+$/);
+  const m = src.match(/src\/_images\/(.*)\/(.*?)\.\w+$/);
   if (!m) {
     return `${hash}-${width}.${format}`;
   }

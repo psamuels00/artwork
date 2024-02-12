@@ -11,7 +11,7 @@ export default async function(categoryName, imageFile) {
   const title = sepWords(rmFileExt(cleanupHack(imageFile)));
 
   const outputDir = this.eleventy.directories.output;
-  const imagePath = '/images/doodles/' + categoryName.replace(/ /g, '') + '/' + imageFile;
+  const imagePath = '/_images/doodles/' + categoryName.replace(/ /g, '') + '/' + imageFile;
   const imageAlt = 'Doodle item ' + categoryName + ' image ' + title;
   const imageClass = 'swipeable hover:brightness-90';
   const image = await shortcodeImage(imagePath, imageAlt, imageClass, {outputDir})

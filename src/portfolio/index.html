@@ -10,7 +10,7 @@ sitemap:
               sm:grid sm:grid-cols-2 md:grid-cols-3">
     {% for item in projects.structured %}
 
-      {% set imagePath = '/images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
+      {% set imagePath = '/_images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
       {% set isLandscape = ('src' + imagePath) | isLandscape %}
 
       <figure class="mx-auto {% if not isLandscape %} w-2/3 {% endif %}">
