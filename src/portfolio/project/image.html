@@ -7,7 +7,7 @@ pagination:
 permalink: portfolio/{{ item.name | slug }}/{{ item.image | cleanupHack | rmFileExt | sepWords | slug }}/
 top_page_name: portfolio
 eleventyComputed:
-  title: {{ item.page_title | safe }}
+  title: '{{ item.page_title | safe }}'
   x_in_x_of_y: '{{item.image_offset + 1}}'
   y_in_x_of_y: '{{item.num_images}}'
 ---

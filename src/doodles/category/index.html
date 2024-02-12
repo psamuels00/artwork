@@ -8,7 +8,7 @@ permalink: doodles/{{ category.name | slug }}/
 sitemap:
   priority: 0.7
 eleventyComputed:
-  title: {{ category.page_title | safe }}
+  title: '{{ category.page_title | safe }}'
   x_in_x_of_y: '{{pagination.pageNumber + 1}}'
   y_in_x_of_y: '{{pagination.pages.length}}'
 ---
