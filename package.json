@@ -19,11 +19,11 @@
     "build": "npm run build-css && npm run build-eleventy",
     "build-color": "npm run build-css && npm run build-eleventy-color",
 
+    "test-find-null": "[ -z \"`find dist -size 0`\" ] || (find dist -size 0 | sed 's/^/*** Error: Empty file: /' && exit 1)",
     "test-http-server": "npx http-server -p 8081 ./dist",
     "test-linkinator": "npx linkinator http://0.0.0.0:8081 --skip '^https://(www.linkedin.com|perrins-art.com)/' --recurse",
     "test-check-links": "concurrently -n http-server,linkinator --kill-others --success last npm:test-http-server npm:test-linkinator",
-    "test-find-null": "[ -z \"`find dist -size 0`\" ] || (find dist -size 0 | sed 's/^/ERROR:EMPTY /' && exit 1)",
-    "test": "concurrently -n nulls,links --kill-others-on-fail npm:test-find-null npm:test-check-links"
+    "test": "npm run test-find-null && npm run test-check-links"
   },
   "keywords": [],
   "author": "",
