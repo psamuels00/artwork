@@ -6,23 +6,18 @@
     "develop-css": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --watch",
     "develop-eleventy": "npx @11ty/eleventy --serve",
     "develop-eleventy-debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
-
     "develop": "concurrently -n css,11ty npm:develop-css npm:develop-eleventy",
     "develop-debug": "concurrently -n css,11ty npm:develop-css npm:develop-eleventy-debug",
-
     "make-favicons": "node src/_eleventy/make-favicons.js",
-
     "build-css": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify",
     "build-eleventy": "NODE_ENV=production npx @11ty/eleventy",
     "build-eleventy-color": "NODE_ENV=production COLOR_PORTFOLIO=1 npx @11ty/eleventy --output=dist/color --pathprefix=color/",
-
     "build": "npm run build-css && npm run build-eleventy",
     "build-color": "npm run build-css && npm run build-eleventy-color",
-
     "test-find-null": "[ -z \"`find dist -size 0`\" ] || (find dist -size 0 | sed 's/^/*** Error: Empty file: /' && exit 1)",
     "test-http-server": "npx http-server -p 8081 ./dist",
     "test-linkinator": "npx linkinator http://0.0.0.0:8081 --skip '^https://(www.linkedin.com|perrins-art.com)/' --recurse",
-    "test-check-links": "concurrently -n http-server,linkinator --kill-others \"trap : SIGTERM; npm run test-http-server\" npm:test-linkinator",
+    "test-check-links": "concurrently -n http-server,linkinator --kill-others --success first \"wait-on http://0.0.0.0:8081/robots.txt && npm run test-linkinator\" npm:test-http-server",
     "test": "npm run test-find-null && npm run test-check-links"
   },
   "keywords": [],
@@ -41,6 +36,7 @@
     "image-size": "^1.1.1",
     "linkinator": "^6.0.4",
     "outdent": "^0.8.0",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "wait-on": "^7.2.0"
   }
 }
