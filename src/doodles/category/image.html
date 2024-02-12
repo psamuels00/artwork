@@ -1,13 +1,13 @@
 ---
-layout: 'layouts/image.html'
+layout: layouts/image.html
 pagination:
   data: doodles.flat
   size: 1
   alias: item
-permalink: "doodles/{{ item.name | slug }}/{{ item.image | cleanupHack | rmFileExt | sepWords | slug }}/"
-top_page_name: 'doodles'
+permalink: doodles/{{ item.name | slug }}/{{ item.image | cleanupHack | rmFileExt | sepWords | slug }}/
+top_page_name: doodles
 eleventyComputed:
-  title: '{{ item.page_title | safe }}'
+  title: {{ item.page_title | safe }}
   x_in_x_of_y: '{{item.image_offset + 1}}'
   y_in_x_of_y: '{{item.num_images}}'
 ---
