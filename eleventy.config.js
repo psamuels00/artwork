@@ -37,15 +37,15 @@ export default (config) => {
   config.addFilter('rmSpaces', filters.rmSpaces);
   config.addFilter('sepWords', filters.sepWords);
 
+  // favicons
+  config.addNunjucksAsyncShortcode('favicons', shortcodes.favicons);
+  config.watchIgnores.add('src/_includes/snippets/favicons.html');
+
   // images
   config.addNunjucksAsyncShortcode('doodleFigure', shortcodes.doodleFigure);
   config.addNunjucksAsyncShortcode('figure', shortcodes.figure);
   config.addNunjucksAsyncShortcode('image', shortcodes.image);
-
-  // image orientation
   config.addFilter('isLandscape', filters.isLandscape);
-
-  // image title
   config.addFilter('capWords', filters.capWords);
 
   // copyright year

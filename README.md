@@ -27,11 +27,7 @@ Extra functionality:
 
 ## Develop
 
-To build the pages and serve them up during development, first generate the favicons files:
-
-    npm run make-favicons
-
-Next run the following commands in separate windows:
+To build and serve the pages during development, run the following commands in separate windows:
 
     npm run develop-css       # Tailwind transformations
     npm run develop-eleventy  # Build pages and run 11ty server
@@ -56,15 +52,13 @@ The following command will publish updates to the site.
 
     git push
 
-Before the site is published to GitHub pages, the Linkinator test must pass.
+Before the site is published to GitHub pages, the tests must pass.
 
 
 ## TODO
 
-### Medium priority
+**Content**
 - Get some better pics of the Beach Boardwalk
-
-### Low priority
 
 **UI tweaks**
 - Maybe make sure the footer is always at the bottom of the page, eg, see /doodles/stills
@@ -73,10 +67,10 @@ Before the site is published to GitHub pages, the Linkinator test must pass.
   of awkward, empty space is left below the image.  Instead,  the project info should move up to
   fill the space.
 
-**New Features**
-- Add search capability.  Get smart with automatically generated tags for all images.
-
 **Performance/Accessibility**
 - Study reports from the following for more recommendations:
   - Google's PageSpeed Insights
   - Catchpoint's Webpage Test
+
+**New Features**
+- Add search capability.  Get smart with automatically generated tags for all images.

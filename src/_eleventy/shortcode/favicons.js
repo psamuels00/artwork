@@ -1,23 +1,14 @@
 import { favicons } from 'favicons';
 import fs from 'fs/promises';
+import outdent from 'outdent';
 import path from 'path';
 
 
-generate_favicons({
-  source: 'src/_images/meta/favicon/EmmasFace.png',
-  destDir: 'build/assets/favicons/',
-  htmlFile: 'favicons.html',
-  hrefPath: '/assets/favicons/',
-});
+export default async function(options) {
+  const { source, hrefPath } = options;
 
-
-async function generate_favicons(options = {}) {
-  const {
-    source = undefined,
-    destDir = undefined,
-    htmlFile = undefined,
-    hrefPath = undefined,
-  } = options;
+  const destDir = this.eleventy.directories.output + hrefPath;
+  await fs.mkdir(destDir, { recursive: true });
 
   const configuration = {
     appDescription: "Personal Web site to show my artwork and learn 11ty.",
@@ -29,16 +20,7 @@ async function generate_favicons(options = {}) {
     path: hrefPath,
     start_url: '/',
   };
-
-  let response = undefined;
-  try {
-    response = await favicons(source, configuration);
-  } catch (error) {
-    console.log('***** Error generating favicons: %s', error.message);
-    return;
-  }
-
-  await fs.mkdir(destDir, { recursive: true });
+  const response = await favicons(source, configuration);
 
   await Promise.all(
     response.images.map(
@@ -54,5 +36,6 @@ async function generate_favicons(options = {}) {
     ),
   );
 
-  await fs.writeFile(path.join(destDir, htmlFile), response.html.join("\n"));
-}
+  const html = response.html.join("\n");
+  return outdent`${html}`;
+};
