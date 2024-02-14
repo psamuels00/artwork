@@ -60,11 +60,9 @@ Before the site is published to GitHub pages, the tests must pass.
 **Content**
 - Get some better pics of the Beach Boardwalk
 
-**UI tweaks**
-- In attempt to make the first image on a project page stand out, it's height takes up most of the
-  window height.  However, when the window is made narrow on a desktop, the image shrinks and a lot
-  of awkward, empty space is left below the image.  Instead,  the project info should move up to
-  fill the space.
+**UI Tweak**
+- On desktop with narrow window, there is a large empty space above and below the first
+  image on a portfolio project page.
 
 **Performance/Accessibility**
 - Study reports from the following for more recommendations:

@@ -18,17 +18,18 @@ eleventyComputed:
 <!-- 144px/205px is the combined height of elements above the image -->
 <!-- 10px is an arbitrary margin -->
 <!-- 210px/105px allows room for the Title and first line of Description to be seen -->
-<div class="flex items-start my-4
-            h-[calc(100svh-142px-10px-210px)]
-            lg:h-[calc(100svh-205px-10px-105px)]
-            min-h-32">
-  <a class="h-full mx-auto" href="/portfolio/{{item.name | slug}}/{{item.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
-    {% set imagePath = '/_images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
-    {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (item.images[0] | cleanupHack | rmFileExt | sepWords) %}
-    {% set imageClass = 'swipeable hover:brightness-90 max-h-full w-full object-contain' %}
-    {% image imagePath, imageAlt, imageClass, { maxWidth: 2560 } %}
-  </a>
-</div>
+<a href="/portfolio/{{item.name | slug}}/{{item.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
+  {% set imagePath = '/_images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
+  {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (item.images[0] | cleanupHack | rmFileExt | sepWords) %}
+  {% set imageClass = '
+    swipeable hover:brightness-90
+    object-scale-down my-4
+    h-[calc(100svh-142px-10px-210px)]
+    lg:h-[calc(100svh-205px-10px-105px)]
+    min-h-48
+  ' %}
+  {% image imagePath, imageAlt, imageClass, { maxWidth: 2560 } %}
+</a>
 
 <div class="flex flex-col" x-data="{ open: true }">
   <div class="flex" @click="open = !open">
