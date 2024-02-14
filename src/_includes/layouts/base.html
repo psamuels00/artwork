@@ -20,7 +20,7 @@
   </head>
   <body class="{{item.color.body.defaults}}">
 
-    <div class="main_content">
+    <div class="main_content flex flex-col min-h-screen">
       {% block content %}
         {{ content | safe }}
       {% endblock %}

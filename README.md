@@ -61,7 +61,6 @@ Before the site is published to GitHub pages, the tests must pass.
 - Get some better pics of the Beach Boardwalk
 
 **UI tweaks**
-- Maybe make sure the footer is always at the bottom of the page, eg, see /doodles/stills
 - In attempt to make the first image on a project page stand out, it's height takes up most of the
   window height.  However, when the window is made narrow on a desktop, the image shrinks and a lot
   of awkward, empty space is left below the image.  Instead,  the project info should move up to

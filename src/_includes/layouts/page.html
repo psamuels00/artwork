@@ -20,53 +20,13 @@ layout: layouts/base.html
 {% endmacro %}
 
 
-<!-- mobile-first, responsive navigation -->
-<nav>
-  <div class="lg:hidden" x-data="{ open: false }">
-    <!-- logo and 🍔 menu button -->
-    <div class="flex justify-between items-center m-4">
-      <a href="/">
-        {% if item.color.logo.use_original == 'true' %}
-          {% set imagePath = '/_images/meta/logo/PerrinLogo-Original.png' %}
-        {% else %}
-          {% set imagePath = '/_images/meta/logo/PerrinLogo-Inverted.png' %}
-        {% endif %}
-        {% set imageAlt = 'Perrin logo' %}
-        {% set imageClass = 'w-[80px]' %}
-        {% image imagePath, imageAlt, imageClass %}
-      </a>
-      <div class="flex">
-        {% set hoverClass = item.color.menu.hover | default('hover:bg-stone-100') %}
+<div class="flex-1">
 
-        {% set is_top_level_page = page.url.split('/').length < 4 %}
-        {% if page.url == '/404.html' %}
-          {# nop #}
-        {% elif is_top_level_page %}
-          <div class="p-2 text-lg">{{ page.url.split('/')[1] | title }}</div>
-        {% else %}
-          <div class="p-2 {{hoverClass}}">
-            <a href="/{{page.url.split('/')[1]}}/">
-              <div class="text-lg">{{ page.url.split('/')[1] | title }}</div>
-            </a>
-          </div>
-        {% endif %}
-
-        <button class="{{hoverClass}} p-2 flex gap-2" aria-label="Main menu" @click="open = !open">
-          {{ macros.svgPath("h-6", 24, 24, 2, "M4 6h16M4 12h16M4 18h16") }} <!-- 🍔 -->
-        </button>
-      </div>
-    </div>
-
-    <!-- mobile menu -->
-    <div class="flex flex-col text-center text-sm border-t border-gray-200" x-cloak x-show="open">
-      {{ menu('py-3 px-4 border-b border-gray-200') }}
-    </div>
-  </div>
-
-  <div class="hidden lg:block">
-    <!-- logo and divider -->
-    <div class="min-w-fit mx-auto mt-2">
-      <div class="flex justify-center">
+  <!-- mobile-first, responsive navigation -->
+  <nav>
+    <div class="lg:hidden" x-data="{ open: false }">
+      <!-- logo and 🍔 menu button -->
+      <div class="flex justify-between items-center m-4">
         <a href="/">
           {% if item.color.logo.use_original == 'true' %}
             {% set imagePath = '/_images/meta/logo/PerrinLogo-Original.png' %}
@@ -74,29 +34,73 @@ layout: layouts/base.html
             {% set imagePath = '/_images/meta/logo/PerrinLogo-Inverted.png' %}
           {% endif %}
           {% set imageAlt = 'Perrin logo' %}
-          {% set imageClass = 'w-[100px]' %}
+          {% set imageClass = 'w-[80px]' %}
           {% image imagePath, imageAlt, imageClass %}
         </a>
+        <div class="flex">
+          {% set hoverClass = item.color.menu.hover | default('hover:bg-stone-100') %}
+
+          {% set is_top_level_page = page.url.split('/').length < 4 %}
+          {% if page.url == '/404.html' %}
+            {# nop #}
+          {% elif is_top_level_page %}
+            <div class="p-2 text-lg">{{ page.url.split('/')[1] | title }}</div>
+          {% else %}
+            <div class="p-2 {{hoverClass}}">
+              <a href="/{{page.url.split('/')[1]}}/">
+                <div class="text-lg">{{ page.url.split('/')[1] | title }}</div>
+              </a>
+            </div>
+          {% endif %}
+
+          <button class="{{hoverClass}} p-2 flex gap-2" aria-label="Main menu" @click="open = !open">
+            {{ macros.svgPath("h-6", 24, 24, 2, "M4 6h16M4 12h16M4 18h16") }} <!-- 🍔 -->
+          </button>
+        </div>
       </div>
-      <div class="max-w-4xl mx-auto my-2 border-b
-                  {{item.color.logo.divider | default('border-gray-900')}}"></div>
+
+      <!-- mobile menu -->
+      <div class="flex flex-col text-center text-sm border-t border-gray-200" x-cloak x-show="open">
+        {{ menu('py-3 px-4 border-b border-gray-200') }}
+      </div>
     </div>
 
-    <!-- primary menu -->
-    <div class="min-w-fit mx-auto">
-      <div class="flex justify-center">
-        <div class="flex text-sm font-extralight">
-          {{ menu('py-1 px-4 transition-colors duration-300') }}
+    <div class="hidden lg:block">
+      <!-- logo and divider -->
+      <div class="min-w-fit mx-auto mt-2">
+        <div class="flex justify-center">
+          <a href="/">
+            {% if item.color.logo.use_original == 'true' %}
+              {% set imagePath = '/_images/meta/logo/PerrinLogo-Original.png' %}
+            {% else %}
+              {% set imagePath = '/_images/meta/logo/PerrinLogo-Inverted.png' %}
+            {% endif %}
+            {% set imageAlt = 'Perrin logo' %}
+            {% set imageClass = 'w-[100px]' %}
+            {% image imagePath, imageAlt, imageClass %}
+          </a>
+        </div>
+        <div class="max-w-4xl mx-auto my-2 border-b
+                    {{item.color.logo.divider | default('border-gray-900')}}"></div>
+      </div>
+
+      <!-- primary menu -->
+      <div class="min-w-fit mx-auto">
+        <div class="flex justify-center">
+          <div class="flex text-sm font-extralight">
+            {{ menu('py-1 px-4 transition-colors duration-300') }}
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="main_content">
-  {% block content %}
-    {{ content | safe }}
-  {% endblock %}
+  <div class="main_content">
+    {% block content %}
+      {{ content | safe }}
+    {% endblock %}
+  </div>
+
 </div>
 
 <footer class="flex justify-center my-12">
