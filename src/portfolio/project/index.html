@@ -15,19 +15,30 @@ eleventyComputed:
 
 {% import "snippets/svg.html" as macros %}
 
-<!-- 144px/205px is the combined height of elements above the image -->
-<!-- 10px is an arbitrary margin -->
-<!-- 210px/105px allows room for the Title and first line of Description to be seen -->
+
 <a href="/portfolio/{{item.name | slug}}/{{item.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
   {% set imagePath = '/_images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
   {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (item.images[0] | cleanupHack | rmFileExt | sepWords) %}
-  {% set imageClass = '
-    swipeable hover:brightness-90
-    object-scale-down my-4
-    h-[calc(100svh-142px-10px-210px)]
-    lg:h-[calc(100svh-205px-10px-105px)]
-    min-h-48
-  ' %}
+  {% set imageClass = 'swipeable hover:brightness-90 object-scale-down my-4 min-h-[128px]' %}
+
+  {% set isLandscape = ('src' + imagePath) | isLandscape %}
+  {% set heightClass = 'h-[min(calc(100svh-142px-10px-210px), 462px)]' if isLandscape
+     else 'h-[calc(100svh-142px-10px-210px)]' %}
+  {% set imageClass = imageClass + ' ' + heightClass %}
+  {#
+   |  142px is the combined height of elements above the image
+   |  10px is an arbitrary margin
+   |  210px allows room for the Title and first line of Description to be seen
+   |  462px is the sum of 142 + 10 + 210 + an arbitrary margin of 100
+   #}
+
+  {% set imageClass = imageClass + ' lg:h-[calc(100svh-205px-10px-105px)]' %}
+  {#
+   |  205px is the combined height of elements above the image
+   |  10px is an arbitrary margin
+   |  105px allows room for the Title and first line of Description to be seen
+   #}
+
   {% image imagePath, imageAlt, imageClass, { maxWidth: 2560 } %}
 </a>
 

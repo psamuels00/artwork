@@ -61,8 +61,8 @@ Before the site is published to GitHub pages, the tests must pass.
 - Get some better pics of the Beach Boardwalk
 
 **UI Tweak**
-- On desktop with narrow window, there is a large empty space above and below the first
-  image on a portfolio project page.
+- The first image on a portfolio project page does not render well in some cases,
+  namely on my iPhone in landscape orientation.
 
 **Performance/Accessibility**
 - Study reports from the following for more recommendations:
