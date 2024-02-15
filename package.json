@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Perrin's Artwork",
   "scripts": {
+    "banner": "node_modules/figlet-cli/bin/figlet -f cybermedium $1",
     "develop-css": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --watch",
     "develop-eleventy": "npx @11ty/eleventy --serve",
     "develop-eleventy-debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
     "develop": "concurrently -n css,11ty npm:develop-css npm:develop-eleventy",
     "develop-debug": "concurrently -n css,11ty npm:develop-css npm:develop-eleventy-debug",
-    "make-favicons": "node src/_eleventy/make-favicons.js",
     "build-css": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --minify",
     "build-eleventy": "NODE_ENV=production npx @11ty/eleventy",
     "build-eleventy-color": "NODE_ENV=production COLOR_PORTFOLIO=1 npx @11ty/eleventy --output=dist/color --pathprefix=color/",
@@ -18,7 +18,7 @@
     "test-http-server": "npx http-server -p 8081 ./dist",
     "test-linkinator": "npx linkinator http://0.0.0.0:8081 --skip '^https://(www.linkedin.com|perrins-art.com)/' --recurse",
     "test-check-links": "concurrently -n http-server,linkinator --kill-others --success first npm:test-http-server npm:test-linkinator",
-    "test": "npm run test-find-null && npm run test-check-links"
+    "test": "(npm run test-find-null && npm run test-check-links && npm run banner Success) || npm run banner Error"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +30,7 @@
     "@quasibit/eleventy-plugin-sitemap": "^2.2.0",
     "concurrently": "^8.2.2",
     "favicons": "^7.1.5",
+    "figlet-cli": "^0.1.1",
     "hammerjs": "^2.0.8",
     "html-minifier-terser": "^7.2.0",
     "http-server": "^14.1.1",
