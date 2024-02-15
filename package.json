@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Perrin's Artwork",
   "scripts": {
-    "banner": "node_modules/figlet-cli/bin/figlet -f cybermedium $1",
+    "banner": "node_modules/figlet-cli/bin/figlet -f cybermedium",
     "develop-css": "tailwindcss -i ./src/_includes/css/global.css -o build/global.css --watch",
     "develop-eleventy": "npx @11ty/eleventy --serve",
     "develop-eleventy-debug": "DEBUG=Eleventy* npx @11ty/eleventy --serve",
