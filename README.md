@@ -60,10 +60,6 @@ Before the site is published to GitHub pages, the tests must pass.
 **Content**
 - Get some better pics of the Beach Boardwalk
 
-**UI Tweak**
-- The first image on a portfolio project page does not render well in some cases,
-  namely on my iPhone in landscape orientation.
-
 **Performance/Accessibility**
 - Study reports from the following for more recommendations:
   - Google's PageSpeed Insights
