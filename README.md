@@ -60,6 +60,9 @@ Before the site is published to GitHub pages, the tests must pass.
 **Content**
 - Get some better pics of the Beach Boardwalk
 
+**Refactor**
+- simplify long chains of filters in the page
+
 **Performance/Accessibility**
 - Study reports from the following for more recommendations:
   - Google's PageSpeed Insights

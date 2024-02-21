@@ -20,6 +20,9 @@ module.exports = {
       fontFamily: {
         rubik: ['Rubik Mono One', 'monospace'],
       },
+      transitionDuration: {
+        '10000': '10000ms',
+      }
     },
   },
   plugins: [],
