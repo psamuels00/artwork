@@ -51,7 +51,7 @@ let projects = [
         hover: 'hover:bg-stone-800',
       },
       logo: {
-        use_original: 'true',
+        useOriginal: 'true',
         divider: 'border-stone-100',
       },
       menu: {
@@ -213,7 +213,7 @@ let projects = [
 // add page title
 projects = projects.map(project => {
   return {
-    page_title: "Perrin's \"" + project.name + "\" Painting",
+    pageTitle: "Perrin's \"" + project.name + "\" Painting",
     ...project
   };
 });

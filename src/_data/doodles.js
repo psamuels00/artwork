@@ -151,7 +151,7 @@ let categories = [
 // add page title
 categories = categories.map(category => {
   return {
-    page_title: "Perrin's " + category.name + " Doodles",
+    pageTitle: "Perrin's " + category.name + " Doodles",
     ...category
   };
 });

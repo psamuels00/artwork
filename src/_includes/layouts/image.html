@@ -14,12 +14,12 @@ layout: layouts/base.html
     {% if item.title %}
       <div class="mx-auto text-xl font-medium flex items-center">
         {{ item.title }}
-        <span class="text-base mx-2 w-[35px]">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
+        <span class="text-base mx-2 w-[35px]">{{curItemIndex}}/{{maxItemIndex}}</span>
       </div>
     {% else %}
       <div class="mx-auto text-3xl font-light align-middle flex items-center">
         {{ item.name }}
-        <span class="text-base mx-2 w-[35px]">{{x_in_x_of_y}}/{{y_in_x_of_y}}</span>
+        <span class="text-base mx-2 w-[35px]">{{curItemIndex}}/{{maxItemIndex}}</span>
       </div>
     {% endif %}
 
@@ -27,39 +27,39 @@ layout: layouts/base.html
   </div>
 
   <div class="flex justify-center text-lg font-extralight">
-    {{ item.image_title }}
+    {{ item.imageTitle }}
   </div>
 
   <!-- 150px is the combined height of elements above and below the image -->
   <div class="swipeable flex items-start h-[calc(100svh-150px)] px-2">
     <div class="mx-auto">
-      {% set imagePath = item.image_path %}
-      {% set imageAlt = item.image_alt %}
+      {% set imagePath = item.imagePath %}
+      {% set imageAlt = item.imageAlt %}
       {% set imageClass = 'max-h-[calc(100svh-150px)] min-h-32 w-full object-contain' %}
       {% image imagePath, imageAlt, imageClass, { maxWidth: 2560, linkable: true } %}
     </div>
   </div>
 
   <div class="flex mx-auto gap-2 py-2">
-    <a href="{{item.prev_prev_href}}">
+    <a href="{{item.prevPrevHref}}">
       <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
               aria-label="Next painting or doodle category">
         <<<
       </button>
     </a>
-    <a href="{{item.prev_href}}">
+    <a href="{{item.prevHref}}">
       <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
               aria-label="Previous image">
         Prev
       </button>
     </a>
-    <a href="{{item.next_href}}">
+    <a href="{{item.nextHref}}">
       <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
               aria-label="Next image">
         Next
       </button>
     </a>
-    <a href="{{item.next_next_href}}">
+    <a href="{{item.nextNextHref}}">
       <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
               aria-label="Next painting or doodle category">
         >>>
@@ -78,18 +78,18 @@ layout: layouts/base.html
 
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{ '/' | url }}{{ item.prev_href_location }}';
+    window.location.href = '{{ '/' | url }}{{ item.prevHrefLocation }}';
   }
 
   function gotoNext() {
-    window.location.href = '{{ '/' | url }}{{ item.next_href_location }}';
+    window.location.href = '{{ '/' | url }}{{ item.nextHrefLocation }}';
   }
 
   function goBack() {
     // If the user reaches this page from the index page directly, we
     // try to take them back to the same scroll position they were at.
     // Once they navigate around though, all bets are off!
-    const indexUrl = '{{'/' | url}}{{top_page_name}}/{{item.name | slug}}/';
+    const indexUrl = '{{'/' | url}}{{topPageName}}/{{item.name | slug}}/';
 
     if (document.referrer.endsWith(indexUrl)) {
       //const scrollPosition = sessionStorage.getItem('scrollPosition');

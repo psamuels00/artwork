@@ -8,9 +8,9 @@ permalink: portfolio/{{ item.name | slug }}/
 sitemap:
   priority: 0.8
 eleventyComputed:
-  title: '{{ item.page_title | safe }}'
-  x_in_x_of_y: '{{pagination.pageNumber + 1}}'
-  y_in_x_of_y: '{{pagination.pages.length}}'
+  title: '{{ item.pageTitle | safe }}'
+  curItemIndex: '{{pagination.pageNumber + 1}}'
+  maxItemIndex: '{{pagination.pages.length}}'
 ---
 
 {% import "snippets/svg.html" as macros %}
@@ -89,7 +89,7 @@ eleventyComputed:
 {% endif %}
 
 
-{% set enterUrl = ('/' | url) + item.enter_url %}
+{% set enterUrl = ('/' | url) + item.enterUrl %}
 <div x-data @keydown.window.prevent.enter="window.location.href = '{{ enterUrl }}'"></div>
 <div x-data @keydown.window.prevent.down="window.location.href = '{{ enterUrl }}'"></div>
 <div x-data @keydown.window.prevent.left="gotoPrev()"></div>
@@ -100,10 +100,10 @@ eleventyComputed:
 
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{'/' | url}}{{item.prev_href_location}}/';
+    window.location.href = '{{'/' | url}}{{item.prevHrefLocation}}/';
   }
 
   function gotoNext() {
-    window.location.href = '{{'/' | url}}{{item.next_href_location}}/';
+    window.location.href = '{{'/' | url}}{{item.nextHrefLocation}}/';
   }
 </script>

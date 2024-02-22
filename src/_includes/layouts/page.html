@@ -28,7 +28,7 @@ layout: layouts/base.html
       <!-- logo and 🍔 menu button -->
       <div class="flex justify-between items-center m-4">
         <a href="/">
-          {% if item.color.logo.use_original == 'true' %}
+          {% if item.color.logo.useOriginal == 'true' %}
             {% set imagePath = '/_images/meta/logo/PerrinLogo-Original.png' %}
           {% else %}
             {% set imagePath = '/_images/meta/logo/PerrinLogo-Inverted.png' %}
@@ -40,10 +40,10 @@ layout: layouts/base.html
         <div class="flex">
           {% set hoverClass = item.color.menu.hover | default('hover:bg-stone-100') %}
 
-          {% set is_top_level_page = page.url.split('/').length < 4 %}
+          {% set isTopLevelPage = page.url.split('/').length < 4 %}
           {% if page.url == '/404.html' %}
             {# nop #}
-          {% elif is_top_level_page %}
+          {% elif isTopLevelPage %}
             <div class="p-2 text-lg">{{ page.url.split('/')[1] | title }}</div>
           {% else %}
             <div class="p-2 {{hoverClass}}">
@@ -70,7 +70,7 @@ layout: layouts/base.html
       <div class="min-w-fit mx-auto mt-2">
         <div class="flex justify-center">
           <a href="/">
-            {% if item.color.logo.use_original == 'true' %}
+            {% if item.color.logo.useOriginal == 'true' %}
               {% set imagePath = '/_images/meta/logo/PerrinLogo-Original.png' %}
             {% else %}
               {% set imagePath = '/_images/meta/logo/PerrinLogo-Inverted.png' %}
