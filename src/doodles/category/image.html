@@ -4,7 +4,7 @@ pagination:
   data: doodles.flat
   size: 1
   alias: item
-permalink: doodles/{{ item.name | slug }}/{{ item.image | cleanupHack | rmFileExt | sepWords | slug }}/
+permalink: '{{ item.permalink }}'
 top_page_name: doodles
 eleventyComputed:
   title: '{{ item.page_title | safe }}'

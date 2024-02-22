@@ -21,7 +21,11 @@ eleventyComputed:
             {% endif %}
             gap-8 sm:px-4 md:px-6">
   {% for image_name in category.images %}
-    {% doodleFigure category.name, image_name %}
+    {% set title = category.image_titles[loop.index0] %}
+    {% set href = category.image_hrefs[loop.index0] %}
+    {% set path = category.image_paths[loop.index0] %}
+    {% set alt = category.image_alts[loop.index0] %}
+    {% doodleFigure category.name, image_name, title, href, path, alt %}
   {% endfor %}
 </div>
 
@@ -33,7 +37,7 @@ eleventyComputed:
 {% endif %}
 
 
-{% set enterUrl = ('/doodles/' | url) + (category.name | slug) + '/' + (category.images[0] | cleanupHack | rmFileExt | sepWords | slug) + '/' %}
+{% set enterUrl = ('/' | url) + category.enter_url %}
 <div x-data @keydown.window.prevent.enter="window.location.href = '{{ enterUrl }}'"></div>
 <div x-data @keydown.window.prevent.down="window.location.href = '{{ enterUrl }}'"></div>
 <div x-data @keydown.window.prevent.left="gotoPrev()"></div>
@@ -44,10 +48,10 @@ eleventyComputed:
 
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{'/' | url}}doodles/{{category.prev | slug}}/';
+    window.location.href = '{{'/' | url}}{{category.prev_href_location}}/';
   }
 
   function gotoNext() {
-    window.location.href = '{{'/' | url}}doodles/{{category.next | slug}}/';
+    window.location.href = '{{'/' | url}}{{category.next_href_location}}/';
   }
 </script>

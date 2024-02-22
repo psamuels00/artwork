@@ -16,9 +16,9 @@ eleventyComputed:
 {% import "snippets/svg.html" as macros %}
 
 
-<a href="/portfolio/{{item.name | slug}}/{{item.images[0] | cleanupHack | rmFileExt | sepWords | slug}}/">
-  {% set imagePath = '/_images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
-  {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (item.images[0] | cleanupHack | rmFileExt | sepWords) %}
+<a href="{{item.image_hrefs[0]}}">
+  {% set imagePath = item.image_paths[0] %}
+  {% set imageAlt = item.image_alts[0] %}
 
   {#  142px/205px is the combined height of elements above the image #}
   {#  10px is an arbitrary margin #}
@@ -74,9 +74,9 @@ eleventyComputed:
               gap-8 mt-4 sm:px-4 md:px-6 justify-center">
     {% for name in item.images %}
       {% if not loop.first %}
-        <a href="/portfolio/{{item.name | slug}}/{{name | cleanupHack | rmFileExt | sepWords | slug}}/">
-          {% set imagePath = '/_images/portfolio/' + item.name | rmSpaces + '/' + name %}
-          {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (name | cleanupHack | rmFileExt | sepWords) %}
+        <a href="{{item.image_hrefs[loop.index0]}}">
+          {% set imagePath = item.image_paths[loop.index0] %}
+          {% set imageAlt = item.image_alts[loop.index0] %}
           {% set imageClass = 'swipeable hover:brightness-90' %}
           {% image imagePath, imageAlt, imageClass, { maxWidth: 1280, loading: 'lazy' } %}
         </a>
@@ -91,7 +91,7 @@ eleventyComputed:
 {% endif %}
 
 
-{% set enterUrl = ('/portfolio/' | url) + (item.name | slug) + '/' + (item.images[0] | cleanupHack | rmFileExt | sepWords | slug) + '/' %}
+{% set enterUrl = ('/' | url) + item.enter_url %}
 <div x-data @keydown.window.prevent.enter="window.location.href = '{{ enterUrl }}'"></div>
 <div x-data @keydown.window.prevent.down="window.location.href = '{{ enterUrl }}'"></div>
 <div x-data @keydown.window.prevent.left="gotoPrev()"></div>
@@ -102,10 +102,10 @@ eleventyComputed:
 
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{'/' | url}}portfolio/{{item.prev | slug}}/';
+    window.location.href = '{{'/' | url}}{{item.prev_href_location}}/';
   }
 
   function gotoNext() {
-    window.location.href = '{{'/' | url}}portfolio/{{item.next | slug}}/';
+    window.location.href = '{{'/' | url}}{{item.next_href_location}}/';
   }
 </script>

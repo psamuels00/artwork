@@ -158,6 +158,6 @@ categories = categories.map(category => {
 
 
 export default {
-    structured: navigable(categories),
-    flat: flattened(categories),
+    structured: navigable(categories, 'doodles'),
+    flat: flattened(categories, 'doodles'),
 };

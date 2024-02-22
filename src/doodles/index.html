@@ -12,8 +12,8 @@ sitemap:
 
       <figure>
         <a href="/doodles/{{category.name | slug}}/">
-          {% set imagePath = '/_images/doodles/' + category.name | rmSpaces + '/' + category.images[0] %}
-          {% set imageAlt = 'Doodles item ' + (category.name | sepWords) + ' image ' + (category.images[0] | rmFileExt | sepWords) %}
+          {% set imagePath = category.image_paths[0] %}
+          {% set imageAlt = category.image_alts[0] %}
           {% set imageClass = 'swipeable hover:brightness-90' %}
           {% image imagePath, imageAlt, imageClass, { maxWidth: 640 } %}
         </a>

@@ -4,7 +4,7 @@ pagination:
   data: projects.flat
   size: 1
   alias: item
-permalink: portfolio/{{ item.name | slug }}/{{ item.image | cleanupHack | rmFileExt | sepWords | slug }}/
+permalink: '{{ item.permalink }}'
 top_page_name: portfolio
 eleventyComputed:
   title: '{{ item.page_title | safe }}'

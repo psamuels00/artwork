@@ -32,10 +32,6 @@ export default (config) => {
 
   // manage URLs
   config.addPlugin(EleventyHtmlBasePlugin);
-  config.addFilter('cleanupHack', filters.cleanupHack);
-  config.addFilter('rmFileExt', filters.rmFileExt);
-  config.addFilter('rmSpaces', filters.rmSpaces);
-  config.addFilter('sepWords', filters.sepWords);
 
   // favicons
   config.addNunjucksAsyncShortcode('favicons', shortcodes.favicons);
@@ -46,7 +42,6 @@ export default (config) => {
   config.addNunjucksAsyncShortcode('figure', shortcodes.figure);
   config.addNunjucksAsyncShortcode('image', shortcodes.image);
   config.addFilter('isLandscape', filters.isLandscape);
-  config.addFilter('capWords', filters.capWords);
 
   // copyright year
   config.addFilter('yearSince', filters.yearSince);

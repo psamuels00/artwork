@@ -10,12 +10,12 @@ sitemap:
               sm:grid sm:grid-cols-2 md:grid-cols-3">
     {% for item in projects.structured %}
 
-      {% set imagePath = '/_images/portfolio/' + item.name | rmSpaces + '/' + item.images[0] %}
+      {% set imagePath = item.image_paths[0] %}
       {% set isLandscape = ('src' + imagePath) | isLandscape %}
 
       <figure class="mx-auto {% if not isLandscape %} w-2/3 {% endif %}">
         <a href="/portfolio/{{item.name | slug}}/">
-          {% set imageAlt = 'Portfolio item ' + (item.name | sepWords) + ' image ' + (item.images[0] | rmFileExt | sepWords) %}
+          {% set imageAlt = item.image_alts[0] %}
           {% set imageClass = 'swipeable hover:brightness-90' %}
           {% image imagePath, imageAlt, imageClass, { maxWidth: 770 } %}
         </a>

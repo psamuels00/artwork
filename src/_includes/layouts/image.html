@@ -27,39 +27,39 @@ layout: layouts/base.html
   </div>
 
   <div class="flex justify-center text-lg font-extralight">
-    {{ item.image | cleanupHack | cleanupHack | rmFileExt | sepWords | capWords }}
+    {{ item.image_title }}
   </div>
 
   <!-- 150px is the combined height of elements above and below the image -->
   <div class="swipeable flex items-start h-[calc(100svh-150px)] px-2">
     <div class="mx-auto">
-      {% set imagePath = '/_images/' + top_page_name + '/' + item.name | rmSpaces + '/' + item.image %}
-      {% set imageAlt = top_page_name + ' item ' + item.name + ' image ' + (item.image | rmFileExt | sepWords) %}
+      {% set imagePath = item.image_path %}
+      {% set imageAlt = item.image_alt %}
       {% set imageClass = 'max-h-[calc(100svh-150px)] min-h-32 w-full object-contain' %}
       {% image imagePath, imageAlt, imageClass, { maxWidth: 2560, linkable: true } %}
     </div>
   </div>
 
   <div class="flex mx-auto gap-2 py-2">
-    <a href="/{{top_page_name}}/{{item.prev_prev.name | slug}}/{{item.prev_prev.image | cleanupHack | rmFileExt | sepWords | slug}}/">
+    <a href="{{item.prev_prev_href}}">
       <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
               aria-label="Next painting or doodle category">
         <<<
       </button>
     </a>
-    <a href="/{{top_page_name}}/{{item.prev.name | slug}}/{{item.prev.image| cleanupHack | rmFileExt | sepWords | slug}}/">
+    <a href="{{item.prev_href}}">
       <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
               aria-label="Previous image">
         Prev
       </button>
     </a>
-    <a href="/{{top_page_name}}/{{item.next.name | slug}}/{{item.next.image | cleanupHack | rmFileExt | sepWords | slug}}/">
+    <a href="{{item.next_href}}">
       <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
               aria-label="Next image">
         Next
       </button>
     </a>
-    <a href="/{{top_page_name}}/{{item.next_next.name | slug}}/{{item.next_next.image | cleanupHack | rmFileExt | sepWords | slug}}/">
+    <a href="{{item.next_next_href}}">
       <button class="border border-stone-400 bg-stone-100 hover:bg-stone-200 text-stone-800 py-2 px-3"
               aria-label="Next painting or doodle category">
         >>>
@@ -78,20 +78,18 @@ layout: layouts/base.html
 
 <script type="text/javascript">
   function gotoPrev() {
-    {% set url = ('/' | url ) + top_page_name + '/' + (item.prev.name | slug) + '/' + (item.prev.image | cleanupHack | rmFileExt | sepWords | slug) + '/' %}
-    window.location .href = '{{ url }}';
+    window.location.href = '{{ '/' | url }}{{ item.prev_href_location }}';
   }
 
   function gotoNext() {
-    {% set url = ('/' | url ) + top_page_name + '/' + (item.next.name | slug) + '/' + (item.next.image | cleanupHack | rmFileExt | sepWords | slug) + '/' %}
-    window.location .href = '{{ url }}';
+    window.location.href = '{{ '/' | url }}{{ item.next_href_location }}';
   }
 
   function goBack() {
     // If the user reaches this page from the index page directly, we
     // try to take them back to the same scroll position they were at.
     // Once they navigate around though, all bets are off!
-    const indexUrl = '{{('/' + top_page_name + '/') | url}}{{item.name | slug}}/';
+    const indexUrl = '{{'/' | url}}{{top_page_name}}/{{item.name | slug}}/';
 
     if (document.referrer.endsWith(indexUrl)) {
       //const scrollPosition = sessionStorage.getItem('scrollPosition');

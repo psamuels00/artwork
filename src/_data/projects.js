@@ -225,6 +225,6 @@ if (!process.env.COLOR_PORTFOLIO) {
 
 
 export default {
-    structured: navigable(projects),
-    flat: flattened(projects),
+    structured: navigable(projects, 'portfolio'),
+    flat: flattened(projects, 'portfolio'),
 };

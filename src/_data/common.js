@@ -1,19 +1,54 @@
-import sepWords from '../_eleventy/filter/sep-words.js';
 import rmFileExt from '../_eleventy/filter/rm-file-ext.js';
+import rmSpaces from '../_eleventy/filter/rm-spaces.js';
+import sepWords from '../_eleventy/filter/sep-words.js';
+import slug from '../_eleventy/filter/slug.js';
 
 
-export const navigable = (items) => {
-  // embellish each item with circular prev/next
+export const navigable = (items, top_page_name) => {
+  // embellish each item with circular prev/next, and a bunch more!
 
-  return items.map((object, offset) => ({
-    ...object,
-    prev: (offset == 0 ? items[items.length - 1].name : items[offset - 1].name),
-    next: (offset == (items.length - 1) ? items[0].name : items[offset + 1].name),
-  }))
+  return items.map((object, offset) => {
+    const prev = (offset == 0 ? items[items.length - 1].name : items[offset - 1].name);
+    const next = (offset == (items.length - 1) ? items[0].name : items[offset + 1].name);
+    const prev_href_location = top_page_name + '/' + slug(prev) + '/';
+    const next_href_location = top_page_name + '/' + slug(next) + '/';
+
+    const image_titles = object.images.map((image_name) => {
+      return sepWords(rmFileExt(image_name));
+    });
+
+    const image_hrefs = object.images.map((image_name) => {
+      return '/' + top_page_name + '/' + slug(object.name) + '/' + slug(sepWords(rmFileExt(image_name))) + '/';
+    });
+
+    const image_paths = object.images.map((image_name) => {
+      return '/_images/' + top_page_name + '/' + rmSpaces(object.name) + '/' + image_name;
+    });
+
+    const image_alts = object.images.map((image_name) => {
+      let type = top_page_name.charAt(0).toUpperCase() + top_page_name.slice(1);
+      return type + ' item ' + sepWords(object.name) + ' image ' + sepWords(rmFileExt(image_name));
+    });
+
+    const enter_url = top_page_name + '/' + slug(object.name) + '/' + slug(sepWords(rmFileExt(object.images[0]))) + '/';
+
+    return {
+      ...object,
+      prev,
+      next,
+      enter_url,
+      prev_href_location,
+      next_href_location,
+      image_titles,
+      image_hrefs,
+      image_paths,
+      image_alts,
+    };
+  });
 };
 
 
-export const flattened = (items) => {
+export const flattened = (items, top_page_name) => {
   // flatten items wrt images, and embellish each item with circular prev_prev/prev/next/next_next
   // assumes items like [ { name: name, images: [image,...], ... }, ... ]
 
@@ -73,16 +108,48 @@ export const flattened = (items) => {
         };
       }
 
-      const page_title = item.page_title + ': ' + sepWords(rmFileExt(image));
+      const image_title = sepWords(rmFileExt(image));
+      const page_title = item.page_title + ': ' + image_title;
+      const image_path = '/_images/' + top_page_name + '/' + rmSpaces(item.name) + '/' + image;
+      const image_alt = top_page_name.charAt(0).toUpperCase() + top_page_name.slice(1)
+                      + ' item ' + item.name + ' image ' + image_title;
+
+      const build_href = (item) => {
+        return top_page_name + '/' + slug(item.name) + '/' + slug(sepWords(rmFileExt(item.image))) + '/';
+      };
+
+      const prev_prev_href = '/' + build_href(prev_prev);
+      const prev_href = '/' + build_href(prev);
+      const next_href = '/' + build_href(next);
+      const next_next_href = '/' + build_href(next_next);
+
+      const prev_href_location = build_href(prev);
+      const next_href_location = build_href(next);
+
+      const permalink = build_href({name: item.name, image});
 
       const embellished_item = {
         ...item,
-        page_title,
         image,
+        permalink,
+
+        image_title,
+        page_title,
+        image_path,
+        image_alt,
+
         prev_prev,
         prev,
         next,
         next_next,
+
+        prev_prev_href,
+        prev_href,
+        next_href,
+        next_next_href,
+        prev_href_location,
+        next_href_location,
+
         image_offset,
         num_images: item.images.length,
       }
