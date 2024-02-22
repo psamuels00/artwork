@@ -3,41 +3,41 @@ layout: layouts/doodles.html
 pagination:
   data: doodles.structured
   size: 1
-  alias: category
-permalink: doodles/{{ category.name | slug }}/
+  alias: item
+permalink: doodles/{{ item.name | slug }}/
 sitemap:
   priority: 0.7
 eleventyComputed:
-  title: '{{ category.page_title | safe }}'
+  title: '{{ item.page_title | safe }}'
   x_in_x_of_y: '{{pagination.pageNumber + 1}}'
   y_in_x_of_y: '{{pagination.pages.length}}'
 ---
 
 <div class="sm:grid
-            {% if category.images.length >= 2 %} sm:grid-cols-2 {% endif %}
-            {% if category.images.length >= 3 %} md:grid-cols-3 {% endif %}
-            {% if category.images.length >= 4 %}
+            {% if item.images.length >= 2 %} sm:grid-cols-2 {% endif %}
+            {% if item.images.length >= 3 %} md:grid-cols-3 {% endif %}
+            {% if item.images.length >= 4 %}
               lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6
             {% endif %}
             gap-8 sm:px-4 md:px-6">
-  {% for image_name in category.images %}
-    {% set title = category.image_titles[loop.index0] %}
-    {% set href = category.image_hrefs[loop.index0] %}
-    {% set path = category.image_paths[loop.index0] %}
-    {% set alt = category.image_alts[loop.index0] %}
-    {% doodleFigure category.name, image_name, title, href, path, alt %}
+  {% for image_name in item.images %}
+    {% set title = item.image_titles[loop.index0] %}
+    {% set href = item.image_hrefs[loop.index0] %}
+    {% set path = item.image_paths[loop.index0] %}
+    {% set alt = item.image_alts[loop.index0] %}
+    {% doodleFigure item.name, image_name, title, href, path, alt %}
   {% endfor %}
 </div>
 
 {% import "snippets/scroll_to_top.html" as macros %}
-{% if category.images.length > 8 %}
+{% if item.images.length > 8 %}
   {{ macros.scrollToTop("hover:bg-stone-100") }}
-{% elif category.images.length > 1 %}
+{% elif item.images.length > 1 %}
   {{ macros.scrollToTop("md:hidden hover:bg-stone-100") }}
 {% endif %}
 
 
-{% set enterUrl = ('/' | url) + category.enter_url %}
+{% set enterUrl = ('/' | url) + item.enter_url %}
 <div x-data @keydown.window.prevent.enter="window.location.href = '{{ enterUrl }}'"></div>
 <div x-data @keydown.window.prevent.down="window.location.href = '{{ enterUrl }}'"></div>
 <div x-data @keydown.window.prevent.left="gotoPrev()"></div>
@@ -48,10 +48,10 @@ eleventyComputed:
 
 <script type="text/javascript">
   function gotoPrev() {
-    window.location.href = '{{'/' | url}}{{category.prev_href_location}}/';
+    window.location.href = '{{'/' | url}}{{item.prev_href_location}}/';
   }
 
   function gotoNext() {
-    window.location.href = '{{'/' | url}}{{category.next_href_location}}/';
+    window.location.href = '{{'/' | url}}{{item.next_href_location}}/';
   }
 </script>
