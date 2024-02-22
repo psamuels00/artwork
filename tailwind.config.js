@@ -7,7 +7,7 @@ module.exports = {
         backyard: {
           200: '#ffd580',
         },
-        desert_brush: {
+        'desert-brush': {
           300: '#8a9a5b',
         },
         onion: {

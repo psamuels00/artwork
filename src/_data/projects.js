@@ -201,7 +201,7 @@ let projects = [
     size: '11 x 8½ inches',
     color: {
       body: {
-        defaults: 'bg-desert_brush-300',
+        defaults: 'bg-desert-brush-300',
       },
     },
     images: [
