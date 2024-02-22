@@ -20,12 +20,8 @@ eleventyComputed:
               lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6
             {% endif %}
             gap-8 sm:px-4 md:px-6">
-  {% for image_name in item.images %}
-    {% set title = item.image_titles[loop.index0] %}
-    {% set href = item.image_hrefs[loop.index0] %}
-    {% set path = item.image_paths[loop.index0] %}
-    {% set alt = item.image_alts[loop.index0] %}
-    {% doodleFigure item.name, image_name, title, href, path, alt %}
+  {% for image in item.images %}
+    {% doodleFigure image %}
   {% endfor %}
 </div>
 

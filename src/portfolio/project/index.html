@@ -16,9 +16,9 @@ eleventyComputed:
 {% import "snippets/svg.html" as macros %}
 
 
-<a href="{{item.image_hrefs[0]}}">
-  {% set imagePath = item.image_paths[0] %}
-  {% set imageAlt = item.image_alts[0] %}
+<a href="{{item.images[0].href}}">
+  {% set imagePath = item.images[0].path %}
+  {% set imageAlt = item.images[0].alt %}
 
   {#  142px/205px is the combined height of elements above the image #}
   {#  10px is an arbitrary margin #}
@@ -72,13 +72,11 @@ eleventyComputed:
 <div class="flex">
   <div class="flex flex-col sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 X2xl:grid-cols-6
               gap-8 mt-4 sm:px-4 md:px-6 justify-center">
-    {% for name in item.images %}
+    {% for image in item.images %}
       {% if not loop.first %}
-        <a href="{{item.image_hrefs[loop.index0]}}">
-          {% set imagePath = item.image_paths[loop.index0] %}
-          {% set imageAlt = item.image_alts[loop.index0] %}
+        <a href="{{image.href}}">
           {% set imageClass = 'swipeable hover:brightness-90' %}
-          {% image imagePath, imageAlt, imageClass, { maxWidth: 1280, loading: 'lazy' } %}
+          {% image image.path, image.alt, imageClass, { maxWidth: 1280, loading: 'lazy' } %}
         </a>
       {% endif %}
     {% endfor %}

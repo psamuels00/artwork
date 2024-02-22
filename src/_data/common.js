@@ -12,37 +12,27 @@ export const navigable = (items, top_page_name) => {
     const next = (offset == (items.length - 1) ? items[0].name : items[offset + 1].name);
     const prev_href_location = top_page_name + '/' + slug(prev) + '/';
     const next_href_location = top_page_name + '/' + slug(next) + '/';
-
-    const image_titles = object.images.map((image_name) => {
-      return sepWords(rmFileExt(image_name));
-    });
-
-    const image_hrefs = object.images.map((image_name) => {
-      return '/' + top_page_name + '/' + slug(object.name) + '/' + slug(sepWords(rmFileExt(image_name))) + '/';
-    });
-
-    const image_paths = object.images.map((image_name) => {
-      return '/_images/' + top_page_name + '/' + rmSpaces(object.name) + '/' + image_name;
-    });
-
-    const image_alts = object.images.map((image_name) => {
-      let type = top_page_name.charAt(0).toUpperCase() + top_page_name.slice(1);
-      return type + ' item ' + sepWords(object.name) + ' image ' + sepWords(rmFileExt(image_name));
-    });
-
     const enter_url = top_page_name + '/' + slug(object.name) + '/' + slug(sepWords(rmFileExt(object.images[0]))) + '/';
+
+    const images = object.images.map((name) => {
+      return {
+        name,
+        title: sepWords(rmFileExt(name)),
+        href: '/' + top_page_name + '/' + slug(object.name) + '/' + slug(sepWords(rmFileExt(name))) + '/',
+        path: '/_images/' + top_page_name + '/' + rmSpaces(object.name) + '/' + name,
+        alt: top_page_name.charAt(0).toUpperCase() + top_page_name.slice(1) +
+             ' item ' + sepWords(object.name) + ' image ' + sepWords(rmFileExt(name)),
+      };
+    });
 
     return {
       ...object,
+      images,
       prev,
       next,
-      enter_url,
       prev_href_location,
       next_href_location,
-      image_titles,
-      image_hrefs,
-      image_paths,
-      image_alts,
+      enter_url,
     };
   });
 };
