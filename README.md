@@ -57,9 +57,6 @@ Before the site is published to GitHub pages, the tests must pass.
 
 ## TODO
 
-**Content**
-- Get some better pics of the Beach Boardwalk
-
 **Performance/Accessibility**
 - Study reports from the following for more recommendations:
   - Google's PageSpeed Insights
